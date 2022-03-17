@@ -5,11 +5,11 @@ import App from './App';
 import './index.css';
 
 const theme = extendTheme({
-    colors: {
-        brand: {
-            50: '#44337A',
-            100: '#B794F4',
-            500: '#B794F4', // you need this
+    styles: {
+        global: {
+            body: {
+                bg: '#C3E0B5',
+            },
         },
     },
 });
