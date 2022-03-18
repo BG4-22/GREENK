@@ -1,14 +1,20 @@
-import { Button, Stack } from '@chakra-ui/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import GameButton from './component/GameButton';
-import Game from './component/Game';
+import Layout from './layout';
+import { Home, Statistics } from './pages';
 
-export default function App() {
+function App() {
     return (
-        <>
-            <Game></Game>
-        </>
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="statistikk" element={<Statistics />} />
+                    <Route path="*" element={<h1>No match</h1>} />
+                </Route>
+            </Routes>
+        </div>
     );
 }
+
+export default App;
