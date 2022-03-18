@@ -1,3 +1,9 @@
 .App {
     text-align: center;
 }
+
+#navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

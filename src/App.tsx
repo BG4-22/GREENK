@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Game from './pages/game/Game';
 import GameButton from './component/GameButton';
@@ -7,7 +7,7 @@ import { Home, Statistics } from './pages';
 
 function App() {
     return (
-        <div className="App">
+        <>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
                     <Route path="*" element={<h1>No match</h1>} />
                 </Route>
             </Routes>
-        </div>
+        </>
     );
 }
 
