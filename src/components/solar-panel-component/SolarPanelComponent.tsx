@@ -1,4 +1,4 @@
-import { Box, Button, Stack } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import cloudIcon from '../../assets/cloudIcon.svg';
@@ -103,9 +103,20 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
         prevWeatherRef.current,
         weather
     );
-    console.log(sunAnime, cloudAnime);
+    const msg = 'skrtskrt';
     return (
-        <Box className={containerStyles}>
+        <Box
+            display={'flex'}
+            pos={'relative'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDir={'column'}
+            overflow={'hidden'}
+            borderRadius={'2em'}
+            margin={'auto'}
+            h={'24rem'}
+            w={'24rem'}
+            border={'2px solid green'}>
             <motion.div
                 className={'sun-container'}
                 animate={sunAnime}
@@ -119,14 +130,15 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
                 animate={cloudAnime}
                 variants={cloudVariants}
             />
+            <Text margin={'auto auto 2rem auto'}>{msg}</Text>
         </Box>
     );
 };
 
 const SolarPanelComponent: React.FC = () => {
     const [weather, setWeather] = useState<Weather>({
-        sun: false,
-        cloud: false,
+        sun: true,
+        cloud: true,
     });
     const updateWeather = (sun: boolean, cloud: boolean): void => {
         setWeather({ sun, cloud });

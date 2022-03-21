@@ -27,6 +27,7 @@
 
 .cloud {
     position: relative;
-    top: -120px;
+    top: -50px;
+    z-index: -1;
     margin: 0 auto;
 }
