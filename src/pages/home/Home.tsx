@@ -1,5 +1,6 @@
 import { AspectRatio, Text } from '@chakra-ui/react';
 import React from 'react';
+import Scoreboard from '../../components/Scoreboard';
 
 export interface HomePropsI {}
 import { Grid, GridItem, Image } from '@chakra-ui/react';
@@ -28,7 +29,7 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                     <Text>SPILL</Text>
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={1} bg="rgba(255,255,255,0.2)">
-                    <Text>SKOLEKONKURRANSE</Text>
+                    <Scoreboard />
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={1} bg="rgba(255,255,255,0.2)">
                     <Text>FUNFACTS</Text>
