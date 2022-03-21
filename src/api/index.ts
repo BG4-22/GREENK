@@ -23,7 +23,7 @@ export async function getScores(): Promise<HighscoreEntry[]> {
             snapshot.docs.forEach((highscore) => {
                 highscores.push({ ...highscore.data() } as HighscoreEntry);
             });
-            return highscores;
+            return highscores.sort((a, b) => b.score - a.score);
         })
         .catch((error) => {
             console.log(error);
