@@ -19,17 +19,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-const db = getFirestore();
-const scores = collection(db, 'scores');
+const dbRef = getFirestore();
+const scoresRef = collection(dbRef, 'scores');
 
 export async function getScores(): Promise<HighscoreEntry[]> {
-    return await getDocs(scores)
+    return await getDocs(scoresRef)
         .then((snapshot) => {
             let highscores = [] as HighscoreEntry[];
             snapshot.docs.forEach((highscore) => {
                 highscores.push({ ...highscore.data() } as HighscoreEntry);
             });
-            return highscores.sort((a, b) => b.score - a.score);
+            return highscores;
         })
         .catch((error) => {
             console.log(error);
@@ -37,11 +37,8 @@ export async function getScores(): Promise<HighscoreEntry[]> {
         });
 }
 
-export async function storeScore(
-    name: string,
-    score: number
-): Promise<boolean> {
-    return await addDoc(scores, { name: name, score: score })
+export async function storeScore(score: HighscoreEntry): Promise<boolean> {
+    return await addDoc(scoresRef, score)
         .then(() => {
             return true;
         })
