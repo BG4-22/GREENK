@@ -13,6 +13,9 @@ export function Layout() {
                     <li>
                         <Link to="/statistikk">Statistikk</Link>
                     </li>
+                    <li>
+                        <Link to="/solcelle">Solcellepanel</Link>
+                    </li>
                 </ul>
             </nav>
             <hr />
