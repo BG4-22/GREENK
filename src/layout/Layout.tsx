@@ -1,6 +1,6 @@
-import { Link, Outlet } from 'react-router-dom';
 import { Box, Center, Circle, Grid, GridItem, Text } from '@chakra-ui/react';
 import { FiHome } from 'react-icons/fi';
+import { Link, Outlet } from 'react-router-dom';
 
 export function Layout() {
     return (
