@@ -67,19 +67,6 @@ export function Layout() {
                         </GridItem>
                     </Grid>
                 </Box>
-
-                {/* <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/statistikk">Statistikk</Link>
-                    </li>
-                </ul>
-            </nav>
-            <hr />
-        */}
             </div>
             {/* An <Outlet> renders whatever child route is currently active,
           so you can think about this <Outlet> as a placeholder for
