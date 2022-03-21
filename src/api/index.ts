@@ -1,5 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+    DocumentReference,
+} from 'firebase/firestore';
 import { HighscoreEntry } from './types';
 
 const firebaseConfig = {
@@ -28,5 +34,18 @@ export async function getScores(): Promise<HighscoreEntry[]> {
         .catch((error) => {
             console.log(error);
             return [];
+        });
+}
+
+export async function storeScore(
+    name: string,
+    score: number
+): Promise<boolean> {
+    return await addDoc(scores, { name: name, score: score })
+        .then(() => {
+            return true;
+        })
+        .catch(() => {
+            return false;
         });
 }
