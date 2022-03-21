@@ -36,10 +36,12 @@ function Scoreboard() {
                 </Thead>
                 <Tbody>
                     {highscores.map((highscore) => {
-                        <Tr>
-                            <Td>{highscore.name}</Td>
-                            <Td>{highscore.score}</Td>
-                        </Tr>;
+                        return (
+                            <Tr>
+                                <Td>{highscore.name}</Td>
+                                <Td>{highscore.score}</Td>
+                            </Tr>
+                        );
                     })}
                 </Tbody>
             </Table>
