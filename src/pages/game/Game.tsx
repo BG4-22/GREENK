@@ -8,25 +8,30 @@ import {
     Flex,
     Spacer,
     Grid,
+    cookieStorageManager,
+    Center,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, VoidFunctionComponent } from 'react';
 import badekar from '../../assets/game/badekar.jpg';
 import dusj from '../../assets/game/dusj.jpg';
 import game_console from '../../assets/game/game_console.jpg';
+import is from '../../assets/game/is.jpg';
 import netflix from '../../assets/game/netflix.svg';
 import { Text } from '@chakra-ui/react';
 
 import CorrectG1 from '../../component/CorrectG1';
 import WrongG1 from '../../component/WrongG1';
+import FeedbackG2 from '../../component/FeedbackG2';
+import AddHighscore from '../../component/AddHighscore';
 
 function Game() {
     const [points, setPoints] = useState(0);
-    const [gameIndex, setGameIndex] = useState(0);
+    let [gameIndex, setGameIndex] = useState(0);
     const [answer, setAnswer] = useState<string>('');
     const [hasAnswered, setHasAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
-
-    const elements = ['dusj.JPG', 'game_console.JPG', 'lys.jpg', 'badekar.jpg'];
+    const [gameOver, setGameOver] = useState(false);
+    const [time, setTime] = useState(0);
 
     const gameIteration = [
         {
@@ -34,8 +39,6 @@ function Game() {
             pic1: {
                 name: 'badekar',
                 img: badekar,
-                message:
-                    'For å ta et bad må man varme opp vann som krever 14 kWh.',
             },
             pic2: { name: 'dusj', img: dusj },
             correct: 'badekar',
@@ -47,6 +50,13 @@ function Game() {
             correct: 'game_console',
         },
     ];
+    function updateGameIndex() {
+        setGameIndex(gameIndex++);
+    }
+
+    function updateHasAnswered() {
+        setHasAnswered(false);
+    }
 
     useEffect(() => {
         if (!!answer) {
@@ -54,29 +64,44 @@ function Game() {
             if (answer == gameIteration[gameIndex].correct) {
                 setIsCorrect(true);
                 setPoints(points + 100);
+            } else {
+                setIsCorrect(false);
             }
         }
     }, [answer]);
 
+    useEffect(() => {
+        setHasAnswered(false);
+        console.log('gameIndex' + gameIndex);
+        if (gameIndex == 2) {
+            setGameOver(true);
+        }
+    }, [gameIndex]);
+
     return (
         <>
             <Heading color="white" margin="20px">
-                {hasAnswered ? (
+                {gameOver ? (
+                    <Text color="#8BA5FF">Du fikk {points} poeng!</Text>
+                ) : hasAnswered ? (
                     isCorrect ? (
-                        <Text>Correct</Text>
+                        <Text color="#597344">Correct</Text>
                     ) : (
-                        <Text>Wrong</Text>
+                        <Text color="#FF5E5E">Wrong</Text>
                     )
                 ) : (
                     gameIteration[gameIndex].heading
                 )}
             </Heading>
             <Box bg="white" w="80%" h="70%" p={4} borderRadius="50px">
-                {hasAnswered ? (
-                    isCorrect ? (
-                        <Text> Correct</Text>
-                    ) : (
-                        <Text>Wrong</Text>
+                {gameOver ? (
+                    <AddHighscore points={points}></AddHighscore>
+                ) : hasAnswered ? (
+                    giveAnswer(
+                        isCorrect,
+                        gameIndex,
+                        updateGameIndex,
+                        updateHasAnswered
                     )
                 ) : (
                     <Flex>
@@ -104,11 +129,30 @@ function Game() {
     );
 }
 
-function checkAnswer(correct: boolean) {
-    if (correct) {
-        return <CorrectG1></CorrectG1>;
-    } else {
-        return <WrongG1></WrongG1>;
+function giveAnswer(
+    correct: boolean,
+    gameIndex: number,
+    updateGameIndex: any,
+    updateHasAnswered: any
+) {
+    if (gameIndex == 0 && correct) {
+        return (
+            <CorrectG1
+                updateGameIndex={updateGameIndex}
+                updateHasAnswered={updateHasAnswered}></CorrectG1>
+        );
+    } else if (gameIndex == 0 && !correct) {
+        return (
+            <WrongG1
+                updateGameIndex={updateGameIndex}
+                updateHasAnswered={updateHasAnswered}></WrongG1>
+        );
+    } else if (gameIndex == 1) {
+        return (
+            <FeedbackG2
+                updateGameIndex={updateGameIndex}
+                updateHasAnswered={updateHasAnswered}></FeedbackG2>
+        );
     }
 }
 
