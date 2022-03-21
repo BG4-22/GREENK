@@ -9,9 +9,11 @@ export function Layout() {
                 {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
                 <Box
+                    aria-label="navigation"
                     display="flex"
                     justify-content="center"
                     alignItems="center"
+                    position="absolute"
                     bg="#8BA5FF"
                     maxH={20}
                     borderRadius={70}
@@ -19,7 +21,9 @@ export function Layout() {
                     w="50%"
                     p={20}
                     color="white"
-                    margin={50}>
+                    margin={50}
+                    bottom="0px"
+                    left="20%">
                     <Grid h="100%" w="100%" templateColumns="repeat(3, 1fr)">
                         <GridItem w="100%" alignSelf="center">
                             <Text>
