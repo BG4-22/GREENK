@@ -1,28 +1,41 @@
-import { Box, List, ListItem, Stack, Text } from '@chakra-ui/react';
-import React from 'react';
-import '../index.css';
+import { Box, Stack, Text } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 
 interface FunfactCardPropsI {
     title: string;
-    ordered?: boolean;
-    list: string[];
+    children: ReactNode;
 }
 
 const FunfactCard: React.FC<FunfactCardPropsI> = ({
     title,
-    ordered = false,
-    list,
+    children,
 }: FunfactCardPropsI) => {
-    const listItems = list.map((item, i) => (
-        <ListItem key={`item-${item}`}>{item}</ListItem>
-    ));
     return (
-        <Box style={{ backgroundColor: '#f2f4fc', borderColor: '#9dbe98' }}>
-            <Stack>
-                <Text borderColor={'#9dbe98'}>{title}</Text>
-                <List styleType={ordered ? '' : 'none'}>{listItems}</List>
-            </Stack>
-        </Box>
+        <Stack
+            borderRadius={'4rem'}
+            bg={'#FFFCFB'}
+            w={'full'}
+            h={'fit-content'}
+            paddingBottom={'2rem'}
+            spacing={'1rem'}>
+            <Text
+                width={'90%'}
+                margin={'0 auto'}
+                fontWeight={'bold'}
+                fontSize={'2rem'}
+                paddingTop={'1rem'}
+                borderBottom={'2px solid #9dbe98'}>
+                {title}
+            </Text>
+            <Box
+                as={'span'}
+                display={'flex'}
+                flexDirection={'column'}
+                justifyContent={'center'}
+                alignItems={'center'}>
+                {children}
+            </Box>
+        </Stack>
     );
 };
 

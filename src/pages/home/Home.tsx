@@ -1,6 +1,7 @@
 import { Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 import NidarvollVideo from '../../Assets/Nidarvoll-video.mp4';
+import FunfactCard from '../../components/funfact-card';
 import Scoreboard from '../../components/Scoreboard';
 import SolarPanelComponent from '../../components/solar-panel-component';
 
@@ -28,9 +29,14 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={1} bg="rgba(255,255,255,0.2)">
                     <Text>SPILL</Text>
+                    <Scoreboard />
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={1} bg="rgba(255,255,255,0.2)">
-                    <Scoreboard />
+                    <FunfactCard title={'Ukens highscores'}>
+                        {highscores.map((entry, i) => (
+                            <p>{entry.name}</p>
+                        ))}
+                    </FunfactCard>
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={1} bg="rgba(255,255,255,0.2)">
                     <Text>FUNFACTS</Text>
