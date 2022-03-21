@@ -33,7 +33,7 @@ function Scoreboard() {
                 <Tbody>
                     {highscores.map((highscore) => {
                         return (
-                            <Tr>
+                            <Tr key={highscores.indexOf(highscore) + 1}>
                                 <Td>{highscore.name}</Td>
                                 <Td>{highscore.score}</Td>
                             </Tr>
