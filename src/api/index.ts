@@ -20,8 +20,8 @@ export async function getScores(): Promise<HighscoreEntry[]> {
     return await getDocs(scores)
         .then((snapshot) => {
             let highscores = [] as HighscoreEntry[];
-            snapshot.docs.forEach((score) => {
-                highscores.push({ ...score.data() } as HighscoreEntry);
+            snapshot.docs.forEach((highscore) => {
+                highscores.push({ ...highscore.data() } as HighscoreEntry);
             });
             return highscores;
         })

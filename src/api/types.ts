@@ -1,4 +1,4 @@
 export type HighscoreEntry = {
     name: string;
-    score: string;
+    score: number;
 };

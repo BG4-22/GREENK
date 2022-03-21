@@ -17,11 +17,7 @@ function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
 
     useEffect(() => {
-        async function updateHighscores() {
-            const response = await getScores();
-            setHighscores(response);
-        }
-        updateHighscores();
+        getScores().then((data) => setHighscores(data));
     }, []);
 
     return (
