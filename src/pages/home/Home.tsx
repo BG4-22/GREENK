@@ -4,7 +4,7 @@ import Scoreboard from '../../components/Scoreboard';
 
 export interface HomePropsI {}
 import { Grid, GridItem, Image } from '@chakra-ui/react';
-import NidarvollVideo from './Assets/Nidarvoll-video.mp4';
+import NidarvollVideo from '../../Assets/Nidarvoll-video.mp4';
 
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
