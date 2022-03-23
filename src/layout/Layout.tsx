@@ -2,7 +2,7 @@ import { Box, Center, Circle, Grid, GridItem, Text } from '@chakra-ui/react';
 import { FiHome } from 'react-icons/fi';
 import { Link, Outlet } from 'react-router-dom';
 
-export function Layout() {
+const Layout: React.FC = () => {
     return (
         <>
             {/* A "layout route" is a good place to put markup you want to
@@ -76,4 +76,6 @@ export function Layout() {
             <Outlet />
         </>
     );
-}
+};
+
+export default Layout;
