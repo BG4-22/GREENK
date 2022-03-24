@@ -1,13 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import SolarPanelComponent from './components/solar-panel-component';
-import Layout from './layout';
 import { Home, Statistics } from './pages';
 
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/">
                 <Route index element={<Home />} />
                 <Route path="statistikk" element={<Statistics />} />
                 <Route path="solcelle" element={<SolarPanelComponent />} />
