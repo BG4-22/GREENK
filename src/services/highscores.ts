@@ -1,5 +1,5 @@
 import { fetchHighscores, addHighscore } from '../api/firebase';
-import { HighscoreEntry } from '../api/types';
+import { HighscoreEntry } from './types';
 
 export async function getHighscores(): Promise<HighscoreEntry[]> {
     return await fetchHighscores();

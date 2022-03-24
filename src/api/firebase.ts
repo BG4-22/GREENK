@@ -10,7 +10,7 @@ import {
     getDoc,
     deleteDoc,
 } from 'firebase/firestore';
-import { HighscoreEntry } from './types';
+import { HighscoreEntry } from '../services/types';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAwtGacFb6f5mA4Bjyu8KiDOM-QrHI7zMs',

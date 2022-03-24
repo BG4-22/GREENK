@@ -9,13 +9,13 @@ import {
     Heading,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { fetchHighscores } from '../api/firebase';
-import { HighscoreEntry } from '../api/types';
+import { HighscoreEntry } from '../services/types';
+import { getHighscores } from '../services/highscores';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
     async function updateHighscores() {
-        setHighscores(await fetchHighscores());
+        setHighscores(await getHighscores());
     }
 
     useEffect(() => {
