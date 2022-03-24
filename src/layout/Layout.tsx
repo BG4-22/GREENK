@@ -1,6 +1,6 @@
-import { Link, Outlet } from 'react-router-dom';
 import { Box, Center, Circle, Grid, GridItem, Text } from '@chakra-ui/react';
 import { FiHome } from 'react-icons/fi';
+import { Link, Outlet } from 'react-router-dom';
 
 export function Layout() {
     return (
@@ -51,15 +51,15 @@ export function Layout() {
                                         border=".1px solid black"
                                         position="relative">
                                         <FiHome size={30} />
-                                        <text style={{ fontSize: '10px' }}>
+                                        <Text style={{ fontSize: '10px' }}>
                                             Home
-                                        </text>
+                                        </Text>
                                     </Circle>
                                 </Link>
                             </Center>
                         </GridItem>
                         <GridItem w="100%" alignSelf="center">
-                            <text>
+                            <Text>
                                 <Link
                                     to="/statistikk"
                                     style={{
@@ -67,7 +67,7 @@ export function Layout() {
                                     }}>
                                     Statistikk
                                 </Link>
-                            </text>
+                            </Text>
                         </GridItem>
                     </Grid>
                 </Box>
