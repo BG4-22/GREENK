@@ -9,8 +9,8 @@ import {
     Heading,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { HighscoreEntry } from '../services/types';
-import { getHighscores } from '../services/highscores';
+import { getHighscores } from '../services/game';
+import { HighscoreEntry } from '../types/game';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
