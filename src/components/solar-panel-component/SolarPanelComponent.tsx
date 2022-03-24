@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import cloudIcon from '../../assets/cloudIcon.svg';
@@ -37,8 +37,6 @@ function weatherUpdateToAnimation(
     return [sunState, cloudState];
 }
 const Weather: React.FC<Weather> = (weather: Weather) => {
-    const containerStyles =
-        'w-96 h-96 relative flex flex-col justify-center align-middle bg-slate-400 overflow-hidden rounded-2xl m-auto';
     const sunVariants = {
         sunIn: {
             rotate: [90, 270],
@@ -106,17 +104,23 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
     const msg = 'skrtskrt';
     return (
         <Box
-            display={'flex'}
-            pos={'relative'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            flexDir={'column'}
+            // display={'flex'}
+            // pos={'relative'}
+            // justifyContent={'center'}
+            // alignItems={'center'}
+            // flexDir={'column'}
             overflow={'hidden'}
             borderRadius={'2em'}
-            margin={'auto'}
-            h={'24rem'}
-            w={'24rem'}
+            // margin={'auto'}
+            h={'18rem'}
+            w={'18rem'}
             border={'2px solid green'}>
+            <motion.img
+                className={'cloud'}
+                src={cloudIcon}
+                animate={cloudAnime}
+                variants={cloudVariants}
+            />
             <motion.div
                 className={'sun-container'}
                 animate={sunAnime}
@@ -124,12 +128,7 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
                 variants={sunVariants}>
                 <motion.div className={'sun'} />
             </motion.div>
-            <motion.img
-                className={'cloud'}
-                src={cloudIcon}
-                animate={cloudAnime}
-                variants={cloudVariants}
-            />
+
             <Text margin={'auto auto 2rem auto'}>{msg}</Text>
         </Box>
     );
@@ -144,35 +143,35 @@ const SolarPanelComponent: React.FC = () => {
         setWeather({ sun, cloud });
     };
     return (
-        <>
-            <Weather {...weather} />
-            <Stack spacing={4} direction="row" align="center">
-                <Button
-                    colorScheme="teal"
-                    size="md"
-                    onClick={() => updateWeather(true, false)}>
-                    Sol :)
-                </Button>
-                <Button
-                    colorScheme="teal"
-                    size="md"
-                    onClick={() => updateWeather(false, true)}>
-                    Sky ://
-                </Button>
-                <Button
-                    colorScheme="teal"
-                    size="md"
-                    onClick={() => updateWeather(true, true)}>
-                    Sol og Sky ://))
-                </Button>
-                <Button
-                    colorScheme="teal"
-                    size="md"
-                    onClick={() => updateWeather(false, false)}>
-                    Ingenting xD
-                </Button>
-            </Stack>
-        </>
+        <Weather {...weather} />
+        // <Box>
+        //     <Stack spacing={4} direction="row" align="center">
+        //         <Button
+        //             colorScheme="teal"
+        //             size="md"
+        //             onClick={() => updateWeather(true, false)}>
+        //             Sol :)
+        //         </Button>
+        //         <Button
+        //             colorScheme="teal"
+        //             size="md"
+        //             onClick={() => updateWeather(false, true)}>
+        //             Sky ://
+        //         </Button>
+        //         <Button
+        //             colorScheme="teal"
+        //             size="md"
+        //             onClick={() => updateWeather(true, true)}>
+        //             Sol og Sky ://))
+        //         </Button>
+        //         <Button
+        //             colorScheme="teal"
+        //             size="md"
+        //             onClick={() => updateWeather(false, false)}>
+        //             Ingenting xD
+        //         </Button>
+        //     </Stack>
+        // </Box>
     );
 };
 

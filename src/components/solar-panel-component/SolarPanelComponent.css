@@ -1,7 +1,7 @@
 .sun-container {
     top: 100%;
-    left: 50%;
-    width: 800px;
+    /* left: 50%; */
+    /* width: 800px; */
     height: fit-content;
     position: absolute;
     margin: 0 -100%;
@@ -20,14 +20,13 @@
     width: 100px;
     height: 100px;
     margin: 0px -100%;
-    padding: 0 100%;
     border-radius: 50px;
     left: 370px;
+    z-index: 10;
 }
 
 .cloud {
     position: relative;
-    top: -50px;
-    z-index: -1;
+    top: -15%;
     margin: 0 auto;
 }
