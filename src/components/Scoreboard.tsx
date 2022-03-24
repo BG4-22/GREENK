@@ -28,14 +28,17 @@ function Scoreboard() {
             <Table variant={'striped'}>
                 <Thead>
                     <Tr>
+                        <Th />
                         <Th>Navn</Th>
                         <Th>Score</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
                     {highscores.map((highscore) => {
+                        const rank = highscores.indexOf(highscore) + 1;
                         return (
-                            <Tr key={highscores.indexOf(highscore) + 1}>
+                            <Tr key={rank}>
+                                <Td>{rank + '.'}</Td>
                                 <Td>{highscore.name}</Td>
                                 <Td>{highscore.score}</Td>
                             </Tr>
