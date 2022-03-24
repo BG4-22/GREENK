@@ -5,19 +5,21 @@ import {
     Th,
     Thead,
     Tbody,
-    Text,
     Container,
     Heading,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { getScores } from '../api';
+import { fetchHighscores } from '../api/firebase';
 import { HighscoreEntry } from '../api/types';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
+    async function updateHighscores() {
+        setHighscores(await fetchHighscores());
+    }
 
     useEffect(() => {
-        getScores().then((data) => setHighscores(data));
+        updateHighscores();
     }, []);
 
     return (
