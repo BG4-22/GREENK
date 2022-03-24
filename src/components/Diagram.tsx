@@ -6,6 +6,7 @@ import React from 'react';
 import { AreaChart, Area, YAxis, XAxis, CartesianGrid } from 'recharts';
 
 class Diagram extends React.Component {
+    //Endre data når vi får data fra Mikael
     data = [
         {
             time: '06.00',
@@ -77,7 +78,7 @@ class Diagram extends React.Component {
                 <XAxis dataKey="time" />
                 <YAxis
                     label={{
-                        value: 'kWh',
+                        /*value: 'kWh',*/
                         position: 'insideLeft',
                         angle: -90,
                         dy: -10,
