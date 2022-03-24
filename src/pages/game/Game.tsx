@@ -26,7 +26,7 @@ import AddHighscore from '../../component/AddHighscore';
 
 function Game() {
     const [points, setPoints] = useState(0);
-    let [gameIndex, setGameIndex] = useState(0);
+    const [gameIndex, setGameIndex] = useState(0);
     const [answer, setAnswer] = useState<string>('');
     const [hasAnswered, setHasAnswered] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
@@ -51,7 +51,7 @@ function Game() {
         },
     ];
     function updateGameIndex() {
-        setGameIndex(gameIndex++);
+        setGameIndex(gameIndex+1);
     }
 
     function updateHasAnswered() {
@@ -72,7 +72,7 @@ function Game() {
 
     useEffect(() => {
         setHasAnswered(false);
-        console.log('gameIndex' + gameIndex);
+        //console.log('gameIndex' + gameIndex);
         if (gameIndex == 2) {
             setGameOver(true);
         }
