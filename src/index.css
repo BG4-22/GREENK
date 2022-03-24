@@ -18,7 +18,7 @@ body,
 body {
     background-color: #c3e0b5;
     margin: 0;
-    /* font-family: ; */
+    position: inherit;
     font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont,
         'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
         'Droid Sans', 'Helvetica Neue', sans-serif;

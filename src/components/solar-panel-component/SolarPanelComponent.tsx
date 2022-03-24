@@ -104,8 +104,8 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
     const msg = 'skrtskrt';
     return (
         <Box
-            // display={'flex'}
-            // pos={'relative'}
+            display={'flex'}
+            pos={'relative'}
             // justifyContent={'center'}
             // alignItems={'center'}
             // flexDir={'column'}

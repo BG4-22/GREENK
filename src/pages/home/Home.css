@@ -6,7 +6,9 @@
 }
 
 .grid-element {
-    max-width: 25vw;
+    max-width: 30vw;
+    max-height: 50vh;
+    border-radius: 40px;
 }
 .grid-element,
 #grid-main-element {
@@ -15,10 +17,13 @@
     align-items: center;
     flex-direction: column;
 }
-
-.grid-element:nth-child(1) {
-    background-color: red;
-    justify-content: baseline;
+.grid-element:nth-child(4),
+.grid-element:nth-child(5) {
+    justify-content: flex-start;
+}
+.grid-element:nth-child(1),
+.grid-element:nth-child(3) {
+    justify-content: flex-end;
 }
 
 /* #grid-main-element {} */

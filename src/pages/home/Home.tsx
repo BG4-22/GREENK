@@ -5,7 +5,7 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react';
-import React, { CSSProperties, ReactNode } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import GreenkLogo from '../../assets/greenk-logo.png';
 import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
@@ -75,66 +75,31 @@ const HomeGrid: React.FC = (props) => {
     );
 };
 
-interface HomeComponentPropsI {
-    children: ReactNode;
-    className?: string;
-    id?: string;
-    rows: number;
-    styles?: CSSProperties;
-}
-
-const HomeComponent: React.FC<HomeComponentPropsI> = (props) => {
-    console.log(props.styles);
-    return (
-        <GridItem
-            className={props.className}
-            rowSpan={props.rows}
-            borderRadius={'40px'}
-            style={props.styles}>
-            {props.children}
-        </GridItem>
-    );
-};
-
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
         <HomeGrid>
-            {/* Solar panel */}
-            <HomeComponent className={'grid-element'} rows={2}>
+            <GridItem className={'grid-element'} rowSpan={2}>
+                {/* Solar panel */}
                 <SolarPanelComponent />
-            </HomeComponent>
-            <GridItem
-                id={'grid-main-element'}
-                borderRadius={'40px'}
-                rowSpan={3}
-                minW={'30vw'}>
+            </GridItem>
+            <GridItem id={'grid-main-element'} rowSpan={3}>
                 {/* main element */}
                 <HomeWelcomeComponent />
             </GridItem>
-            <GridItem
-                className={'grid-element'}
-                borderRadius={'40px'}
-                rowSpan={2}>
+            <GridItem className={'grid-element'} rowSpan={2}>
                 {/* Game funfact card */}
                 <Scoreboard />
             </GridItem>
-            <GridItem
-                className={'grid-element'}
-                borderRadius={'40px'}
-                rowSpan={2}>
+            <GridItem className={'grid-element'} rowSpan={2}>
+                {/* Funfact card */}
+                <FunfactSlideshow />
+            </GridItem>
+            <GridItem className={'grid-element'} rowSpan={2}>
                 {/* Power saving competition */}
                 <Scoreboard />
             </GridItem>
             <GridItem
-                className={'grid-element'}
-                borderRadius={'40px'}
-                rowSpan={2}>
-                {/* Funfact card */}
-                <FunfactSlideshow />
-            </GridItem>
-            <GridItem
                 id={'grid-navbar-element'}
-                borderRadius={'40px'}
                 display={'flex'}
                 alignItems={'center'}
                 justifyContent={'center'}
