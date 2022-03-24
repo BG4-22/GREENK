@@ -24,6 +24,7 @@ const FunfactCard: React.FC<FunfactCardPropsI> = ({
                 fontWeight={'bold'}
                 fontSize={'2rem'}
                 paddingTop={'1rem'}
+                textAlign={'center'}
                 borderBottom={'2px solid #9dbe98'}>
                 {title}
             </Text>
