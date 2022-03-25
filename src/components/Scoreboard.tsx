@@ -4,14 +4,6 @@ import { getHighscores } from '../services/game';
 import { HighscoreEntry } from '../types/game';
 import FunfactCard from './funfact-card';
 
-// const rank = highscores.indexOf(highscore) + 1;
-//                         return (
-//                             <Tr key={rank}>
-//                                 <Td>{rank + '.'}</Td>
-//                                 <Td>{highscore.name}</Td>
-//                                 <Td>{highscore.score}</Td>
-//                             </Tr>
-
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
     async function updateHighscores() {
@@ -28,7 +20,7 @@ function Scoreboard() {
             fontSize={'1.1rem'}
             listStylePos={'inside'}
             textAlign={'left'}
-            key={`item-${item.name}`}>
+            key={`$highscore-${i + 1}`}>
             {`${i + 1}. ${item.name}: ${item.score}`}
         </ListItem>
     ));
