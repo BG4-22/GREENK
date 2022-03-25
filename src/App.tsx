@@ -1,6 +1,6 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Game from './pages/game/Game';
+import Game from './pages/game/Game2';
 import GameButton from './component/GameButton';
 import Layout from './layout';
 import { Home, Statistics } from './pages';
