@@ -14,8 +14,10 @@ const Navbar: React.FC = () => {
             borderRadius={70}
             border={'.1px solid black'}
             w={'100%'}
-            h={'100%'}
-            m={'auto'}
+            h={'3rem'}
+            maxW={'50%'}
+            margin={'6em auto auto auto'}
+            bottom={'1rem'}
             color="white">
             <Grid h="100%" w="100%" templateColumns="1fr auto 1fr">
                 <GridItem h="100%" w="100%" alignSelf="center">

@@ -6,7 +6,6 @@ import FunfactCard from './funfact-card';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
-
     useEffect(() => {
         getScores().then((data) => setHighscores(data));
     }, []);
@@ -21,9 +20,6 @@ function Scoreboard() {
             {item.name}
         </ListItem>
     ));
-    /* <List spacing={'1rem'} styleType={ordered ? 'circle' : 'decimal'}>
-                {listItems}
-            </List> */
 
     return (
         <FunfactCard title={'Ukens highscores'}>

@@ -17,6 +17,7 @@ const FunfactCard: React.FC<FunfactCardPropsI> = ({
             w={'full'}
             h={'fit-content'}
             paddingBottom={'2rem'}
+            overflow={'hidden'}
             spacing={'1rem'}>
             <Text
                 width={'90%'}

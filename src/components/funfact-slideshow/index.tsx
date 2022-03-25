@@ -1,3 +1,3 @@
 import FunfactSlideshow from './FunfactSlideshow';
 
-export { FunfactSlideshow };
+export default FunfactSlideshow;

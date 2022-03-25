@@ -101,17 +101,17 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
         prevWeatherRef.current,
         weather
     );
-    const msg = 'skrtskrt';
+    const msg = 'Nidarvoll generer X antall KWh nå :)';
     return (
         <Box
             display={'flex'}
             pos={'relative'}
-            // justifyContent={'center'}
-            // alignItems={'center'}
-            // flexDir={'column'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDir={'column'}
             overflow={'hidden'}
             borderRadius={'2em'}
-            // margin={'auto'}
+            margin={'3rem auto auto auto'}
             h={'18rem'}
             w={'18rem'}
             border={'2px solid green'}>
@@ -124,7 +124,7 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
             <motion.div
                 className={'sun-container'}
                 animate={sunAnime}
-                style={{ transform: 'rotate(90deg)' }}
+                style={{ transform: 'rotate(90deg)', userSelect: 'none' }}
                 variants={sunVariants}>
                 <motion.div className={'sun'} />
             </motion.div>
@@ -142,37 +142,7 @@ const SolarPanelComponent: React.FC = () => {
     const updateWeather = (sun: boolean, cloud: boolean): void => {
         setWeather({ sun, cloud });
     };
-    return (
-        <Weather {...weather} />
-        // <Box>
-        //     <Stack spacing={4} direction="row" align="center">
-        //         <Button
-        //             colorScheme="teal"
-        //             size="md"
-        //             onClick={() => updateWeather(true, false)}>
-        //             Sol :)
-        //         </Button>
-        //         <Button
-        //             colorScheme="teal"
-        //             size="md"
-        //             onClick={() => updateWeather(false, true)}>
-        //             Sky ://
-        //         </Button>
-        //         <Button
-        //             colorScheme="teal"
-        //             size="md"
-        //             onClick={() => updateWeather(true, true)}>
-        //             Sol og Sky ://))
-        //         </Button>
-        //         <Button
-        //             colorScheme="teal"
-        //             size="md"
-        //             onClick={() => updateWeather(false, false)}>
-        //             Ingenting xD
-        //         </Button>
-        //     </Stack>
-        // </Box>
-    );
+    return <Weather {...weather} />;
 };
 
 export default SolarPanelComponent;

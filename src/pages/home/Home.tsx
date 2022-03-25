@@ -1,28 +1,27 @@
-import {
-    Grid,
-    GridItem,
-    Link as ChakraLink,
-    Stack,
-    Text,
-} from '@chakra-ui/react';
+import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import GreenkLogo from '../../assets/greenk-logo.png';
 import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
-import { FunfactSlideshow } from '../../components/funfact-slideshow';
+import FunfactSlideshow from '../../components/funfact-slideshow';
 import Scoreboard from '../../components/Scoreboard';
 import SolarPanelComponent from '../../components/solar-panel-component';
-import { Navbar } from '../../layout';
-import './Home.css';
 
 export interface HomePropsI {}
 
-// TODO: Fix hover color for navbar buttons
-// TODO: fix sizes of content containers for small screen
+const funfacts: string[] = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est erat, dignissim in sem nec, elementum porta neque. Vivamus eu quam quis nisi tincidunt feugiat. Vivamus viverra eros nec sagittis fermentum.',
+    'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus. Aenean sollicitudin velit nec vulputate volutpat. Donec metus erat, ultricies non urna et, vestibulum efficitur nisl. Proin venenatis metus enim, non aliquet neque mattis et. Nunc a dui tincidunt, mattis quam vel, condimentum sapien. Nulla cursus, risus in vehicula ultrices, nulla eros vulputate risus, sed porta nulla sapien a lectus.',
+    'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. Phasellus eget metus eu mi sodales aliquam. Nullam viverra enim eget velit dapibus malesuada.',
+    'Nullam lobortis luctus magna, nec euismod lorem mattis in. Mauris molestie tincidunt lorem vitae tincidunt. Ut molestie lobortis mi, vel condimentum augue cursus vitae.',
+];
 
 const HomeWelcomeComponent: React.FC = () => {
     return (
-        <>
+        <Box
+            display={'flex'}
+            flexDir={'column'}
+            justifyContent={'flex-start'}
+            alignItems={'center'}>
             <Text
                 fontSize={'2.5rem'}
                 fontWeight={'bold'}
@@ -36,16 +35,16 @@ const HomeWelcomeComponent: React.FC = () => {
                 />
                 NIDARVOLL <span style={{ color: 'green' }}>GRØNN</span> KIOSK
             </Text>
-            <video width="540px" height="540px" autoPlay loop>
+            <video width="90%" autoPlay loop style={{ borderRadius: '40px' }}>
                 <source src={NidarvollVideo} type="video/mp4"></source>
             </video>
-            <br />
+            {/* <br />
             <br />
             <Stack color={'#fff'}>
                 <Text fontSize={'1.9rem'} fontWeight={'bold'}>
                     Velkommen til Grønn kiosk
                 </Text>
-                <Text fontSize={'1.5rem'}>
+                <Text fontSize={'1.5rem'} textAlign={'left'}>
                     Her kan du lære mer om hvordan Nidarvoll skole og
                     rehabiliteringssenter sparer miljøet og er miljøvennlig.
                     Visste du for eksempel at 20% på denne skolen er gjenbruk,
@@ -54,60 +53,64 @@ const HomeWelcomeComponent: React.FC = () => {
                         <ChakraLink color={'#ff9797'}>Lær mer her</ChakraLink>
                     </Link>
                 </Text>
-            </Stack>
-        </>
+            </Stack> */}
+        </Box>
     );
 };
 
-const HomeGrid: React.FC = (props) => {
-    return (
-        <Grid
-            id={'grid-container'}
-            h={'97vh'}
-            w={'97.5%'}
-            gap={'2%'}
-            borderRadius={'20px'}
-            gridTemplateColumns={'24% 48% 24%'}
-            gridTemplateRows={'auto 10% auto 10%'}
-            gridAutoFlow={'row'}>
-            {props.children}
-        </Grid>
-    );
-};
+// TODO: Fix hover color for navbar buttons
+// TODO: fix sizes of content containers for small screen
 
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
-        <HomeGrid>
-            <GridItem className={'grid-element'} rowSpan={2}>
-                {/* Solar panel */}
+        <Grid
+            h="85vh"
+            margin={'1rem'}
+            templateRows="repeat(2, 1fr)"
+            templateColumns="repeat(4, 1fr)"
+            gap={25}>
+            <GridItem
+                rowSpan={1}
+                colSpan={1}
+                p={'1rem'}
+                borderRadius={'40px'}
+                bg="rgba(255,255,255,0.2)">
+                <Text>SOLCELLE</Text>
                 <SolarPanelComponent />
             </GridItem>
-            <GridItem id={'grid-main-element'} rowSpan={3}>
-                {/* main element */}
+            <GridItem
+                rowSpan={2}
+                colSpan={2}
+                p={'1rem'}
+                borderRadius={'40px'}
+                bg="rgba(255,255,255,0.8)">
                 <HomeWelcomeComponent />
             </GridItem>
-            <GridItem className={'grid-element'} rowSpan={2}>
-                {/* Game funfact card */}
-                <Scoreboard />
+            <GridItem
+                rowSpan={1}
+                colSpan={1}
+                p={'1rem'}
+                borderRadius={'40px'}
+                bg="rgba(255,255,255,0.2)">
+                <Text>SPILL</Text>
             </GridItem>
-            <GridItem className={'grid-element'} rowSpan={2}>
-                {/* Funfact card */}
-                <FunfactSlideshow />
-            </GridItem>
-            <GridItem className={'grid-element'} rowSpan={2}>
-                {/* Power saving competition */}
+            <GridItem
+                rowSpan={1}
+                colSpan={1}
+                p={'1rem'}
+                borderRadius={'40px'}
+                bg="rgba(255,255,255,0.2)">
                 <Scoreboard />
             </GridItem>
             <GridItem
-                id={'grid-navbar-element'}
-                display={'flex'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                minW={'30vw'}>
-                {/* Navbar */}
-                <Navbar />
+                rowSpan={1}
+                colSpan={1}
+                p={'1rem'}
+                borderRadius={'40px'}
+                bg="rgba(255,255,255,0.2)">
+                <FunfactSlideshow funfacts={funfacts} />
             </GridItem>
-        </HomeGrid>
+        </Grid>
     );
 };
 
