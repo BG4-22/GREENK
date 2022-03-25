@@ -1,3 +1,4 @@
-import { Layout } from './Layout';
+import Layout from './Layout';
+import Navbar from './Navbar';
 
-export default Layout;
+export { Navbar, Layout };

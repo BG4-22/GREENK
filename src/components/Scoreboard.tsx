@@ -1,16 +1,8 @@
-import {
-    Table,
-    Tr,
-    Td,
-    Th,
-    Thead,
-    Tbody,
-    Container,
-    Heading,
-} from '@chakra-ui/react';
+import { Button, List, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { getHighscores } from '../services/game';
 import { HighscoreEntry } from '../types/game';
+import FunfactCard from './funfact-card';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
@@ -21,32 +13,32 @@ function Scoreboard() {
     useEffect(() => {
         updateHighscores();
     }, []);
+    const listItems = highscores.map((item, i) => (
+        <ListItem
+            w={'65%'}
+            margin={'auto'}
+            fontSize={'1.1rem'}
+            listStylePos={'inside'}
+            textAlign={'left'}
+            key={`$highscore-${i + 1}`}>
+            {`${i + 1}. ${item.name}: ${item.score}`}
+        </ListItem>
+    ));
 
     return (
-        <Container>
-            <Heading size={'md'}>Highscores</Heading>
-            <Table variant={'striped'}>
-                <Thead>
-                    <Tr>
-                        <Th />
-                        <Th>Navn</Th>
-                        <Th>Score</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    {highscores.map((highscore) => {
-                        const rank = highscores.indexOf(highscore) + 1;
-                        return (
-                            <Tr key={rank}>
-                                <Td>{rank + '.'}</Td>
-                                <Td>{highscore.name}</Td>
-                                <Td>{highscore.score}</Td>
-                            </Tr>
-                        );
-                    })}
-                </Tbody>
-            </Table>
-        </Container>
+        <FunfactCard title={'Ukens highscores'}>
+            <List margin={'0 auto 1rem auto'} w={'100%'}>
+                {listItems}
+            </List>
+            <Button
+                padding={'1rem'}
+                margin={'0 auto'}
+                bg={'#FFDD85'}
+                w={'fit-content'}
+                borderRadius={'2rem'}>
+                Spill nå!
+            </Button>
+        </FunfactCard>
     );
 }
 
