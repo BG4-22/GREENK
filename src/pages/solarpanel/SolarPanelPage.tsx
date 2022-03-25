@@ -3,7 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { FC, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-function Skrt(props) {
+function Box3D(props) {
     // This reference gives us direct access to the THREE.Mesh object
     const ref = useRef();
     // Hold state for hovered and clicked events
@@ -58,8 +58,8 @@ const SolarPanelPage: FC<{}> = () => {
             <Canvas>
                 <ambientLight />
                 <pointLight position={[10, 10, 10]} />
-                <Skrt position={[-1.2, 0, 0]} />
-                <Skrt position={[1.2, 0, 0]} />
+                <Box3D position={[-1.2, 0, 0]} />
+                <Box3D position={[1.2, 0, 0]} />
             </Canvas>
         </Box>
     );
