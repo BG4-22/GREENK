@@ -17,10 +17,14 @@ import {
     Text,
     usePrefersReducedMotion,
     keyframes,
+    Button,
+    Stack,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AddHighscore from '../../component/AddHighscore';
+import { animate, AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { update } from 'lodash';
+import Feedback from '../../component/Feedback';
 
 interface Prompt{
     description: string,
@@ -31,10 +35,12 @@ interface Prompt{
 function Game(){
     const [gameOver, setGameOver] = useState(false);
     const [hasAnswered, setHasAnswered] = useState(false);
+    const [next, setNext] = useState(false);
     const [points, setPoints] = useState(0);
     const [promptLeft, setPromptLeft] = useState<Prompt>();
     const [promptRight, setPromptRight] = useState<Prompt>();
     const [answer, setAnswer] = useState<Prompt>();
+    const [isCorrect, setIsCorrect] = useState(false);
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
     Water Heater (4-person household): 310/kWh/month
@@ -124,30 +130,82 @@ function Game(){
     }
 
     function handleAnswer(prompt: Prompt){
+        setNext(true)
+    }
+
+    function updateHasAnswered(prompt: Prompt) {
         setAnswer(prompt)
-        setHasAnswered(!hasAnswered);
+        setHasAnswered(true)
+        setTo(prompt.kWh)
     }
 
     useEffect(() => {
-        if(answer){
+        if(answer && next){
             if (promptLeft&&promptRight&&(
                     answer == (
                         promptLeft.kWh >= promptRight.kWh 
                         ? promptLeft : promptRight))) {
                     setPoints(points + 1);
+                    //setIsCorrect(true);
                 } else {
+                    //setIsCorrect(false);
                     setGameOver(true);
                 }
             updatePrompts();
         }
-    }, [hasAnswered]);
+    }, [next]);
+
+    const controls = useAnimation();
+    /*useEffect(() => {
+        console.log("animate")
+        controls.start({
+            x: "0%", 
+            transition: {duration: 1}
+        });
+    }, [promptRight]);*/
+    const [from, setFrom] = useState(0);
+    const [to, setTo] = useState(0);
+
+    function Counter({from, to}) {
+        const nodeContainer = useRef<HTMLParagraphElement>(null);
+        useEffect(() => {
+            if(to != 0 && hasAnswered){
+                const node = nodeContainer.current;
+                const controls = animate(from, to, {
+                duration: 1,
+                onComplete: () => {
+                    setNext(true)
+                    console.log("test")
+                    console.log(to)
+                    setTo(0)
+                },
+                onUpdate(value) {
+                    console.log(value)
+                    if(node){
+                        node.textContent = value.toFixed(0);
+                    }
+                }
+                });
+
+                return () => controls.stop();
+            }
+        }, [to]);
+
+        return <p style={{display: "inline-block"}} ref={nodeContainer} />;
+    }
 
     return (
         <>
             <Heading color="white" margin="20px">
                 {gameOver ? (
                     <Text color="#8BA5FF">Du fikk {points} poeng!</Text>
-                ) : (
+                ) /*: hasAnswered ? (
+                    isCorrect ? (
+                        <Text color="#597344">Riktig</Text>
+                    ) : (
+                        <Text color="#FF5E5E">Feil</Text>
+                    )
+                ) */: (
                     'Hva bruker mest energi?'
                 )}
             </Heading>
@@ -155,28 +213,104 @@ function Game(){
                 {gameOver ? (
                     <AddHighscore points={points}></AddHighscore>
                     //slide animation
-                ) : (promptLeft && promptRight) ?(
+                ) /*: (hasAnswered && answer && promptLeft && promptRight)? (
+                    <Feedback 
+                        updateHasAnswered={updateHasAnswered} 
+                        promptLeft={answer} 
+                        promptRight={answer == promptLeft ? promptRight : promptLeft}/>
+                ) */: (promptLeft && promptRight) ?(
                     <>
-                    <Flex>
-                        <Text>{promptLeft.description}</Text>
-                        <Image
-                            src={promptLeft.img}
-                            width="40%"
-                            p={4}
-                            onClick={() =>
-                                handleAnswer(promptLeft)
-                            }
-                        />
-                        <Spacer />
-                        <Text>{promptRight.description}</Text>
-                        <Image
-                            src={promptRight.img}
-                            width="40%"
-                            p={4}
-                            onClick={() =>
-                                handleAnswer(promptRight)
-                            }
-                        />
+                    <Flex style={{width: "100%", minWidth: "100%", maxWidth: "100%", height: "100%", overflow: "hidden", borderRadius: "40px", backgroundColor: "#000000"}}>
+                        <div style={{minWidth: "50%", maxWidth: "50%", minHeight: "100%", position: "relative"}}>
+                            <AnimatePresence >
+                                <motion.div 
+                                    style={{minHeight:"100%", position: "absolute"}} 
+                                    initial={{x: "100%",}} 
+                                    animate={{x: "0%"}} 
+                                    transition={{duration: 1, delay: 1}} 
+                                    exit={{x: "-100%"}} 
+                                    key={promptLeft.kWh+1}
+                                    onAnimationComplete={definition => {
+                                        setNext(false)
+                                        setHasAnswered(false)
+                                    }}>
+                                    <div style={{minWidth: "100%", height: "100%", minHeight: "100%", position: "relative", opacity: 1}}>
+                                        
+                                        <Image
+                                            width="100%"
+                                            height="70vh"
+                                            objectFit="cover"
+                                            src={promptLeft.img}
+                                            opacity={0.7}
+                                            p={0}
+                                        />
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"30%", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        fontSize: 40}}>{promptLeft.description}</Text>
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"50%", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        fontSize: 30}}>{promptLeft.kWh} kWh</Text>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                        <div style={{minWidth: "50%", maxWidth: "50%", minHeight: "100%", position: "relative", justifyContent: "center"}}>
+                            <AnimatePresence >
+                                <motion.div 
+                                    style={{minHeight:"100%", position: "absolute"}} 
+                                    initial={{x: "100%",}} 
+                                    animate={{x: "0%"}} 
+                                    transition={{duration: 1, delay: 1}} 
+                                    //exit={{x: "-100%"}} 
+                                    key={promptRight.kWh+1}>
+                                    <div style={{minWidth: "100%", height: "100%", minHeight: "100%", position: "relative"}}>
+                                        
+                                        <Image
+                                            width="100%"
+                                            height="70vh"
+                                            objectFit="cover"
+                                            src={promptRight.img}
+                                            p={0}
+                                            opacity={0.7}
+                                        />
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"30%", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        fontSize: 40}}>{promptRight.description}</Text>
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"50%", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        fontSize: 30}}
+                                        visibility={(hasAnswered && !next) ? "visible" : "hidden"}>{<Counter from={from} to={to} />} kWh</Text>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                            <Stack direction="column" spacing={2} align='center' position="relative" top="50%"
+                            visibility={hasAnswered ? "hidden" : "visible"}>
+                                <Button width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
+                                onClick={() => updateHasAnswered(promptRight)}>
+                                    Mer
+                                </Button>
+                                <Button width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
+                                onClick={() => updateHasAnswered(promptLeft)}>
+                                    Mindre
+                                </Button>
+                            </Stack>
+                        </div>
                     </Flex>
                     </>
                 ) : (
