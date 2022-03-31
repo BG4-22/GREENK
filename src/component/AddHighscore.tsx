@@ -6,8 +6,19 @@ import netflix from '../assets/game/netflix.svg';
 import is from '../assets/game/is.jpg';
 import { Center } from '@chakra-ui/react';
 import { ListItem, List, OrderedList } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { submitScore } from '../services/game'
 
 function AddHighscore(props: { points: number }) {
+    const [value, setValue] = useState('');
+
+    useEffect(() => {
+        console.log(value)
+    }, [value]);
+    
+    function leggTil(){
+        submitScore({name: value, score: props.points})
+    }
     return (
         <>
             <Center>
@@ -24,10 +35,11 @@ function AddHighscore(props: { points: number }) {
                         width="50%"
                         marginLeft={5}
                         marginRight={5}
+                        onChange={(e) => setValue(e.target.value)}
                     />
 
-                    <Button borderRadius="40px" bg="#FFDD85" size="lg">
-                        Legg til
+                    <Button borderRadius="40px" bg="#FFDD85" size="lg" onClick={leggTil}>
+                        {value ? "Legg til" : "Gå videre"}
                     </Button>
                 </Flex>
             </Center>

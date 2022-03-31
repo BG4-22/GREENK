@@ -122,6 +122,7 @@ function Game(){
         }
         setPromptLeft(randomPromptLeft)
         setPromptRight(randomPromptRight)
+        setTo(randomPromptRight.kWh)
     }
 
     function getRandomPromt()
@@ -137,7 +138,6 @@ function Game(){
     function updateHasAnswered(prompt: Prompt) {
         setAnswer(prompt)
         setHasAnswered(true)
-        setTo(prompt.kWh)
     }
     function updateHighscore(){
         setHighscore(true)
@@ -181,7 +181,6 @@ function Game(){
                 duration: 2, ease: "easeOut",
                 onComplete: () => {
                     setNext(true)
-                    setTo(0)
                 },
                 onUpdate(value) {
                     if(node){
