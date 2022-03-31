@@ -176,6 +176,7 @@ function Game(){
         useEffect(() => {
             if(to != 0 && hasAnswered){
                 const node = nodeContainer.current
+                console.log(to)
                 const controls = animate(from, to, {
                 duration: 2, ease: "easeOut",
                 onComplete: () => {
@@ -188,12 +189,11 @@ function Game(){
                     }
                 }
                 });
-
                 return () => controls.stop();
             }
         }, [to]);
 
-        return <p style={{display: "inline-block"}} ref={nodeContainer} />;
+        return <p style={{display: "inline-block"}} ref={nodeContainer}/>;
     }
 
     return (

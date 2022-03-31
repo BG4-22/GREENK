@@ -17,7 +17,7 @@ function Feedback(props: {
         <Box>
             <Center>
                 <Text fontSize="xl" margin={10}>
-                    {props.promptLeft.description} bruker {props.promptLeft.kWh - props.promptRight.kWh}kWh mer i måneden enn {props.promptRight.description}
+                    {props.promptLeft.description} bruker {props.promptLeft.kWh - props.promptRight.kWh}kWh mer i måneden enn {props.promptRight.description}!
                 </Text>
             </Center>
             <br></br>
