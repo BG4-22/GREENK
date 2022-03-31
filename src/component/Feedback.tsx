@@ -8,9 +8,10 @@ interface Prompt{
     kWh: number
 }
 function Feedback(props: {
-    updateHasAnswered(): any;
+    points: number;
     promptLeft: Prompt;
     promptRight: Prompt;
+    updateHighscore: any;
 }) {
     return (
         <Box>
@@ -38,7 +39,7 @@ function Feedback(props: {
                     size="lg"
                     margin={10}
                     onClick={() => {
-                        props.updateHasAnswered();
+                        props.updateHighscore()
                     }}>
                     Neste
                 </Button>

@@ -2,7 +2,7 @@ import klimaanlegg from '../../Assets/game/klimaanlegg.png';
 import varmtvann from '../../Assets/game/varmtvann.jpeg'
 import kjøleskap from '../../Assets/game/kjøleskap.jpeg'
 import tørketrommel from '../../Assets/game/tørketrommel.jpeg'
-import stekeovn from '../../Assets/game/stekeovn.png'
+import stekeovn from '../../Assets/game/stekeovn.jpeg'
 import belysning from '../../Assets/game/belysning.jpeg'
 import oppvaskmaskin from '../../Assets/game/oppvaskmaskin.jpeg'
 import tv from '../../Assets/game/tv.jpeg'
@@ -25,6 +25,7 @@ import AddHighscore from '../../component/AddHighscore';
 import { animate, AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { update } from 'lodash';
 import Feedback from '../../component/Feedback';
+import Highscores from '../highscores/Highscores';
 
 interface Prompt{
     description: string,
@@ -40,7 +41,7 @@ function Game(){
     const [promptLeft, setPromptLeft] = useState<Prompt>();
     const [promptRight, setPromptRight] = useState<Prompt>();
     const [answer, setAnswer] = useState<Prompt>();
-    const [isCorrect, setIsCorrect] = useState(false);
+    const [highscore, setHighscore] = useState(false);
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
     Water Heater (4-person household): 310/kWh/month
@@ -138,6 +139,10 @@ function Game(){
         setHasAnswered(true)
         setTo(prompt.kWh)
     }
+    function updateHighscore(){
+        setHighscore(true)
+        setGameOver(false)
+    }
 
     useEffect(() => {
         if(answer && next){
@@ -170,19 +175,16 @@ function Game(){
         const nodeContainer = useRef<HTMLParagraphElement>(null);
         useEffect(() => {
             if(to != 0 && hasAnswered){
-                const node = nodeContainer.current;
+                const node = nodeContainer.current
                 const controls = animate(from, to, {
-                duration: 1,
+                duration: 2, ease: "easeOut",
                 onComplete: () => {
                     setNext(true)
-                    console.log("test")
-                    console.log(to)
                     setTo(0)
                 },
                 onUpdate(value) {
-                    console.log(value)
                     if(node){
-                        node.textContent = value.toFixed(0);
+                        node.textContent = value.toFixed(0)
                     }
                 }
                 });
@@ -197,28 +199,24 @@ function Game(){
     return (
         <>
             <Heading color="white" margin="20px">
-                {gameOver ? (
+                {gameOver || highscore ? (
                     <Text color="#8BA5FF">Du fikk {points} poeng!</Text>
-                ) /*: hasAnswered ? (
-                    isCorrect ? (
-                        <Text color="#597344">Riktig</Text>
-                    ) : (
-                        <Text color="#FF5E5E">Feil</Text>
-                    )
-                ) */: (
+                ) : (
                     'Hva bruker mest energi?'
                 )}
             </Heading>
             <Box bg="white" w="80%" h="70%" p={4} borderRadius="50px">
-                {gameOver ? (
-                    <AddHighscore points={points}></AddHighscore>
-                    //slide animation
-                ) /*: (hasAnswered && answer && promptLeft && promptRight)? (
+                {gameOver && (hasAnswered && answer && promptLeft && promptRight) ? (
                     <Feedback 
-                        updateHasAnswered={updateHasAnswered} 
-                        promptLeft={answer} 
-                        promptRight={answer == promptLeft ? promptRight : promptLeft}/>
-                ) */: (promptLeft && promptRight) ?(
+                    points={points} 
+                    promptLeft={answer == promptLeft ? promptRight : promptLeft} 
+                    promptRight={answer}
+                    updateHighscore={updateHighscore}/>
+                    
+                    //slide animation
+                ) : (highscore) ?(
+                    <AddHighscore points={points}/>
+                ) : (promptLeft && promptRight) ?(
                     <>
                     <Flex style={{width: "100%", minWidth: "100%", maxWidth: "100%", height: "100%", overflow: "hidden", borderRadius: "40px", backgroundColor: "#000000"}}>
                         <div style={{minWidth: "50%", maxWidth: "50%", minHeight: "100%", position: "relative"}}>
@@ -295,7 +293,7 @@ function Game(){
                                         textAlign: "center",
                                         color: "white",
                                         fontSize: 30}}
-                                        visibility={(hasAnswered && !next) ? "visible" : "hidden"}>{<Counter from={from} to={to} />} kWh</Text>
+                                        visibility={(hasAnswered && !next) ? "visible" : "hidden"}>{<Counter from={from} to={to}/>} kWh</Text>
                                     </div>
                                 </motion.div>
                             </AnimatePresence>
