@@ -19,6 +19,7 @@ import {
     keyframes,
     Button,
     Stack,
+    Circle,
 } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 import AddHighscore from '../../component/AddHighscore';
@@ -196,7 +197,7 @@ function Game(){
     }
 
     return (
-        <>
+        <div style={{textAlign: "center", height: "100%"}}>
             <Heading color="white" margin="20px">
                 {gameOver || highscore ? (
                     <Text color="#8BA5FF">Du fikk {points} poeng!</Text>
@@ -204,8 +205,32 @@ function Game(){
                     'Hva bruker mest energi?'
                 )}
             </Heading>
-            <Box bg="white" w="80%" h="70%" p={4} borderRadius="50px">
-                {gameOver && (hasAnswered && answer && promptLeft && promptRight) ? (
+            <Box bg="white" w="80%" h="85%" p={4} borderRadius="50px" margin="auto">
+                    {!gameOver && !highscore ?
+                    <Box position="absolute" zIndex="1" width="5px" height="68%" bg='white' color='black' left="50%" transform="translateX(-50%)"></Box>
+                    :<></>}
+                    {!hasAnswered ?
+                    <motion.div
+                        key={promptLeft ? promptLeft.kWh+5 : 0} 
+                        initial={{x: "-50%", scale: 0}}
+                        animate={{
+                            scale: [0, 1],
+                            rotate: [0, 360],
+                            borderRadius: ["10px", "40px"],}}
+                        transition={{ duration: 0.5 }}
+                        style={{position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'black', left: "50%", top: "40%", fontSize: "30px", paddingTop: "20px"}}>VS</motion.div>
+                        : !next?
+                        <motion.div
+                        key={promptLeft ? promptLeft.kWh+2 : 1} 
+                        initial={{x: "-50%"}}
+                        animate={{
+                            scale: [1, 0],
+                            rotate: [360, 0],
+                            borderRadius: ["40px", "10px"],}}
+                        transition={{ duration: 0.25 }}
+                        style={{position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'black', left: "50%", top: "40%", fontSize: "30px", paddingTop: "20px"}}>VS</motion.div>
+                    : <></>}
+                    {gameOver && (hasAnswered && answer && promptLeft && promptRight) ? (
                     <Feedback 
                     points={points} 
                     promptLeft={answer == promptLeft ? promptRight : promptLeft} 
@@ -314,7 +339,7 @@ function Game(){
                     <>{updatePrompts()}</>
                 )}
             </Box>
-        </>
+        </div>
     );
 }
 

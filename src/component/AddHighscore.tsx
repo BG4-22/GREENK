@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Img, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '@chakra-ui/react';
 
 import netflix from '../assets/game/netflix.svg';
@@ -11,6 +11,8 @@ import { submitScore } from '../services/game'
 
 function AddHighscore(props: { points: number }) {
     const [value, setValue] = useState('');
+    const navigate = useNavigate();
+    const navigateTo = () => navigate('/highscore');
 
     useEffect(() => {
         console.log(value)
@@ -18,6 +20,7 @@ function AddHighscore(props: { points: number }) {
     
     function leggTil(){
         submitScore({name: value, score: props.points})
+        navigateTo()
     }
     return (
         <>
@@ -44,11 +47,11 @@ function AddHighscore(props: { points: number }) {
                 </Flex>
             </Center>
 
-            <Center>
+            {/*<Center>
                 <Button borderRadius="40px" bg="#FFDD85" size="lg" margin={10}>
                     <Link to={'/highscore'}>Gå videre</Link>
                 </Button>
-            </Center>
+            </Center>*/}
         </>
     );
 }

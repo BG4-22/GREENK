@@ -33,7 +33,7 @@ function CorrectG1(props: {
                     margin={10}
                     onClick={() => {
                         props.updateGameIndex();
-                        //props.updateHasAnswered();
+                        props.updateHasAnswered();
                     }}>
                     Neste
                 </Button>

@@ -21,14 +21,14 @@ function Highscores() {
     const listItemsNames = highscores.map((item, i) => (
         <ListItem
             key={`$name-${i + 1}`}
-            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.3)' : '', wordSpacing: "1vW", whiteSpace: "nowrap", paddingLeft: "5vw"}}>
+            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '', wordSpacing: "1vW", whiteSpace: "nowrap", paddingLeft: "5vw"}}>
             {`${i + 1}. ${item.name}`}
         </ListItem>
     ));
     const listItemsScores = highscores.map((item, i) => (
         <ListItem
             key={`$highscore-${i + 1}`}
-            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.3)' : '', paddingLeft: "2vw"}}>
+            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '', paddingLeft: "2vw"}}>
             {`${item.score}`}
         </ListItem>
     ));
