@@ -7,11 +7,10 @@ import {
     query,
     orderBy,
     limit,
-    getDoc,
-    deleteDoc,
 } from 'firebase/firestore';
 import { HighscoreEntry } from '../types/game';
 
+// Config to connect to firebase
 const firebaseConfig = {
     apiKey: 'AIzaSyAwtGacFb6f5mA4Bjyu8KiDOM-QrHI7zMs',
     authDomain: 'greenk-scoreboard.firebaseapp.com',
@@ -26,6 +25,10 @@ initializeApp(firebaseConfig);
 const dbRef = getFirestore();
 const scoresRef = collection(dbRef, 'scores');
 
+/**
+ * Fetches scores from firestore, limiting the results to the 10 higest scores
+ * @returns the 10 highest scores from the database, or an empty list on error
+ */
 export async function fetchHighscores(): Promise<HighscoreEntry[]> {
     try {
         const highscores = [] as HighscoreEntry[];
@@ -42,6 +45,10 @@ export async function fetchHighscores(): Promise<HighscoreEntry[]> {
     }
 }
 
+/**
+ * Adds a highscore to firestore for storage
+ * @param highscore the highscore to store
+ */
 export async function addHighscore(highscore: HighscoreEntry) {
     try {
         await addDoc(scoresRef, highscore);
