@@ -7,7 +7,7 @@ export async function getHighscores(): Promise<HighscoreEntry[]> {
 
 export async function submitScore(score: HighscoreEntry): Promise<boolean> {
     const highscores = await fetchHighscores();
-    if (highscores.length < 10 || score.score <= highscores[9].score) {
+    if (highscores.length < 10 || score.score >= highscores[9].score) {
         await addHighscore(score);
         return true;
     }
