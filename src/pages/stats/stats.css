@@ -1,10 +1,19 @@
-.example-container {
+/*.example-container {
     width: 100vw;
     height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+}*/
+
+.statsWrapper {
+    background-color: white;
+    height: 700px;
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .next,
