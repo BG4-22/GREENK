@@ -1,10 +1,9 @@
 import * as React from 'react';
 import money from '../img/canvas_1000.png';
-import $ from 'jquery';
 import { useEffect, useState } from 'react';
 import '../App.css';
 
-export default function DiagramC() {
+export default function DiagramMoney() {
     const [value, setArray] = useState(0);
 
     useEffect(() => {});

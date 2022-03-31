@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
-import Diagram from '../../components/Diagram';
-import DiagramC from '../../components/DiagramC';
+//import Diagram from '../../components/Diagram';
+//import DiagramMoney from '../../components/DiagramMoney';
 import { motion, AnimatePresence } from 'framer-motion';
 import './stats.css';
 import { wrap } from 'popmotion';
@@ -11,10 +11,6 @@ export interface StatisticsPropsI {
 }
 
 const Statistics: React.FC<StatisticsPropsI> = ({ children }) => {
-    const [component, setComponent] = useState('diagram');
-
-    const statComponents = [<Diagram />, <DiagramC />];
-
     const variants = {
         enter: (direction: number) => {
             return {
@@ -52,36 +48,41 @@ const Statistics: React.FC<StatisticsPropsI> = ({ children }) => {
 
     return (
         <>
-            <Text>Statistikk</Text>
+            {/*<Text style={{ fontSize: 40 }}>Strømforbruket på skolen</Text>*/}
             <AnimatePresence initial={false} custom={direction}>
-                <div className="statsWrapper">
-                    <motion.div
-                        key={page}
-                        //src={statComponents[componentIndex]}
-                        custom={direction}
-                        variants={variants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            x: { type: 'spring', stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 },
-                        }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={1}
-                        onDragEnd={(e, { offset, velocity }) => {
-                            const swipe = swipePower(offset.x, velocity.x);
+                {/* <div className="statsWrapper"> */}
+                <motion.div
+                    style={{
+                        position: 'absolute',
+                        height: '100%',
+                        minHeight: '100vh',
+                        width: '100%',
+                    }}
+                    key={page}
+                    custom={direction}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{
+                        x: { type: 'spring', stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 },
+                    }}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={1}
+                    onDragEnd={(e, { offset, velocity }) => {
+                        const swipe = swipePower(offset.x, velocity.x);
 
-                            if (swipe < -swipeConfidenceThreshold) {
-                                paginate(1);
-                            } else if (swipe > swipeConfidenceThreshold) {
-                                paginate(-1);
-                            }
-                        }}>
-                        {children[componentIndex]}
-                    </motion.div>
-                </div>
+                        if (swipe < -swipeConfidenceThreshold) {
+                            paginate(1);
+                        } else if (swipe > swipeConfidenceThreshold) {
+                            paginate(-1);
+                        }
+                    }}>
+                    {children[componentIndex]}
+                </motion.div>
+                {/* </div> */}
             </AnimatePresence>
             <div className="next" onClick={() => paginate(1)}>
                 {'‣'}
@@ -94,3 +95,5 @@ const Statistics: React.FC<StatisticsPropsI> = ({ children }) => {
 };
 
 export default Statistics;
+
+//OBS OBS,Kokt mye fra: https://codesandbox.io/embed/framer-motion-image-gallery-pqvx3?codemirror=1

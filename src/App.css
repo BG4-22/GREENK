@@ -41,12 +41,6 @@ button {
     font-size: calc(10px + 2vmin);
 }
 
-#image {
-    background-image: url('../src/img/canvas_1000.jpeg');
-    background-repeat: repeat-y;
-    background-color: pink;
-}
-
 ul {
     list-style-type: none;
 }

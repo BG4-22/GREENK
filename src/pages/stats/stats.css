@@ -9,10 +9,12 @@
 
 .statsWrapper {
     background-color: white;
+    border-radius: 50px;
     height: 700px;
     width: 1500px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
 }
 
@@ -44,11 +46,6 @@
     transform: scale(-1);
 }
 
-img {
-    position: absolute;
-    max-width: 100vw;
-}
-
 .refresh {
     padding: 10px;
     position: absolute;
@@ -62,4 +59,13 @@ img {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+#sunshine {
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    /*    left: -480px;
+    top: -500px; */
 }
