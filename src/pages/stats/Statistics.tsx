@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
-import Diagram from '../../components/stats/Diagram';
-import DiagramC from '../../components/stats/DiagramC';
+import Diagram from 'components/stats/Diagram';
+import DiagramC from 'components/stats/DiagramC';
 
 export interface StatisticsPropsI {}
 
