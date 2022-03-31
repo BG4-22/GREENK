@@ -1,5 +1,5 @@
 import { Center } from '@chakra-ui/react';
-import Energiflyt from '../../assets/Energiflyt.mp4';
+import Energiflyt from '../../assets/EnergiflytNidarvoll.mp4';
 
 const EnergyFlow: React.FC = () => {
     return (
