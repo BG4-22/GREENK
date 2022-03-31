@@ -1,8 +1,8 @@
 import { Button, List, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { getHighscores } from '../services/game';
-import { HighscoreEntry } from '../types/game';
-import FunfactCard from './funfact-card';
+import { getHighscores } from '../../services/game';
+import { HighscoreEntry } from '../../types/game';
+import FunfactCard from '../funfacts/funfact-card';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
