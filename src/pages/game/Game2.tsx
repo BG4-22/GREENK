@@ -43,6 +43,7 @@ function Game(){
     const [promptRight, setPromptRight] = useState<Prompt>();
     const [answer, setAnswer] = useState<Prompt>();
     const [highscore, setHighscore] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
     Water Heater (4-person household): 310/kWh/month
@@ -218,7 +219,7 @@ function Game(){
                             rotate: [0, 360],
                             borderRadius: ["10px", "40px"],}}
                         transition={{ duration: 0.5 }}
-                        style={{position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'black', left: "50%", top: "40%", fontSize: "30px", paddingTop: "20px"}}>VS</motion.div>
+                        style={{fontWeight: "bold", position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'gray', left: "50%", top: "40%", fontSize: "30px", paddingTop: "18px"}}>VS</motion.div>
                         : !next?
                         <motion.div
                         key={promptLeft ? promptLeft.kWh+2 : 1} 
@@ -228,7 +229,7 @@ function Game(){
                             rotate: [360, 0],
                             borderRadius: ["40px", "10px"],}}
                         transition={{ duration: 0.25 }}
-                        style={{position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'black', left: "50%", top: "40%", fontSize: "30px", paddingTop: "20px"}}>VS</motion.div>
+                        style={{fontWeight: "bold", position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'gray', left: "50%", top: "40%", fontSize: "30px", paddingTop: "18px"}}>VS</motion.div>
                     : <></>}
                     {gameOver && (hasAnswered && answer && promptLeft && promptRight) ? (
                     <Feedback 
@@ -247,7 +248,7 @@ function Game(){
                             <AnimatePresence >
                                 <motion.div 
                                     style={{minHeight:"100%", position: "absolute"}} 
-                                    initial={{x: "100%",}} 
+                                    initial={{x: loading ? "0%" : "100%"}} 
                                     animate={{x: "0%"}} 
                                     transition={{duration: 1, delay: 1}} 
                                     exit={{x: "-100%"}} 
@@ -255,6 +256,7 @@ function Game(){
                                     onAnimationComplete={definition => {
                                         setNext(false)
                                         setHasAnswered(false)
+                                        setLoading(false)
                                     }}>
                                     <div style={{minWidth: "100%", height: "100%", minHeight: "100%", position: "relative", opacity: 1}}>
                                         
@@ -307,7 +309,7 @@ function Game(){
                             <AnimatePresence >
                                 <motion.div 
                                     style={{minHeight:"100%", position: "absolute"}} 
-                                    initial={{x: "100%",}} 
+                                    initial={{x: loading ? "0%" : "100%"}} 
                                     animate={{x: "0%"}} 
                                     transition={{duration: 1, delay: 1}} 
                                     //exit={{x: "-100%"}} 
