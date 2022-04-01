@@ -41,7 +41,7 @@ function AddHighscore(props: { points: number }) {
                         onChange={(e) => setValue(e.target.value)}
                     />
 
-                    <Button borderRadius="40px" bg="#FFDD85" size="lg" onClick={leggTil}>
+                    <Button borderRadius="40px" bg="#FFDD85" size="lg" onClick={value ? leggTil : () => {}}>
                         {value ? "Legg til" : "Gå videre"}
                     </Button>
                 </Flex>
