@@ -272,14 +272,33 @@ function Game(){
                                         width: "100%",
                                         textAlign: "center",
                                         color: "white",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
                                         fontSize: 40}}>{promptLeft.description}</Text>
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"43%", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 20}}>bruker i snitt</Text>
                                         <Text style={{
                                         position: "absolute", 
                                         top:"50%", 
                                         width: "100%",
                                         textAlign: "center",
+                                        color: "#c3e0b5",
+                                        fontWeight: "bold",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 50}}>{promptLeft.kWh} kWh</Text>
+                                        <Text style={{
+                                        position: "absolute", 
+                                        top:"65%", 
+                                        width: "100%",
+                                        textAlign: "center",
                                         color: "white",
-                                        fontSize: 30}}>{promptLeft.kWh} kWh</Text>
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 20}}>i måneden</Text>
                                     </div>
                                 </motion.div>
                             </AnimatePresence>
@@ -309,25 +328,42 @@ function Game(){
                                         width: "100%",
                                         textAlign: "center",
                                         color: "white",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
                                         fontSize: 40}}>{promptRight.description}</Text>
+                                        <Text top={(hasAnswered && !next) ? "43%" : "40%"} style={{
+                                        position: "absolute",  
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 20}}>bruker i snitt</Text>
                                         <Text style={{
                                         position: "absolute", 
                                         top:"50%", 
                                         width: "100%",
                                         textAlign: "center",
-                                        color: "white",
-                                        fontSize: 30}}
+                                        color: "#c3e0b5",
+                                        fontWeight: "bold",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 50}}
                                         visibility={(hasAnswered && !next) ? "visible" : "hidden"}>{<Counter from={from} to={to}/>} kWh</Text>
+                                        <Text top={(hasAnswered && !next) ? "65%" : "68%"} style={{
+                                        position: "absolute", 
+                                        width: "100%",
+                                        textAlign: "center",
+                                        color: "white",
+                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+                                        fontSize: 20}}>i måneden</Text>
                                     </div>
                                 </motion.div>
                             </AnimatePresence>
                             <Stack direction="column" spacing={2} align='center' position="relative" top="50%"
                             visibility={hasAnswered ? "hidden" : "visible"}>
-                                <Button width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
+                                <Button shadow="0px 0px 10px rgba(0, 0, 0, 0.2)" textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)" color="white" bgColor="#c3e0b5" width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
                                 onClick={() => updateHasAnswered(promptRight)}>
                                     Mer
                                 </Button>
-                                <Button width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
+                                <Button shadow="0px 0px 10px rgba(0, 0, 0, 0.2)" textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)" color="white" bgColor="#FF8585" width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
                                 onClick={() => updateHasAnswered(promptLeft)}>
                                     Mindre
                                 </Button>
