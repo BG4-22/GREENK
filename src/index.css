@@ -16,7 +16,6 @@ body,
 }
 
 body {
-    background-color: #c3e0b5;
     margin: 0;
     position: inherit;
     font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont,
@@ -28,7 +27,6 @@ body {
 
 #root {
     background: #c3e0b5;
-    background: #9dbe98;
     display: flex;
     align-items: center;
     justify-content: center;
