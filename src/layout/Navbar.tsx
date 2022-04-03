@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
                             style={{
                                 textDecoration: 'none',
                             }}>
-                            Energiflyten i byggene
+                            Energiflyt
                         </Link>
                     </Button>
                 </GridItem>

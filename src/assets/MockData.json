@@ -9,7 +9,7 @@
         6.09, 2.95, 1.49, 0.09, 0, 0, 0, 0, 0
     ],
     "NonDistrictHeatingPercentage": [
-        { "Lade": [0.38, 0.39, 0.48] },
-        { "Bispehaugen": [0.61, 0.62, 0.7] }
+        { "Lade": [0.38] },
+        { "Bispehaugen": [0.61] }
     ]
 }
