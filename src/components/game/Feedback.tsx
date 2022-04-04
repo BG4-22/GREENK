@@ -1,5 +1,6 @@
 import { Box, Button, Img, Text } from '@chakra-ui/react';
 import netflix from '../../assets/game/netflix.svg';
+import playstation from '../../Assets/game/playstation.png';
 import { Center } from '@chakra-ui/react';
 
 interface Prompt{
@@ -13,24 +14,44 @@ function Feedback(props: {
     promptRight: Prompt;
     updateHighscore: any;
 }) {
+    const prompts: {biggest: Prompt, smallest: Prompt} = (props.promptLeft.kWh > props.promptRight.kWh) 
+    ? {biggest: props.promptLeft, smallest: props.promptRight} : {biggest: props.promptRight, smallest: props.promptLeft}
+    const difference = prompts.biggest.kWh - prompts.smallest.kWh
+    const comperisons = [
+        {
+            verb: "se",
+            description: 'på',
+            img: netflix,
+            kWh: 0.077,
+            tidsramme: "timer" 
+        },
+        {
+            verb: "spille",
+            description: 'på',
+            img: playstation,
+            kWh: 0.26,
+            tidsramme: "timer" 
+        },
+    ];
+    const comp = comperisons[Math.floor(Math.random() * comperisons.length)]
     return (
         <Box>
             <Center>
                 <Text fontSize="xl" margin={10}>
-                    {props.promptLeft.description} bruker {props.promptLeft.kWh - props.promptRight.kWh}kWh mer i måneden enn {props.promptRight.description}!
+                    {prompts.biggest.description} bruker {difference}kWh mer i måneden enn {prompts.smallest.description}!
                 </Text>
             </Center>
             <br></br>
             <Center>
-                <Text fontSize="xl">Det tilsvarer å se </Text>
+                <Text fontSize="xl">Det tilsvarer å {comp.verb}</Text>
                 <Text color="#8BA5FF" fontSize="2xl" margin={3}>
                     {' '}
-                    181 timer{' '}
+                    {(difference/comp.kWh).toFixed(0)}{comp.tidsramme}{' '}
                 </Text>
                 <Text fontSize="xl" marginRight={3}>
-                    på
+                    {comp.description}
                 </Text>
-                <img src={netflix} width="100px" />
+                <img src={comp.img} width="100px" />
             </Center>
             <Center>
                 <Button
