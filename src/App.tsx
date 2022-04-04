@@ -4,6 +4,7 @@ import { Home, Statistics } from './pages';
 import Game from './pages/game/Game2';
 import Highscores from './pages/highscores/Highscores';
 import SolarPanelPage from './pages/solarpanel';
+import EnergyFlow from './pages/energyflow/EnergyFlow';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="solcelle" element={<SolarPanelPage />} />
                 <Route path="game" element={<Game />} />
                 <Route path="highscore" element={<Highscores />} />
+                <Route path="energiflyt" element={<EnergyFlow />} />
                 <Route path="*" element={<h1>No match</h1>} />
             </Route>
         </Routes>
