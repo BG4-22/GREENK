@@ -1,5 +1,5 @@
 import { Box, Button, Img, Text } from '@chakra-ui/react';
-import netflix from '../assets/game/netflix.svg';
+import netflix from '../../assets/game/netflix.svg';
 import { Center } from '@chakra-ui/react';
 
 interface Prompt{

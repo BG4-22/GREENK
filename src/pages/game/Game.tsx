@@ -22,7 +22,7 @@ import { Text } from '@chakra-ui/react';
 import CorrectG1 from '../../component/CorrectG1';
 import WrongG1 from '../../component/WrongG1';
 import FeedbackG2 from '../../component/FeedbackG2';
-import AddHighscore from '../../component/AddHighscore';
+import AddHighscore from '../../components/game/AddHighscore';
 interface Answer{
     heading: string,
     pic: Img,

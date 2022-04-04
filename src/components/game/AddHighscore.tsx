@@ -7,7 +7,7 @@ import is from '../assets/game/is.jpg';
 import { Center } from '@chakra-ui/react';
 import { ListItem, List, OrderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { submitScore } from '../services/game'
+import { submitScore } from '../../services/game'
 
 function AddHighscore(props: { points: number }) {
     const [value, setValue] = useState('');

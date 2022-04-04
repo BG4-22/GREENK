@@ -1,40 +1,35 @@
 import klimaanlegg from '../../Assets/game/klimaanlegg.png';
-import varmtvann from '../../Assets/game/varmtvann.jpeg'
-import kjøleskap from '../../Assets/game/kjøleskap.jpeg'
-import tørketrommel from '../../Assets/game/tørketrommel.jpeg'
-import stekeovn from '../../Assets/game/stekeovn.jpeg'
-import belysning from '../../Assets/game/belysning.jpeg'
-import oppvaskmaskin from '../../Assets/game/oppvaskmaskin.jpeg'
-import tv from '../../Assets/game/tv.jpeg'
-import mikrobølgeovn from '../../Assets/game/mikrobølgeovn.jpeg'
-import vaskemaskin from '../../Assets/game/vaskemaskin.jpeg'
+import varmtvann from '../../Assets/game/varmtvann.jpeg';
+import kjøleskap from '../../Assets/game/kjøleskap.jpeg';
+import tørketrommel from '../../Assets/game/tørketrommel.jpeg';
+import stekeovn from '../../Assets/game/stekeovn.jpeg';
+import belysning from '../../Assets/game/belysning.jpeg';
+import oppvaskmaskin from '../../Assets/game/oppvaskmaskin.jpeg';
+import tv from '../../Assets/game/tv.jpeg';
+import mikrobølgeovn from '../../Assets/game/mikrobølgeovn.jpeg';
+import vaskemaskin from '../../Assets/game/vaskemaskin.jpeg';
 import {
-    Image,
     Box,
     Heading,
     Flex,
-    Spacer,
     Text,
-    usePrefersReducedMotion,
-    keyframes,
     Button,
     Stack,
-    Circle,
 } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
-import AddHighscore from '../../component/AddHighscore';
-import { animate, AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { update } from 'lodash';
-import Feedback from '../../component/Feedback';
-import Highscores from '../highscores/Highscores';
+import React, { useEffect, useState } from 'react';
+import AddHighscore from '../../components/game/AddHighscore';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import Feedback from '../../components/game/Feedback';
+import GameSlide from '../../components/game/Slide';
+import Counter from '../../components/game/Counter';
 
-interface Prompt{
-    description: string,
-    img: string,
-    kWh: number
+interface Prompt {
+    description: string;
+    img: string;
+    kWh: number;
 }
 
-function Game(){
+function Game() {
     const [gameOver, setGameOver] = useState(false);
     const [hasAnswered, setHasAnswered] = useState(false);
     const [next, setNext] = useState(false);
@@ -106,99 +101,63 @@ function Game(){
             img: vaskemaskin,
             kWh: 9,
         },
-    ]
+    ];
 
     function updatePrompts() {
-        let randomPromptLeft, randomPromptRight
-        if (promptLeft){
-            randomPromptLeft = promptRight
+        let randomPromptLeft, randomPromptRight;
+        if (promptLeft) {
+            randomPromptLeft = promptRight;
+        } else {
+            randomPromptLeft = getRandomPromt();
         }
-        else {
-            randomPromptLeft = getRandomPromt()
-        }
-        randomPromptRight = getRandomPromt()
-        while (true){
+        randomPromptRight = getRandomPromt();
+        while (true) {
             if (randomPromptRight.description == randomPromptLeft?.description)
-                randomPromptRight = getRandomPromt()
-            else break
+                randomPromptRight = getRandomPromt();
+            else break;
         }
-        setPromptLeft(randomPromptLeft)
-        setPromptRight(randomPromptRight)
-        setTo(randomPromptRight.kWh)
+        setPromptLeft(randomPromptLeft);
+        setPromptRight(randomPromptRight);
+        setTo(randomPromptRight.kWh);
     }
 
-    function getRandomPromt()
-    {
+    function getRandomPromt() {
         let random = Math.floor(Math.random() * prompts.length);
-        return prompts[random]
-    }
-
-    function handleAnswer(prompt: Prompt){
-        setNext(true)
+        return prompts[random];
     }
 
     function updateHasAnswered(prompt: Prompt) {
-        setAnswer(prompt)
-        setHasAnswered(true)
+        setAnswer(prompt);
+        setHasAnswered(true);
     }
-    function updateHighscore(){
-        setHighscore(true)
-        setGameOver(false)
+    function updateHighscore() {
+        setHighscore(true);
+        setGameOver(false);
     }
 
     useEffect(() => {
-        if(answer && next){
-            if (promptLeft&&promptRight&&(
-                    answer == (
-                        promptLeft.kWh >= promptRight.kWh 
-                        ? promptLeft : promptRight))) {
-                    setPoints(points + 1);
-                    //setIsCorrect(true);
-                } else {
-                    //setIsCorrect(false);
-                    setGameOver(true);
-                }
+        if (answer && next) {
+            if (
+                promptLeft &&
+                promptRight &&
+                answer ==
+                    (promptLeft.kWh >= promptRight.kWh
+                        ? promptLeft
+                        : promptRight)
+            ) {
+                setPoints(points + 1);
+            } else {
+                setGameOver(true);
+            }
             updatePrompts();
         }
     }, [next]);
 
-    const controls = useAnimation();
-    /*useEffect(() => {
-        console.log("animate")
-        controls.start({
-            x: "0%", 
-            transition: {duration: 1}
-        });
-    }, [promptRight]);*/
-    const [from, setFrom] = useState(0);
+    const from = 0;
     const [to, setTo] = useState(0);
 
-    function Counter({from, to}) {
-        const nodeContainer = useRef<HTMLParagraphElement>(null);
-        useEffect(() => {
-            if(to != 0 && hasAnswered){
-                const node = nodeContainer.current
-                console.log(to)
-                const controls = animate(from, to, {
-                duration: 2, ease: "easeOut",
-                onComplete: () => {
-                    setNext(true)
-                },
-                onUpdate(value) {
-                    if(node){
-                        node.textContent = value.toFixed(0)
-                    }
-                }
-                });
-                return () => controls.stop();
-            }
-        }, [to]);
-
-        return <p style={{display: "inline-block"}} ref={nodeContainer}/>;
-    }
-
     return (
-        <div style={{textAlign: "center", height: "100%"}}>
+        <div style={{ textAlign: 'center', height: '100%' }}>
             <Heading color="white" margin="20px">
                 {gameOver || highscore ? (
                     <Text color="#8BA5FF">Du fikk {points} poeng!</Text>
@@ -206,172 +165,248 @@ function Game(){
                     'Hva bruker mest energi?'
                 )}
             </Heading>
-            <Box bg="white" w="80%" h="85%" p={4} borderRadius="50px" margin="auto">
-                    {!gameOver && !highscore ?
-                    <Box position="absolute" zIndex="1" width="5px" height="68%" bg='white' color='black' left="50%" transform="translateX(-50%)"></Box>
-                    :<></>}
-                    {!hasAnswered ?
+            <Box
+                bg="white"
+                w="80%"
+                h="85%"
+                p={4}
+                borderRadius="50px"
+                margin="auto">
+                {!gameOver && !highscore ? (
+                    <Box
+                        position="absolute"
+                        zIndex="1"
+                        width="5px"
+                        height="68%"
+                        bg="white"
+                        color="black"
+                        left="50%"
+                        transform="translateX(-50%)"></Box>
+                ) : (
+                    <></>
+                )}
+                {!hasAnswered ? (
                     <motion.div
-                        key={promptLeft ? promptLeft.kWh+5 : 0} 
-                        initial={{x: "-50%", scale: 0}}
+                        key={promptLeft ? promptLeft.kWh + 5 : 0}
+                        initial={{ x: '-50%', scale: 0 }}
                         animate={{
                             scale: [0, 1],
                             rotate: [0, 360],
-                            borderRadius: ["10px", "40px"],}}
+                            borderRadius: ['10px', '40px'],
+                        }}
                         transition={{ duration: 0.5 }}
-                        style={{fontWeight: "bold", position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'gray', left: "50%", top: "40%", fontSize: "30px", paddingTop: "18px"}}>VS</motion.div>
-                        : !next?
-                        <motion.div
-                        key={promptLeft ? promptLeft.kWh+2 : 1} 
-                        initial={{x: "-50%"}}
+                        style={{
+                            fontWeight: 'bold',
+                            position: 'absolute',
+                            zIndex: '1',
+                            width: '80px',
+                            height: '80px',
+                            borderRadius: '40px',
+                            backgroundColor: 'white',
+                            color: 'gray',
+                            left: '50%',
+                            top: '40%',
+                            fontSize: '30px',
+                            paddingTop: '18px',
+                        }}>
+                        VS
+                    </motion.div>
+                ) : !next ? (
+                    <motion.div
+                        key={promptLeft ? promptLeft.kWh + 2 : 1}
+                        initial={{ x: '-50%' }}
                         animate={{
                             scale: [1, 0],
                             rotate: [360, 0],
-                            borderRadius: ["40px", "10px"],}}
+                            borderRadius: ['40px', '10px'],
+                        }}
                         transition={{ duration: 0.25 }}
-                        style={{fontWeight: "bold", position: "absolute", zIndex: "1", width: '80px', height: "80px", borderRadius: "40px", backgroundColor: "white", color: 'gray', left: "50%", top: "40%", fontSize: "30px", paddingTop: "18px"}}>VS</motion.div>
-                    : <></>}
-                    {gameOver && (hasAnswered && answer && promptLeft && promptRight) ? (
-                    <Feedback 
-                    points={points} 
-                    promptLeft={answer == promptLeft ? promptRight : promptLeft} 
-                    promptRight={answer}
-                    updateHighscore={updateHighscore}/>
-                    
-                    //slide animation
-                ) : (highscore) ?(
-                    <AddHighscore points={points}/>
-                ) : (promptLeft && promptRight) ?(
+                        style={{
+                            fontWeight: 'bold',
+                            position: 'absolute',
+                            zIndex: '1',
+                            width: '80px',
+                            height: '80px',
+                            borderRadius: '40px',
+                            backgroundColor: 'white',
+                            color: 'gray',
+                            left: '50%',
+                            top: '40%',
+                            fontSize: '30px',
+                            paddingTop: '18px',
+                        }}>
+                        VS
+                    </motion.div>
+                ) : (
+                    <></>
+                )}
+                {gameOver &&
+                hasAnswered &&
+                answer &&
+                promptLeft &&
+                promptRight ? (
+                    <Feedback
+                        points={points}
+                        promptLeft={
+                            answer == promptLeft ? promptRight : promptLeft
+                        }
+                        promptRight={answer}
+                        updateHighscore={updateHighscore}
+                    />
+                ) : 
+                highscore ? (
+                    <AddHighscore points={points} />
+                ) : promptLeft && promptRight ? (
                     <>
-                    <Flex style={{width: "100%", minWidth: "100%", maxWidth: "100%", height: "100%", overflow: "hidden", borderRadius: "40px", backgroundColor: "#000000"}}>
-                        <div style={{minWidth: "50%", maxWidth: "50%", minHeight: "100%", position: "relative"}}>
-                            <AnimatePresence >
-                                <motion.div 
-                                    style={{minHeight:"100%", position: "absolute"}} 
-                                    initial={{x: loading ? "0%" : "100%"}} 
-                                    animate={{x: "0%"}} 
-                                    transition={{duration: 1, delay: 1}} 
-                                    exit={{x: "-100%"}} 
-                                    key={promptLeft.kWh+1}
-                                    onAnimationComplete={definition => {
-                                        setNext(false)
-                                        setHasAnswered(false)
-                                        setLoading(false)
-                                    }}>
-                                    <div style={{minWidth: "100%", height: "100%", minHeight: "100%", position: "relative", opacity: 1}}>
-                                        
-                                        <Image
-                                            width="100%"
-                                            height="70vh"
-                                            objectFit="cover"
-                                            src={promptLeft.img}
-                                            opacity={0.7}
-                                            p={0}
+                        <Flex
+                            style={{
+                                width: '100%',
+                                minWidth: '100%',
+                                maxWidth: '100%',
+                                height: '100%',
+                                overflow: 'hidden',
+                                borderRadius: '40px',
+                                backgroundColor: '#000000',
+                            }}>
+                            <div
+                                style={{
+                                    minWidth: '50%',
+                                    maxWidth: '50%',
+                                    minHeight: '100%',
+                                    position: 'relative',
+                                }}>
+                                <AnimatePresence>
+                                    <motion.div
+                                        style={{
+                                            minHeight: '100%',
+                                            position: 'absolute',
+                                        }}
+                                        initial={{ x: loading ? '0%' : '100%' }}
+                                        animate={{ x: '0%' }}
+                                        transition={{ duration: 1, delay: 1 }}
+                                        exit={{ x: '-100%' }}
+                                        key={promptLeft.kWh + 1}
+                                        onAnimationComplete={(definition) => {
+                                            setNext(false);
+                                            setHasAnswered(false);
+                                            setLoading(false);
+                                        }}>
+                                        <GameSlide
+                                            prompt={promptLeft}
+                                            hasAnswered={true}
+                                            next={false}
                                         />
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"30%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 40}}>{promptLeft.description}</Text>
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"43%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 20}}>bruker i snitt</Text>
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"50%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "#c3e0b5",
-                                        fontWeight: "bold",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 50}}>{promptLeft.kWh} kWh</Text>
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"65%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 20}}>i måneden</Text>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-                        <div style={{minWidth: "50%", maxWidth: "50%", minHeight: "100%", position: "relative", justifyContent: "center"}}>
-                            <AnimatePresence >
-                                <motion.div 
-                                    style={{minHeight:"100%", position: "absolute"}} 
-                                    initial={{x: loading ? "0%" : "100%"}} 
-                                    animate={{x: "0%"}} 
-                                    transition={{duration: 1, delay: 1}} 
-                                    //exit={{x: "-100%"}} 
-                                    key={promptRight.kWh+1}>
-                                    <div style={{minWidth: "100%", height: "100%", minHeight: "100%", position: "relative"}}>
-                                        
-                                        <Image
-                                            width="100%"
-                                            height="70vh"
-                                            objectFit="cover"
-                                            src={promptRight.img}
-                                            p={0}
-                                            opacity={0.7}
+                                        <Text
+                                            style={{
+                                                position: 'absolute',
+                                                top: '50%',
+                                                width: '100%',
+                                                textAlign: 'center',
+                                                color: '#c3e0b5',
+                                                fontWeight: 'bold',
+                                                textShadow:
+                                                    '0px 0px 10px rgba(0, 0, 0, 0.2)',
+                                                fontSize: 50,
+                                            }}>
+                                            {promptLeft.kWh} kWh
+                                        </Text>
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
+                            <div
+                                style={{
+                                    minWidth: '50%',
+                                    maxWidth: '50%',
+                                    minHeight: '100%',
+                                    position: 'relative',
+                                    justifyContent: 'center',
+                                }}>
+                                <AnimatePresence>
+                                    <motion.div
+                                        style={{
+                                            minHeight: '100%',
+                                            position: 'absolute',
+                                        }}
+                                        initial={{ x: loading ? '0%' : '100%' }}
+                                        animate={{ x: '0%' }}
+                                        transition={{ duration: 1, delay: 1 }}
+                                        key={promptRight.kWh + 1}>
+                                        <GameSlide
+                                            prompt={promptRight}
+                                            hasAnswered={hasAnswered}
+                                            next={next}
                                         />
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"30%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 40}}>{promptRight.description}</Text>
-                                        <Text top={(hasAnswered && !next) ? "43%" : "40%"} style={{
-                                        position: "absolute",  
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 20}}>bruker i snitt</Text>
-                                        <Text style={{
-                                        position: "absolute", 
-                                        top:"50%", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "#c3e0b5",
-                                        fontWeight: "bold",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 50}}
-                                        visibility={(hasAnswered && !next) ? "visible" : "hidden"}>{<Counter from={from} to={to}/>} kWh</Text>
-                                        <Text top={(hasAnswered && !next) ? "65%" : "68%"} style={{
-                                        position: "absolute", 
-                                        width: "100%",
-                                        textAlign: "center",
-                                        color: "white",
-                                        textShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-                                        fontSize: 20}}>i måneden</Text>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
-                            <Stack direction="column" spacing={2} align='center' position="relative" top="50%"
-                            visibility={hasAnswered ? "hidden" : "visible"}>
-                                <Button shadow="0px 0px 10px rgba(0, 0, 0, 0.2)" textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)" color="white" bgColor="#c3e0b5" width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
-                                onClick={() => updateHasAnswered(promptRight)}>
-                                    Mer
-                                </Button>
-                                <Button shadow="0px 0px 10px rgba(0, 0, 0, 0.2)" textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)" color="white" bgColor="#FF8585" width="30%" borderRadius="40px" bg="#FFFFFF" size="lg"
-                                onClick={() => updateHasAnswered(promptLeft)}>
-                                    Mindre
-                                </Button>
-                            </Stack>
-                        </div>
-                    </Flex>
+                                        <Text
+                                            style={{
+                                                position: 'absolute',
+                                                top: '50%',
+                                                width: '100%',
+                                                textAlign: 'center',
+                                                color: '#c3e0b5',
+                                                fontWeight: 'bold',
+                                                textShadow:
+                                                    '0px 0px 10px rgba(0, 0, 0, 0.2)',
+                                                fontSize: 50,
+                                            }}
+                                            visibility={
+                                                hasAnswered && !next
+                                                    ? 'visible'
+                                                    : 'hidden'
+                                            }>
+                                            {
+                                                <Counter
+                                                    key={hasAnswered ? 1 : 0}
+                                                    to={to}
+                                                    from={from}
+                                                    hasAnswered={hasAnswered}
+                                                    next={next}
+                                                    setNext={setNext}
+                                                />
+                                            }{' '}
+                                            kWh
+                                        </Text>
+                                    </motion.div>
+                                </AnimatePresence>
+                                <Stack
+                                    direction="column"
+                                    spacing={2}
+                                    align="center"
+                                    position="relative"
+                                    top="50%"
+                                    visibility={
+                                        hasAnswered ? 'hidden' : 'visible'
+                                    }>
+                                    <Button
+                                        shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
+                                        textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
+                                        color="white"
+                                        bgColor="#c3e0b5"
+                                        width="30%"
+                                        borderRadius="40px"
+                                        bg="#FFFFFF"
+                                        size="lg"
+                                        onClick={() =>
+                                            updateHasAnswered(promptRight)
+                                        }>
+                                        Mer
+                                    </Button>
+                                    <Button
+                                        shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
+                                        textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
+                                        color="white"
+                                        bgColor="#FF8585"
+                                        width="30%"
+                                        borderRadius="40px"
+                                        bg="#FFFFFF"
+                                        size="lg"
+                                        onClick={() =>
+                                            updateHasAnswered(promptLeft)
+                                        }>
+                                        Mindre
+                                    </Button>
+                                </Stack>
+                            </div>
+                        </Flex>
                     </>
                 ) : (
                     <>{updatePrompts()}</>
