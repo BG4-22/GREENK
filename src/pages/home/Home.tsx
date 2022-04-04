@@ -2,7 +2,7 @@ import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 import GreenkLogo from '../../assets/greenk-logo.png';
 import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
-import GameButton from '../../component/GameButton';
+import GameButton from '../../components/GameButton';
 import FunfactSlideshow from '../../components/funfact-slideshow';
 import Scoreboard from '../../components/Scoreboard';
 import SolarPanelComponent from '../../components/solar-panel-component';

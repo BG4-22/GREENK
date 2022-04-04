@@ -72,11 +72,6 @@ function Highscores() {
                     </Flex>
                 </Center>
             </Box>
-            {/*
-            <Button borderRadius="40px" bg="#FFDD85" size="lg">
-                <Link to={'/'}>Tilbake</Link>
-            </Button>
-            */}
         </VStack>
     );
 }

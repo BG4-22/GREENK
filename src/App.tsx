@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './layout';
 import { Home, Statistics } from './pages';
-import Game from './pages/game/Game2';
+import Game from './pages/game/Game';
 import Highscores from './pages/highscores/Highscores';
 import SolarPanelPage from './pages/solarpanel';
 import EnergyFlow from './pages/energyflow/EnergyFlow';
