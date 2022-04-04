@@ -104,9 +104,8 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
     );
 
     const effect = getSolarPanelEffect();
-    console.log(effect)
 
-    const msg = 'Nidarvoll generer ' +  effect + ' KWh nå :)';
+    const msg = 'Nidarvoll generer ' + effect + ' KWh nå :)';
     return (
         <Box
             display={'flex'}

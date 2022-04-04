@@ -9,7 +9,6 @@ const getSolarPanelEffect = () => {
         let value = plusOrMinus ? effect + difference : effect - difference;
 
         setEffect(Math.round(value));
-        console.log(plusOrMinus);
     };
 
     useEffect(() => {
