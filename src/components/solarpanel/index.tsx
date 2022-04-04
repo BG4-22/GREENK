@@ -1,2 +1,1 @@
-import SolarPanelComponent from './SolarPanelComponent';
-export default SolarPanelComponent;
+export { default } from './SolarPanelComponent';

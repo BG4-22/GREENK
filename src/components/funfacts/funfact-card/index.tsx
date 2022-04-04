@@ -1,2 +1,1 @@
-import FunfactCard from './FunfactCard';
-export default FunfactCard;
+export { default } from './FunfactCard';
