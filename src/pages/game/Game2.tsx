@@ -165,6 +165,22 @@ function Game() {
                     'Hva bruker mest energi?'
                 )}
             </Heading>
+               { highscore ? (
+                    <AddHighscore points={points} /> 
+                ) : gameOver &&
+                hasAnswered &&
+                answer &&
+                promptLeft &&
+                promptRight ? (
+                    <Feedback
+                        points={points}
+                        promptLeft={
+                            answer == promptLeft ? promptRight : promptLeft
+                        }
+                        promptRight={answer}
+                        updateHighscore={updateHighscore}
+                    />
+                ) : 
             <Box
                 bg="white"
                 w="80%"
@@ -240,23 +256,7 @@ function Game() {
                 ) : (
                     <></>
                 )}
-                {gameOver &&
-                hasAnswered &&
-                answer &&
-                promptLeft &&
-                promptRight ? (
-                    <Feedback
-                        points={points}
-                        promptLeft={
-                            answer == promptLeft ? promptRight : promptLeft
-                        }
-                        promptRight={answer}
-                        updateHighscore={updateHighscore}
-                    />
-                ) : 
-                highscore ? (
-                    <AddHighscore points={points} />
-                ) : promptLeft && promptRight ? (
+                {promptLeft && promptRight ? (
                     <>
                         <Flex
                             style={{
@@ -412,6 +412,7 @@ function Game() {
                     <>{updatePrompts()}</>
                 )}
             </Box>
+            }
         </div>
     );
 }
