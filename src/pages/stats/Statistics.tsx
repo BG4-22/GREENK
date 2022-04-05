@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
-//import Diagram from '../../components/Diagram';
-//import DiagramMoney from '../../components/DiagramMoney';
+//import Diagram from '../../components/statistics/Diagram';
+//import DiagramMoney from '../../components/statistics/DiagramMoney';
 import { motion, AnimatePresence } from 'framer-motion';
 import './stats.css';
 import { wrap } from 'popmotion';
