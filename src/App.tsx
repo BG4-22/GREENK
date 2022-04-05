@@ -12,7 +12,7 @@ import Statistics from './pages/stats/Statistics';
 
 function App() {
     //Set the components that will be shown on the Statistics site
-    const statComponents = [<Diagram />, <DiagramMoney />];
+    const statComponents = [<DiagramMoney />];
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
