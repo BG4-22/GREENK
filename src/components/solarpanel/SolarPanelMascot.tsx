@@ -10,7 +10,11 @@ const SolarPanelMascot = () => {
     return (
         <>
             <SolarPanelComponent2 />
-            <img src={Maskot} alt="Maskot" style={{ marginBottom: '60px', zIndex: "2" }} />
+            <img
+                src={Maskot}
+                alt="Maskot"
+                style={{ marginBottom: '60px', zIndex: '2' }}
+            />
         </>
     );
 };
