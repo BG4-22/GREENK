@@ -3,7 +3,7 @@
 }*/
 
 import React from 'react';
-import { AreaChart, Area, YAxis, XAxis, CartesianGrid } from 'recharts';
+import { Area, AreaChart, XAxis, YAxis } from 'recharts';
 
 class Diagram extends React.Component {
     //Endre data når vi får data fra Mikael

@@ -1,25 +1,38 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Diagram from './components/statistics/Diagram';
+import Carousel from './components/carousel/Carousel';
 import DiagramMoney from './components/DiagramMoney';
+import Diagram from './components/statistics/Diagram';
+import EnergySources from './components/statistics/EnergySources';
+import HeatPump from './components/statistics/HeatPump';
+import OverallCon from './components/statistics/OverallCon';
+//import DiagramMoney from './components/statistics/DiagramMoney';
 import { Layout } from './layout';
 import { Home } from './pages';
+import EnergyFlow from './pages/energyflow/EnergyFlow';
 import Game from './pages/game/Game';
 import Highscores from './pages/highscores/Highscores';
 import SolarPanelPage from './pages/solarpanel';
-import EnergyFlow from './pages/energyflow/EnergyFlow';
-import Statistics from './pages/stats/Statistics';
 
 function App() {
     //Set the components that will be shown on the Statistics site
-    const statComponents = [<DiagramMoney />];
+    const statComponents = [
+        <DiagramMoney />,
+        <Diagram />,
+        <OverallCon />,
+        <HeatPump />,
+        <EnergySources />,
+    ];
+    //, <DiagramMoney />
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route
                     path="statistikk"
-                    element={<Statistics>{statComponents}</Statistics>}
+                    element={
+                        <Carousel withButtons={true}>{statComponents}</Carousel>
+                    }
                 />
                 <Route path="solcelle" element={<SolarPanelPage />} />
                 <Route path="game" element={<Game />} />
