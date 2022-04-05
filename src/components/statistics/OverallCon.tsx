@@ -1,13 +1,12 @@
-import { Box, Center, Text, Image, Flex, Spacer } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Box, Center, Flex, Image, Spacer, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import dataJson from '../../assets/MockData.json';
+import HotChocolate from '../../assets/stats/hotChocolate.png';
 import Light from '../../assets/stats/light.png';
 import Playstation from '../../assets/stats/playstation.png';
-import HotChocolate from '../../assets/stats/hotChocolate.png';
-import dataJson from '../../assets/MockData.json';
 import './statistics.css';
 
 const OverallCon = () => {
-    //
     const lightConsump = 0.06;
     //playstation: 0.31 kwh pr hour
     const playstationConsump: number = 0.31;
