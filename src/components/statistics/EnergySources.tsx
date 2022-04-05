@@ -127,7 +127,7 @@ const EnergySources: FC = () => {
                         w={'75%'}
                         h={'100%'}
                         justifyContent={'center'}>
-                        <Image src={Skole} alt={'Nidarvoll skole'} w={'50%'} />
+                        <Image src={Skole} alt={'Nidarvoll skole'} w={'62%'} />
                     </Flex>
                     <HStack spacing={0} h={'75%'} w={'75%'}>
                         <EnergyElements elements={sources} />
