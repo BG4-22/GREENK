@@ -34,11 +34,11 @@ const Navbar: React.FC = () => {
                             color: '#000',
                         }}>
                         <Link
-                            to="/"
+                            to="/energiflyt"
                             style={{
                                 textDecoration: 'none',
                             }}>
-                            Nidarvoll Prosjektet
+                            Energiflyt
                         </Link>
                     </Button>
                 </GridItem>

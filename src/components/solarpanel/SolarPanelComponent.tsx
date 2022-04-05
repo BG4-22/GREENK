@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import cloudIcon from 'assets/images/cloudIcon.svg';
 import './SolarPanelComponent.css';
+import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
 interface Weather {
     sun: boolean;
@@ -102,7 +103,10 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
         prevWeatherRef.current,
         weather
     );
-    const msg = 'Nidarvoll generer X antall KWh nå :)';
+
+    const effect = getSolarPanelEffect();
+
+    const msg = 'Nidarvoll generer ' + effect + ' KWh nå :)';
     return (
         <Box
             display={'flex'}
