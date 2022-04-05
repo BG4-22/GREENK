@@ -1,13 +1,13 @@
-import klimaanlegg from '../../Assets/game/klimaanlegg.png';
-import varmtvann from '../../Assets/game/varmtvann.jpeg';
-import kjøleskap from '../../Assets/game/kjøleskap.jpeg';
-import tørketrommel from '../../Assets/game/tørketrommel.jpeg';
-import stekeovn from '../../Assets/game/stekeovn.jpeg';
-import belysning from '../../Assets/game/belysning.jpeg';
-import oppvaskmaskin from '../../Assets/game/oppvaskmaskin.jpeg';
-import tv from '../../Assets/game/tv.jpeg';
-import mikrobølgeovn from '../../Assets/game/mikrobølgeovn.jpeg';
-import vaskemaskin from '../../Assets/game/vaskemaskin.jpeg';
+import klimaanlegg from '../../assets/game/klimaanlegg.png';
+import varmtvann from '../../assets/game/varmtvann.jpeg';
+import kjøleskap from '../../assets/game/kjøleskap.jpeg';
+import tørketrommel from '../../assets/game/tørketrommel.jpeg';
+import stekeovn from '../../assets/game/stekeovn.jpeg';
+import belysning from '../../assets/game/belysning.jpeg';
+import oppvaskmaskin from '../../assets/game/oppvaskmaskin.jpeg';
+import tv from '../../assets/game/tv.jpeg';
+import mikrobølgeovn from '../../assets/game/mikrobølgeovn.jpeg';
+import vaskemaskin from '../../assets/game/vaskemaskin.jpeg';
 import {
     Box,
     Heading,
@@ -283,7 +283,7 @@ function Game() {
                                         }}
                                         initial={{ x: loading ? '0%' : '100%' }}
                                         animate={{ x: '0%' }}
-                                        transition={{ duration: 1 }}
+                                        transition={{ duration: 1, delay: 1 }}
                                         exit={{ x: '-100%' }}
                                         key={promptLeft.kWh + 1}
                                         onAnimationComplete={(definition) => {
@@ -329,7 +329,7 @@ function Game() {
                                         }}
                                         initial={{ x: loading ? '0%' : '100%' }}
                                         animate={{ x: '0%' }}
-                                        transition={{ duration: 1}}
+                                        transition={{ duration: 1, delay: 1 }}
                                         key={promptRight.kWh + 1}>
                                         <GameSlide
                                             prompt={promptRight}
