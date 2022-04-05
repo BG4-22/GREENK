@@ -3,6 +3,7 @@ import React from 'react';
 import GreenkLogo from '../../assets/greenk-logo.png';
 import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
 import Competition from '../../components/CompetitionBarChart';
+import GameButton from '../../components/GameButton';
 import FunfactSlideshow from '../../components/funfact-slideshow';
 import Scoreboard from '../../components/Scoreboard';
 import SolarPanelComponent from '../../components/solar-panel-component';
@@ -98,7 +99,6 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 p={'1rem'}
                 borderRadius={'40px'}
                 bg="rgba(255,255,255,0.2)">
-                {/* <Text>SPILL</Text> */}
                 <Competition data={exampleData} unitOfMeasure="%" />
             </GridItem>
             <GridItem
