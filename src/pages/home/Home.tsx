@@ -1,11 +1,11 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
-import GreenkLogo from '../../assets/greenk-logo.png';
-import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
+import GreenkLogo from 'assets/images/greenk-logo.png';
+import NidarvollVideo from 'assets/videos/Nidarvoll-video.mp4';
+import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
+import Scoreboard from '../../components/game/Scoreboard';
 import GameButton from '../../components/GameButton';
-import FunfactSlideshow from '../../components/funfact-slideshow';
-import Scoreboard from '../../components/Scoreboard';
-import SolarPanelComponent from '../../components/solar-panel-component';
+import SolarPanelComponent from '../../components/solarpanel';
 
 export interface HomePropsI {}
 

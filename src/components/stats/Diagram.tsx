@@ -1,9 +1,5 @@
-/*export default function Diagram() {
-    return <h2>Hi!</h2>;
-}*/
-
 import React from 'react';
-import { AreaChart, Area, YAxis, XAxis, CartesianGrid } from 'recharts';
+import { AreaChart, Area, YAxis, XAxis } from 'recharts';
 
 class Diagram extends React.Component {
     //Endre data når vi får data fra Mikael
