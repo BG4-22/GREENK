@@ -110,21 +110,21 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
     return (
         <Box
             display={'flex'}
-            pos={'relative'}
+            pos={'absolute'}
+            margin={'0px 100px 100px 150px'}
             justifyContent={'center'}
             alignItems={'center'}
-            flexDir={'column'}
+            flexDir={'row'}
             overflow={'hidden'}
             borderRadius={'2em'}
-            margin={'3rem auto auto auto'}
             h={'18rem'}
-            w={'18rem'}
-            border={'2px solid green'}>
+            w={'15rem'}>
             <motion.img
                 className={'cloud'}
                 src={cloudIcon}
                 animate={cloudAnime}
                 variants={cloudVariants}
+                style={{ zIndex: '1' }}
             />
             <motion.div
                 className={'sun-container'}
@@ -134,12 +134,12 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
                 <motion.div className={'sun'} />
             </motion.div>
 
-            <Text margin={'auto auto 2rem auto'}>{msg}</Text>
+            {/*             <Text margin={0}>{msg}</Text> */}
         </Box>
     );
 };
 
-const SolarPanelComponent: React.FC = () => {
+const SolarPanelComponent2: React.FC = () => {
     const [weather, setWeather] = useState<Weather>({
         sun: true,
         cloud: true,
@@ -150,4 +150,4 @@ const SolarPanelComponent: React.FC = () => {
     return <Weather {...weather} />;
 };
 
-export default SolarPanelComponent;
+export default SolarPanelComponent2;
