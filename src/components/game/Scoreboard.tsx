@@ -1,9 +1,10 @@
 import { Button, List, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
-import { getHighscores } from 'services/game';
-import { HighscoreEntry } from 'types/game';
-import FunfactCard from 'components/funfacts/funfact-card';
+import { getHighscores } from '../../services/game';
+import { HighscoreEntry } from '../../types/game';
+import FunfactCard from '../funfacts/funfact-card';
+import GameButton from '../GameButton';
 
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
@@ -31,14 +32,7 @@ function Scoreboard() {
             <List margin={'0 auto 1rem auto'} w={'100%'}>
                 {listItems}
             </List>
-            <Button
-                padding={'1rem'}
-                margin={'0 auto'}
-                bg={'#FFDD85'}
-                w={'fit-content'}
-                borderRadius={'2rem'}>
-                Spill nå!
-            </Button>
+            <GameButton/>
         </FunfactCard>
     );
 }
