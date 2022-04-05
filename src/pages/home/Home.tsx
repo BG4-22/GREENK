@@ -6,6 +6,7 @@ import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
 import Scoreboard from '../../components/game/Scoreboard';
 import SolarPanelComponent from '../../components/solarpanel';
 import Competition from '../../components/CompetitionBarChart';
+import SolarPanelMascot from 'components/solarpanel/SolarPanelMascot';
 
 export interface HomePropsI {}
 
@@ -39,7 +40,6 @@ const HomeWelcomeComponent: React.FC = () => {
     );
 };
 
-// TODO: Fix hover color for navbar buttons
 // TODO: fix sizes of content containers for small screen
 
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
@@ -58,7 +58,7 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 display={'flex'}
                 flexDir={'column'}
                 justifyContent={'flex-end'}>
-                <SolarPanelComponent />
+                <SolarPanelMascot />
             </GridItem>
             <GridItem rowSpan={2} colSpan={2} p={'1rem'} borderRadius={'40px'}>
                 <HomeWelcomeComponent />
