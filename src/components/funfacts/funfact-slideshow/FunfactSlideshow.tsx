@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
-import Carousel from '../carousel/Carousel';
+import Carousel from '../../carousel/Carousel';
 import FunfactCard from '../funfact-card';
 export interface FunfactSlideshowPropsI {
     funfacts: string[];
