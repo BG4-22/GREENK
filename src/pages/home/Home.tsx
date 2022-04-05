@@ -27,14 +27,8 @@ const HomeWelcomeComponent: React.FC = () => {
                 fontSize={'2.5rem'}
                 fontWeight={'bold'}
                 color="#455B33"
-                marginBottom="0px">
-                <img
-                    src={GreenkLogo}
-                    width={'50px'}
-                    style={{ margin: '0 auto' }}
-                    alt="Greenk logo"
-                />
-                NIDARVOLL <span style={{ color: 'green' }}>GRØNN</span> KIOSK
+                margin="30px auto 30px auto">
+                GRØNN KIOSK: Nidarvoll Skole
             </Text>
             <video width="100%" autoPlay loop style={{ borderRadius: '40px' }}>
                 <source src={NidarvollVideo} type="video/mp4"></source>
