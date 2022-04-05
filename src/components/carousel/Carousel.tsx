@@ -44,7 +44,6 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
     const index = wrap(0, children.length, page);
     return (
         <HStack
-            // className={'statsWrapper'}
             margin={'auto'}
             position={'relative'}
             h={'100%'}
@@ -58,18 +57,10 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
                     {'‣'}
                 </Box>
             )}
-            <Box
-                textAlign={'left'}
-                width={'90%'}
-                margin={'auto'}
-                fontSize={'1.5rem'}
-                visibility={'hidden'}>
-                {children[index]}
-            </Box>
-            <AnimatePresence initial={false} custom={direction}>
+            <AnimatePresence initial={false} custom={direction} exitBeforeEnter>
                 <motion.div
                     style={{
-                        position: 'absolute',
+                        // position: 'relative',
                         top: '0px',
                         height: '90%',
                         width: '90%',
@@ -77,7 +68,6 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
                         flexDirection: 'column',
                         backgroundColor: '#fff',
                         borderRadius: '40px',
-                        margin: '4rem 0 0 0',
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}
