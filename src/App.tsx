@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Diagram from './components/statistics/Diagram';
 import OverallCon from './components/statistics/OverallCon';
+import HeatPump from './components/statistics/HeatPump';
 //import DiagramMoney from './components/statistics/DiagramMoney';
 import { Layout } from './layout';
 import { Home } from './pages';
@@ -13,7 +14,7 @@ import Statistics from './pages/stats/Statistics';
 
 function App() {
     //Set the components that will be shown on the Statistics site
-    const statComponents = [<Diagram />, <OverallCon />];
+    const statComponents = [<Diagram />, <OverallCon />, <HeatPump />];
     //, <DiagramMoney />
     return (
         <Routes>
