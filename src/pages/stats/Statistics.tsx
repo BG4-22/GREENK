@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react';
+//import { Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 //import Diagram from '../../components/statistics/Diagram';
 //import DiagramMoney from '../../components/statistics/DiagramMoney';
@@ -49,41 +49,42 @@ const Statistics: React.FC<StatisticsPropsI> = ({ children }) => {
     return (
         <>
             {/*<Text style={{ fontSize: 40 }}>Strømforbruket på skolen</Text>*/}
-            <AnimatePresence initial={false} custom={direction}>
-                {/* <div className="statsWrapper"> */}
-                <motion.div
-                    style={{
-                        position: 'absolute',
-                        height: '100%',
-                        minHeight: '100vh',
-                        width: '100%',
-                    }}
-                    key={page}
-                    custom={direction}
-                    variants={variants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                        x: { type: 'spring', stiffness: 300, damping: 30 },
-                        opacity: { duration: 0.2 },
-                    }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={1}
-                    onDragEnd={(e, { offset, velocity }) => {
-                        const swipe = swipePower(offset.x, velocity.x);
+            <div className="statsWrapper">
+                <AnimatePresence initial={false} custom={direction}>
+                    <motion.div
+                        style={{
+                            height: '100%',
+                            width: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                        key={page}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                            x: { type: 'spring', stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 },
+                        }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={1}
+                        onDragEnd={(e, { offset, velocity }) => {
+                            const swipe = swipePower(offset.x, velocity.x);
 
-                        if (swipe < -swipeConfidenceThreshold) {
-                            paginate(1);
-                        } else if (swipe > swipeConfidenceThreshold) {
-                            paginate(-1);
-                        }
-                    }}>
-                    {children[componentIndex]}
-                </motion.div>
-                {/* </div> */}
-            </AnimatePresence>
+                            if (swipe < -swipeConfidenceThreshold) {
+                                paginate(1);
+                            } else if (swipe > swipeConfidenceThreshold) {
+                                paginate(-1);
+                            }
+                        }}>
+                        {children[componentIndex]}
+                    </motion.div>
+                </AnimatePresence>
+            </div>
             <div className="next" onClick={() => paginate(1)}>
                 {'‣'}
             </div>
