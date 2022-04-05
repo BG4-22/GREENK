@@ -4,11 +4,6 @@ import Chart from './Chart';
 import Legend from './Legend';
 import YAxisLabel from './YAxixLabel';
 
-const exampleData = [
-    { name: 'Nidarvoll skole', value: 70 },
-    { name: 'Gjennomsnitts- skolen i Trondheim', value: 30 },
-];
-
 interface CompetitionProps {
     data: { name: string; value: number }[];
     unitOfMeasure: string;
