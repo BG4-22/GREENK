@@ -14,7 +14,7 @@ function Scoreboard() {
     useEffect(() => {
         updateHighscores();
     }, []);
-    const listItems = highscores.map((item, i) => (
+    const listItems = highscores.slice(0, 5).map((item, i) => (
         <ListItem
             w={'65%'}
             margin={'auto'}
