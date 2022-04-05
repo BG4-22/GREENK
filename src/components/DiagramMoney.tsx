@@ -1,38 +1,20 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import money from '../assets/stats/money.png';
+import { Input, Text } from '@chakra-ui/react';
 
-export default function DiagramMoney() {
-    const [value, setArray] = useState(0);
+const DiagramMoney = () => {
+    const [count, setCount] = useState<string>('');
 
-    useEffect(() => {});
-
-    var arr = [
-        <ul>
-            <li>
-                <img src={money} width="100" height="50"></img>
-            </li>
-            <li>
-                <img src={money} width="100" height="50"></img>
-            </li>
-            <li>
-                <img src={money} width="100" height="50"></img>
-            </li>
-            <li>
-                <img src={money} width="100" height="50"></img>
-            </li>
-            <img src={money} width="100" height="50"></img>
-        </ul>,
-    ];
-
-    /*$('#imageDiv').append('<ul></ul>');
-    for (var i in arr) {
-        $('#imageList').append(i);
-    }*/
+    useEffect(() => {}, []);
 
     return (
-        <div id="imageDiv">
-            <p>{arr}</p>
-        </div>
+        <>
+            <Text>
+                Hvor mye penger har skolen brukt på strøm de siste månedene?
+            </Text>
+        </>
     );
-}
+};
+
+export default DiagramMoney;

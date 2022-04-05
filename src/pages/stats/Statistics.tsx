@@ -1,10 +1,10 @@
-import { Text } from '@chakra-ui/react';
-import React, { useState, useEffect } from 'react';
+//import { Text } from '@chakra-ui/react';
 //import Diagram from '../../components/statistics/Diagram';
 //import DiagramMoney from '../../components/statistics/DiagramMoney';
-import { motion, AnimatePresence } from 'framer-motion';
-import './stats.css';
+import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
+import React, { useState } from 'react';
+import './stats.css';
 
 export interface StatisticsPropsI {
     children: JSX.Element[];

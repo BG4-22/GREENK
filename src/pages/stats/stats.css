@@ -27,11 +27,11 @@
 }
 
 .next {
-    right: 10px;
+    right: 2rem;
 }
 
 .prev {
-    left: 10px;
+    left: 2rem;
     transform: scale(-1);
 }
 
