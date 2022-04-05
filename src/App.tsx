@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Carousel from './components/carousel/Carousel';
+import DiagramMoney from './components/DiagramMoney';
 import Diagram from './components/statistics/Diagram';
 import EnergySources from './components/statistics/EnergySources';
 import HeatPump from './components/statistics/HeatPump';
@@ -15,8 +16,13 @@ import SolarPanelPage from './pages/solarpanel';
 
 function App() {
     //Set the components that will be shown on the Statistics site
-    const statComponents = [<Diagram />, <OverallCon />, <HeatPump />, <EnergySources />];
-    //, <DiagramMoney />
+    const statComponents = [
+        <Diagram />,
+        <OverallCon />,
+        <HeatPump />,
+        <EnergySources />,
+        <DiagramMoney />,
+    ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
