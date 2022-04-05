@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
             w={'100%'}
             h={'3rem'}
             maxW={'50%'}
-            margin={'6em auto auto auto'}
+            margin={'2em auto auto auto'}
             bottom={'1rem'}
             color="white">
             <Grid h="100%" w="100%" templateColumns="1fr auto 1fr">

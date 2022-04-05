@@ -9,6 +9,7 @@ import SolarPanelComponent from '../../components/solar-panel-component';
 export interface HomePropsI {}
 
 const funfacts: string[] = [
+    'Så mye energi solcellene produserer nå tilsvarer å lade 10 iphones!',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est erat, dignissim in sem nec, elementum porta neque. Vivamus eu quam quis nisi tincidunt feugiat. Vivamus viverra eros nec sagittis fermentum.',
     'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus. Aenean sollicitudin velit nec vulputate volutpat. Donec metus erat, ultricies non urna et, vestibulum efficitur nisl. Proin venenatis metus enim, non aliquet neque mattis et. Nunc a dui tincidunt, mattis quam vel, condimentum sapien. Nulla cursus, risus in vehicula ultrices, nulla eros vulputate risus, sed porta nulla sapien a lectus.',
     'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. Phasellus eget metus eu mi sodales aliquam. Nullam viverra enim eget velit dapibus malesuada.',
@@ -35,25 +36,9 @@ const HomeWelcomeComponent: React.FC = () => {
                 />
                 NIDARVOLL <span style={{ color: 'green' }}>GRØNN</span> KIOSK
             </Text>
-            <video width="90%" autoPlay loop style={{ borderRadius: '40px' }}>
+            <video width="100%" autoPlay loop style={{ borderRadius: '40px' }}>
                 <source src={NidarvollVideo} type="video/mp4"></source>
             </video>
-            {/* <br />
-            <br />
-            <Stack color={'#fff'}>
-                <Text fontSize={'1.9rem'} fontWeight={'bold'}>
-                    Velkommen til Grønn kiosk
-                </Text>
-                <Text fontSize={'1.5rem'} textAlign={'left'}>
-                    Her kan du lære mer om hvordan Nidarvoll skole og
-                    rehabiliteringssenter sparer miljøet og er miljøvennlig.
-                    Visste du for eksempel at 20% på denne skolen er gjenbruk,
-                    eller at solcellene akkurat nå produserer ... mye strøm.
-                    <Link to={'/grønn-kiosk'}>
-                        <ChakraLink color={'#ff9797'}>Lær mer her</ChakraLink>
-                    </Link>
-                </Text>
-            </Stack> */}
         </Box>
     );
 };
@@ -74,32 +59,23 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 colSpan={1}
                 p={'1rem'}
                 borderRadius={'40px'}
-                bg="rgba(255,255,255,0.2)">
-                <Text>SOLCELLE</Text>
+                display={'flex'}
+                flexDir={'column'}
+                justifyContent={'flex-end'}>
                 <SolarPanelComponent />
             </GridItem>
-            <GridItem
-                rowSpan={2}
-                colSpan={2}
-                p={'1rem'}
-                borderRadius={'40px'}
-                bg="rgba(255,255,255,0.8)">
+            <GridItem rowSpan={2} colSpan={2} p={'1rem'} borderRadius={'40px'}>
                 <HomeWelcomeComponent />
             </GridItem>
             <GridItem
                 rowSpan={1}
                 colSpan={1}
+                h={'380px'}
                 p={'1rem'}
                 borderRadius={'40px'}
-                bg="rgba(255,255,255,0.2)">
-                <Text>SPILL</Text>
-            </GridItem>
-            <GridItem
-                rowSpan={1}
-                colSpan={1}
-                p={'1rem'}
-                borderRadius={'40px'}
-                bg="rgba(255,255,255,0.2)">
+                display={'flex'}
+                flexDir={'column'}
+                justifyContent={'flex-end'}>
                 <Scoreboard />
             </GridItem>
             <GridItem
@@ -107,7 +83,20 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 colSpan={1}
                 p={'1rem'}
                 borderRadius={'40px'}
-                bg="rgba(255,255,255,0.2)">
+                display={'flex'}
+                flexDir={'column'}
+                justifyContent={'flex-start'}>
+                <Text>SKOLEKONKURRANSE</Text>
+            </GridItem>
+            <GridItem
+                rowSpan={1}
+                colSpan={1}
+                h={'380px'}
+                p={'1rem'}
+                borderRadius={'40px'}
+                display={'flex'}
+                flexDir={'column'}
+                justifyContent={'flex-start'}>
                 <FunfactSlideshow funfacts={funfacts} />
             </GridItem>
         </Grid>

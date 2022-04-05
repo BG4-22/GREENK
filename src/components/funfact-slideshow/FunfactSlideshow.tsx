@@ -101,9 +101,9 @@ const Carousel: FC<FunfactSlideshowPropsI> = (props) => {
 
 // inspired by: https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?file=/src/Example.tsx:1598-2616
 
-const FunfactSlideshow: React.FC<FunfactSlideshowPropsI> = (funfacts) => {
+const FunfactSlideshow: FC<FunfactSlideshowPropsI> = (funfacts) => {
     return (
-        <FunfactCard title={'Viste du at?'}>
+        <FunfactCard title={'Visste du at?'}>
             <Carousel {...funfacts} />
         </FunfactCard>
     );
