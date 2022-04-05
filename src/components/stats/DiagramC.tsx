@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import money from '../img/canvas_1000.png';
+import money from 'assets/images/canvas_1000.png';
 
 export default function DiagramC() {
     const [value, setArray] = useState(0);
