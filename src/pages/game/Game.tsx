@@ -283,7 +283,7 @@ function Game() {
                                         }}
                                         initial={{ x: loading ? '0%' : '100%' }}
                                         animate={{ x: '0%' }}
-                                        transition={{ duration: 1, delay: 1 }}
+                                        transition={{ duration: 1 }}
                                         exit={{ x: '-100%' }}
                                         key={promptLeft.kWh + 1}
                                         onAnimationComplete={(definition) => {
@@ -329,7 +329,7 @@ function Game() {
                                         }}
                                         initial={{ x: loading ? '0%' : '100%' }}
                                         animate={{ x: '0%' }}
-                                        transition={{ duration: 1, delay: 1 }}
+                                        transition={{ duration: 1}}
                                         key={promptRight.kWh + 1}>
                                         <GameSlide
                                             prompt={promptRight}

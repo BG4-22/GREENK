@@ -12,7 +12,7 @@ function Counter(props: {
     useEffect(() => {
         if (props.to != 0 && props.hasAnswered) {
             const node = nodeContainer.current;
-            const controls = animate(props.from, props.to, {
+            const controls = animate(props.from, [props.from, props.to, props.to], {
                 duration: 2,
                 ease: 'easeOut',
                 onComplete: () => {
