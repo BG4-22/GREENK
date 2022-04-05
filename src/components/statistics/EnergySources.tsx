@@ -117,7 +117,10 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
 const EnergySources: FC = () => {
     return (
         <>
-            <Text fontSize={'3rem'} transform={'translateY(2rem)'}>
+            <Text
+                fontSize={'3rem'}
+                textAlign={'center'}
+                transform={'translateY(2rem)'}>
                 Hvor kommer energien fra?
             </Text>
             <HStack pos={'relative'} w={'100%'} h={'100%'}>
@@ -137,7 +140,10 @@ const EnergySources: FC = () => {
                     <EnergyInfoList elements={sources} />
                 </HStack>
             </HStack>
-            <Text fontSize={'1.5rem'} transform={'translateY(-2rem)'}>
+            <Text
+                fontSize={'1.5rem'}
+                textAlign={'center'}
+                transform={'translateY(-2rem)'}>
                 Til sammenlikning får den gjennomsnittlige skolen kjøpe 60% av
                 strømmen sin
             </Text>

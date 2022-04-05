@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Carousel from './components/carousel/Carousel';
 import DiagramMoney from './components/DiagramMoney';
 import Diagram from './components/statistics/Diagram';
 import EnergySources from './components/statistics/EnergySources';
@@ -9,7 +10,6 @@ import EnergyFlow from './pages/energyflow/EnergyFlow';
 import Game from './pages/game/Game';
 import Highscores from './pages/highscores/Highscores';
 import SolarPanelPage from './pages/solarpanel';
-import Statistics from './pages/stats/Statistics';
 
 function App() {
     //Set the components that will be shown on the Statistics site
@@ -20,7 +20,9 @@ function App() {
                 <Route index element={<Home />} />
                 <Route
                     path="statistikk"
-                    element={<Statistics>{statComponents}</Statistics>}
+                    element={
+                        <Carousel withButtons={true}>{statComponents}</Carousel>
+                    }
                 />
                 <Route path="solcelle" element={<SolarPanelPage />} />
                 <Route path="game" element={<Game />} />
