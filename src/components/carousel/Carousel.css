@@ -32,7 +32,6 @@
 
 .prev {
     left: 2rem;
-    transform: scale(-1);
 }
 
 .refresh {

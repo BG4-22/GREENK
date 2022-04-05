@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { FC, useState } from 'react';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import './Carousel.css';
 
 const variants = {
     enter: (direction: number) => {
