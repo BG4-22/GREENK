@@ -11,7 +11,7 @@ import vaskemaskin from '../../assets/game/vaskemaskin.jpeg';
 import { Box, Heading, Flex, Text, Button, Stack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import AddHighscore from '../../components/game/AddHighscore';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Feedback from '../../components/game/Feedback';
 import GameSlide from '../../components/game/Slide';
 import Counter from '../../components/game/Counter';

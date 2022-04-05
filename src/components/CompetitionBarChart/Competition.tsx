@@ -2,7 +2,7 @@ import { HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
 import Chart from './Chart';
 import Legend from './Legend';
-import YAxisLabel from './YAxixLabel';
+import YAxisLabel from './YAxisLabel';
 
 interface CompetitionProps {
     data: { name: string; value: number }[];
