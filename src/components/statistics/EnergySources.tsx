@@ -118,7 +118,7 @@ const EnergySources: FC = () => {
     return (
         <>
             <Text fontSize={'3rem'} transform={'translateY(2rem)'}>
-                Hvor kommer strømmen fra?
+                Hvor kommer energien fra?
             </Text>
             <HStack pos={'relative'} w={'100%'} h={'100%'}>
                 <VStack justifyContent={'center'} w={'100%'} h={'100%'}>
