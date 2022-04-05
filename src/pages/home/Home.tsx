@@ -33,9 +33,11 @@ const HomeWelcomeComponent: React.FC = () => {
             <Text fontSize={'2.5rem'} fontWeight={'bold'} color="#455B33">
                 GRØNN KIOSK: Nidarvoll Skole
             </Text>
-            <video width="100%" autoPlay loop style={{ borderRadius: '40px' }}>
-                <source src={NidarvollVideo} type="video/mp4"></source>
-            </video>
+            <Box marginTop={'70px'}>
+                <video width="100%" loop style={{ borderRadius: '40px' }}>
+                    <source src={NidarvollVideo} type="video/mp4"></source>
+                </video>
+            </Box>
         </Box>
     );
 };
@@ -53,31 +55,39 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
             <GridItem
                 rowSpan={1}
                 colSpan={1}
+                gridColumn="1"
+                gridRow="1"
                 p={'1rem'}
-                borderRadius={'40px'}
                 display={'flex'}
-                flexDir={'column'}
-                justifyContent={'flex-end'}>
+                alignItems="center">
                 <SolarPanelMascot />
             </GridItem>
-            <GridItem rowSpan={2} colSpan={2} p={'1rem'} borderRadius={'40px'}>
+            <GridItem
+                rowSpan={2}
+                colSpan={2}
+                p={'1rem'}
+                borderRadius={'40px'}
+                gridColumnStart="2">
                 <HomeWelcomeComponent />
             </GridItem>
             <GridItem
                 rowSpan={1}
                 colSpan={1}
+                gridColumn="4"
+                gridRow="1"
                 h={'100%'}
                 minH={'100%'}
                 p={'1rem'}
-                borderRadius={'40px'}
                 display={'flex'}
-                flexDir={'column'}
-                justifyContent={'flex-end'}>
+                alignItems="center"
+            >
                 <Scoreboard />
             </GridItem>
             <GridItem
                 rowSpan={1}
                 colSpan={1}
+                gridColumn="1"
+                gridRow="2"
                 p={'1rem'}
                 borderRadius={'40px'}
                 display={'flex'}
@@ -88,12 +98,12 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
             <GridItem
                 rowSpan={1}
                 colSpan={1}
-                h={'340px'}
+                gridColumn="4"
+                gridRow="2"
+                h={'100%'}
                 p={'1rem'}
                 borderRadius={'40px'}
                 display={'flex'}
-                flexDir={'column'}
-                justifyContent={'flex-start'}
                 textOverflow={'ellipse'}>
                 <FunfactSlideshow funfacts={funfacts} />
             </GridItem>
