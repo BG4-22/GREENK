@@ -106,7 +106,7 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
                             w={'2rem'}
                             bg={colors[index]}
                             marginRight={'2rem'}></Box>
-                        <Box pos={'relative'}>{element.name}</Box>
+                        <Text fontSize={'1.5rem'}>{element.name}</Text>
                     </ListItem>
                 );
             })}
