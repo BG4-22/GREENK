@@ -2,7 +2,8 @@ import { Box, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
 import React, { FC, useState } from 'react';
-import FunfactCard from '../funfact-card';
+
+import FunfactCard from 'components/funfacts/funfact-card';
 
 const variants = {
     enter: (direction: number) => {

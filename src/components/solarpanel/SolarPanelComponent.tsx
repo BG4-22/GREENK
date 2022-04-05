@@ -1,7 +1,8 @@
 import { Box, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-import cloudIcon from '../../assets/cloudIcon.svg';
+
+import cloudIcon from 'assets/images/cloudIcon.svg';
 import './SolarPanelComponent.css';
 import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
