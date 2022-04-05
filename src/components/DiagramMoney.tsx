@@ -34,52 +34,41 @@ const DiagramMoney = () => {
 
     return (
         <>
-            <VStack spacing={90} align="stretch">
-                <Center>
-                    <Box>
-                        <Text fontSize="2xl">
-                            Hvor mye penger har skolen brukt på strøm de siste
-                            månedene?
-                        </Text>
-                    </Box>
-                </Center>
-                <Box>
-                    <Box className="moneyBarWrapper">
-                        <HStack spacing={30.5} alignItems={'flex-end'}>
-                            {moneyBoxHeight()}
-                        </HStack>
-                    </Box>
-                    <Box className="axisWrapper">
-                        <BarChart
-                            width={1400}
-                            height={400}
-                            data={dataJson.EnergyMoneyMonthly}>
-                            <XAxis dataKey="month" tick={{ fontSize: 25 }} />
-                            <YAxis />
-                            <Bar
-                                className="bars"
-                                dataKey="spent"
-                                fill="blue"
-                                fontSize={20}
-                                opacity={0}
-                            />
-                        </BarChart>
-                    </Box>
+            <Text transform={'translateY(4rem)'} fontSize="4xl">
+                Hvor mye penger har skolen brukt på strøm de siste månedene?
+            </Text>
+            <Box>
+                <Box className="moneyBarWrapper">
+                    <HStack spacing={30.5} alignItems={'flex-end'}>
+                        {moneyBoxHeight()}
+                    </HStack>
                 </Box>
-                <Center>
-                    <Box>
-                        <Text>
-                            Dette er i gjennomsnitt .... mindre enn andre skoler
-                            i Trondheim
-                        </Text>
-                        {console.log(moneyToList())}
-                        <Text>
-                            Lær mer om hvorfor skolen bruker mindre strøm om
-                            sommeren:
-                        </Text>
-                    </Box>
-                </Center>
-            </VStack>
+                <Box className="axisWrapper">
+                    <BarChart
+                        width={1400}
+                        height={400}
+                        data={dataJson.EnergyMoneyMonthly}>
+                        <XAxis dataKey="month" tick={{ fontSize: 25 }} />
+                        <YAxis tick={{ fontSize: 18 }} />
+                        <Bar
+                            className="bars"
+                            dataKey="spent"
+                            fill="blue"
+                            fontSize={20}
+                            opacity={0}
+                        />
+                    </BarChart>
+                </Box>
+            </Box>
+            <Box transform={'translateY(-4rem)'}>
+                <Text>
+                    Dette er i gjennomsnitt .... mindre enn andre skoler i
+                    Trondheim
+                </Text>
+                <Text>
+                    Lær mer om hvorfor skolen bruker mindre strøm om sommeren:
+                </Text>
+            </Box>
         </>
     );
 };
