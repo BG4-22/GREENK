@@ -60,10 +60,10 @@ const sources: EnergySourceI[] = [
 ];
 
 const colors: string[] = [
-    'rgba(0, 255, 0, .5)',
-    'rgba(0, 0, 255, .5)',
-    'rgba(0, 255, 255, .5)',
-    'rgba(255, 0, 0, .5)',
+    'rgba(205, 233, 181, .6)',
+    'rgba(253, 251, 185, .6)',
+    'rgba(147, 227, 254, .6)',
+    'rgba(244, 164, 192, .6)',
 ];
 
 interface EnergyElementsPropsI {
@@ -105,6 +105,7 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
                             h={'2rem'}
                             w={'2rem'}
                             bg={colors[index]}
+                            border={'2px solid rgba(0, 0, 0, .8)'}
                             marginRight={'2rem'}></Box>
                         <Text fontSize={'1.5rem'}>{element.name}</Text>
                     </ListItem>
