@@ -2,6 +2,7 @@ import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 import GreenkLogo from '../../assets/greenk-logo.png';
 import NidarvollVideo from '../../assets/Nidarvoll-video.mp4';
+import Competition from '../../components/CompetitionBarChart';
 import FunfactSlideshow from '../../components/funfact-slideshow';
 import Scoreboard from '../../components/Scoreboard';
 import SolarPanelComponent from '../../components/solar-panel-component';
@@ -13,6 +14,11 @@ const funfacts: string[] = [
     'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus. Aenean sollicitudin velit nec vulputate volutpat. Donec metus erat, ultricies non urna et, vestibulum efficitur nisl. Proin venenatis metus enim, non aliquet neque mattis et. Nunc a dui tincidunt, mattis quam vel, condimentum sapien. Nulla cursus, risus in vehicula ultrices, nulla eros vulputate risus, sed porta nulla sapien a lectus.',
     'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. Phasellus eget metus eu mi sodales aliquam. Nullam viverra enim eget velit dapibus malesuada.',
     'Nullam lobortis luctus magna, nec euismod lorem mattis in. Mauris molestie tincidunt lorem vitae tincidunt. Ut molestie lobortis mi, vel condimentum augue cursus vitae.',
+];
+
+const exampleData = [
+    { name: 'Nidarvoll skole', value: 70 },
+    { name: 'Gjennomsnitts- skolen i Trondheim', value: 30 },
 ];
 
 const HomeWelcomeComponent: React.FC = () => {
@@ -92,7 +98,8 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 p={'1rem'}
                 borderRadius={'40px'}
                 bg="rgba(255,255,255,0.2)">
-                <Text>SPILL</Text>
+                {/* <Text>SPILL</Text> */}
+                <Competition data={exampleData} unitOfMeasure="%" />
             </GridItem>
             <GridItem
                 rowSpan={1}
