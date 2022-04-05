@@ -14,17 +14,17 @@
         { "Bispehaugen": [0.61] }
     ],
     "EnergyMoneyMonthly": [
-        { "month": "Mai", "spent": 20000 },
-        { "month": "Jun", "spent": 15000 },
-        { "month": "Jul", "spent": 10000 },
-        { "month": "Aug", "spent": 20000 },
-        { "month": "Sep", "spent": 50000 },
-        { "month": "Okt", "spent": 50000 },
-        { "month": "Nov", "spent": 50000 },
-        { "month": "Des", "spent": 30000 },
-        { "month": "Jan", "spent": 40000 },
-        { "month": "Feb", "spent": 30000 },
-        { "month": "Mar", "spent": 25000 },
-        { "month": "Apr", "spent": 20000 }
+        { "month": "Mai🌸", "spent": 20000 },
+        { "month": "Jun☀️", "spent": 15000 },
+        { "month": "Jul🏖️", "spent": 10000 },
+        { "month": "Aug☀️", "spent": 20000 },
+        { "month": "Sep🌦️", "spent": 50000 },
+        { "month": "Okt🎃", "spent": 50000 },
+        { "month": "Nov☃️", "spent": 50000 },
+        { "month": "Des🎅🏼", "spent": 30000 },
+        { "month": "Jan❄️", "spent": 40000 },
+        { "month": "Feb⛷️", "spent": 30000 },
+        { "month": "Mar🌦️", "spent": 25000 },
+        { "month": "Apr🌼", "spent": 20000 }
     ]
 }

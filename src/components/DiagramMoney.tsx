@@ -54,12 +54,13 @@ const DiagramMoney = () => {
                             width={1400}
                             height={400}
                             data={dataJson.EnergyMoneyMonthly}>
-                            <XAxis dataKey="month" />
+                            <XAxis dataKey="month" tick={{ fontSize: 25 }} />
                             <YAxis />
                             <Bar
                                 className="bars"
                                 dataKey="spent"
                                 fill="blue"
+                                fontSize={20}
                                 opacity={0}
                             />
                         </BarChart>
