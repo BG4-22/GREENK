@@ -16,44 +16,51 @@ const Navbar: React.FC = () => {
             h={'75px'}
             w={'100%'}
             maxW={'50%'}
-            color="white">
-            <Link to={'/energiflyt'}>
-                <Box
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    height={'75px'}
-                    width={'310px'}
-                    borderRadius={'3rem'}>
-                    Energiflyt
-                </Box>
+            color="white"
+            marginTop={'10px'}
+            fontSize={'2rem'}>
+            <Link
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    width: '100%',
+                    background: '#8BA5FF',
+                    borderRadius: '3rem',
+                }}
+                to={'/energiflyt'}>
+                Energiflyt
             </Link>
-            <Link to={'/'}>
-                <Box
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    flexDir={'column'}
-                    height={'100px'}
-                    marginBottom={'25px'}
-                    width={'100px'}
-                    borderRadius={'3rem'}
-                    border={'.1px solid black'}
-                    bg="#8BA5FF">
-                    <FiHome size={30} />
-                    <Text style={{ fontSize: '10px' }}>Home</Text>
-                </Box>
+            <Link
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                    height: '135%',
+                    marginBottom: '25px',
+                    width: '30%',
+                    borderRadius: '3rem',
+                    border: '.1px solid black',
+                    background: '#8BA5FF',
+                }}
+                to={'/'}>
+                <FiHome size={30} />
+                <Text style={{ fontSize: '15px' }}>Hjem</Text>
             </Link>
-            <Link to={'/statistikk'}>
-                <Box
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    height={'75px'}
-                    width={'310px'}
-                    borderRadius={'3rem'}>
-                    Statistikk
-                </Box>
+            <Link
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    width: '100%',
+                    background: '#8BA5FF',
+                    borderRadius: '3rem',
+                }}
+                to={'/statistikk'}>
+                Se Statistikk
             </Link>
         </Box>
     );

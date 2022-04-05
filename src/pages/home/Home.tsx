@@ -23,11 +23,7 @@ const HomeWelcomeComponent: React.FC = () => {
             flexDir={'column'}
             justifyContent={'flex-start'}
             alignItems={'center'}>
-            <Text
-                fontSize={'2.5rem'}
-                fontWeight={'bold'}
-                color="#455B33"
-                margin="30px auto 30px auto">
+            <Text fontSize={'2.5rem'} fontWeight={'bold'} color="#455B33">
                 GRØNN KIOSK: Nidarvoll Skole
             </Text>
             <video width="100%" autoPlay loop style={{ borderRadius: '40px' }}>
@@ -43,7 +39,7 @@ const HomeWelcomeComponent: React.FC = () => {
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
         <Grid
-            h="85vh"
+            h="100%"
             margin={'1rem'}
             templateRows="repeat(2, 1fr)"
             templateColumns="repeat(4, 1fr)"
@@ -64,7 +60,8 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
             <GridItem
                 rowSpan={1}
                 colSpan={1}
-                h={'380px'}
+                h={'100%'}
+                minH={'100%'}
                 p={'1rem'}
                 borderRadius={'40px'}
                 display={'flex'}
@@ -85,12 +82,13 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
             <GridItem
                 rowSpan={1}
                 colSpan={1}
-                h={'380px'}
+                h={'340px'}
                 p={'1rem'}
                 borderRadius={'40px'}
                 display={'flex'}
                 flexDir={'column'}
-                justifyContent={'flex-start'}>
+                justifyContent={'flex-start'}
+                textOverflow={'ellipse'}>
                 <FunfactSlideshow funfacts={funfacts} />
             </GridItem>
         </Grid>
