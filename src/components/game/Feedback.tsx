@@ -1,8 +1,7 @@
-import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
+import { Button, HStack, Image, Text, VStack } from '@chakra-ui/react';
 import netflix from '../../assets/game/netflix.svg';
-import playstation from '../../Assets/game/playstation.png';
-import tesla from '../../Assets/game/tesla.png';
-import { Center } from '@chakra-ui/react';
+import playstation from '../../assets/game/playstation.png';
+import tesla from '../../assets/game/tesla.png';
 import '../../fonts.css';
 
 interface Prompt {
@@ -45,54 +44,55 @@ function Feedback(props: {
         },
     ];
     const comp = comperisons[Math.floor(Math.random() * comperisons.length)];
+
     return (
-        <>
-            <Center fontFamily="Comic Neue">
-                <Flex
-                    justifyContent="center"
-                    display="flex"
-                    flexDirection="column"
-                    width="50%"
-                    height="35%"
-                    backgroundColor="white"
-                    position= 'absolute'
-                    top='20%'
-                    borderRadius='50px'>
-                    <Text fontSize="xl" margin={10} marginTop="5%">
-                        {prompts.biggest.description} bruker {difference}kWh mer
-                        i måneden enn {prompts.smallest.description}!
-                    </Text>
-                    <Flex justifyContent={'center'}>
-                        <Text display="flex" flexDirection="row" justifyContent="center" alignItems={'center'} fontSize="xl">
-                            Det tilsvarer å {comp.verb}{' '}
-                            {
-                                <Text color="#8BA5FF" fontSize="2xl" margin={3}>
-                                    {' '}
-                                    {(difference / comp.kWh).toFixed(0)}{' '}
-                                    {comp.timerange}{' '}
-                                </Text>
-                            }{' '}
-                            {comp.noun}
+        <VStack
+            fontFamily="Comic Neue"
+            w="50%"
+            mx="auto"
+            spacing="14"
+            mt="10vh">
+            <VStack
+                bgColor="white"
+                w="100%"
+                p="3rem"
+                borderRadius="50px"
+                spacing="20">
+                <Text fontSize="xl">
+                    {prompts.biggest.description} bruker {difference}kWh mer i
+                    måneden enn {prompts.smallest.description}!
+                </Text>
+
+                <HStack>
+                    <Text fontSize="xl">
+                        Det tilsvarer å {comp.verb}{' '}
+                        <Text as="span" color="#8BA5FF" fontSize="2xl">
+                            {(difference / comp.kWh).toFixed(0)}{' '}
+                            {comp.timerange}{' '}
                         </Text>
-                        <Image src={comp.img} width="100px" objectFit="contain" marginLeft="15px"/>
-                    </Flex>
-                </Flex>
-                <Button
-                    position="absolute"
-                    color="white"
-                    background='#F6DC97'
-                    boxShadow='0px 4px 4px rgba(0, 0, 0, 0.25)'
-                    borderRadius='50px'
-                    fontSize='25px'
-                    width="15%"
-                    height="8%"
-                    top="60%"
-                    size="lg"
-                    onClick={props.updateHighscore}>
-                    Neste
-                </Button>
-            </Center>
-        </>
+                        {comp.noun}
+                    </Text>
+                    <Image
+                        src={comp.img}
+                        width="100px"
+                        objectFit="contain"
+                        marginLeft="15px"
+                    />
+                </HStack>
+            </VStack>
+            <Button
+                color="white"
+                background="#F6DC97"
+                boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+                borderRadius="50px"
+                fontSize="25px"
+                width="160px"
+                height="62px"
+                size="lg"
+                onClick={props.updateHighscore}>
+                Neste
+            </Button>
+        </VStack>
     );
 }
 
