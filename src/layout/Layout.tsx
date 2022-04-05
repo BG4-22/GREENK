@@ -1,7 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
-import Navbar2 from './Navbar2';
 
 const Layout: React.FC = () => {
     return (
@@ -12,7 +11,7 @@ const Layout: React.FC = () => {
 		the child routes we defined above. */}
                 <Outlet />
             </Box>
-            <Navbar/>
+            <Navbar />
         </>
     );
 };
