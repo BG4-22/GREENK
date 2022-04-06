@@ -1,5 +1,5 @@
 import getSolarPanelEffect from 'api/getSolarPanelEffect';
-import Maskot from '../../assets/Maskot.svg';
+import Maskot from '../../assets/images/Maskot.svg';
 import SolarPanelComponent from './SolarPanelComponent';
 
 const SolarPanelMascot = () => {
