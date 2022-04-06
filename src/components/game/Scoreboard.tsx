@@ -1,4 +1,4 @@
-import { Button, List, ListItem } from '@chakra-ui/react';
+import { List, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import { getHighscores } from '../../services/game';
@@ -19,7 +19,7 @@ function Scoreboard() {
         <ListItem
             w={'65%'}
             margin={'auto'}
-            fontSize={'1.1rem'}
+            fontSize={'1rem'}
             listStylePos={'inside'}
             textAlign={'left'}
             key={`$highscore-${i + 1}`}>
@@ -32,7 +32,7 @@ function Scoreboard() {
             <List margin={'0 auto 1rem auto'} w={'100%'}>
                 {listItems}
             </List>
-            <GameButton/>
+            <GameButton />
         </FunfactCard>
     );
 }

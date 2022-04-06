@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    transform: translateY(-0.8rem);
     border-radius: 100px;
     border: 0.1px solid black;
     background-color: #8ba5ff;

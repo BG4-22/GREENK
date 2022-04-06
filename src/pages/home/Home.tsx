@@ -12,10 +12,10 @@ export interface HomePropsI {}
 
 const funfacts: string[] = [
     'Så mye energi solcellene produserer nå tilsvarer å lade 10 iphones!',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est erat, dignissim in sem nec, elementum porta neque. Vivamus eu quam quis nisi tincidunt feugiat. Vivamus viverra eros nec sagittis fermentum.',
-    'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus. Aenean sollicitudin velit nec vulputate volutpat. Donec metus erat, ultricies non urna et, vestibulum efficitur nisl. Proin venenatis metus enim, non aliquet neque mattis et. Nunc a dui tincidunt, mattis quam vel, condimentum sapien. Nulla cursus, risus in vehicula ultrices, nulla eros vulputate risus, sed porta nulla sapien a lectus.',
-    'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. Phasellus eget metus eu mi sodales aliquam. Nullam viverra enim eget velit dapibus malesuada.',
-    'Nullam lobortis luctus magna, nec euismod lorem mattis in. Mauris molestie tincidunt lorem vitae tincidunt. Ut molestie lobortis mi, vel condimentum augue cursus vitae.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est erat, dignissim in sem nec, elementum porta neque. ',
+    'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus.',
+    'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. ',
+    'Nullam lobortis luctus magna, nec euismod lorem mattis in. Mauris molestie tincidunt lorem vitae tincidunt. ',
 ];
 
 const exampleData = [
@@ -30,7 +30,7 @@ const HomeWelcomeComponent: React.FC = () => {
             flexDir={'column'}
             justifyContent={'flex-start'}
             alignItems={'center'}>
-            <Text fontSize={'2.5rem'} fontWeight={'bold'} color="#455B33">
+            <Text fontSize={'2.5vw'} fontWeight={'bold'} color="#455B33">
                 GRØNN KIOSK: Nidarvoll Skole
             </Text>
             <Box marginTop={'20px'}>
@@ -77,10 +77,10 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 gridRow="1"
                 h={'100%'}
                 minH={'100%'}
+                marginTop={'30px'}
                 p={'1rem'}
                 display={'flex'}
-                alignItems="center"
-            >
+                alignItems="center">
                 <Scoreboard />
             </GridItem>
             <GridItem
@@ -102,6 +102,7 @@ const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
                 gridRow="2"
                 h={'100%'}
                 p={'1rem'}
+                marginTop={'30px'}
                 borderRadius={'40px'}
                 display={'flex'}
                 textOverflow={'ellipse'}>
