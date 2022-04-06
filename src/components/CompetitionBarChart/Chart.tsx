@@ -10,7 +10,7 @@ interface ChartProps {
 }
 
 const Chart: React.FC<ChartProps> = ({ items, unitOfMeasure }) => {
-    const largestValue = useMemo(() => items.sort((a, b) => b - a)[0], [items]);
+    const largestValue = useMemo(() => Math.max(...items), [items]);
     const relativeHeights = useMemo(
         () => items.map((item) => (item / largestValue) * 100 + '%'),
         [items, largestValue]
