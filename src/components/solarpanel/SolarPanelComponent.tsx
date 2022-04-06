@@ -139,7 +139,7 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
     );
 };
 
-const SolarPanelComponent2: React.FC = () => {
+const SolarPanelComponent: React.FC = () => {
     const [weather, setWeather] = useState<Weather>({
         sun: true,
         cloud: true,
@@ -150,4 +150,4 @@ const SolarPanelComponent2: React.FC = () => {
     return <Weather {...weather} />;
 };
 
-export default SolarPanelComponent2;
+export default SolarPanelComponent;

@@ -33,7 +33,7 @@ const HomeWelcomeComponent: React.FC = () => {
             <Text fontSize={'2.5rem'} fontWeight={'bold'} color="#455B33">
                 GRØNN KIOSK: Nidarvoll Skole
             </Text>
-            <Box marginTop={'70px'}>
+            <Box marginTop={'20px'}>
                 <video width="100%" loop style={{ borderRadius: '40px' }}>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
