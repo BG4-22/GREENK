@@ -6,6 +6,8 @@ import Diagram from './components/statistics/Diagram';
 import EnergySources from './components/statistics/EnergySources';
 import HeatPump from './components/statistics/HeatPump';
 import OverallCon from './components/statistics/OverallCon';
+import SolarPanel from './components/statistics/SolarPanel';
+
 import { Layout } from './layout';
 import { Home } from './pages';
 import EnergyFlow from './pages/energyflow/EnergyFlow';
@@ -19,6 +21,7 @@ function App() {
         <Diagram />,
         <OverallCon />,
         <HeatPump />,
+        <SolarPanel />,
         <EnergySources />,
         <DiagramMoney />,
     ].sort(() => (Math.random() > 0.5 ? 1 : -1));
