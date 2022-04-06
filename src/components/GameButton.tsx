@@ -1,11 +1,18 @@
-import { Button, ButtonGroup, Stack } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 function GameButton() {
     return (
-        <Button borderRadius="40px" bg="#FFDD85" size="lg">
-            <Link to={'/game'}>Spill nå!</Link>
-        </Button>
+        <Link style={{display: 'flex', height: '50px' }} to={'/game'}>
+            <Button
+                borderRadius="40px"
+                borderBottom={'3px solid grey'}
+                bg="#FFDD85"
+                height={'100%'}
+                size="lg">
+                Spill nå!
+            </Button>
+        </Link>
     );
 }
 

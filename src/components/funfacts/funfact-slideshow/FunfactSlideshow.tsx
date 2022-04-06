@@ -10,16 +10,16 @@ const FunfactSlideshow: React.FC<FunfactSlideshowPropsI> = ({ funfacts }) => {
     const elements = funfacts.map((el: string, i: number) => {
         return (
             <Text
-                textAlign={'left'}
+                textAlign={'center'}
                 width={'90%'}
                 margin={'auto'}
-                fontSize={'1.5rem'}>
+                fontSize={'1.1rem'}>
                 {el}
             </Text>
         );
     });
     return (
-        <FunfactCard title={'Viste du at?'}>
+        <FunfactCard title={'Visste du at?'}>
             <Carousel>{elements}</Carousel>
         </FunfactCard>
     );
