@@ -47,7 +47,6 @@ function Feedback(props: {
 
     return (
         <VStack
-            fontFamily="Comic Neue"
             w="50%"
             mx="auto"
             spacing="14"

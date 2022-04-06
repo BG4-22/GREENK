@@ -25,7 +25,7 @@ function AddHighscore(props: { points: number }) {
     }
     return (
         <>
-            <Center fontFamily="Comic Neue">
+            <Center>
                 <Box
                     width="50%"
                     height="35%"
