@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 
-import dataJson from '../../assets/MockData.json';
+import dataJson from 'assets/MockData.json';
 import getSolarPanelEffect from 'api/getSolarPanelEffect';
 
-import SolarPanelPhone from '../../assets/stats/SolarPanelPhone.png';
-import NoBattery from '../../assets/stats/battery/noBattery.png';
-import LowBattery from '../../assets/stats/battery/lowBattery.png';
-import TwoBattery from '../../assets/stats/battery/twoBattery.png';
-import ThreeBattery from '../../assets/stats/battery/threeBattery.png';
-import FullBattery from '../../assets/stats/battery/fullBattery.png';
+import SolarPanelPhone from 'assets/stats/solarPanelPhone.png';
+import NoBattery from 'assets/stats/battery/noBattery.png';
+import LowBattery from 'assets/stats/battery/lowBattery.png';
+import TwoBattery from 'assets/stats/battery/twoBattery.png';
+import ThreeBattery from 'assets/stats/battery/threeBattery.png';
+import FullBattery from 'assets/stats/battery/fullBattery.png';
 
 const SolarPanel = () => {
     //Phone: 2 kwh
