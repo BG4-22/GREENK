@@ -1,5 +1,5 @@
 .sun-container {
-    top: 100%;
+    top: 95%;
     /* left: 50%; */
     /* width: 800px; */
     height: fit-content;
@@ -7,6 +7,8 @@
     margin: 0 -100%;
     padding: 0 100%;
     display: flex;
+    transform: rotate(90deg);
+    user-select: none;
 }
 
 .sun {
@@ -29,4 +31,24 @@
     position: relative;
     top: -15%;
     margin: 0 auto;
+    z-index: 1;
+}
+
+#weatherBox {
+    display: flex;
+    position: absolute;
+    margin: 0px 100px 100px 150px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 2em;
+    height: 20rem;
+    width: 10rem;
+}
+
+#mascot {
+    width: 80%;
+    margin-bottom: 60px;
+    z-index: 2;
 }
