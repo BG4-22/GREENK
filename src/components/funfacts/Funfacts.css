@@ -1,0 +1,32 @@
+#funfactStack {
+    border-radius: 2rem;
+    background: #fffcfb;
+    width: 80%;
+    height: 280px;
+    padding-bottom: 0.9rem;
+    overflow: hidden;
+}
+
+#funfactTitle {
+    width: 90%;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.5vw;
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 2px solid #9dbe98;
+}
+#funfactText {
+    max-height: 100%;
+    display: flex;
+    font-size: 10vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#textElement {
+    text-align: center;
+    width: 90%;
+    font-size: 1.1rem;
+}
