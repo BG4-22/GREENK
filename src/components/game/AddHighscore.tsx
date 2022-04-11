@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { submitScore } from '../../services/game';
 import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
+import './Game.css';
 
 function AddHighscore(props: { points: number }) {
     const [value, setValue] = useState('');
@@ -26,15 +27,7 @@ function AddHighscore(props: { points: number }) {
     return (
         <>
             <Center>
-                <Box
-                    width="50%"
-                    height="35%"
-                    backgroundColor="white"
-                    style={{
-                        position: 'absolute',
-                        top: '20%',
-                        borderRadius: '50px',
-                    }}>
+                <Box id={'addHighScoreBox'}>
                     <Center>
                         <Stack>
                             <Text fontSize="xl" margin={10}>
@@ -68,15 +61,7 @@ function AddHighscore(props: { points: number }) {
                                     </Center>
                                     <Center>
                                         <Button
-                                            style={{
-                                                color: 'white',
-                                                background: '#F6DC97',
-                                                boxShadow:
-                                                    '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                                                borderRadius: '50px',
-                                            }}
-                                            marginTop="5%"
-                                            width="30%"
+                                            id={'addButton'}
                                             size="lg"
                                             onClick={
                                                 lagtTil ? () => {} : leggTil
@@ -102,20 +87,7 @@ function AddHighscore(props: { points: number }) {
                         </Stack>
                     </Center>
                 </Box>
-                <Button
-                    position="absolute"
-                    style={{
-                        color: 'white',
-                        background: '#F6DC97',
-                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                        borderRadius: '50px',
-                        fontSize: '25px',
-                    }}
-                    width="15%"
-                    height="8%"
-                    top="60%"
-                    size="lg"
-                    onClick={navigateTo}>
+                <Button id={'continueButton'} size="lg" onClick={navigateTo}>
                     Gå videre
                 </Button>
             </Center>
