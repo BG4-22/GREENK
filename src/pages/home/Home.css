@@ -52,3 +52,20 @@
     display: flex;
     text-overflow: ellipsis;
 }
+
+#welcomeBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#greenK {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #455b33;
+}
+
+video {
+    border-radius: 40px;
+}

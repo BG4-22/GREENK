@@ -26,20 +26,10 @@ const exampleData = [
 
 const HomeWelcomeComponent: React.FC = () => {
     return (
-        <Box
-            display={'flex'}
-            flexDir={'column'}
-            justifyContent={'flex-start'}
-            alignItems={'center'}>
-            <Text fontSize={'2.5vw'} fontWeight={'bold'} color="#455B33">
-                GRØNN KIOSK: Nidarvoll Skole
-            </Text>
+        <Box id={'welcomeBox'}>
+            <Text id={'greenK'}>GRØNN KIOSK: Nidarvoll Skole</Text>
             <Box marginTop={'20px'}>
-                <video
-                    width="100%"
-                    loop
-                    autoPlay
-                    style={{ borderRadius: '40px' }}>
+                <video width="100%" loop autoPlay>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
             </Box>
