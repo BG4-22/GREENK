@@ -1,3 +1,4 @@
+import { Box, Text } from '@chakra-ui/react';
 import getSolarPanelEffect from 'api/getSolarPanelEffect';
 import Maskot from '../../assets/Maskot.svg';
 import SolarPanelComponent from './SolarPanelComponent';
@@ -19,6 +20,11 @@ const SolarPanelMascot = () => {
                     zIndex: '2',
                 }}
             />
+            <Box id={'solarInfo'}>
+                <Text>
+                    Solcellene genererer <Text>{effect}</Text> kWh nå :)
+                </Text>
+            </Box>
         </>
     );
 };
