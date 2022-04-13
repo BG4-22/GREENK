@@ -3,6 +3,7 @@ import netflix from '../../assets/game/netflix.svg';
 import playstation from '../../assets/game/playstation.png';
 import tesla from '../../assets/game/tesla.png';
 import '../../fonts.css';
+import './Game.css';
 
 interface Prompt {
     description: string;
@@ -46,18 +47,8 @@ function Feedback(props: {
     const comp = comperisons[Math.floor(Math.random() * comperisons.length)];
 
     return (
-        <VStack
-            fontFamily="Comic Neue"
-            w="50%"
-            mx="auto"
-            spacing="14"
-            mt="10vh">
-            <VStack
-                bgColor="white"
-                w="100%"
-                p="3rem"
-                borderRadius="50px"
-                spacing="20">
+        <VStack id={'feedbackStack'} spacing="14">
+            <VStack id={'differenceStack'} spacing="20">
                 <Text fontSize="xl">
                     {prompts.biggest.description} bruker {difference}kWh mer i
                     måneden enn {prompts.smallest.description}!
@@ -72,22 +63,11 @@ function Feedback(props: {
                         </Text>
                         {comp.noun}
                     </Text>
-                    <Image
-                        src={comp.img}
-                        width="100px"
-                        objectFit="contain"
-                        marginLeft="15px"
-                    />
+                    <Image id={'compImg'} src={comp.img} />
                 </HStack>
             </VStack>
             <Button
-                color="white"
-                background="#F6DC97"
-                boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-                borderRadius="50px"
-                fontSize="25px"
-                width="160px"
-                height="62px"
+                id={'nextButton'}
                 size="lg"
                 onClick={props.updateHighscore}>
                 Neste

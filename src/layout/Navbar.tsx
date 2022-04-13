@@ -5,21 +5,7 @@ import './Navbar.css';
 
 const Navbar: React.FC = () => {
     return (
-        <Box
-            aria-label="navigation"
-            display="flex"
-            justify-content="space-around"
-            alignItems="center"
-            position="relative"
-            bg="#8BA5FF"
-            borderRadius={70}
-            borderBottom={'3px solid grey'}
-            h={'75px'}
-            w={'100%'}
-            maxW={'50%'}
-            color="white"
-            marginTop={'10px'}
-            fontSize={'1.5rem'}>
+        <Box id={'navBar'} aria-label="navigation">
             <Link className="link" to={'/energiflyt'}>
                 Energiflyt
             </Link>
