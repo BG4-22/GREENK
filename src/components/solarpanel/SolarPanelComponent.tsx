@@ -108,28 +108,16 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
 
     const msg = 'Nidarvoll generer ' + effect + ' KWh nå :)';
     return (
-        <Box
-            display={'flex'}
-            pos={'absolute'}
-            margin={'0px 100px 100px 150px'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            flexDir={'row'}
-            overflow={'hidden'}
-            borderRadius={'2em'}
-            h={'18rem'}
-            w={'15rem'}>
+        <Box id={'weatherBox'}>
             <motion.img
                 className={'cloud'}
                 src={cloudIcon}
                 animate={cloudAnime}
                 variants={cloudVariants}
-                style={{ zIndex: '1' }}
             />
             <motion.div
                 className={'sun-container'}
                 animate={sunAnime}
-                style={{ transform: 'rotate(90deg)', userSelect: 'none' }}
                 variants={sunVariants}>
                 <motion.div className={'sun'} />
             </motion.div>

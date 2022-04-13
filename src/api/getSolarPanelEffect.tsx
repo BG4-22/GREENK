@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const getSolarPanelEffect = () => {
-    const [effect, setEffect] = useState(145);
+    const [effect, setEffect] = useState(11.56);
 
     const updateEffect = () => {
         let plusOrMinus = Math.random() < 0.5;

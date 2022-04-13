@@ -7,6 +7,7 @@ import Scoreboard from '../../components/game/Scoreboard';
 import SolarPanelComponent from '../../components/solarpanel';
 import Competition from '../../components/CompetitionBarChart';
 import SolarPanelMascot from 'components/solarpanel/SolarPanelMascot';
+import './Home.css';
 
 export interface HomePropsI {}
 
@@ -25,16 +26,10 @@ const exampleData = [
 
 const HomeWelcomeComponent: React.FC = () => {
     return (
-        <Box
-            display={'flex'}
-            flexDir={'column'}
-            justifyContent={'flex-start'}
-            alignItems={'center'}>
-            <Text fontSize={'2.5vw'} fontWeight={'bold'} color="#455B33">
-                GRØNN KIOSK: Nidarvoll Skole
-            </Text>
+        <Box id={'welcomeBox'}>
+            <Text id={'greenK'}>GRØNN KIOSK: Nidarvoll Skole</Text>
             <Box marginTop={'20px'}>
-                <video width="100%" loop style={{ borderRadius: '40px' }}>
+                <video width="100%" loop autoPlay>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
             </Box>
@@ -46,66 +41,20 @@ const HomeWelcomeComponent: React.FC = () => {
 
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
-        <Grid
-            h="100%"
-            margin={'1rem'}
-            templateRows="repeat(2, 1fr)"
-            templateColumns="repeat(4, 1fr)"
-            gap={25}>
-            <GridItem
-                rowSpan={1}
-                colSpan={1}
-                gridColumn="1"
-                gridRow="1"
-                p={'1rem'}
-                display={'flex'}
-                alignItems="center">
+        <Grid id="grid">
+            <GridItem id={'item1'} rowSpan={1} colSpan={1}>
                 <SolarPanelMascot />
             </GridItem>
-            <GridItem
-                rowSpan={2}
-                colSpan={2}
-                p={'1rem'}
-                borderRadius={'40px'}
-                gridColumnStart="2">
+            <GridItem id={'item2'} rowSpan={2} colSpan={2}>
                 <HomeWelcomeComponent />
             </GridItem>
-            <GridItem
-                rowSpan={1}
-                colSpan={1}
-                gridColumn="4"
-                gridRow="1"
-                h={'100%'}
-                minH={'100%'}
-                marginTop={'30px'}
-                p={'1rem'}
-                display={'flex'}
-                alignItems="center">
+            <GridItem id={'item3'} rowSpan={1} colSpan={1}>
                 <Scoreboard />
             </GridItem>
-            <GridItem
-                rowSpan={1}
-                colSpan={1}
-                gridColumn="1"
-                gridRow="2"
-                p={'1rem'}
-                borderRadius={'40px'}
-                display={'flex'}
-                flexDir={'column'}
-                justifyContent={'flex-start'}>
+            <GridItem id={'item4'} rowSpan={1} colSpan={1}>
                 <Competition data={exampleData} unitOfMeasure="%" />
             </GridItem>
-            <GridItem
-                rowSpan={1}
-                colSpan={1}
-                gridColumn="4"
-                gridRow="2"
-                h={'100%'}
-                p={'1rem'}
-                marginTop={'30px'}
-                borderRadius={'40px'}
-                display={'flex'}
-                textOverflow={'ellipse'}>
+            <GridItem id={'item5'} rowSpan={1} colSpan={1}>
                 <FunfactSlideshow funfacts={funfacts} />
             </GridItem>
         </Grid>
