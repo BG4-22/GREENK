@@ -25,7 +25,7 @@ const DiagramMoney = () => {
         moneyToList().forEach(
             (item) =>
                 boxList.push(
-                    <Box className="moneyBar" height={item / 200}></Box>
+                    <Box className="moneyBar" height={item / 166.66}></Box>
                 ) //Prøve på noe modelo så lappene blir hele
         );
 
@@ -39,7 +39,7 @@ const DiagramMoney = () => {
             </Text>
             <Box>
                 <Box className="moneyBarWrapper">
-                    <HStack spacing={30.5} alignItems={'flex-end'}>
+                    <HStack spacing={41} alignItems={'flex-end'}>
                         {moneyBoxHeight()}
                     </HStack>
                 </Box>
