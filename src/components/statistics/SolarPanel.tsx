@@ -19,6 +19,7 @@ const SolarPanel = () => {
 
     const [batteryPic, setBatteryPic] = useState(NoBattery);
 
+    //Calculates amout of phones that can be charged
     const phoneCount = Math.floor(getSolarPanelEffect() / phoneEnergy);
 
     //List with battery pictures
