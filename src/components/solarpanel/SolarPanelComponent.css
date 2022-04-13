@@ -52,3 +52,23 @@
     margin-bottom: 60px;
     z-index: 2;
 }
+
+#solarInfo {
+    z-index: 999;
+    margin: -130px;
+    width: 130px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#solarInfo > p {
+    text-align: center;
+    font-size: 80%;
+}
+
+#solarInfo > p > p {
+    color: green;
+    font-size: large;
+}
