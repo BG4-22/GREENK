@@ -14,7 +14,7 @@ const SolarPanelMascot = () => {
             <img src={Mascot} alt="Mascot" id={'mascot'} />
             <Box id={'solarInfo'}>
                 <Text>
-                    Solcellene genererer <Text>{effect}</Text> kWh nå :)
+                    Solcellene genererer <Text>{effect}</Text> kWh nå!!
                 </Text>
             </Box>
         </>

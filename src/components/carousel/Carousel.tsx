@@ -65,6 +65,8 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
                         top: '0px',
                         height: '90%',
                         width: '90%',
+                        marginLeft: '10%',
+                        marginRight: '10%',
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: '#fff',

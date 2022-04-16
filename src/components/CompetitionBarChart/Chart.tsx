@@ -2,7 +2,13 @@ import { HStack } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
 import Bar from './Bar';
 
-const colors: string[] = ['#BDD9AD', '#FFDD85', '#FF8585', '#8BA5FF'];
+const colors: string[] = [
+    '#597344',
+    '#FF8585',
+    '#8BA5FF',
+    '#FFDD85',
+    '#BDD9AD',
+];
 
 interface ChartProps {
     items: number[];

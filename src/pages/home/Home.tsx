@@ -12,11 +12,13 @@ import './Home.css';
 export interface HomePropsI {}
 
 const funfacts: string[] = [
-    'Så mye energi solcellene produserer nå tilsvarer å lade 10 iphones!',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est erat, dignissim in sem nec, elementum porta neque. ',
-    'Morbi feugiat, mi sed imperdiet tincidunt, sem augue commodo massa, sit amet sollicitudin velit mi vel tellus.',
-    'Fusce erat lacus, posuere quis sem pulvinar, ornare congue nisi. Fusce pretium facilisis elit eu blandit. ',
-    'Nullam lobortis luctus magna, nec euismod lorem mattis in. Mauris molestie tincidunt lorem vitae tincidunt. ',
+    'Hvis man samler all energi som sola lager på 60 minutter, er det nok energi for hele verden i ett år.',
+    'En vindmølle lager nok energi til 1400 hus.  ',
+    'Elektrisitet i stømledningene går like fort som lyset.',
+    'Fugler kan sitte på en strømledning uten å få støt, men hvis de er borti to samtidig lager de en sluttet krets og kan dø.',
+    'Fornybar energi kommer fra kilder som vind, sol, vann og jordvarme. Nidarvoll skole bruker 80% fornybar energi ',
+    'Mesteparten av energien vi bruker i verden i dag kommer fra ikke fornybar energi som kull, olje og gass. ',
+    'Ikke fornybar energi forurenser masse og verdens kull, olje og gass brukes opp!',
 ];
 
 const exampleData = [
