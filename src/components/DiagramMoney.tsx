@@ -34,18 +34,18 @@ const DiagramMoney = () => {
 
     return (
         <>
-            <Text transform={'translateY(4rem)'} fontSize="4xl">
+            <Text transform={'translateY(7rem)'} fontSize="4xl">
                 Hvor mye penger har skolen brukt på strøm de siste månedene?
             </Text>
             <Box>
-                <Box className="moneyBarWrapper">
-                    <HStack spacing={41} alignItems={'flex-end'}>
+                <Box className="moneyBarWrapper" marginLeft={40}>
+                    <HStack spacing={23} alignItems={'flex-end'}>
                         {moneyBoxHeight()}
                     </HStack>
                 </Box>
-                <Box className="axisWrapper">
+                <Box className="axisWrapper" marginLeft={40}>
                     <BarChart
-                        width={1400}
+                        width={1200}
                         height={400}
                         data={dataJson.EnergyMoneyMonthly}>
                         <XAxis dataKey="month" tick={{ fontSize: 25 }} />
@@ -60,13 +60,14 @@ const DiagramMoney = () => {
                     </BarChart>
                 </Box>
             </Box>
-            <Box transform={'translateY(-4rem)'}>
+            <Box transform={'translateY(-8rem)'}>
                 <Text>
-                    Dette er i gjennomsnitt .... mindre enn andre skoler i
-                    Trondheim
+                    Dette er i gjennomsnitt 10 000 kr mindre enn andre skoler i
+                    Trondheim.
                 </Text>
                 <Text>
                     Lær mer om hvorfor skolen bruker mindre strøm om sommeren:
+                    ...
                 </Text>
             </Box>
         </>
