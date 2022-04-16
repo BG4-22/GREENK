@@ -15,8 +15,8 @@ const Heatpump = () => {
             <Box>
                 <Center>
                     <Text fontSize="2xl">
-                        Akkurat nå (Forrige time?) produserer varmepumpene nok
-                        energi til at du kan dusje i
+                        Forrige time produserte varmepumpene nok energi til at
+                        du kan dusje i
                     </Text>
                     <Text fontSize="4xl" color="#FF8585" margin={3}>
                         {calcHours}

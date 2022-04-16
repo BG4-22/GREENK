@@ -58,11 +58,10 @@ const OverallCon = () => {
 
     return (
         <>
-            <Box>
+            <Box marginBottom={50}>
                 <Center>
                     <Text fontSize="2xl">
-                        {' '}
-                        Forrige time brukte Nidarvoll skole{' '}
+                        Forrige time brukte Nidarvoll skole
                     </Text>
                     <Text fontSize="4xl" color="#FF8585" margin={3}>
                         {consPerHour}
@@ -89,24 +88,35 @@ const OverallCon = () => {
                     </Flex>
                 </Center>
                 <Center>
-                    <Flex width={700}>
+                    <Flex width={700} marginRight={50} position="absolute">
                         <Box>
                             <Text className="funfact">
-                                Å ha på en lyspære i {LightHour} timer!
+                                Å ha på en lyspære i{' '}
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {LightHour}{' '}
+                                </Text>
+                                timer!
                             </Text>
                         </Box>
                         <Spacer></Spacer>
                         <Box>
                             <Text className="funfact">
-                                Å spille playstation i {playstationHour} timer!
+                                Å spille playstation i{' '}
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {' '}
+                                    {playstationHour}{' '}
+                                </Text>{' '}
+                                timer!
                             </Text>
                         </Box>
                         <Spacer />
                         <Box>
                             <Text className="funfact">
-                                Å varme opp vann til å lage
-                                {hotChocoCount}
-                                kopper med kakao!
+                                Å varme opp vann til
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {hotChocoCount}
+                                </Text>
+                                kakaoer!
                             </Text>
                         </Box>
                     </Flex>

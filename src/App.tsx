@@ -18,12 +18,10 @@ import SolarPanelPage from './pages/solarpanel';
 function App() {
     //Set the components that will be shown on the Statistics site
     const statComponents = [
-        <Diagram />,
         <OverallCon />,
         <HeatPump />,
         <SolarPanel />,
         <EnergySources />,
-        <DiagramMoney />,
     ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return (
         <Routes>
