@@ -1,7 +1,8 @@
 import { Box, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-import cloudIcon from '../../assets/cloudIcon.svg';
+
+import cloudIcon from 'assets/images/cloudIcon.svg';
 import './SolarPanelComponent.css';
 import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
@@ -107,18 +108,7 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
 
     const msg = 'Nidarvoll generer ' + effect + ' KWh nå :)';
     return (
-        <Box
-            display={'flex'}
-            pos={'relative'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            flexDir={'column'}
-            overflow={'hidden'}
-            borderRadius={'2em'}
-            margin={'3rem auto auto auto'}
-            h={'18rem'}
-            w={'18rem'}
-            border={'2px solid green'}>
+        <Box id={'weatherBox'}>
             <motion.img
                 className={'cloud'}
                 src={cloudIcon}
@@ -128,12 +118,11 @@ const Weather: React.FC<Weather> = (weather: Weather) => {
             <motion.div
                 className={'sun-container'}
                 animate={sunAnime}
-                style={{ transform: 'rotate(90deg)', userSelect: 'none' }}
                 variants={sunVariants}>
                 <motion.div className={'sun'} />
             </motion.div>
 
-            <Text margin={'auto auto 2rem auto'}>{msg}</Text>
+            {/*             <Text margin={0}>{msg}</Text> */}
         </Box>
     );
 };

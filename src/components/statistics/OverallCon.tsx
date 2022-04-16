@@ -1,16 +1,20 @@
-import { Box, Center, Text, Image, Flex, Spacer } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Box, Center, Flex, Image, Spacer, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import dataJson from '../../assets/MockData.json';
+import HotChocolate from '../../assets/stats/hotChocolate.png';
 import Light from '../../assets/stats/light.png';
 import Playstation from '../../assets/stats/playstation.png';
-import HotChocolate from '../../assets/stats/hotChocolate.png';
-import dataJson from '../../assets/MockData.json';
 import './statistics.css';
 
 const OverallCon = () => {
-    //
+    //Variable for light consumption
     const lightConsump = 0.06;
+
+    //Variable for playstation consumption
     //playstation: 0.31 kwh pr hour
     const playstationConsump: number = 0.31;
+
+    //Variable for hot water consumption
     //https://www.quora.com/How-much-kW-of-energy-is-needed-to-boil-1kg-of-water-Assume-at-1atm-and-at-room-temperature-Then-how-much-would-it-be-for-2-3-and-4kg-of-water-Is-there-a-linear-relationship
     //1.33952 kW for 1kg water
     //1.33952/5 = 0.267904 per 2dl
@@ -21,6 +25,7 @@ const OverallCon = () => {
     const [playstationHour, setPlaystationHour] = useState<number>(0);
     const [hotChocoCount, setHotChocoCount] = useState<number>(0);
 
+    //Gets data for overall consumption every 10 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             getData();
@@ -28,6 +33,7 @@ const OverallCon = () => {
         return () => clearInterval(interval);
     }, []);
 
+    //Calculates hours and counts based on the overall consumption
     useEffect(() => {
         const calcLight = Math.floor(consPerHour / lightConsump);
         setLightHour(calcLight);
@@ -38,7 +44,10 @@ const OverallCon = () => {
         setHotChocoCount(calcHotChoco);
     }, [consPerHour]);
 
+    //Index to get data at different hours from the mock data
     let index = 0;
+
+    //Fetches data from the different hours
     function getData() {
         index++;
         if (index > 23) {
@@ -49,11 +58,10 @@ const OverallCon = () => {
 
     return (
         <>
-            <Box>
+            <Box marginBottom={50}>
                 <Center>
                     <Text fontSize="2xl">
-                        {' '}
-                        Forrige time brukte Nidarvoll skole{' '}
+                        Forrige time brukte Nidarvoll skole
                     </Text>
                     <Text fontSize="4xl" color="#FF8585" margin={3}>
                         {consPerHour}
@@ -80,24 +88,35 @@ const OverallCon = () => {
                     </Flex>
                 </Center>
                 <Center>
-                    <Flex width={700}>
+                    <Flex width={700} marginRight={50} position="absolute">
                         <Box>
                             <Text className="funfact">
-                                Å ha på en lyspære i {LightHour} timer!
+                                Å ha på en lyspære i{' '}
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {LightHour}{' '}
+                                </Text>
+                                timer!
                             </Text>
                         </Box>
                         <Spacer></Spacer>
                         <Box>
                             <Text className="funfact">
-                                Å spille playstation i {playstationHour} timer!
+                                Å spille playstation i{' '}
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {' '}
+                                    {playstationHour}{' '}
+                                </Text>{' '}
+                                timer!
                             </Text>
                         </Box>
                         <Spacer />
                         <Box>
                             <Text className="funfact">
-                                Å varme opp vann til å lage
-                                {hotChocoCount}
-                                kopper med kakao!
+                                Å varme opp vann til
+                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                    {hotChocoCount}
+                                </Text>
+                                kakaoer!
                             </Text>
                         </Box>
                     </Flex>

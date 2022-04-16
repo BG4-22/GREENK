@@ -6,7 +6,8 @@ import Diagram from './components/statistics/Diagram';
 import EnergySources from './components/statistics/EnergySources';
 import HeatPump from './components/statistics/HeatPump';
 import OverallCon from './components/statistics/OverallCon';
-//import DiagramMoney from './components/statistics/DiagramMoney';
+import SolarPanel from './components/statistics/SolarPanel';
+
 import { Layout } from './layout';
 import { Home } from './pages';
 import EnergyFlow from './pages/energyflow/EnergyFlow';
@@ -17,13 +18,12 @@ import SolarPanelPage from './pages/solarpanel';
 function App() {
     //Set the components that will be shown on the Statistics site
     const statComponents = [
-        <DiagramMoney />,
-        <Diagram />,
         <OverallCon />,
         <HeatPump />,
+        <SolarPanel />,
         <EnergySources />,
-    ];
-    //, <DiagramMoney />
+        <DiagramMoney />,
+    ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return (
         <Routes>
             <Route path="/" element={<Layout />}>

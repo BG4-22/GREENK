@@ -7,7 +7,6 @@
 html,
 body,
 #root {
-    min-height: 100vh;
     width: 100vw;
     height: 100%;
     margin: 0;
@@ -26,7 +25,8 @@ body {
 }
 
 #root {
-    background: #c3e0b5;
+    background: #b9d6ac;
+    /*#9dbe*/
     display: flex;
     align-items: center;
     justify-content: center;

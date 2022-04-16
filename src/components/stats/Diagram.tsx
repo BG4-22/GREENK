@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD:src/components/stats/Diagram.tsx
+import { AreaChart, Area, YAxis, XAxis } from 'recharts';
+=======
 import { Area, AreaChart, XAxis, YAxis } from 'recharts';
+>>>>>>> 949df4697e18350f266e383dad68ec9602dd47e4:src/components/statistics/Diagram.tsx
 
 class Diagram extends React.Component {
     //Endre data når vi får data fra Mikael

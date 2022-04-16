@@ -1,4 +1,5 @@
-import { Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
+import './Game.css';
 
 interface Prompt {
     description: string;
@@ -13,58 +14,24 @@ function GameSlide(props: {
 }) {
     return (
         <>
-            <div
-                style={{
-                    minWidth: '100%',
-                    height: '100%',
-                    minHeight: '100%',
-                    position: 'relative',
-                }}>
-                <Image
-                    width="100%"
-                    height="70vh"
-                    objectFit="cover"
-                    src={props.prompt.img}
-                    p={0}
-                    opacity={0.7}
-                />
-                <Text
-                    style={{
-                        position: 'absolute',
-                        top: '30%',
-                        width: '100%',
-                        textAlign: 'center',
-                        color: 'white',
-                        textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-                        fontSize: 40,
-                    }}>
+            <Box id={'gameSlideContainer'}>
+                <Image id={'gameSlideImage'} src={props.prompt.img} />
+                <Text id={'slideDescription'} className={'slideText'}>
                     {props.prompt.description}
                 </Text>
                 <Text
-                    top={props.hasAnswered && !props.next ? '43%' : '40%'}
-                    style={{
-                        position: 'absolute',
-                        width: '100%',
-                        textAlign: 'center',
-                        color: 'white',
-                        textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-                        fontSize: 20,
-                    }}>
+                    id={'onAveragePrompt'}
+                    className={'slideText'}
+                    top={props.hasAnswered && !props.next ? '43%' : '40%'}>
                     bruker i snitt
                 </Text>
                 <Text
-                    top={props.hasAnswered && !props.next ? '65%' : '68%'}
-                    style={{
-                        position: 'absolute',
-                        width: '100%',
-                        textAlign: 'center',
-                        color: 'white',
-                        textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-                        fontSize: 20,
-                    }}>
+                    className={'slideText'}
+                    id={'monthlyPrompt'}
+                    top={props.hasAnswered && !props.next ? '65%' : '68%'}>
                     i måneden
                 </Text>
-            </div>
+            </Box>
         </>
     );
 }

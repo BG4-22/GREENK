@@ -2,6 +2,8 @@ import { Box, HStack } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { FC, useState } from 'react';
+import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import './Carousel.css';
 
 const variants = {
     enter: (direction: number) => {
@@ -44,7 +46,6 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
     const index = wrap(0, children.length, page);
     return (
         <HStack
-            // className={'statsWrapper'}
             margin={'auto'}
             position={'relative'}
             h={'100%'}
@@ -54,44 +55,36 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
             alignItems={'center'}
             flexGrow={1}>
             {withButtons && (
-                <Box className="prev" onClick={() => paginate(-1)}>
-                    {'‣'}
+                <Box className={'prev'}>
+                    <IoMdArrowDropleft onClick={() => paginate(-1)} />
                 </Box>
             )}
-            <Box
-                textAlign={'left'}
-                width={'90%'}
-                margin={'auto'}
-                fontSize={'1.5rem'}
-                visibility={'hidden'}>
-                {children[index]}
-            </Box>
-            <AnimatePresence initial={false} custom={direction}>
+            <AnimatePresence initial={false} custom={direction} exitBeforeEnter>
                 <motion.div
                     style={{
-                        position: 'absolute',
                         top: '0px',
                         height: '90%',
                         width: '90%',
+                        marginLeft: '10%',
+                        marginRight: '10%',
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: '#fff',
                         borderRadius: '40px',
-                        margin: '4rem 0 0 0',
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}
                     key={page}
                     custom={direction}
                     variants={variants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
+                    initial={'enter'}
+                    animate={'center'}
+                    exit={'exit'}
                     transition={{
                         x: { type: 'spring', stiffness: 300, damping: 30 },
                         opacity: { duration: 0.2 },
                     }}
-                    drag="x"
+                    drag={'x'}
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
                     onDragEnd={(e, { offset, velocity }) => {
@@ -106,8 +99,8 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
                 </motion.div>
             </AnimatePresence>
             {withButtons && (
-                <Box className="next" onClick={() => paginate(1)}>
-                    {'‣'}
+                <Box className={'next'}>
+                    <IoMdArrowDropright onClick={() => paginate(1)} />
                 </Box>
             )}
         </HStack>
