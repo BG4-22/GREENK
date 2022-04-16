@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import '../pages/stats/stats.css';
+
 import money from '../assets/stats/money.png';
 import { Text, Flex, Center, Box, VStack, HStack } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
