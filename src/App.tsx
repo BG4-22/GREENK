@@ -11,25 +11,14 @@ import { Home } from 'pages';
 import EnergyFlow from 'pages/EnergyFlow';
 import Game from 'pages/Game';
 import Highscores from 'pages/Highscores';
+import Statistics from 'pages/Statistics';
 
 function App() {
-    //Set the components that will be shown on the Statistics site
-    const statComponents = [
-        <OverallCon />,
-        <HeatPump />,
-        <SolarPanel />,
-        <EnergySources />,
-    ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route
-                    path="statistikk"
-                    element={
-                        <Carousel withButtons={true}>{statComponents}</Carousel>
-                    }
-                />
+                <Route path="statistikk" element={<Statistics />} />
                 <Route path="spill" element={<Game />} />
                 <Route path="highscore" element={<Highscores />} />
                 <Route path="energiflyt" element={<EnergyFlow />} />
