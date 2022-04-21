@@ -1,20 +1,20 @@
 import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import belysning from '../../assets/game/belysning.jpeg';
-import kjøleskap from '../../assets/game/kjøleskap.jpeg';
-import klimaanlegg from '../../assets/game/klimaanlegg.png';
-import mikrobølgeovn from '../../assets/game/mikrobølgeovn.jpeg';
-import oppvaskmaskin from '../../assets/game/oppvaskmaskin.jpeg';
-import stekeovn from '../../assets/game/stekeovn.jpeg';
-import tv from '../../assets/game/tv.jpeg';
-import tørketrommel from '../../assets/game/tørketrommel.jpeg';
-import varmtvann from '../../assets/game/varmtvann.jpeg';
-import vaskemaskin from '../../assets/game/vaskemaskin.jpeg';
-import AddHighscore from '../../components/game/AddHighscore';
-import Counter from '../../components/game/Counter';
-import Feedback from '../../components/game/Feedback';
-import GameSlide from '../../components/game/Slide';
+import belysning from 'assets/game/belysning.jpeg';
+import kjøleskap from 'assets/game/kjøleskap.jpeg';
+import klimaanlegg from 'assets/game/klimaanlegg.png';
+import mikrobølgeovn from 'assets/game/mikrobølgeovn.jpeg';
+import oppvaskmaskin from 'assets/game/oppvaskmaskin.jpeg';
+import stekeovn from 'assets/game/stekeovn.jpeg';
+import tv from 'assets/game/tv.jpeg';
+import tørketrommel from 'assets/game/tørketrommel.jpeg';
+import varmtvann from 'assets/game/varmtvann.jpeg';
+import vaskemaskin from 'assets/game/vaskemaskin.jpeg';
+import AddHighscore from 'components/game/AddHighscore';
+import Counter from 'components/game/Counter';
+import Feedback from 'components/game/Feedback';
+import GameSlide from 'components/game/Slide';
 
 interface Prompt {
     description: string;
