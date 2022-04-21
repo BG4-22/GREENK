@@ -1,16 +1,16 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Carousel from './components/carousel/Carousel';
-import EnergySources from './components/statistics/EnergySources';
-import HeatPump from './components/statistics/HeatPump';
-import OverallCon from './components/statistics/OverallCon';
-import SolarPanel from './components/statistics/SolarPanel';
+import Carousel from 'components/carousel/Carousel';
+import EnergySources from 'components/statistics/EnergySources';
+import HeatPump from 'components/statistics/HeatPump';
+import OverallCon from 'components/statistics/OverallCon';
+import SolarPanel from 'components/statistics/SolarPanel';
 
-import { Layout } from './layout';
-import { Home } from './pages';
-import EnergyFlow from './pages/energyflow/EnergyFlow';
-import Game from './pages/game/Game';
-import Highscores from './pages/highscores/Highscores';
+import { Layout } from 'layout';
+import { Home } from 'pages';
+import EnergyFlow from 'pages/EnergyFlow';
+import Game from 'pages/Game';
+import Highscores from 'pages/Highscores';
 
 function App() {
     //Set the components that will be shown on the Statistics site
