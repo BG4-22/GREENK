@@ -1,0 +1,39 @@
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #8ba5ff;
+    border-radius: 3rem;
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    background-color: #8ba5ff;
+    border-radius: 100px;
+    height: 75px;
+    width: 100%;
+    max-width: 50%;
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+#navBar,
+.homeButton {
+    border-bottom: 3px solid grey;
+}
+
+.homeButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-0.8rem);
+    border-radius: 100px;
+    background-color: #8ba5ff;
+}

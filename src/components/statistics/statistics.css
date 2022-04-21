@@ -1,0 +1,12 @@
+.funfact {
+    justify-content: center;
+    align-content: center;
+    width: 100px;
+    text-align: center;
+}
+
+#battery {
+    position: absolute;
+    left: 918px;
+    top: 310px;
+}

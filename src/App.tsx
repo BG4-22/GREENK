@@ -1,44 +1,30 @@
-import { useState } from 'react';
-import logo from './logo.svg';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Carousel from 'components/carousel/Carousel';
+import EnergySources from 'components/statistics/EnergySources';
+import HeatPump from 'components/statistics/HeatPump';
+import OverallCon from 'components/statistics/OverallCon';
+import SolarPanel from 'components/statistics/SolarPanel';
+
+import { Layout } from 'layout';
+import { Home } from 'pages';
+import EnergyFlow from 'pages/EnergyFlow';
+import Game from 'pages/Game';
+import Highscores from 'pages/Highscores';
+import Statistics from 'pages/Statistics';
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Hello Vite + React!</p>
-                <p>
-                    <button
-                        type="button"
-                        onClick={() => setCount((count) => count + 1)}>
-                        count is: {count}
-                    </button>
-                </p>
-                <p>
-                    Edit <code>App.tsx</code> and save to test HMR updates.
-                </p>
-                <p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Learn React
-                    </a>
-                    {' | '}
-                    <a
-                        className="App-link"
-                        href="https://vitejs.dev/guide/features.html"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Vite Docs
-                    </a>
-                </p>
-            </header>
-        </div>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="statistikk" element={<Statistics />} />
+                <Route path="spill" element={<Game />} />
+                <Route path="highscore" element={<Highscores />} />
+                <Route path="energiflyt" element={<EnergyFlow />} />
+                <Route path="*" element={<Navigate replace to={'/'} />} />
+            </Route>
+        </Routes>
     );
 }
 
