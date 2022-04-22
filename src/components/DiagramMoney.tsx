@@ -1,8 +1,6 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 
-import money from '../assets/stats/money.png';
-import { Text, Flex, Center, Box, VStack, HStack } from '@chakra-ui/react';
+import { Box, HStack, Text } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
 import dataJson from '../assets/MockData.json';
 
@@ -11,26 +9,13 @@ const DiagramMoney = () => {
 
     useEffect(() => {}, []);
 
-    function moneyToList() {
-        const moneyList: number[] = [];
-        dataJson.EnergyMoneyMonthly.forEach((month) =>
-            moneyList.push(month.spent)
-        );
-        return moneyList;
-    }
+    const moneyToList = () =>
+        dataJson.EnergyMoneyMonthly.map((month) => month.spent);
 
-    function moneyBoxHeight() {
-        const boxList: JSX.Element[] = [];
-
-        moneyToList().forEach(
-            (item) =>
-                boxList.push(
-                    <Box className="moneyBar" height={item / 166.66}></Box>
-                ) //Prøve på noe modelo så lappene blir hele
-        );
-
-        return boxList;
-    }
+    const moneyBoxHeight: () => JSX.Element[] = () =>
+        moneyToList().map((item) => (
+            <Box className="moneyBar" height={item / 166.66}></Box>
+        ));
 
     return (
         <>
