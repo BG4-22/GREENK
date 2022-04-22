@@ -1,4 +1,5 @@
 import Carousel from 'components/carousel/Carousel';
+import DiagramMoney from 'components/DiagramMoney';
 import EnergySources from 'components/statistics/EnergySources';
 import HeatPump from 'components/statistics/HeatPump';
 import OverallCon from 'components/statistics/OverallCon';
@@ -10,6 +11,7 @@ const Statistics: React.FC = () => {
         <OverallCon />,
         <HeatPump />,
         <SolarPanel />,
+        <DiagramMoney />,
         <EnergySources />,
     ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return <Carousel withButtons>{statComponents}</Carousel>;
