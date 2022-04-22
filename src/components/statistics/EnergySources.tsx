@@ -122,7 +122,7 @@ const EnergySources: FC = () => {
                 fontSize={'3rem'}
                 textAlign={'center'}
                 transform={'translateY(2rem)'}>
-                Hvor kommer energien fra?
+                Hvor energien kommer fra
             </Text>
             <HStack pos={'relative'} w={'100%'} h={'100%'}>
                 <VStack justifyContent={'center'} w={'100%'} h={'100%'}>
@@ -145,8 +145,8 @@ const EnergySources: FC = () => {
                 fontSize={'1.5rem'}
                 textAlign={'center'}
                 transform={'translateY(-2rem)'}>
-                Til sammenlikning får den gjennomsnittlige skolen kjøpe 60% av
-                strømmen sin
+                {/* Til sammenlikning får den gjennomsnittlige skolen kjøpe 60% av
+                strømmen sin */}
             </Text>
         </>
     );
