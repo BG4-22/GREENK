@@ -1,12 +1,9 @@
-import { Box, Button, Flex, Heading, Img, Spacer, Text, VStack } from '@chakra-ui/react';
-import netflix from '../assets/game/netflix.svg';
-import is from '../assets/game/is.jpg';
+import { Box, Flex, Heading, Spacer, Text, VStack } from '@chakra-ui/react';
 import { Center } from '@chakra-ui/react';
 import { ListItem, List, OrderedList } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { HighscoreEntry } from '../../types/game';
-import { getHighscores } from '../../services/game';
+import { HighscoreEntry } from 'types/game';
+import { getHighscores } from 'services/game';
 
 function Highscores() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
@@ -21,14 +18,22 @@ function Highscores() {
     const listItemsNames = highscores.map((item, i) => (
         <ListItem
             key={`$name-${i + 1}`}
-            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '', wordSpacing: "1vW", whiteSpace: "nowrap", paddingLeft: "5vw"}}>
+            style={{
+                backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '',
+                wordSpacing: '1vW',
+                whiteSpace: 'nowrap',
+                paddingLeft: '5vw',
+            }}>
             {`${i + 1}. ${item.name}`}
         </ListItem>
     ));
     const listItemsScores = highscores.map((item, i) => (
         <ListItem
             key={`$highscore-${i + 1}`}
-            style={{backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '', paddingLeft: "2vw"}}>
+            style={{
+                backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '',
+                paddingLeft: '2vw',
+            }}>
             {`${item.score}`}
         </ListItem>
     ));
@@ -54,7 +59,7 @@ function Highscores() {
                     </Flex>
                 </Center>
             </Box>
-            <Spacer/>
+            <Spacer />
             <Box bg="#FF8585" width="30%" borderRadius={20} margin={5}>
                 <Center>
                     <Text fontSize="xl" color="white" margin={3}>
