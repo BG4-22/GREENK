@@ -20,7 +20,7 @@ const DiagramMoney = () => {
     return (
         <>
             <Text transform={'translateY(7rem)'} fontSize="4xl">
-                Hvor mye penger har skolen brukt på strøm de siste månedene?
+                Penger skolen har brukt på strøm
             </Text>
             <Box>
                 <Box className="moneyBarWrapper" marginLeft={40}>
