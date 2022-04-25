@@ -1,8 +1,3 @@
-.sun-container,
-.sun-container * {
-    outline: 1px solid red !important;
-}
-
 .sun-container {
     top: 35%;
     right: 25%;
