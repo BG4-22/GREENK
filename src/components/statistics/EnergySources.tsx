@@ -8,62 +8,26 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import dataJson from '../../assets/MockData.json';
 import Skole from '../../assets/stats/skole.svg';
-
-type IsPositive<N extends number> = `${N}` extends `-${string}` ? false : true;
-
-type IsInteger<N extends number> = `${N}` extends `${string}.${string}`
-    ? never
-    : `${N}` extends `-${string}.${string}`
-    ? never
-    : number;
-
-type IsValid<N extends number> = IsPositive<N> extends true
-    ? IsInteger<N> extends number
-        ? number
-        : never
-    : never;
-
-type PositiveNumber<
-    N extends number,
-    T extends number[] = []
-> = T['length'] extends N ? T[number] : PositiveNumber<N, [...T, T['length']]>;
-
-type Range<N1 extends IsValid<N1>, N2 extends IsValid<N2>> = Exclude<
-    PositiveNumber<N2>,
-    PositiveNumber<N1>
->;
+import './statistics.css';
+const data = dataJson['EnergySources'];
 
 interface EnergySourceI {
     name: string;
-    amount: Range<0, 100>;
+    amount: number;
 }
-
-const sources: EnergySourceI[] = [
-    {
-        name: 'Resirkulasjon av varmeenergi',
-        amount: 15,
-    },
-    {
-        name: 'Solceller',
-        amount: 25,
-    },
-    {
-        name: 'Varmepumpe',
-        amount: 50,
-    },
-    {
-        name: 'Annet',
-        amount: 10,
-    },
-];
 
 const colors: string[] = [
     'rgba(205, 233, 181, .6)',
     'rgba(253, 251, 185, .6)',
     'rgba(147, 227, 254, .6)',
     'rgba(244, 164, 192, .6)',
+    'rgba(148, 148, 205, .6)',
+    'rgba(239, 139,136, .6)',
+    'rgba(76, 164, 244, .6)',
+    'rgba(168, 152, 151, .6)',
 ];
 
 interface EnergyElementsPropsI {
@@ -73,14 +37,25 @@ interface EnergyElementsPropsI {
 const EnergyElements: FC<EnergyElementsPropsI> = ({
     elements,
 }): JSX.Element => {
+    const total = elements
+        .map((value: EnergySourceI, index: number) => value.amount)
+        .reduce((a: number, b: number) => a + b);
     return (
         <>
             {elements.map((element, index) => {
+                const value: number = Math.ceil((element.amount / total) * 100);
                 return (
-                    <Box pos={'relative'} h={'100%'} w={`${element.amount}%`}>
+                    <Box
+                        className={'animate-width'}
+                        pos={'relative'}
+                        h={'100%'}
+                        w={`${value}%`}>
                         <Box h={'90%'} bg={colors[index]} />
-                        <Text textAlign={'center'} fontSize={'1.8rem'}>
-                            {`${element.amount}%`}
+                        <Text
+                            textAlign={'center'}
+                            fontSize={'1.8rem'}
+                            whiteSpace={'nowrap'}>
+                            {`${value}%`}
                         </Text>
                     </Box>
                 );
@@ -116,6 +91,25 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
 };
 
 const EnergySources: FC = () => {
+    //Index to get data at different hours from the mock data
+    const [index, setIndex] = useState<number>(0);
+
+    const increment = () => {
+        if (data[index + 1]) {
+            setIndex(index + 1);
+        } else {
+            setIndex(0);
+        }
+    };
+
+    //Calculates hours and counts based on the overall consumption
+    useEffect(() => {
+        const interval = setInterval(() => {
+            increment();
+        }, 10 * 1000);
+        return () => clearInterval(interval);
+    }, [index]);
+
     return (
         <>
             <Text
@@ -134,11 +128,11 @@ const EnergySources: FC = () => {
                         <Image src={Skole} alt={'Nidarvoll skole'} w={'62%'} />
                     </Flex>
                     <HStack spacing={0} h={'75%'} w={'75%'}>
-                        <EnergyElements elements={sources} />
+                        <EnergyElements elements={data[index]} />
                     </HStack>
                 </VStack>
                 <HStack w={'60%'}>
-                    <EnergyInfoList elements={sources} />
+                    <EnergyInfoList elements={data[index]} />
                 </HStack>
             </HStack>
             <Text
