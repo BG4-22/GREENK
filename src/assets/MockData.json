@@ -112,5 +112,61 @@
 			"month": "Apr🌼",
 			"spent": 20000
 		}
+	],
+	"EnergySources": [
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 15
+			},
+			{
+				"name": "Solceller",
+				"amount": 25
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 50
+			},
+			{
+				"name": "Annet",
+				"amount": 10
+			}
+		],
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 13
+			},
+			{
+				"name": "Solceller",
+				"amount": 27
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 46
+			},
+			{
+				"name": "Annet",
+				"amount": 4
+			}
+		],
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 17
+			},
+			{
+				"name": "Solceller",
+				"amount": 23
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 55
+			},
+			{
+				"name": "Annet",
+				"amount": 6
+			}
+		]
 	]
 }

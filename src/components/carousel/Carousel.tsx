@@ -33,17 +33,21 @@ const swipePower = (offset: number, velocity: number) => {
 };
 // inspired by: https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?file=/src/Example.tsx:1598-2616
 
+type ButtonType = 'small-buttons' | 'default' | undefined;
+
 export interface CarouselPropsI {
     children: JSX.Element[];
-    withButtons?: boolean;
+    navButtons?: ButtonType;
 }
 
-const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
+const Carousel: FC<CarouselPropsI> = ({ children, navButtons }) => {
     const [[page, direction], setPage] = useState([0, 0]);
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection]);
     };
     const index = wrap(0, children.length, page);
+    const withButtons = navButtons != undefined;
+    console.log(navButtons);
     return (
         <HStack
             margin={'auto'}
@@ -55,7 +59,7 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
             alignItems={'center'}
             flexGrow={1}>
             {withButtons && (
-                <Box className={'prev'}>
+                <Box className={`prev ${navButtons}`}>
                     <IoMdArrowDropleft onClick={() => paginate(-1)} />
                 </Box>
             )}
@@ -99,7 +103,7 @@ const Carousel: FC<CarouselPropsI> = ({ children, withButtons = false }) => {
                 </motion.div>
             </AnimatePresence>
             {withButtons && (
-                <Box className={'next'}>
+                <Box className={`next ${navButtons}`}>
                     <IoMdArrowDropright onClick={() => paginate(1)} />
                 </Box>
             )}
