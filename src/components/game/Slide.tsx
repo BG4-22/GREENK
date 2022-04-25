@@ -1,11 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import './Game.css';
-
-interface Prompt {
-    description: string;
-    img: string;
-    kWh: number;
-}
+import { Prompt } from './Prompt';
 
 function GameSlide(props: {
     prompt: Prompt;
