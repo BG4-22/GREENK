@@ -1,15 +1,172 @@
 {
-    "EnergyComsumptionByHour": [
-        48.6, 50.6, 53.6, 58.5, 60.6, 57.6, 127.6, 154.6, 156.6, 147.9, 138.9,
-        134.5, 122.6, 142.5, 125.4, 104.9, 92.6, 62.4, 49.3, 53.7, 50.4, 53.5,
-        52.4, 43.7
-    ],
-    "SolarPanelProductionByHour": [
-        0, 0, 0, 0, 0, 0, 0.04, 1.22, 3.73, 10.66, 7.9, 11.56, 8.66, 3.72, 5.23,
-        6.09, 2.95, 1.49, 0.09, 0, 0, 0, 0, 0
-    ],
-    "NonDistrictHeatingPercentage": [
-        { "Lade": [0.38] },
-        { "Bispehaugen": [0.61] }
-    ]
+	"EnergyComsumptionByHour": [
+		48.6,
+		50.6,
+		53.6,
+		58.5,
+		60.6,
+		57.6,
+		127.6,
+		154.6,
+		156.6,
+		147.9,
+		138.9,
+		134.5,
+		122.6,
+		142.5,
+		125.4,
+		104.9,
+		92.6,
+		62.4,
+		49.3,
+		53.7,
+		50.4,
+		53.5,
+		52.4,
+		43.7
+	],
+	"SolarPanelProductionByHour": [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0.04,
+		1.22,
+		3.73,
+		10.66,
+		7.9,
+		11.56,
+		8.66,
+		3.72,
+		5.23,
+		6.09,
+		2.95,
+		1.49,
+		0.09,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"NonDistrictHeatingPercentage": [
+		{
+			"Lade": [
+				0.38
+			]
+		},
+		{
+			"Bispehaugen": [
+				0.61
+			]
+		}
+	],
+	"EnergyMoneyMonthly": [
+		{
+			"month": "Mai🌸",
+			"spent": 20000
+		},
+		{
+			"month": "Jun☀️",
+			"spent": 15000
+		},
+		{
+			"month": "Jul🏖️",
+			"spent": 10000
+		},
+		{
+			"month": "Aug☀️",
+			"spent": 20000
+		},
+		{
+			"month": "Sep🌦️",
+			"spent": 50000
+		},
+		{
+			"month": "Okt🎃",
+			"spent": 50000
+		},
+		{
+			"month": "Nov☃️",
+			"spent": 50000
+		},
+		{
+			"month": "Des🎅🏼",
+			"spent": 30000
+		},
+		{
+			"month": "Jan❄️",
+			"spent": 40000
+		},
+		{
+			"month": "Feb⛷️",
+			"spent": 30000
+		},
+		{
+			"month": "Mar🌦️",
+			"spent": 25000
+		},
+		{
+			"month": "Apr🌼",
+			"spent": 20000
+		}
+	],
+	"EnergySources": [
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 15
+			},
+			{
+				"name": "Solceller",
+				"amount": 25
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 50
+			},
+			{
+				"name": "Annet",
+				"amount": 10
+			}
+		],
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 13
+			},
+			{
+				"name": "Solceller",
+				"amount": 27
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 46
+			},
+			{
+				"name": "Annet",
+				"amount": 4
+			}
+		],
+		[
+			{
+				"name": "Resirkulasjon av varmeenergi",
+				"amount": 17
+			},
+			{
+				"name": "Solceller",
+				"amount": 23
+			},
+			{
+				"name": "Varmepumpe",
+				"amount": 55
+			},
+			{
+				"name": "Annet",
+				"amount": 6
+			}
+		]
+	]
 }

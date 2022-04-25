@@ -1,18 +1,16 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
-import React from 'react';
-import GreenkLogo from 'assets/images/greenk-logo.png';
 import NidarvollVideo from 'assets/videos/Nidarvoll-video.mp4';
-import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
-import Scoreboard from '../../components/game/Scoreboard';
-import SolarPanelComponent from '../../components/solarpanel';
-import Competition from '../../components/CompetitionBarChart';
+import Competition from 'components/competition';
+import FunfactSlideshow from 'components/funfacts/funfact-slideshow';
+import Scoreboard from 'components/game/Scoreboard';
 import SolarPanelMascot from 'components/solarpanel/SolarPanelMascot';
+import React from 'react';
 import './Home.css';
 
 export interface HomePropsI {}
 
 const funfacts: string[] = [
-    'Hvis man samler all energi som sola lager på 60 minutter, er det nok energi for hele verden i ett år.',
+    'Hvis man samler all solenergi som treffer jorda på 60 minutter, er det nok energi for hele verden i ett år.',
     'En vindmølle lager nok energi til 1400 hus.  ',
     'Elektrisitet i stømledningene går like fort som lyset.',
     'Fugler kan sitte på en strømledning uten å få støt, men hvis de er borti to samtidig lager de en sluttet krets og kan dø.',
