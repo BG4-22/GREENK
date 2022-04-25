@@ -180,15 +180,29 @@ function Game() {
                     borderRadius="50px"
                     margin="auto">
                     {!gameOver && !highscore ? (
-                        <Box
-                            position="absolute"
-                            zIndex="1"
-                            width="5px"
-                            height="68%"
-                            bg="white"
-                            color="black"
-                            left="50%"
-                            transform="translateX(-50%)"></Box>
+                        <>
+                            <Box
+                                position="absolute"
+                                zIndex="1"
+                                width="5px"
+                                height="68%"
+                                bg="white"
+                                color="black"
+                                left="50%"
+                                transform="translateX(-50%)"></Box>
+                            <Text
+                                fontWeight="bold"
+                                fontSize="20px"
+                                //textShadow='0px 0px 10px rgba(0, 0, 0, 0.2)'
+                                position="absolute"
+                                zIndex="1"
+                                color="white"
+                                top="8%"
+                                left="85%"
+                                transform="translateX(-50%)">
+                                Score: {points}
+                            </Text>
+                        </>
                     ) : (
                         <></>
                     )}

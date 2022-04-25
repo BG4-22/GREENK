@@ -25,7 +25,7 @@ function Scoreboard() {
     return (
         <FunfactCard title={'Ukens highscores'}>
             <List id={'highScoreList'}>{listItems}</List>
-            <GameButton />
+            <GameButton>Spill nå!</GameButton>
         </FunfactCard>
     );
 }
