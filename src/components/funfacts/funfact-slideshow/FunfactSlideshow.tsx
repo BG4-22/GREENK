@@ -13,7 +13,9 @@ const FunfactSlideshow: React.FC<FunfactSlideshowPropsI> = ({ funfacts }) => {
     });
     return (
         <FunfactCard title={'Visste du at?'}>
-            <Carousel navButtons={'small-buttons'}>{elements}</Carousel>
+            <Carousel withAutomaticSliding navButtons={'small-buttons'}>
+                {elements}
+            </Carousel>
         </FunfactCard>
     );
 };
