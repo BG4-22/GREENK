@@ -5,11 +5,9 @@ import { SolarPanelComponentPropsI } from './SolarPanelComponent';
 const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
     const width = 1101;
     const height = 992;
-    // 1101 992
     return (
         <svg
-            width={'100%'}
-            height={'100%'}
+            id={'mascot'}
             viewBox={`0 0 ${width} ${height}`}
             fill="none"
             xmlns="http://www.w3.org/2000/svg">

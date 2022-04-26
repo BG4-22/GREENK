@@ -9,10 +9,6 @@
     height: 235px;
 }
 
-#dlkjfldskjf > * {
-    outline: 0.1px solid red !important;
-}
-
 .sun {
     user-select: none;
     position: relative;
@@ -20,8 +16,8 @@
     align-self: flex-start;
     width: 160px;
     height: 160px;
-    margin-left: 8rem;
-    margin-top: 4rem;
+    margin-left: 9rem;
+    transform: scale(0.8);
 }
 
 .cloud {
@@ -29,41 +25,21 @@
     z-index: 1;
 }
 
-#weatherBox {
-    max-width: 400px;
+#weather-box {
+    z-index: 0;
     display: flex;
-    position: relative;
+    position: absolute;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     overflow: hidden;
-    height: 60%;
+    height: 40%;
     width: 100%;
-    margin-top: 5rem;
     top: 0px;
     right: 0px;
 }
 
 #mascot {
     width: 100%;
-}
-
-#solarInfo {
-    z-index: 999;
-    margin: -130px;
-    width: 130px;
-    height: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#solarInfo > p {
-    text-align: center;
-    font-size: 80%;
-}
-
-#solarInfo > p > p {
-    color: green;
-    font-size: large;
+    height: 70%;
 }
