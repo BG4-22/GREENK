@@ -1,5 +1,5 @@
 .sun-container {
-    top: 35%;
+    top: 55%;
     right: 25%;
     width: 150px;
     position: absolute;
@@ -7,6 +7,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     height: 235px;
+}
+
+#dlkjfldskjf > * {
+    outline: 0.1px solid red !important;
 }
 
 .sun {
@@ -22,27 +26,26 @@
 
 .cloud {
     position: absolute;
-    top: 7%;
     z-index: 1;
 }
 
 #weatherBox {
+    max-width: 400px;
     display: flex;
-    position: absolute;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     overflow: hidden;
     height: 60%;
-    width: 20rem;
+    width: 100%;
+    margin-top: 5rem;
     top: 0px;
     right: 0px;
 }
 
 #mascot {
-    width: 80%;
-    margin-bottom: 60px;
-    z-index: 2;
+    width: 100%;
 }
 
 #solarInfo {

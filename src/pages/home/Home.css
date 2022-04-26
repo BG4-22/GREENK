@@ -13,6 +13,7 @@
 #item5 {
     position: relative;
     padding: 1rem;
+    overflow: hidden;
 }
 
 #item1 {

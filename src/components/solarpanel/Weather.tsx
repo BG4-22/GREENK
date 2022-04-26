@@ -66,19 +66,19 @@ const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
     };
     const cloudVariants = {
         cloudIn: {
-            x: ['-200%', '0%'],
+            x: ['-200%', '10%'],
             transition: {
                 duration: 1,
             },
         },
         cloudOut: {
-            x: ['0%', '200%'],
+            x: ['10%', '200%'],
             transition: {
                 duration: 1,
             },
         },
         cloud: {
-            x: ['0%', '0%'],
+            x: ['10%', '10%'],
             transition: {
                 duration: 0,
             },
@@ -102,7 +102,7 @@ const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
         weather
     );
     return (
-        <Box id={'weatherBox'} w={'100%'} h={'100%'}>
+        <Box id={'weatherBox'}>
             <motion.img
                 className={'cloud'}
                 src={cloudIcon}

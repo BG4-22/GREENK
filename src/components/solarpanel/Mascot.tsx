@@ -8,7 +8,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
     // 1101 992
     return (
         <svg
-            width={'80%'}
+            width={'100%'}
             height={'100%'}
             viewBox={`0 0 ${width} ${height}`}
             fill="none"
@@ -1537,7 +1537,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
             />
             <text
                 className="mascot-text"
-                x="550"
+                x="535"
                 y="550"
                 width="300"
                 height="469"
@@ -1547,7 +1547,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
             </text>
             <text
                 className="mascot-text kwh-value"
-                x="700"
+                x="750"
                 y="660"
                 width="300"
                 height="469"
@@ -1557,7 +1557,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
             </text>
             <text
                 className="mascot-text"
-                x="700"
+                x="680"
                 y="750"
                 width="300"
                 height="469"

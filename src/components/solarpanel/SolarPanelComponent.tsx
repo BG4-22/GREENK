@@ -2,8 +2,8 @@ import { Box } from '@chakra-ui/react';
 import getSolarPanelEffect from 'api/getSolarPanelEffect';
 import React, { useEffect, useState } from 'react';
 import Mascot from '../solarpanel/Mascot';
-import './SolarPanelComponent.css';
 import Weather, { WeatherPropsI } from './Weather';
+import './SolarPanelComponent.css';
 
 export interface SolarPanelComponentPropsI {
     effect: number;
@@ -25,7 +25,14 @@ const SolarPanelComponent: React.FC = () => {
     }, [effect]);
 
     return (
-        <Box>
+        <Box
+            id={'dlkjfldskjf'}
+            h={'100%'}
+            w={'100%'}
+            pos={'relative'}
+            display={'flex'}
+            flexDir={'column'}
+            justifyContent={'center'}>
             <Weather {...weather} />
             <Mascot effect={effect} />
         </Box>
