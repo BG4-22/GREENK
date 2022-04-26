@@ -11,10 +11,10 @@ import tv from 'assets/game/tv.jpeg';
 import tørketrommel from 'assets/game/tørketrommel.jpeg';
 import varmtvann from 'assets/game/varmtvann.jpeg';
 import vaskemaskin from 'assets/game/vaskemaskin.jpeg';
-import AddHighscore from 'components/game/AddHighscore';
-import Counter from 'components/game/Counter';
-import Feedback from 'components/game/Feedback';
-import GameSlide from 'components/game/Slide';
+import AddHighscore from '../components/game/AddHighscore';
+import Counter from '../components/game/Counter';
+import Feedback from '../components/game/Feedback';
+import GameSlide from '../components/game/Slide';
 
 interface Prompt {
     description: string;

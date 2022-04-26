@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 
 import dataJson from 'assets/MockData.json';
-import getSolarPanelEffect from 'api/getSolarPanelEffect';
+import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
 import SolarPanelPhone from 'assets/stats/solarPanelPhone.png';
 import NoBattery from 'assets/stats/battery/noBattery.png';

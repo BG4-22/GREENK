@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import getSolarPanelEffect from 'api/getSolarPanelEffect';
+import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 import Mascot from '../../assets/images/Mascot.svg';
 import SolarPanelComponent from './SolarPanelComponent';
 

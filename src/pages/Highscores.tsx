@@ -3,7 +3,7 @@ import { Center } from '@chakra-ui/react';
 import { ListItem, List, OrderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HighscoreEntry } from 'types/game';
-import { getHighscores } from 'services/game';
+import { getHighscores } from '../services/game';
 
 function Highscores() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);

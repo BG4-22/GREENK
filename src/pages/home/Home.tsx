@@ -1,9 +1,9 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import NidarvollVideo from 'assets/videos/Nidarvoll-video.mp4';
-import Competition from 'components/competition';
-import FunfactSlideshow from 'components/funfacts/funfact-slideshow';
-import Scoreboard from 'components/game/Scoreboard';
-import SolarPanelMascot from 'components/solarpanel/SolarPanelMascot';
+import Competition from '../../components/competition/Competition';
+import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
+import Scoreboard from '../../components/game/Scoreboard';
+import SolarPanelMascot from '../../components/solarpanel/SolarPanelMascot';
 import React from 'react';
 import './Home.css';
 
