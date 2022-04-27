@@ -7,13 +7,13 @@ interface YAxisLabelProps {
 
 const YAxisLabel: React.VFC<YAxisLabelProps> = ({ text }) => {
     return (
-        <Box w="30px">
+        <Box w={'30px'}>
             <Text
-                w="300px"
-                style={{
-                    transform:
-                        'rotateZ(90deg) translateY(550%) translateX(-10px)',
-                }}>
+                w={'300px'}
+                textAlign={'end'}
+                transform={
+                    'rotateZ(90deg) translateY(550%) translateX(-10px) rotate(180deg)'
+                }>
                 {text}
             </Text>
         </Box>
