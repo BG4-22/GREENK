@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Should render correctly 1`] = `
+<Routes>
+  <Route
+    element={<Layout />}
+    path="/"
+  >
+    <Route
+      element={<Home />}
+      index={true}
+    />
+    <Route
+      element={<Statistics />}
+      path="statistikk"
+    />
+    <Route
+      element={<Game />}
+      path="spill"
+    />
+    <Route
+      element={<Highscores />}
+      path="highscore"
+    />
+    <Route
+      element={<EnergyFlow />}
+      path="energiflyt"
+    />
+    <Route
+      element={
+        <Navigate
+          replace={true}
+          to="/"
+        />
+      }
+      path="*"
+    />
+  </Route>
+</Routes>
+`;
