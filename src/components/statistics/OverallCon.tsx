@@ -42,7 +42,6 @@ const OverallCon = () => {
         const calcLight = Math.floor(consPerHour / lightConsump);
         setLightHour(calcLight);
         const calcPlaystation = Math.floor(consPerHour / playstationConsump);
-        console.log(calcPlaystation);
         setPlaystationHour(calcPlaystation);
         const calcHotChoco = Math.floor(consPerHour / hotChocoConsump);
         setHotChocoCount(calcHotChoco);
