@@ -3,7 +3,7 @@ import NidarvollVideo from 'assets/videos/Nidarvoll-video.mp4';
 import Competition from '../../components/competition/Competition';
 import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
 import Scoreboard from '../../components/game/Scoreboard';
-import SolarPanelMascot from '../../components/solarpanel/SolarPanelMascot';
+import SolarPanelComponent from '../../components/solarpanel/SolarPanelComponent';
 import React from 'react';
 import './Home.css';
 
@@ -27,7 +27,7 @@ const exampleData = [
 const HomeWelcomeComponent: React.FC = () => {
     return (
         <Box id={'welcomeBox'}>
-            <Text id={'greenK'}>GRØNN KIOSK: Nidarvoll Skole</Text>
+            <Text id={'greenK'}>GRØNN KIOSK</Text>
             <Box marginTop={'20px'}>
                 <video width="100%" loop autoPlay>
                     <source src={NidarvollVideo} type="video/mp4"></source>
@@ -37,13 +37,11 @@ const HomeWelcomeComponent: React.FC = () => {
     );
 };
 
-// TODO: fix sizes of content containers for small screen
-
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
         <Grid id="grid">
             <GridItem id={'item1'} rowSpan={1} colSpan={1}>
-                <SolarPanelMascot />
+                <SolarPanelComponent />
             </GridItem>
             <GridItem id={'item2'} rowSpan={2} colSpan={2}>
                 <HomeWelcomeComponent />

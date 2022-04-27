@@ -1,5 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
+import { hashCode } from '../../../utils/hashcode';
 import Carousel from '../../carousel/Carousel';
 import FunfactCard from '../funfact-card';
 import './../Funfacts.css';
@@ -9,11 +10,17 @@ export interface FunfactSlideshowPropsI {
 
 const FunfactSlideshow: React.FC<FunfactSlideshowPropsI> = ({ funfacts }) => {
     const elements = funfacts.map((el: string, i: number) => {
-        return <Text id={'textElement'}>{el}</Text>;
+        return (
+            <Text key={`${i}-${hashCode(el)}`} id={'textElement'}>
+                {el}
+            </Text>
+        );
     });
     return (
         <FunfactCard title={'Visste du at?'}>
-            <Carousel>{elements}</Carousel>
+            <Carousel withAutomaticSliding navButtons={'small-buttons'}>
+                {elements}
+            </Carousel>
         </FunfactCard>
     );
 };

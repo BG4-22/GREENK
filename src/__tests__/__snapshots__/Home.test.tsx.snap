@@ -9,7 +9,7 @@ exports[`<Home /> Should render correctly 1`] = `
     id="item1"
     rowSpan={1}
   >
-    <SolarPanelMascot />
+    <SolarPanelComponent />
   </ForwardRef>
   <ForwardRef
     colSpan={2}

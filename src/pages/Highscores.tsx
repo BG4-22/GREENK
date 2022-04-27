@@ -4,6 +4,7 @@ import { ListItem, List, OrderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HighscoreEntry } from 'types/game';
 import { getHighscores } from '../services/game';
+import GameButton from '../components/GameButton';
 
 function Highscores() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
@@ -77,6 +78,7 @@ function Highscores() {
                     </Flex>
                 </Center>
             </Box>
+            <GameButton>Spill igjen!</GameButton>
         </VStack>
     );
 }

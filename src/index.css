@@ -25,7 +25,9 @@ body {
 }
 
 #root {
-    background: #b9d6ac;
+    /* background: #b9d6ac; */
+    /* background: #c2e6b3; */
+    background: #b4d6a5;
     /*#9dbe*/
     display: flex;
     align-items: center;

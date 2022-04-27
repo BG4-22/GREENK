@@ -14,7 +14,7 @@ const Statistics: React.FC = () => {
         <DiagramMoney />,
         <EnergySources />,
     ].sort(() => (Math.random() > 0.5 ? 1 : -1));
-    return <Carousel withButtons>{statComponents}</Carousel>;
+    return <Carousel navButtons={'default'}>{statComponents}</Carousel>;
 };
 
 export default Statistics;

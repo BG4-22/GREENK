@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Home from '../pages/home/Home';
-import SolarPanelMascot from '../components/solarpanel/SolarPanelMascot';
+import SolarPanelComponent from '../components/solarpanel/SolarPanelComponent';
 import HomeWelcomeComponent from '../pages/home/Home';
 import Scoreboard from '../components/game/Scoreboard';
 import Competition from '../components/competition';
@@ -16,7 +16,7 @@ describe('<Home />', () => {
     });
 
     it('Should render every component on the page', () => {
-        expect(wrapper.find(<SolarPanelMascot />)).toBeDefined();
+        expect(wrapper.find(<SolarPanelComponent />)).toBeDefined();
         expect(wrapper.find(<HomeWelcomeComponent />)).toBeDefined();
         expect(wrapper.find(<Scoreboard />)).toBeDefined();
         expect(

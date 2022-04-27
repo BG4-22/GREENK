@@ -1,4 +1,20 @@
 <svg width="1101" height="992" viewBox="0 0 1101 992" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+	.mascot-text {
+		font: 60px serif; 
+		fill: black;
+		font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+	}
+	.kwh-value {
+		font-size: 90px;
+		fill: green !important;
+	}
+</style>
 <path d="M83.0007 460.049L102.638 460.049C119.627 460.049 134.763 449.317 140.385 433.285L171.5 344.549" stroke="white" stroke-width="30"/>
 <path d="M171.499 344.549L149 406.549" stroke="#DADADA" stroke-width="30"/>
 <rect x="62.1963" y="354.049" width="73" height="33" rx="16.5" transform="rotate(77.3297 62.1963 354.049)" fill="#C5C5C5"/>
@@ -193,7 +209,10 @@
 <line x1="640.704" y1="580.354" x2="644.996" y2="741.297" stroke="#50B4CA" stroke-width="3"/>
 <line x1="658.698" y1="579.874" x2="662.99" y2="740.817" stroke="#50B4CA" stroke-width="3"/>
 <rect x="156.742" y="25.5582" width="516" height="739" rx="28.5" transform="rotate(-1.52759 156.742 25.5582)" stroke="white" stroke-width="23"/>
-<rect x="511.05" y="396.853" width="576" height="469" rx="40" transform="rotate(-1.73042 511.05 396.853)" fill="white"/>
+<rect x="511.05" y="396.853" width="576" height="469" rx="40" transform="rotate(-1.73042 511.05 396.853)" fill="white" />
+<text class="mascot-text" x="550" y="550" width="300" height="469" rx="40" transform="rotate(-1.73042 511.05 396.853)">Solcellene genererer</text>
+<text class="mascot-text kwh-value" x="700" y="660" width="300" height="469" rx="40" transform="rotate(-1.73042 511.05 396.853)">12.4</text>
+<text class="mascot-text" x="700" y="750" width="300" height="469" rx="40" transform="rotate(-1.73042 511.05 396.853)">kWh nå!</text>
 <rect x="741.572" y="441.443" width="73" height="33" rx="16.5" transform="rotate(-95.4252 741.572 441.443)" fill="#C5C5C5"/>
 <rect x="736.656" y="389.676" width="21" height="33" rx="10.5" transform="rotate(-95.4252 736.656 389.676)" fill="#C5C5C5"/>
 <rect x="736.278" y="385.694" width="18" height="33" rx="9" transform="rotate(-95.4252 736.278 385.694)" fill="#DFDFDF"/>
