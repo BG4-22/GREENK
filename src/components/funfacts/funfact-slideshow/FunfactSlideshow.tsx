@@ -2,7 +2,7 @@ import { Text } from '@chakra-ui/react';
 import React from 'react';
 import { hashCode } from '../../../utils/hashcode';
 import Carousel from '../../carousel/Carousel';
-import FunfactCard from '../funfact-card';
+import Card from '../funfact-card';
 import './../Funfacts.css';
 
 /**
@@ -22,11 +22,11 @@ const FunfactSlideshow: React.FC<FunfactSlideshowPropsI> = ({ funfacts }) => {
         );
     });
     return (
-        <FunfactCard title={'Visste du at?'}>
+        <Card title={'Visste du at?'}>
             <Carousel withAutomaticSliding navButtons={'small-buttons'}>
                 {elements}
             </Carousel>
-        </FunfactCard>
+        </Card>
     );
 };
 

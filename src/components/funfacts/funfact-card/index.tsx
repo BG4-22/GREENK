@@ -1,1 +1,1 @@
-export { default } from './FunfactCard';
+export { default } from './Card';

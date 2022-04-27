@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { getHighscores } from '../../services/game';
 import { HighscoreEntry } from '../../types/game';
-import FunfactCard from '../funfacts/funfact-card';
+import Card from '../funfacts/funfact-card';
 import GameButton from '../GameButton';
 import './Game.css';
 
@@ -32,10 +32,10 @@ function Scoreboard() {
     ));
 
     return (
-        <FunfactCard title={'Ukens highscores'}>
+        <Card title={'Ukens highscores'}>
             <List id={'highScoreList'}>{listItems}</List>
             <GameButton>Spill nå!</GameButton>
-        </FunfactCard>
+        </Card>
     );
 }
 
