@@ -7,8 +7,15 @@ import SolarPanelComponent from '../../components/solarpanel/SolarPanelComponent
 import React from 'react';
 import './Home.css';
 
+/**
+ * The "main page" component. Combines different components to make a whole page.
+ */
+
 export interface HomePropsI {}
 
+/**
+ * List of funfacts to add as props in the funfact-component.
+ */
 const funfacts: string[] = [
     'Hvis man samler all solenergi som treffer jorda på 60 minutter, er det nok energi for hele verden i ett år.',
     'En vindmølle lager nok energi til 1400 hus.  ',
@@ -19,6 +26,9 @@ const funfacts: string[] = [
     'Ikke fornybar energi forurenser masse og verdens kull, olje og gass brukes opp!',
 ];
 
+/**
+ * Example data to pass as props in the competition component.
+ */
 const exampleData = [
     { name: 'Nidarvoll skole', value: 70 },
     { name: 'Gjennomsnitts- skolen i Trondheim', value: 30 },
@@ -36,7 +46,11 @@ const HomeWelcomeComponent: React.FC = () => {
         </Box>
     );
 };
-
+/**
+ * Arranges the different components in a grid.
+ * @param props
+ * @returns Home component
+ */
 const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
     return (
         <Grid id="grid">

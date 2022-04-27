@@ -2,6 +2,9 @@ import { Button } from '@chakra-ui/react';
 import { ReactChild, ReactFragment, ReactPortal } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Button with preset design. Is used in HighScore and ScoreBoard component.
+ */
 function GameButton(props: {
     children:
         | boolean

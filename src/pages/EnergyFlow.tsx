@@ -1,6 +1,11 @@
 import { Center } from '@chakra-ui/react';
 import Energiflyt from 'assets/videos/Energiflyt_Nidarvoll.mp4';
 
+/**
+ * Video-component to show energyflow. A centered video-element.
+ * @returns 
+ */
+
 const EnergyFlow: React.FC = () => {
     return (
         <Center margin={'20px auto'}>
