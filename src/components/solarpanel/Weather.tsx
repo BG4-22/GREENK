@@ -40,17 +40,20 @@ const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
     const sunVariants = {
         sunIn: {
             rotate: [90, 270],
+            opacity: [0, 0, 1],
             transition: {
                 duration: 1,
             },
         },
         sunOut: {
             rotate: [270, 450],
+            opacity: [1, 0, 0],
             transition: {
                 duration: 1,
             },
         },
         sun: {
+            opacity: 1,
             rotate: [270, 270],
             transition: {
                 duration: 0,
@@ -67,17 +70,20 @@ const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
     const cloudVariants = {
         cloudIn: {
             x: ['-200%', '10%'],
+            opacity: [0, 0, 1],
             transition: {
                 duration: 1,
             },
         },
         cloudOut: {
             x: ['10%', '200%'],
+            opacity: [1, 0, 0],
             transition: {
                 duration: 1,
             },
         },
         cloud: {
+            opacity: 1,
             x: ['10%', '10%'],
             transition: {
                 duration: 0,
