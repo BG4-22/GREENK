@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Navbar /> render correctly 1`] = `
+exports[`<Navbar /> Should render correctly 1`] = `
 <Box
   aria-label="navigation"
   id="navBar"

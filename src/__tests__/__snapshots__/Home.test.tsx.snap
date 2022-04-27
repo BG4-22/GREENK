@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> Should render correctly 1`] = `
+exports[`<Home /> Should render correctly 1`] = `
 <Grid
   id="grid"
 >
