@@ -16,6 +16,7 @@
     align-self: flex-start;
     width: 160px;
     height: 160px;
+    margin-top: 2rem;
     margin-left: 9rem;
     transform: scale(0.8);
 }
@@ -35,8 +36,8 @@
     overflow: hidden;
     height: 40%;
     width: 100%;
-    top: 0px;
-    right: 0px;
+    top: -20px;
+    right: 100px;
 }
 
 #mascot {
