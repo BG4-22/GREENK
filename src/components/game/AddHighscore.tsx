@@ -9,20 +9,25 @@ import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import './Game.css';
 
-// Function that takes the points as a prop and returns a component that handles logic for submitting the score
+/**
+ * Function that takes the points as a prop and returns a component that handles logic for submitting the score
+ */
 function AddHighscore(props: { points: number }) {
-    /* 
-    Variables: 
-        value: string value of input field
-        added: boolean state that prohibites multiple submissions
-    */
+    /**
+     * Variables:
+     *    value: string value of input field
+     *    added: boolean state that prohibites multiple submissions
+     */
+
     const [value, setValue] = useState('');
     const [added, setAdded] = useState(false);
 
     const navigate = useNavigate();
     const navigateTo = () => navigate('/highscore');
-    
-    // Function that calls submitScore and updates state of added
+
+    /**
+     * Function that calls submitScore and updates state of added
+     */
     function addScore() {
         submitScore({ name: value, score: props.points });
         setAdded(true);
@@ -85,7 +90,7 @@ function AddHighscore(props: { points: number }) {
                                     animate={{ scale: '100%' }}
                                     transition={{ duration: 0.25, delay: 0.25 }}
                                     key={added ? 10 : 5}>
-                                    Nais{/* Burde oppdatere melding her */}
+                                    Lagt til!
                                 </motion.div>
                             </AnimatePresence>
                         </Stack>

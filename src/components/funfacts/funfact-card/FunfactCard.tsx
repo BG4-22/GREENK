@@ -2,6 +2,10 @@ import { Box, Stack, Text } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import './../Funfacts.css';
 
+/**
+ * Component used in funfact-card and in scoreboard. Basic white box to ensure similarity in design.
+ */
+
 interface FunfactCardPropsI {
     title: string;
     children: ReactNode;

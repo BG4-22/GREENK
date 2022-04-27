@@ -7,8 +7,10 @@ import FunfactCard from '../funfacts/funfact-card';
 import GameButton from '../GameButton';
 import './Game.css';
 
-//Function that fetches highscores from the database and returns a component that renders them.
-//Also has clickable button that navigates to "/game"
+/**
+ * Function that fetches highscores from the database and returns a component that renders them.
+ * Also has clickable button that navigates to "/game"
+ */
 function Scoreboard() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
 
@@ -20,7 +22,9 @@ function Scoreboard() {
         updateHighscores();
     }, []);
 
-    //Only shows first 5 entries
+    /**
+     * Only shows first 5 entries
+     */
     const listItems = highscores.slice(0, 5).map((item, i) => (
         <ListItem id={'highScoreItem'} key={`$highscore-${i + 1}`}>
             {`${i + 1}. ${item.name}: ${item.score}`}
