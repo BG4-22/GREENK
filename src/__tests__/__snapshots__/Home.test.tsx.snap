@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> Should render correctly 1`] = `
+<Grid
+  id="grid"
+>
+  <ForwardRef
+    colSpan={1}
+    id="item1"
+    rowSpan={1}
+  >
+    <SolarPanelComponent />
+  </ForwardRef>
+  <ForwardRef
+    colSpan={2}
+    id="item2"
+    rowSpan={2}
+  >
+    <HomeWelcomeComponent />
+  </ForwardRef>
+  <ForwardRef
+    colSpan={1}
+    id="item3"
+    rowSpan={1}
+  >
+    <Scoreboard />
+  </ForwardRef>
+  <ForwardRef
+    colSpan={1}
+    id="item4"
+    rowSpan={1}
+  >
+    <Competition
+      data={
+        Array [
+          Object {
+            "name": "Nidarvoll skole",
+            "value": 70,
+          },
+          Object {
+            "name": "Gjennomsnitts- skolen i Trondheim",
+            "value": 30,
+          },
+        ]
+      }
+      unitOfMeasure="%"
+    />
+  </ForwardRef>
+  <ForwardRef
+    colSpan={1}
+    id="item5"
+    rowSpan={1}
+  >
+    <FunfactSlideshow
+      funfacts={
+        Array [
+          "Hvis man samler all solenergi som treffer jorda på 60 minutter, er det nok energi for hele verden i ett år.",
+          "En vindmølle lager nok energi til 1400 hus.  ",
+          "Elektrisitet i stømledningene går like fort som lyset.",
+          "Fugler kan sitte på en strømledning uten å få støt, men hvis de er borti to samtidig lager de en sluttet krets og kan dø.",
+          "Fornybar energi kommer fra kilder som vind, sol, vann og jordvarme. Nidarvoll skole bruker 80% fornybar energi ",
+          "Mesteparten av energien vi bruker i verden i dag kommer fra ikke fornybar energi som kull, olje og gass. ",
+          "Ikke fornybar energi forurenser masse og verdens kull, olje og gass brukes opp!",
+        ]
+      }
+    />
+  </ForwardRef>
+</Grid>
+`;

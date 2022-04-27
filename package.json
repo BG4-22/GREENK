@@ -6,7 +6,9 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "jest",
+		"test:changed": "jest --onlyChanged"
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^1.8.6",
@@ -15,6 +17,7 @@
 		"@react-three/fiber": "^7.0.26",
 		"firebase": "^9.6.9",
 		"framer-motion": "^4.1.2",
+		"jest-transform-stub": "^2.0.0",
 		"prettier": "^2.5.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
@@ -26,12 +29,24 @@
 		"three": "^0.139.0"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.17.9",
+		"@babel/preset-env": "^7.16.11",
+		"@babel/preset-react": "^7.16.7",
+		"@babel/preset-typescript": "^7.16.7",
 		"@mui/base": "^5.0.0-alpha.73",
+		"@types/enzyme": "^3.10.12",
+		"@types/jest": "^27.4.1",
 		"@types/react": "^17.0.33",
 		"@types/react-dom": "^17.0.10",
 		"@types/three": "^0.138.0",
 		"@vitejs/plugin-react": "^1.0.7",
+		"@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+		"babel-jest": "^28.0.1",
+		"enzyme": "^3.11.0",
+		"enzyme-to-json": "^3.6.2",
+		"jest": "^27.0.1",
 		"react-icons": "^4.3.1",
+		"ts-jest": "^27.1.4",
 		"typescript": "^4.5.4",
 		"vite": "^2.8.0",
 		"vite-tsconfig-paths": "^3.4.1"

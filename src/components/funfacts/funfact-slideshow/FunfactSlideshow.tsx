@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
-import { hashCode } from 'utils/hashcode';
+import { hashCode } from '../../../utils/hashcode';
 import Carousel from '../../carousel/Carousel';
 import FunfactCard from '../funfact-card';
 import './../Funfacts.css';
