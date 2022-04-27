@@ -1,7 +1,7 @@
 import { Box, HStack } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 import './Carousel.css';
 
@@ -38,16 +38,32 @@ type ButtonType = 'small-buttons' | 'default' | undefined;
 export interface CarouselPropsI {
     children: JSX.Element[];
     navButtons?: ButtonType;
+    withAutomaticSliding?: boolean;
 }
 
-const Carousel: FC<CarouselPropsI> = ({ children, navButtons }) => {
+const Carousel: FC<CarouselPropsI> = ({
+    children,
+    navButtons,
+    withAutomaticSliding = false,
+}) => {
     const [[page, direction], setPage] = useState([0, 0]);
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection]);
     };
     const index = wrap(0, children.length, page);
     const withButtons = navButtons != undefined;
-    console.log(navButtons);
+    useEffect(() => {
+        let timeout: NodeJS.Timeout | undefined;
+        if (withAutomaticSliding) {
+            timeout = setTimeout(() => {
+                paginate(1);
+            }, 10000);
+        }
+        return () => {
+            if (timeout) clearTimeout(timeout);
+        };
+    }, [withAutomaticSliding, page, paginate]);
+
     return (
         <HStack
             margin={'auto'}

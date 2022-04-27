@@ -1,24 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const getSolarPanelEffect = () => {
-    const [effect, setEffect] = useState(11.56);
+    const [effect, setEffect] = useState(0);
 
     const updateEffect = () => {
-        let plusOrMinus = Math.random() < 0.5;
-        let difference = (Math.random() + 1) * 3;
-        let value = plusOrMinus ? effect + difference : effect - difference;
-
-        setEffect(Math.round(value));
+        setEffect(effect + 1);
     };
 
     useEffect(() => {
         const interval = setInterval(() => {
             updateEffect();
-        }, 3000);
-
+        }, 2000);
         return () => clearInterval(interval);
-    }, []);
+    }, [effect]);
 
-    return effect;
+    return Math.round(Math.sin(effect) * 5 + 10);
 };
 export default getSolarPanelEffect;

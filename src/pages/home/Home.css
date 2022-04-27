@@ -11,7 +11,9 @@
 #item3,
 #item4,
 #item5 {
+    position: relative;
     padding: 1rem;
+    overflow: hidden;
 }
 
 #item1 {
