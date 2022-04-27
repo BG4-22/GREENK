@@ -27,7 +27,7 @@ const exampleData = [
 const HomeWelcomeComponent: React.FC = () => {
     return (
         <Box id={'welcomeBox'}>
-            <Text id={'greenK'}>GRØNN KIOSK: Nidarvoll Skole</Text>
+            <Text id={'greenK'}>GRØNN KIOSK</Text>
             <Box marginTop={'20px'}>
                 <video width="100%" loop autoPlay>
                     <source src={NidarvollVideo} type="video/mp4"></source>

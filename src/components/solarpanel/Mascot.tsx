@@ -1555,13 +1555,13 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
             </text>
             <text
                 className="mascot-text"
-                x="680"
+                x="700"
                 y="750"
                 width="300"
                 height="469"
                 rx="40"
                 transform="rotate(-1.73042 511.05 396.853)">
-                kWh nå!
+                kW nå!
             </text>
             <rect
                 x="741.572"
