@@ -7,7 +7,6 @@ import Arrow from '../../assets/stats/arrow.png';
 
 const Heatpump = () => {
     const heatPumpEnergy = 5000;
-    //Dusj: 5 kwh for 30 min
     const showerEnergy = 10;
     const calcHours = heatPumpEnergy / showerEnergy;
     return (

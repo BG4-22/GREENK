@@ -12,17 +12,22 @@ import ThreeBattery from 'assets/stats/battery/threeBattery.png';
 import FullBattery from 'assets/stats/battery/fullBattery.png';
 
 const SolarPanel = () => {
-    //Phone: 2 kwh
     //www.forbes.com/sites/christopherhelman/2013/09/07/how-much-energy-does-your-iphone-and-other-devices-use-and-what-to-do-about-it/
-    //Constant variable for phones energy consumption
+    /**
+     * Constant variable for phones energy consumption
+     */
     const phoneEnergy = 0.00545;
 
     const [batteryPic, setBatteryPic] = useState(NoBattery);
 
-    //Calculates amout of phones that can be charged
+    /**
+     * Calculates amout of phones that can be charged
+     */
     const phoneCount = Math.floor(getSolarPanelEffect() / phoneEnergy);
 
-    //List with battery pictures
+    /**
+     * List with battery pictures
+     */
     const battery = [
         NoBattery,
         LowBattery,
@@ -31,16 +36,22 @@ const SolarPanel = () => {
         FullBattery,
     ];
 
-    //Index for battery pictures
+    /**
+     * Index for battery pictures
+     */
     let index = 0;
 
-    //Animation of battery charging
+    /**
+     * Animation of battery charging
+     */
     useEffect(() => {
         const interval = setInterval(() => {
             if (index > 4) {
                 index = 0;
             }
-            //No charging animation if no energy
+            /**
+             * No charging animation if no energy
+             */
             if (phoneCount === 0) {
                 setBatteryPic(LowBattery);
             } else {

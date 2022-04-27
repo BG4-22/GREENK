@@ -7,11 +7,15 @@ import dataJson from '../assets/MockData.json';
 const DiagramMoney = () => {
     const [count, setCount] = useState<string>('');
 
-    useEffect(() => {}, []);
-
+    /**
+     * Maps every energy-entry to a month.
+     */
     const moneyToList = () =>
         dataJson.EnergyMoneyMonthly.map((month) => month.spent);
 
+    /**
+     * Decides how high the entry in the table should be based on the value.
+     */
     const moneyBoxHeight: () => JSX.Element[] = () =>
         moneyToList().map((item) => (
             <Box className="moneyBar" height={item / 166.66}></Box>

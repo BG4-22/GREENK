@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * Function to randomly change the kW the solar panels produce every 2 seconds.
+ * Used to mock positive and negative changes in the value.
+ * @returns number
+ */
+
 const getSolarPanelEffect = () => {
     const [effect, setEffect] = useState(0);
 

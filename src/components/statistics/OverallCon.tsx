@@ -20,12 +20,14 @@ const OverallCon = () => {
     //1.33952/5 = 0.267904 per 2dl
     const hotChocoConsump = 0.27;
 
-    const [consPerHour, setConsPerHour] = useState<number>(48.6);
+    const [consPerHour, setConsPerHour] = useState<number>(134.5);
     const [LightHour, setLightHour] = useState<number>(0);
     const [playstationHour, setPlaystationHour] = useState<number>(0);
     const [hotChocoCount, setHotChocoCount] = useState<number>(0);
 
-    //Gets data for overall consumption every 10 seconds
+    /**
+     * Gets data for overall consumption every 10 seconds
+     */
     useEffect(() => {
         const interval = setInterval(() => {
             getData();
@@ -33,7 +35,9 @@ const OverallCon = () => {
         return () => clearInterval(interval);
     }, []);
 
-    //Calculates hours and counts based on the overall consumption
+    /**
+     * Calculates hours and counts based on the overall consumption
+     */
     useEffect(() => {
         const calcLight = Math.floor(consPerHour / lightConsump);
         setLightHour(calcLight);
@@ -44,10 +48,14 @@ const OverallCon = () => {
         setHotChocoCount(calcHotChoco);
     }, [consPerHour]);
 
-    //Index to get data at different hours from the mock data
-    let index = 0;
+    /**
+     * Index to get data at different hours from the mock data
+     */
+    let index = 10;
 
-    //Fetches data from the different hours
+    /**
+     * Fetches data from the different hours
+     */
     function getData() {
         index++;
         if (index > 23) {
