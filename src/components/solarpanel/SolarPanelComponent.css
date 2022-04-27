@@ -28,7 +28,7 @@
 #weather-box {
     z-index: 0;
     display: flex;
-    position: absolute;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: row;
