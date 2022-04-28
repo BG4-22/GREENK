@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
                 </Circle>
             </Link>
             <Link className="link" to={'/statistikk'}>
-                Se Statistikk
+                Statistikk
             </Link>
         </Box>
     );
