@@ -67,6 +67,7 @@ function AddHighscore(props: { points: number }) {
                                         <Button
                                             id={'addButton'}
                                             size="lg"
+                                            variant="game"
                                             onClick={
                                                 added ? () => {} : addScore
                                             }>
@@ -92,7 +93,11 @@ function AddHighscore(props: { points: number }) {
                     </Center>
                 </Box>
                 {/* Button that navigates to "/highscore" page */}
-                <Button id={'continueButton'} size="lg" onClick={navigateTo}>
+                <Button
+                    id={'continueButton'}
+                    variant="gameNavigation"
+                    size="lg"
+                    onClick={navigateTo}>
                     Gå videre
                 </Button>
             </Center>

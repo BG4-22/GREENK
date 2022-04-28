@@ -70,6 +70,7 @@ function Feedback(props: {
             </VStack>
             <Button
                 id={'nextButton'}
+                variant="gameNavigation"
                 size="lg"
                 onClick={props.updateHighscore}>
                 Neste

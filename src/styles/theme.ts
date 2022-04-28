@@ -5,7 +5,7 @@ const theme = extendTheme({
         brand: {
             50: '#44337A',
             100: '#B794F4',
-            500: '#B794F4', // you need thisj
+            500: '#B794F4', // you need this
         },
     },
     components: {
@@ -18,7 +18,7 @@ const theme = extendTheme({
                 game: {
                     bgColor: '#FFDD85',
                     borderBottom: '3px solid grey',
-                    height: '100%',
+                    height: '50px',
                 },
                 //extends the default variant, that is 'solid'
                 gameAnswer: (props: any) => ({
@@ -27,6 +27,11 @@ const theme = extendTheme({
                     textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
                     width: '30%',
                 }),
+                gameNavigation: {
+                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                    background: '#f6dc97',
+                    fontSize: '25px',
+                },
             },
         },
     },
