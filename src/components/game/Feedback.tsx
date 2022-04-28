@@ -52,8 +52,11 @@ function Feedback(props: {
         <VStack id={'feedbackStack'} spacing="14">
             <VStack id={'differenceStack'} spacing="20">
                 <Text fontSize="xl">
-                    {prompts.biggest.description} bruker {difference}kWh mer i
-                    måneden enn {prompts.smallest.description}!
+                    {prompts.biggest.description} bruker{' '}
+                    <Text as="span" color="#FF8585" fontSize="2xl">
+                        {difference} kWh
+                    </Text>{' '}
+                    mer i måneden enn {prompts.smallest.description}!
                 </Text>
 
                 <HStack>
@@ -68,10 +71,7 @@ function Feedback(props: {
                     <Image id={'compImg'} src={comp.img} />
                 </HStack>
             </VStack>
-            <Button
-                id={'nextButton'}
-                size="lg"
-                onClick={props.updateHighscore}>
+            <Button id={'nextButton'} size="lg" onClick={props.updateHighscore}>
                 Neste
             </Button>
         </VStack>
