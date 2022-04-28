@@ -112,9 +112,9 @@ const EnergySources: FC = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             increment();
-        }, 10 * 1000);
+        }, 5 * 1000);
         return () => clearInterval(interval);
-    }, [index]);
+    }, [index, data]);
 
     if (data.length < 1) return <></>;
 
