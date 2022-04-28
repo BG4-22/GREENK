@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Layout from './layout/Layout';
 import Home from './pages/home/Home';
 import EnergyFlow from './pages/EnergyFlow';

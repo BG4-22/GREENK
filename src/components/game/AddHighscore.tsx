@@ -1,9 +1,9 @@
-import { Box, Button, Flex, Spacer, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@chakra-ui/react';
 
 import { Center } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { submitScore } from '../../services/game';
 import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -72,6 +72,7 @@ function AddHighscore(props: { points: number }) {
                                         <Button
                                             id={'addButton'}
                                             size="lg"
+                                            variant="game"
                                             onClick={
                                                 added ? () => {} : addScore
                                             }>
@@ -97,7 +98,11 @@ function AddHighscore(props: { points: number }) {
                     </Center>
                 </Box>
                 {/* Button that navigates to "/highscore" page */}
-                <Button id={'continueButton'} size="lg" onClick={navigateTo}>
+                <Button
+                    id={'continueButton'}
+                    variant="gameNavigation"
+                    size="lg"
+                    onClick={navigateTo}>
                     Gå videre
                 </Button>
             </Center>

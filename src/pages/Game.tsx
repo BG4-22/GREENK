@@ -417,13 +417,8 @@ function Game() {
                                                 : 'visible'
                                         }>
                                         <Button
-                                            shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            color="white"
+                                            variant="gameAnswer"
                                             bgColor="#c3e0b5"
-                                            width="30%"
-                                            borderRadius="40px"
-                                            bg="#FFFFFF"
                                             size="lg"
                                             onClick={() =>
                                                 updateHasAnswered(promptRight)
@@ -431,13 +426,8 @@ function Game() {
                                             Mer
                                         </Button>
                                         <Button
-                                            shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            color="white"
+                                            variant="gameAnswer"
                                             bgColor="#FF8585"
-                                            width="30%"
-                                            borderRadius="40px"
-                                            bg="#FFFFFF"
                                             size="lg"
                                             onClick={() =>
                                                 updateHasAnswered(promptLeft)

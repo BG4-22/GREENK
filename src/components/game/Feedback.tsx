@@ -79,7 +79,12 @@ function Feedback(props: {
                     <Image id={'compImg'} src={comp.img} />
                 </HStack>
             </VStack>
-            <Button id={'nextButton'} size="lg" onClick={props.updateHighscore}>
+
+            <Button
+                id="nextButton"
+                variant="gameNavigation"
+                size="lg"
+                onClick={props.updateHighscore}>
                 Neste
             </Button>
         </VStack>

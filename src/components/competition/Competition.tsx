@@ -1,6 +1,5 @@
 import { HStack, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import '../../App.css';
 import Chart from './Chart';
 import Legend from './Legend';
 import YAxisLabel from './YAxisLabel';
