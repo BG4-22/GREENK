@@ -15,6 +15,7 @@ import AddHighscore from '../components/game/AddHighscore';
 import Counter from '../components/game/Counter';
 import Feedback from '../components/game/Feedback';
 import GameSlide from '../components/game/Slide';
+import { SpinnerIcon } from '@chakra-ui/icons';
 
 import { Prompt } from '../components/game/Prompt';
 
@@ -193,7 +194,8 @@ function Game() {
                     h="85%"
                     p={4}
                     borderRadius="50px"
-                    margin="auto">
+                    margin="auto"
+                    visibility={loading ? 'hidden' : 'visible'}>
                     {!gameOver && !highscore ? (
                         <>
                             <Box
@@ -410,7 +412,9 @@ function Game() {
                                         position="relative"
                                         top="50%"
                                         visibility={
-                                            hasAnswered ? 'hidden' : 'visible'
+                                            hasAnswered || loading
+                                                ? 'hidden'
+                                                : 'visible'
                                         }>
                                         <Button
                                             shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
@@ -443,6 +447,20 @@ function Game() {
                                     </Stack>
                                 </div>
                             </Flex>
+                            <AnimatePresence>
+                                <motion.div
+                                    style={{"marginTop": "-30%", "visibility": loading ? "visible" : "hidden"}}
+                                    animate={{ rotate: 360 }}
+                                    transition={{
+                                        ease: 'linear',
+                                        duration: 2,
+                                        repeat: Infinity,
+                                    }}>
+                                    <SpinnerIcon
+                                        boxSize="50px"
+                                        color="white"></SpinnerIcon>
+                                </motion.div>
+                            </AnimatePresence>
                         </>
                     ) : (
                         <>{updatePrompts()}</>
