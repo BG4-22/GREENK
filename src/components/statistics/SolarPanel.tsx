@@ -40,9 +40,8 @@ const SolarPanel = () => {
      */
     useEffect(() => {
         const interval = setInterval(() => {
-            if (index > 4) {
-                setIndex(0);
-            }
+            setIndex(index > 3 ? 0 : index + 1)
+
             /**
              * No charging animation if no energy
              */
@@ -50,11 +49,10 @@ const SolarPanel = () => {
                 setBatteryPic(LowBattery);
             } else {
                 setBatteryPic(battery[index]);
-                setIndex(index + 1);
             }
-        }, 3000);
+        }, 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [phoneCount]);
 
     return (
         <>

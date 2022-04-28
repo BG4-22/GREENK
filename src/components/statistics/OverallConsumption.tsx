@@ -71,9 +71,7 @@ const OverallConsumption: React.FC = () => {
         <>
             <Box marginBottom={50}>
                 <Center>
-                    <Text fontSize="2xl">
-                        Forrige time brukte Nidarvoll skole
-                    </Text>
+                    <Text fontSize="2xl">Forrige time brukte skolen vår</Text>
                     <Text fontSize="4xl" color="#FF8585" margin={3}>
                         {consPerHour}
                     </Text>
