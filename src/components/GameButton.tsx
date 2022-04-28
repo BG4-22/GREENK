@@ -1,19 +1,11 @@
 import { Button } from '@chakra-ui/react';
-import { ReactChild, ReactFragment, ReactPortal } from 'react';
 import { Link } from 'react-router-dom';
 
 /**
  * Button with preset design. Is used in HighScore and ScoreBoard component.
  */
-function GameButton(props: {
-    children:
-        | boolean
-        | ReactChild
-        | ReactFragment
-        | ReactPortal
-        | null
-        | undefined;
-}) {
+
+const GameButton: React.FC = ({ children }) => {
     return (
         <Link style={{ display: 'flex', height: '50px' }} to={'/spill'}>
             <Button
@@ -22,10 +14,10 @@ function GameButton(props: {
                 bg="#FFDD85"
                 height={'100%'}
                 size="lg">
-                {props.children}
+                {children}
             </Button>
         </Link>
     );
-}
+};
 
 export default GameButton;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 
-import dataJson from 'assets/MockData.json';
 import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
 import SolarPanelPhone from 'assets/stats/solarPanelPhone.png';
@@ -17,8 +16,8 @@ const SolarPanel = () => {
      * Constant variable for phones energy consumption
      */
     const phoneEnergy = 0.00545;
-
     const [batteryPic, setBatteryPic] = useState(NoBattery);
+    const [index, setIndex] = useState<number>(0);
 
     /**
      * Calculates amout of phones that can be charged
@@ -37,17 +36,12 @@ const SolarPanel = () => {
     ];
 
     /**
-     * Index for battery pictures
-     */
-    let index = 0;
-
-    /**
      * Animation of battery charging
      */
     useEffect(() => {
         const interval = setInterval(() => {
             if (index > 4) {
-                index = 0;
+                setIndex(0);
             }
             /**
              * No charging animation if no energy
@@ -56,7 +50,7 @@ const SolarPanel = () => {
                 setBatteryPic(LowBattery);
             } else {
                 setBatteryPic(battery[index]);
-                index++;
+                setIndex(index + 1);
             }
         }, 3000);
         return () => clearInterval(interval);
@@ -81,7 +75,10 @@ const SolarPanel = () => {
                             <Image src={SolarPanelPhone} width="800px"></Image>
                         </Box>
                         <Box id="battery">
-                            <Image src={batteryPic} width="100px"></Image>
+                            <Image
+                                src={batteryPic}
+                                key={battery.indexOf(batteryPic)}
+                                width="100px"></Image>
                         </Box>
                     </Flex>
                 </Center>

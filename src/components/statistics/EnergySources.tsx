@@ -8,16 +8,11 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
+import { getEnergySources } from 'api/energyData';
 import { FC, useEffect, useState } from 'react';
-import dataJson from '../../assets/MockData.json';
+import { EnergySourceList } from 'types/api';
 import Skole from '../../assets/stats/skole.svg';
 import './statistics.css';
-const data = dataJson['EnergySources'];
-
-interface EnergySourceI {
-    name: string;
-    amount: number;
-}
 
 const colors: string[] = [
     'rgba(205, 233, 181, .6)',
@@ -31,21 +26,23 @@ const colors: string[] = [
 ];
 
 interface EnergyElementsPropsI {
-    elements: EnergySourceI[];
+    elements: EnergySourceList;
 }
 
 const EnergyElements: FC<EnergyElementsPropsI> = ({
     elements,
 }): JSX.Element => {
     const total = elements
-        .map((value: EnergySourceI, index: number) => value.amount)
+        .map((value) => value.amount)
         .reduce((a: number, b: number) => a + b);
+
     return (
         <>
             {elements.map((element, index) => {
                 const value: number = Math.ceil((element.amount / total) * 100);
                 return (
                     <Box
+                        key={'energyElement' + index}
                         className={'animate-width'}
                         pos={'relative'}
                         h={'100%'}
@@ -94,6 +91,11 @@ const EnergySources: FC = () => {
     /**
      * Index to get data at different hours from the mock data
      */
+    const [data, setData] = useState<EnergySourceList[]>([]);
+    useEffect(() => {
+        setData(getEnergySources());
+    }, []);
+
     const [index, setIndex] = useState<number>(0);
 
     const increment = () => {
@@ -113,6 +115,8 @@ const EnergySources: FC = () => {
         }, 10 * 1000);
         return () => clearInterval(interval);
     }, [index]);
+
+    if (data.length < 1) return <></>;
 
     return (
         <>

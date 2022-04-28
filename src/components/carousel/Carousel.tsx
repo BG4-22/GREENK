@@ -50,8 +50,11 @@ const Carousel: FC<CarouselPropsI> = ({
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection]);
     };
+
     const index = wrap(0, children.length, page);
+
     const withButtons = navButtons != undefined;
+
     useEffect(() => {
         let timeout: NodeJS.Timeout | undefined;
         if (withAutomaticSliding) {
