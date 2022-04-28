@@ -1,30 +1,58 @@
 import { useEffect, useState } from 'react';
 
-import { Box, HStack, Text } from '@chakra-ui/react';
+import { Box, Center, Heading, HStack, Spinner, Text } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
 import { getMonthlySpendings } from 'api/energyData';
 import { MonthlySpendings } from 'types/api';
 
 const DiagramMoney = () => {
     const [data, setData] = useState<MonthlySpendings>([]);
+    const [height, setHeight] = useState<number | undefined>(undefined);
 
     useEffect(() => {
         setData(getMonthlySpendings());
     }, []);
 
+    const maxSpent = Math.max(...data.map((month) => month.spent));
+
+    //calcuate the relative height of the money bars
+    const barHeight = (value: number) => (value / maxSpent) * 100 + '%';
+
     const moneyBoxHeight: () => JSX.Element[] = () =>
-        data.map((month) => (
-            <Box className="moneyBar" height={month.spent / 166.66}></Box>
+        data.map((month, index) => (
+            <Box
+                className="moneyBar"
+                h={barHeight(month.spent)}
+                key={'bar' + index}></Box>
         ));
+
+    useEffect(() => {
+        //find height of rechart bars
+        const findHeight = () => {
+            const el: SVGGElement | null = document.querySelector(
+                '.recharts-layer.recharts-bar.bars'
+            );
+            setHeight(el?.getBBox().height);
+        };
+        const timeout = setTimeout(findHeight, 1000);
+
+        return () => clearTimeout(timeout);
+    }, [data]);
 
     return (
         <>
-            <Text transform={'translateY(7rem)'} fontSize="4xl">
+            <Heading transform={'translateY(7rem)'} fontSize="4xl">
                 Hvor mye penger har skolen brukt på energi
-            </Text>
-            <Box>
+            </Heading>
+
+            {!height && (
+                <Center mt="200px">
+                    <Spinner />
+                </Center>
+            )}
+            <Box visibility={!height ? 'hidden' : 'visible'}>
                 <Box className="moneyBarWrapper" marginLeft={40}>
-                    <HStack spacing={23} alignItems={'flex-end'}>
+                    <HStack spacing={23} h={height} alignItems={'flex-end'}>
                         {moneyBoxHeight()}
                     </HStack>
                 </Box>
