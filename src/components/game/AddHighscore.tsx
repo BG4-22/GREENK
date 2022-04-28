@@ -1,9 +1,9 @@
-import { Box, Button, Flex, Spacer, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@chakra-ui/react';
 
 import { Center } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { submitScore } from '../../services/game';
 import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -21,7 +21,7 @@ function AddHighscore(props: { points: number }) {
 
     const navigate = useNavigate();
     const navigateTo = () => navigate('/highscore');
-    
+
     // Function that calls submitScore and updates state of added
     function addScore() {
         submitScore({ name: value, score: props.points });
