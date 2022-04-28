@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { getHighscores } from '../../services/game';
 import { HighscoreEntry } from '../../types/game';
-import Card from '../funfacts/funfact-card';
+import Card from '../Card';
 import GameButton from '../GameButton';
 import './Game.css';
 

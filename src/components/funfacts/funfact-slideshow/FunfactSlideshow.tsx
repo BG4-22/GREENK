@@ -2,7 +2,7 @@ import { Text } from '@chakra-ui/react';
 import React from 'react';
 import { hashCode } from '../../../utils/hashcode';
 import Carousel from '../../carousel/Carousel';
-import Card from '../funfact-card';
+import Card from '../../Card';
 import './../Funfacts.css';
 
 /**
