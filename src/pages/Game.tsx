@@ -449,7 +449,7 @@ function Game() {
                             </Flex>
                             <AnimatePresence>
                                 <motion.div
-                                    style={{"marginTop": "-30%", "visibility": loading ? "visible" : "hidden"}}
+                                    style={{"marginTop": "-30%", "visibility": "visible", "display": loading ?  "block" : "none"}}
                                     animate={{ rotate: 360 }}
                                     transition={{
                                         ease: 'linear',
