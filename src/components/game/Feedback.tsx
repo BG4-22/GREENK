@@ -60,8 +60,11 @@ function Feedback(props: {
         <VStack id={'feedbackStack'} spacing="14">
             <VStack id={'differenceStack'} spacing="20">
                 <Text fontSize="xl">
-                    {prompts.biggest.description} bruker {difference}kWh mer i
-                    måneden enn {prompts.smallest.description}!
+                    {prompts.biggest.description} bruker{' '}
+                    <Text as="span" color="#FF8585" fontSize="2xl">
+                        {difference} kWh
+                    </Text>{' '}
+                    mer i måneden enn {prompts.smallest.description}!
                 </Text>
 
                 <HStack>

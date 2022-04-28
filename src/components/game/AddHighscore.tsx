@@ -84,13 +84,13 @@ function AddHighscore(props: { points: number }) {
                                         visibility: added
                                             ? 'visible'
                                             : 'hidden',
-                                        marginTop: '-10%',
+                                        marginTop: '-130px',
                                     }}
-                                    initial={{ scale: '0%' }}
-                                    animate={{ scale: '100%' }}
-                                    transition={{ duration: 0.25, delay: 0.25 }}
+                                    initial={{scale: "0%"}}
+                                    animate={{rotate: 360, scale: "100%"}}
+                                    transition={{ duration: 0.5, delay: 0.25, type: "spring"}}
                                     key={added ? 10 : 5}>
-                                    Lagt til!
+                                    <Text fontSize={100}>&#128077;</Text>
                                 </motion.div>
                             </AnimatePresence>
                         </Stack>
