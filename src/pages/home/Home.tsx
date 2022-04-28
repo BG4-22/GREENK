@@ -30,8 +30,8 @@ const funfacts: string[] = [
  * Example data to pass as props in the competition component.
  */
 const exampleData = [
-    { name: 'Nidarvoll skole', value: 70 },
-    { name: 'Gjennomsnitts- skolen i Trondheim', value: 30 },
+    { name: 'Vår skole', value: 70 },
+    { name: 'Andre skoler', value: 30 },
 ];
 
 const HomeWelcomeComponent: React.FC = () => {

@@ -31,6 +31,7 @@ const SolarPanelComponent: React.FC = () => {
 
     return (
         <Box
+            mb={'20px'}
             h={'100%'}
             w={'100%'}
             pos={'relative'}
