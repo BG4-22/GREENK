@@ -1529,14 +1529,25 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 stroke="white"
                 stroke-width="23"
             />
-            <rect
-                x="511.05"
+            {/* <rect
+                x="490"
                 y="396.853"
-                width="576"
-                height="469"
+                width="650"
+                height="430"
+                rx="40"
+                transform="rotate(-1.73042 511.05 396.853)"
+                fill="black"
+            /> */}
+            <rect
+                x="500"
+                y="410"
+                width="620"
+                height="440"
                 rx="40"
                 transform="rotate(-1.73042 511.05 396.853)"
                 fill="white"
+                stroke="#BCBCBC"
+                stroke-width="20"
             />
             <rect
                 x="741.572"
