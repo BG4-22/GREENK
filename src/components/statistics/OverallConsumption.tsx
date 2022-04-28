@@ -1,37 +1,60 @@
-import { Box, Center, Flex, Image, Spacer, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Center,
+    Flex,
+    Image,
+    Spacer,
+    Spinner,
+    Text,
+} from '@chakra-ui/react';
+import { getEnergyConsumptionPerHour } from 'api/energyData';
 import { useEffect, useState } from 'react';
-import dataJson from '../../assets/MockData.json';
+import { EnergyConsumptionList } from 'types/api';
 import HotChocolate from '../../assets/stats/hotChocolate.png';
 import Light from '../../assets/stats/light.png';
 import Playstation from '../../assets/stats/playstation.png';
 import './statistics.css';
 
-const OverallConsumption = () => {
-    //Variable for light consumption
-    const lightConsumption = 0.06;
+//Variable for light consumption
+const lightConsumption = 0.06;
 
-    //Variable for playstation consumption
-    //playstation: 0.31 kwh pr hour
-    const playstationConsumption: number = 0.31;
+//Variable for playstation consumption
+//playstation: 0.31 kwh pr hour
+const playstationConsumption: number = 0.31;
 
-    //Variable for hot water consumption
-    //https://www.quora.com/How-much-kW-of-energy-is-needed-to-boil-1kg-of-water-Assume-at-1atm-and-at-room-temperature-Then-how-much-would-it-be-for-2-3-and-4kg-of-water-Is-there-a-linear-relationship
-    //1.33952 kW for 1kg water
-    //1.33952/5 = 0.267904 per 2dl
-    const hotChocoConsumption = 0.27;
+//Variable for hot water consumption
+//https://www.quora.com/How-much-kW-of-energy-is-needed-to-boil-1kg-of-water-Assume-at-1atm-and-at-room-temperature-Then-how-much-would-it-be-for-2-3-and-4kg-of-water-Is-there-a-linear-relationship
+//1.33952 kW for 1kg water
+//1.33952/5 = 0.267904 per 2dl
+const hotChocoConsumption = 0.27;
+
+const OverallConsumption: React.FC = () => {
+    const [data, setData] = useState<EnergyConsumptionList>([]);
+    useEffect(() => {
+        setData(getEnergyConsumptionPerHour());
+    }, []);
+
+    const [hour, setHour] = useState<number>(0);
+
+    //Updates data when hour change
+    function incrementHour() {
+        const nextHour = hour >= 23 ? 0 : hour;
+        setHour(nextHour);
+        setConsPerHour(data[nextHour]);
+    }
+
+    //Updates data for overall consumption every 10 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            incrementHour();
+        }, 10000);
+        return () => clearInterval(interval);
+    }, []);
 
     const [consPerHour, setConsPerHour] = useState<number>(48.6);
     const [LightHour, setLightHour] = useState<number>(0);
     const [playstationHour, setPlaystationHour] = useState<number>(0);
     const [hotChocoCount, setHotChocoCount] = useState<number>(0);
-
-    //Gets data for overall consumption every 10 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            getData();
-        }, 10000);
-        return () => clearInterval(interval);
-    }, []);
 
     //Calculates hours and counts based on the overall consumption
     useEffect(() => {
@@ -42,17 +65,7 @@ const OverallConsumption = () => {
         setHotChocoCount(calc(hotChocoConsumption));
     }, [consPerHour]);
 
-    //Index to get data at different hours from the mock data
-    let index = 0;
-
-    //Fetches data from the different hours
-    function getData() {
-        index++;
-        if (index > 23) {
-            index = 0;
-        }
-        setConsPerHour(dataJson.EnergyComsumptionByHour[index]);
-    }
+    if (!data) return <Spinner />;
 
     return (
         <>

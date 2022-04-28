@@ -7,3 +7,5 @@ export type EnergySourceList = {
     name: string;
     amount: number;
 }[];
+
+export type EnergyConsumptionList = number[];

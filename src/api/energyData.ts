@@ -1,4 +1,8 @@
-import { EnergySourceList, MonthlySpendings } from 'types/api';
+import {
+    EnergyConsumptionList,
+    EnergySourceList,
+    MonthlySpendings,
+} from 'types/api';
 import dataJson from '../assets/MockData.json';
 
 export const getMonthlySpendings: () => MonthlySpendings = () => {
@@ -7,4 +11,8 @@ export const getMonthlySpendings: () => MonthlySpendings = () => {
 
 export const getEnergySources: () => EnergySourceList[] = () => {
     return dataJson.EnergySources as EnergySourceList[];
+};
+
+export const getEnergyConsumptionPerHour: () => EnergyConsumptionList = () => {
+    return dataJson.EnergyConsumptionByHour;
 };
