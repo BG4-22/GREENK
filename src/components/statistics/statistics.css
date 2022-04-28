@@ -6,7 +6,14 @@
 }
 
 #battery {
-    position: absolute;
-    left: 918px;
-    top: 310px;
+    position: relative;
+    top: 9rem;
+    right: 12rem;
+}
+
+.animate-width {
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
 }

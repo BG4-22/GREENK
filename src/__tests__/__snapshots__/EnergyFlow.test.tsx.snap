@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EnergyFlow /> renders correctly 1`] = `
+<Center
+  margin="75px auto"
+>
+  <video
+    autoPlay={true}
+    loop={true}
+    style={
+      Object {
+        "borderRadius": "40px",
+      }
+    }
+    width="75%"
+  >
+    <source
+      src="stub-file"
+      type="video/mp4"
+    />
+  </video>
+</Center>
+`;

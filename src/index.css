@@ -25,8 +25,7 @@ body {
 }
 
 #root {
-    background: #b9d6ac;
-    /*#9dbe*/
+    background: #c3e0b5;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,28 +1,36 @@
-import { Box, Button, Flex, Spacer, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@chakra-ui/react';
 
 import { Center } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { submitScore } from '../../services/game';
 import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import './Game.css';
 
+/**
+ * Function that takes the points as a prop and returns a component that handles logic for submitting the score
+ */
 function AddHighscore(props: { points: number }) {
+    /**
+     * Variables:
+     *    value: string value of input field
+     *    added: boolean state that prohibites multiple submissions
+     */
+
     const [value, setValue] = useState('');
+    const [added, setAdded] = useState(false);
+
     const navigate = useNavigate();
     const navigateTo = () => navigate('/highscore');
-    const [lagtTil, setLagtTil] = useState(false);
 
-    useEffect(() => {
-        console.log(value);
-    }, [value]);
-
-    function leggTil() {
+    /**
+     * Function that calls submitScore and updates state of added
+     */
+    function addScore() {
         submitScore({ name: value, score: props.points });
-        setLagtTil(true);
-        console.log(lagtTil);
+        setAdded(true);
     }
     return (
         <>
@@ -37,7 +45,7 @@ function AddHighscore(props: { points: number }) {
                             <AnimatePresence>
                                 <motion.div
                                     style={{
-                                        visibility: lagtTil
+                                        visibility: added
                                             ? 'hidden'
                                             : 'visible',
                                     }}
@@ -45,7 +53,7 @@ function AddHighscore(props: { points: number }) {
                                     animate={{ scale: '100%' }}
                                     exit={{ scale: '0%' }}
                                     transition={{ duration: 0.25 }}
-                                    key={lagtTil ? 1 : 0}>
+                                    key={added ? 1 : 0}>
                                     <Center>
                                         <Text fontSize="2xl">Navn:</Text>
                                         <Input
@@ -60,11 +68,13 @@ function AddHighscore(props: { points: number }) {
                                         />
                                     </Center>
                                     <Center>
+                                        {/* Button that calls addScore if added is false */}
                                         <Button
                                             id={'addButton'}
                                             size="lg"
+                                            variant="game"
                                             onClick={
-                                                lagtTil ? () => {} : leggTil
+                                                added ? () => {} : addScore
                                             }>
                                             Legg til
                                         </Button>
@@ -72,22 +82,27 @@ function AddHighscore(props: { points: number }) {
                                 </motion.div>
                                 <motion.div
                                     style={{
-                                        visibility: lagtTil
+                                        visibility: added
                                             ? 'visible'
                                             : 'hidden',
-                                        marginTop: '-10%',
+                                        marginTop: '-130px',
                                     }}
-                                    initial={{ scale: '0%' }}
-                                    animate={{ scale: '100%' }}
-                                    transition={{ duration: 0.25, delay: 0.25 }}
-                                    key={lagtTil ? 10 : 5}>
-                                    Nais
+                                    initial={{scale: "0%"}}
+                                    animate={{rotate: 360, scale: "100%"}}
+                                    transition={{ duration: 0.5, delay: 0.25, type: "spring"}}
+                                    key={added ? 10 : 5}>
+                                    <Text fontSize={100}>&#128077;</Text>
                                 </motion.div>
                             </AnimatePresence>
                         </Stack>
                     </Center>
                 </Box>
-                <Button id={'continueButton'} size="lg" onClick={navigateTo}>
+                {/* Button that navigates to "/highscore" page */}
+                <Button
+                    id={'continueButton'}
+                    variant="gameNavigation"
+                    size="lg"
+                    onClick={navigateTo}>
                     Gå videre
                 </Button>
             </Center>

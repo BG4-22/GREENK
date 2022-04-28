@@ -11,18 +11,27 @@ import tv from 'assets/game/tv.jpeg';
 import tørketrommel from 'assets/game/tørketrommel.jpeg';
 import varmtvann from 'assets/game/varmtvann.jpeg';
 import vaskemaskin from 'assets/game/vaskemaskin.jpeg';
-import AddHighscore from 'components/game/AddHighscore';
-import Counter from 'components/game/Counter';
-import Feedback from 'components/game/Feedback';
-import GameSlide from 'components/game/Slide';
+import AddHighscore from '../components/game/AddHighscore';
+import Counter from '../components/game/Counter';
+import Feedback from '../components/game/Feedback';
+import GameSlide from '../components/game/Slide';
+import { SpinnerIcon } from '@chakra-ui/icons';
 
-interface Prompt {
-    description: string;
-    img: string;
-    kWh: number;
-}
+import { Prompt } from '../components/game/Prompt';
 
+//Function that handle the game logic, and returns a component that contains the game
 function Game() {
+    /* 
+    gameOver: Has the player lost?
+    hasAnswered: Has the player answered the current question
+    next: Should we update to the next game state?
+    points: Increases by one for every right answer
+    promptLeft: Prompt object that contains information on the left prompt
+    promptRight: Prompt object that contains information on the right prompt
+    answer: Prompt that is a referance to the answered prompt
+    highscore: Should we show the addHighscore component?
+    loading: State for not animating the first time the component is rendered
+    */
     const [gameOver, setGameOver] = useState(false);
     const [hasAnswered, setHasAnswered] = useState(false);
     const [next, setNext] = useState(false);
@@ -96,19 +105,26 @@ function Game() {
         },
     ];
 
+    //Function for updating the prompts
     function updatePrompts() {
         let randomPromptLeft, randomPromptRight;
+        //If promptLeft is not assigned, assign random promptLeft, else promptLeft = promptRight
         if (promptLeft) {
             randomPromptLeft = promptRight;
         } else {
             randomPromptLeft = getRandomPromt();
         }
+        //Assign random promptRight
         randomPromptRight = getRandomPromt();
+
+        //Since the prompts are assigned randomly, we need logic to make sure they are not the same
         while (true) {
             if (randomPromptRight.description == randomPromptLeft?.description)
                 randomPromptRight = getRandomPromt();
             else break;
         }
+
+        //Update the states
         setPromptLeft(randomPromptLeft);
         setPromptRight(randomPromptRight);
         setTo(randomPromptRight.kWh);
@@ -178,17 +194,32 @@ function Game() {
                     h="85%"
                     p={4}
                     borderRadius="50px"
-                    margin="auto">
+                    margin="auto"
+                    visibility={loading ? 'hidden' : 'visible'}>
                     {!gameOver && !highscore ? (
-                        <Box
-                            position="absolute"
-                            zIndex="1"
-                            width="5px"
-                            height="68%"
-                            bg="white"
-                            color="black"
-                            left="50%"
-                            transform="translateX(-50%)"></Box>
+                        <>
+                            <Box
+                                position="absolute"
+                                zIndex="1"
+                                width="5px"
+                                height="68%"
+                                bg="white"
+                                color="black"
+                                left="50%"
+                                transform="translateX(-50%)"></Box>
+                            <Text
+                                fontWeight="bold"
+                                fontSize="20px"
+                                //textShadow='0px 0px 10px rgba(0, 0, 0, 0.2)'
+                                position="absolute"
+                                zIndex="1"
+                                color="white"
+                                top="8%"
+                                left="85%"
+                                transform="translateX(-50%)">
+                                Score: {points}
+                            </Text>
+                        </>
                     ) : (
                         <></>
                     )}
@@ -381,16 +412,13 @@ function Game() {
                                         position="relative"
                                         top="50%"
                                         visibility={
-                                            hasAnswered ? 'hidden' : 'visible'
+                                            hasAnswered || loading
+                                                ? 'hidden'
+                                                : 'visible'
                                         }>
                                         <Button
-                                            shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            color="white"
+                                            variant="gameAnswer"
                                             bgColor="#c3e0b5"
-                                            width="30%"
-                                            borderRadius="40px"
-                                            bg="#FFFFFF"
                                             size="lg"
                                             onClick={() =>
                                                 updateHasAnswered(promptRight)
@@ -398,13 +426,8 @@ function Game() {
                                             Mer
                                         </Button>
                                         <Button
-                                            shadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            textShadow="0px 0px 10px rgba(0, 0, 0, 0.2)"
-                                            color="white"
+                                            variant="gameAnswer"
                                             bgColor="#FF8585"
-                                            width="30%"
-                                            borderRadius="40px"
-                                            bg="#FFFFFF"
                                             size="lg"
                                             onClick={() =>
                                                 updateHasAnswered(promptLeft)
@@ -414,6 +437,28 @@ function Game() {
                                     </Stack>
                                 </div>
                             </Flex>
+                            <AnimatePresence>
+                                <motion.div
+                                    style={{
+                                        marginTop: '-24%',
+                                        marginLeft: "37%",
+                                        position : "absolute",
+                                        height: '50px',
+                                        width: '50px',
+                                        visibility: 'visible',
+                                        display: loading ? 'block' : 'none',
+                                    }}
+                                    animate={{ rotate: 360 }}
+                                    transition={{
+                                        ease: 'linear',
+                                        duration: 2,
+                                        repeat: Infinity,
+                                    }}>
+                                    <SpinnerIcon
+                                        boxSize="50px"
+                                        color="white"></SpinnerIcon>
+                                </motion.div>
+                            </AnimatePresence>
                         </>
                     ) : (
                         <>{updatePrompts()}</>

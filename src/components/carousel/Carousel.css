@@ -26,12 +26,23 @@
     opacity: 80%;
 }
 
-.next {
-    right: 2rem;
+.small-buttons {
+    transform: scale(-50%) rotate(180deg);
 }
 
-.prev {
-    left: 2rem;
+.small-buttons.next {
+    right: 0rem;
+}
+.small-buttons.prev {
+    left: 0rem;
+}
+
+.default.next {
+    right: 3rem;
+}
+
+.default.prev {
+    left: 3rem;
 }
 
 .refresh {
@@ -58,12 +69,12 @@
 }
 
 .moneyBarWrapper {
-    height: 50%;
     width: 1400px;
     position: relative;
     z-index: 10;
-    top: 215px;
+    top: 165px;
     left: 85px;
+    overflow: hidden;
 }
 .axisWrapper {
     position: relative;
