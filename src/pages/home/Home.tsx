@@ -1,5 +1,5 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
-import NidarvollVideo from 'assets/videos/Nidarvoll-video.mp4';
+import NidarvollVideo from 'assets/videos/NidarvollGjenbruk-video.mp4';
 import Competition from '../../components/competition/Competition';
 import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
 import Scoreboard from '../../components/game/Scoreboard';
@@ -38,7 +38,7 @@ const HomeWelcomeComponent: React.FC = () => {
     return (
         <Box id={'welcomeBox'}>
             <Text id={'greenK'}>GRØNN KIOSK</Text>
-            <Box marginTop={'20px'}>
+            <Box marginTop={'70px'}>
                 <video width="100%" loop autoPlay>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
