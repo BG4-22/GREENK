@@ -6,19 +6,19 @@ import Light from '../../assets/stats/light.png';
 import Playstation from '../../assets/stats/playstation.png';
 import './statistics.css';
 
-const OverallCon = () => {
+const OverallConsumption = () => {
     //Variable for light consumption
-    const lightConsump = 0.06;
+    const lightConsumption = 0.06;
 
     //Variable for playstation consumption
     //playstation: 0.31 kwh pr hour
-    const playstationConsump: number = 0.31;
+    const playstationConsumption: number = 0.31;
 
     //Variable for hot water consumption
     //https://www.quora.com/How-much-kW-of-energy-is-needed-to-boil-1kg-of-water-Assume-at-1atm-and-at-room-temperature-Then-how-much-would-it-be-for-2-3-and-4kg-of-water-Is-there-a-linear-relationship
     //1.33952 kW for 1kg water
     //1.33952/5 = 0.267904 per 2dl
-    const hotChocoConsump = 0.27;
+    const hotChocoConsumption = 0.27;
 
     const [consPerHour, setConsPerHour] = useState<number>(48.6);
     const [LightHour, setLightHour] = useState<number>(0);
@@ -35,13 +35,11 @@ const OverallCon = () => {
 
     //Calculates hours and counts based on the overall consumption
     useEffect(() => {
-        const calcLight = Math.floor(consPerHour / lightConsump);
-        setLightHour(calcLight);
-        const calcPlaystation = Math.floor(consPerHour / playstationConsump);
-        console.log(calcPlaystation);
-        setPlaystationHour(calcPlaystation);
-        const calcHotChoco = Math.floor(consPerHour / hotChocoConsump);
-        setHotChocoCount(calcHotChoco);
+        const calc = (value: number) => Math.floor(consPerHour / value);
+
+        setLightHour(calc(lightConsumption));
+        setPlaystationHour(calc(playstationConsumption));
+        setHotChocoCount(calc(hotChocoConsumption));
     }, [consPerHour]);
 
     //Index to get data at different hours from the mock data
@@ -91,21 +89,18 @@ const OverallCon = () => {
                     <Flex width={700} marginRight={50} position="absolute">
                         <Box>
                             <Text className="funfact">
-                                Å ha på en lyspære i{' '}
-                                <Text fontSize="2xl" color="#FF8585" margin={1}>
-                                    {LightHour}{' '}
-                                </Text>
+                                Å ha på en lyspære i
+                                <HightlightedText>{LightHour}</HightlightedText>
                                 timer!
                             </Text>
                         </Box>
                         <Spacer></Spacer>
                         <Box>
                             <Text className="funfact">
-                                Å spille playstation i{' '}
-                                <Text fontSize="2xl" color="#FF8585" margin={1}>
-                                    {' '}
-                                    {playstationHour}{' '}
-                                </Text>{' '}
+                                Å spille playstation i
+                                <HightlightedText>
+                                    {playstationHour}
+                                </HightlightedText>
                                 timer!
                             </Text>
                         </Box>
@@ -113,9 +108,9 @@ const OverallCon = () => {
                         <Box>
                             <Text className="funfact">
                                 Å varme opp vann til
-                                <Text fontSize="2xl" color="#FF8585" margin={1}>
+                                <HightlightedText>
                                     {hotChocoCount}
-                                </Text>
+                                </HightlightedText>
                                 kakaoer!
                             </Text>
                         </Box>
@@ -126,4 +121,13 @@ const OverallCon = () => {
     );
 };
 
-export default OverallCon;
+const HightlightedText: React.FC = ({ children }) => {
+    return (
+        <Text as="span" fontSize="2xl" color="#FF8585">
+            {' '}
+            {children}{' '}
+        </Text>
+    );
+};
+
+export default OverallConsumption;

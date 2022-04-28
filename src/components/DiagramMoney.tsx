@@ -34,7 +34,7 @@ const DiagramMoney = () => {
             );
             setHeight(el?.getBBox().height);
         };
-        const timeout = setTimeout(findHeight, 1000);
+        const timeout = setTimeout(findHeight, 500);
 
         return () => clearTimeout(timeout);
     }, [data]);
