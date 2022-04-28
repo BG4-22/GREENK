@@ -6,9 +6,9 @@
 }
 
 #battery {
-    position: absolute;
-    left: 918px;
-    top: 310px;
+    position: relative;
+    top: 9rem;
+    right: 12rem;
 }
 
 .animate-width {

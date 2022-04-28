@@ -51,7 +51,7 @@ const OverallConsumption: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const [consPerHour, setConsPerHour] = useState<number>(48.6);
+    const [consPerHour, setConsPerHour] = useState<number>(134.5);
     const [LightHour, setLightHour] = useState<number>(0);
     const [playstationHour, setPlaystationHour] = useState<number>(0);
     const [hotChocoCount, setHotChocoCount] = useState<number>(0);
@@ -71,9 +71,7 @@ const OverallConsumption: React.FC = () => {
         <>
             <Box marginBottom={50}>
                 <Center>
-                    <Text fontSize="2xl">
-                        Forrige time brukte Nidarvoll skole
-                    </Text>
+                    <Text fontSize="2xl">Forrige time brukte skolen vår</Text>
                     <Text fontSize="4xl" color="#FF8585" margin={3}>
                         {consPerHour}
                     </Text>

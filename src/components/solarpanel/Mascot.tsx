@@ -2,6 +2,10 @@ import { FC } from 'react';
 import './Mascot.css';
 import { SolarPanelComponentPropsI } from './SolarPanelComponent';
 
+/**
+ * React svg component. Effect is passed as a prop from SolarPanelComponent and is used to make the text-tag with kW value fluctuate.
+ */
+
 const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
     const width = 1101;
     const height = 992;

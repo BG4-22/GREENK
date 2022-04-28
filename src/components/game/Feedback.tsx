@@ -6,21 +6,27 @@ import '../../fonts.css';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-//Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+/**
+ * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+ */
 function Feedback(props: {
     points: number;
     promptLeft: Prompt;
     promptRight: Prompt;
     updateHighscore: any;
 }) {
-    //Create referance to biggest and smallest prompt by comparing kWh.
+    /**
+     * Create referance to biggest and smallest prompt by comparing kWh.
+     */
     const prompts: { biggest: Prompt; smallest: Prompt } =
         props.promptLeft.kWh > props.promptRight.kWh
             ? { biggest: props.promptLeft, smallest: props.promptRight }
             : { biggest: props.promptRight, smallest: props.promptLeft };
     const difference = prompts.biggest.kWh - prompts.smallest.kWh;
 
-    //List of objects, where one will be chosen randomly to compare against difference
+    /**
+     * List of objects, where one will be chosen randomly to compare against difference
+     */
     const comperisons = [
         {
             verb: 'se',
@@ -45,7 +51,9 @@ function Feedback(props: {
         },
     ];
 
-    //Random object from comparions list
+    /**
+     * Random object from comparions list
+     */
     const comp = comperisons[Math.floor(Math.random() * comperisons.length)];
 
     return (

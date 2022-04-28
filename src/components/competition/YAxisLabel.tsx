@@ -10,7 +10,7 @@ const YAxisLabel: React.VFC<YAxisLabelProps> = ({ text }) => {
         <Box w={'30px'}>
             <Text
                 w={'300px'}
-                textAlign={'end'}
+                textAlign={'center'}
                 transform={
                     'rotateZ(90deg) translateY(550%) translateX(-10px) rotate(180deg)'
                 }>

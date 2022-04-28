@@ -10,37 +10,49 @@ import TwoBattery from 'assets/stats/battery/twoBattery.png';
 import ThreeBattery from 'assets/stats/battery/threeBattery.png';
 import FullBattery from 'assets/stats/battery/fullBattery.png';
 
-//Phone: 2 kwh
-//www.forbes.com/sites/christopherhelman/2013/09/07/how-much-energy-does-your-iphone-and-other-devices-use-and-what-to-do-about-it/
-//Constant variable for phones energy consumption
-const phoneEnergy = 0.00545;
-
-//List with battery pictures
-const battery = [NoBattery, LowBattery, TwoBattery, ThreeBattery, FullBattery];
-
 const SolarPanel = () => {
+    //www.forbes.com/sites/christopherhelman/2013/09/07/how-much-energy-does-your-iphone-and-other-devices-use-and-what-to-do-about-it/
+    /**
+     * Constant variable for phones energy consumption
+     */
+    const phoneEnergy = 0.00545;
     const [batteryPic, setBatteryPic] = useState(NoBattery);
     const [index, setIndex] = useState<number>(0);
 
-    //Calculates amout of phones that can be charged
+    /**
+     * Calculates amout of phones that can be charged
+     */
     const phoneCount = Math.floor(getSolarPanelEffect() / phoneEnergy);
 
-    //Animation of battery charging
+    /**
+     * List with battery pictures
+     */
+    const battery = [
+        NoBattery,
+        LowBattery,
+        TwoBattery,
+        ThreeBattery,
+        FullBattery,
+    ];
+
+    /**
+     * Animation of battery charging
+     */
     useEffect(() => {
         const interval = setInterval(() => {
-            if (index > 4) {
-                setIndex(0);
-            }
-            //No charging animation if no energy
+            setIndex(index > 3 ? 0 : index + 1)
+
+            /**
+             * No charging animation if no energy
+             */
             if (phoneCount === 0) {
                 setBatteryPic(LowBattery);
             } else {
                 setBatteryPic(battery[index]);
-                setIndex(index + 1);
             }
-        }, 3000);
+        }, 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [phoneCount]);
 
     return (
         <>

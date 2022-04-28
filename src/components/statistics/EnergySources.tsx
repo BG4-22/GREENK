@@ -88,7 +88,9 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
 };
 
 const EnergySources: FC = () => {
-    //Index to get data at different hours from the mock data
+    /**
+     * Index to get data at different hours from the mock data
+     */
     const [data, setData] = useState<EnergySourceList[]>([]);
     useEffect(() => {
         setData(getEnergySources());
@@ -104,7 +106,9 @@ const EnergySources: FC = () => {
         }
     };
 
-    //Calculates hours and counts based on the overall consumption
+    /**
+     * Calculates hours and counts based on the overall consumption
+     */
     useEffect(() => {
         const interval = setInterval(() => {
             increment();
@@ -120,7 +124,7 @@ const EnergySources: FC = () => {
                 fontSize={'3rem'}
                 textAlign={'center'}
                 transform={'translateY(2rem)'}>
-                Hvor energien kommer fra
+                Hvor energien kommer fra akkurat nå
             </Text>
             <HStack pos={'relative'} w={'100%'} h={'100%'}>
                 <VStack justifyContent={'center'} w={'100%'} h={'100%'}>
@@ -143,8 +147,8 @@ const EnergySources: FC = () => {
                 fontSize={'1.5rem'}
                 textAlign={'center'}
                 transform={'translateY(-2rem)'}>
-                {/* Til sammenlikning får den gjennomsnittlige skolen kjøpe 60% av
-                strømmen sin */}
+                Til sammenlikning må den gjennomsnittlige skolen kjøpe 60% av
+                strømmen sin
             </Text>
         </>
     );
