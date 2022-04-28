@@ -6,21 +6,27 @@ import '../../fonts.css';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-//Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+/**
+ * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+ */
 function Feedback(props: {
     points: number;
     promptLeft: Prompt;
     promptRight: Prompt;
     updateHighscore: any;
 }) {
-    //Create referance to biggest and smallest prompt by comparing kWh.
+    /**
+     * Create referance to biggest and smallest prompt by comparing kWh.
+     */
     const prompts: { biggest: Prompt; smallest: Prompt } =
         props.promptLeft.kWh > props.promptRight.kWh
             ? { biggest: props.promptLeft, smallest: props.promptRight }
             : { biggest: props.promptRight, smallest: props.promptLeft };
     const difference = prompts.biggest.kWh - prompts.smallest.kWh;
 
-    //List of objects, where one will be chosen randomly to compare against difference
+    /**
+     * List of objects, where one will be chosen randomly to compare against difference
+     */
     const comperisons = [
         {
             verb: 'se',
@@ -45,15 +51,20 @@ function Feedback(props: {
         },
     ];
 
-    //Random object from comparions list
+    /**
+     * Random object from comparions list
+     */
     const comp = comperisons[Math.floor(Math.random() * comperisons.length)];
 
     return (
         <VStack id={'feedbackStack'} spacing="14">
             <VStack id={'differenceStack'} spacing="20">
                 <Text fontSize="xl">
-                    {prompts.biggest.description} bruker {difference}kWh mer i
-                    måneden enn {prompts.smallest.description}!
+                    {prompts.biggest.description} bruker{' '}
+                    <Text as="span" color="#FF8585" fontSize="2xl">
+                        {difference} kWh
+                    </Text>{' '}
+                    mer i måneden enn {prompts.smallest.description}!
                 </Text>
 
                 <HStack>
@@ -68,8 +79,9 @@ function Feedback(props: {
                     <Image id={'compImg'} src={comp.img} />
                 </HStack>
             </VStack>
+
             <Button
-                id={'nextButton'}
+                id="nextButton"
                 variant="gameNavigation"
                 size="lg"
                 onClick={props.updateHighscore}>

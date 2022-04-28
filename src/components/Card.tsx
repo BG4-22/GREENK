@@ -1,16 +1,17 @@
 import { Box, Stack, Text } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
-import './../Funfacts.css';
+import '../components/funfacts/Funfacts.css';
 
-interface FunfactCardPropsI {
+/**
+ * Component used in funfact-card and in scoreboard. Basic white box to ensure similarity in design.
+ */
+
+interface CardPropsI {
     title: string;
     children: ReactNode;
 }
 
-const FunfactCard: React.FC<FunfactCardPropsI> = ({
-    title,
-    children,
-}: FunfactCardPropsI) => {
+const Card: React.FC<CardPropsI> = ({ title, children }: CardPropsI) => {
     return (
         <Stack id={'funfactStack'} spacing={'1rem'}>
             <Text id={'funfactTitle'}>{title}</Text>
@@ -19,4 +20,4 @@ const FunfactCard: React.FC<FunfactCardPropsI> = ({
     );
 };
 
-export default FunfactCard;
+export default Card;

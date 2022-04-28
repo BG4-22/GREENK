@@ -12,7 +12,6 @@ describe('<Home />', () => {
     const wrapper = shallow(<Home />);
     it('Should render correctly', () => {
         expect(toJson(wrapper)).toMatchSnapshot();
-        console.log(wrapper);
     });
 
     it('Should render every component on the page', () => {

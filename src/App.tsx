@@ -6,6 +6,10 @@ import Game from './pages/Game';
 import Highscores from './pages/Highscores';
 import Statistics from './pages/Statistics';
 
+/**
+ * Main react component. Here the routes are made to map each url path and the components that is shown on each of those.
+ */
+
 function App() {
     return (
         <Routes>

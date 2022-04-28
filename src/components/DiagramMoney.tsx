@@ -9,6 +9,9 @@ const DiagramMoney = () => {
     const [data, setData] = useState<MonthlySpendings>([]);
     const [height, setHeight] = useState<number | undefined>(undefined);
 
+    /**
+     * Maps every energy-entry to a month.
+     */
     useEffect(() => {
         setData(getMonthlySpendings());
     }, []);
@@ -18,6 +21,9 @@ const DiagramMoney = () => {
     //calcuate the relative height of the money bars
     const barHeight = (value: number) => (value / maxSpent) * 100 + '%';
 
+    /**
+     * Decides how high the entry in the table should be based on the value.
+     */
     const moneyBoxHeight: () => JSX.Element[] = () =>
         data.map((month, index) => (
             <Box

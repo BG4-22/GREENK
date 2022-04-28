@@ -5,6 +5,11 @@ import Mascot from '../solarpanel/Mascot';
 import './SolarPanelComponent.css';
 import Weather, { WeatherPropsI } from './Weather';
 
+/**
+ * This component consists of the Mascot svg-component and the weather component. Based on
+ * the effect value, the svg of the sun and cloud will change appearance.
+ */
+
 export interface SolarPanelComponentPropsI {
     effect: number;
 }
@@ -26,6 +31,7 @@ const SolarPanelComponent: React.FC = () => {
 
     return (
         <Box
+            mb={'20px'}
             h={'100%'}
             w={'100%'}
             pos={'relative'}
