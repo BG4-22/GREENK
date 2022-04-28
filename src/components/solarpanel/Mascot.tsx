@@ -14,12 +14,17 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
             <path
                 d="M83.0007 460.049L102.638 460.049C119.627 460.049 134.763 449.317 140.385 433.285L171.5 344.549"
                 stroke="white"
-                strokeWidth="30"
+                stroke-width="30"
             />
             <path
                 d="M171.499 344.549L149 406.549"
-                stroke="#DADADA"
-                strokeWidth="30"
+                stroke="#A6A6A6"
+                stroke-width="30"
+            />
+            <path
+                d="M205.525 377L147.022 418.295"
+                stroke="#A6A6A6"
+                stroke-width="40"
             />
             <rect
                 x="62.1963"
@@ -28,7 +33,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="33"
                 rx="16.5"
                 transform="rotate(77.3297 62.1963 354.049)"
-                fill="#C5C5C5"
+                fill="#FFC876"
             />
             <rect
                 x="73.6016"
@@ -37,7 +42,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="33"
                 rx="10.5"
                 transform="rotate(77.3297 73.6016 404.783)"
-                fill="#C5C5C5"
+                fill="#FFC876"
             />
             <rect
                 x="80.249"
@@ -46,7 +51,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="51.0955"
                 rx="25.5478"
                 transform="rotate(79.551 80.249 404.049)"
-                fill="#B7B7B7"
+                fill="#DDAA5C"
             />
             <rect
                 x="93.8828"
@@ -55,7 +60,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="51.0955"
                 rx="15.1803"
                 transform="rotate(79.551 93.8828 477.981)"
-                fill="#B7B7B7"
+                fill="#DDAA5C"
             />
             <rect
                 x="689"
@@ -64,7 +69,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="33"
                 rx="16.5"
                 transform="rotate(-32.4189 689 399.219)"
-                fill="#C5C5C5"
+                fill="#FFC876"
             />
             <rect
                 x="729"
@@ -73,30 +78,30 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 height="33"
                 rx="16.5"
                 transform="rotate(-0.678035 729 376.104)"
-                fill="#B7B7B7"
+                fill="#DDAA5C"
             />
             <rect x="303" y="722.049" width="40" height="250" fill="white" />
-            <rect x="303" y="722.049" width="40" height="86" fill="#DADADA" />
+            <rect x="303" y="722.049" width="40" height="86" fill="#A6A6A6" />
             <rect
                 x="283"
                 y="952.049"
                 width="79"
                 height="39"
                 rx="19.5"
-                fill="#C5C5C5"
+                fill="#FFC876"
             />
-            <rect x="283" y="972.049" width="79" height="19" fill="#C5C5C5" />
+            <rect x="283" y="972.049" width="79" height="19" fill="#FFC876" />
             <rect x="505" y="722.049" width="40" height="250" fill="white" />
-            <rect x="505" y="722.049" width="40" height="86" fill="#DADADA" />
+            <rect x="505" y="722.049" width="40" height="86" fill="#A6A6A6" />
             <rect
                 x="485"
                 y="952.049"
                 width="79"
                 height="39"
                 rx="19.5"
-                fill="#C5C5C5"
+                fill="#FFC876"
             />
-            <rect x="485" y="972.049" width="79" height="19" fill="#C5C5C5" />
+            <rect x="485" y="972.049" width="79" height="19" fill="#FFC876" />
             <rect
                 x="144.939"
                 y="14.3689"
@@ -120,7 +125,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="231.342"
                 y2="197.13"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="171.69"
@@ -128,7 +133,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="282.65"
                 y2="114.233"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="172.383"
@@ -136,7 +141,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="283.343"
                 y2="140.224"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -144,7 +149,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 170.957 89.7019)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="173.156"
@@ -152,7 +157,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="284.117"
                 y2="169.214"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -160,7 +165,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 170.264 63.7112)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="188.064"
@@ -168,7 +173,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="192.356"
                 y2="198.17"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="207.057"
@@ -176,7 +181,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="211.349"
                 y2="197.664"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="245.043"
@@ -184,7 +189,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="249.335"
                 y2="196.651"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="263.038"
@@ -192,7 +197,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="267.33"
                 y2="196.171"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="174.503"
@@ -208,7 +213,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="236.275"
                 y2="382.065"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="176.622"
@@ -216,7 +221,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="287.583"
                 y2="299.167"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="177.315"
@@ -224,7 +229,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="288.276"
                 y2="325.158"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -232,7 +237,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 175.89 274.636)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="178.089"
@@ -240,7 +245,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="289.049"
                 y2="354.148"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -248,7 +253,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 175.196 248.646)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="192.997"
@@ -256,7 +261,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="197.289"
                 y2="383.104"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="211.99"
@@ -264,7 +269,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="216.282"
                 y2="382.598"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="249.976"
@@ -272,7 +277,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="254.268"
                 y2="381.585"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="267.97"
@@ -280,7 +285,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="272.262"
                 y2="381.105"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="179.435"
@@ -296,7 +301,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="241.206"
                 y2="566.999"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="181.554"
@@ -304,7 +309,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="292.514"
                 y2="484.102"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="182.247"
@@ -312,7 +317,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="293.208"
                 y2="510.092"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -320,7 +325,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 180.821 459.571)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="183.021"
@@ -328,7 +333,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="293.981"
                 y2="539.082"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -336,7 +341,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 180.128 433.58)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="197.928"
@@ -344,7 +349,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="202.22"
                 y2="568.039"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="216.921"
@@ -352,7 +357,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="221.213"
                 y2="567.532"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="254.908"
@@ -360,7 +365,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="259.2"
                 y2="566.519"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="272.902"
@@ -368,7 +373,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="277.194"
                 y2="566.039"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="184.366"
@@ -384,7 +389,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="246.138"
                 y2="751.933"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="186.485"
@@ -392,7 +397,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="297.446"
                 y2="669.036"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="187.179"
@@ -400,7 +405,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="298.139"
                 y2="695.027"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -408,7 +413,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 185.753 644.505)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="187.952"
@@ -416,7 +421,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="298.913"
                 y2="724.016"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -424,7 +429,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 185.06 618.514)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="202.86"
@@ -432,7 +437,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="207.152"
                 y2="752.973"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="221.853"
@@ -440,7 +445,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="226.145"
                 y2="752.466"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="259.839"
@@ -448,7 +453,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="264.131"
                 y2="751.453"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="277.833"
@@ -456,7 +461,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="282.125"
                 y2="750.973"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="296.525"
@@ -472,7 +477,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="358.297"
                 y2="193.745"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="298.645"
@@ -480,7 +485,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="409.605"
                 y2="110.848"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="299.338"
@@ -488,7 +493,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="410.298"
                 y2="136.838"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -496,7 +501,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 297.912 86.3164)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="300.111"
@@ -504,7 +509,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="411.072"
                 y2="165.828"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -512,7 +517,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 297.219 60.3257)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="315.019"
@@ -520,7 +525,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="319.311"
                 y2="194.785"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="334.012"
@@ -528,7 +533,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="338.304"
                 y2="194.278"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="371.998"
@@ -536,7 +541,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="376.29"
                 y2="193.265"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="389.993"
@@ -544,7 +549,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="394.285"
                 y2="192.785"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="301.457"
@@ -560,7 +565,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="363.229"
                 y2="378.679"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="303.576"
@@ -568,7 +573,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="414.537"
                 y2="295.782"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="304.27"
@@ -576,7 +581,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="415.23"
                 y2="321.773"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -584,7 +589,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 302.844 271.251)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="305.043"
@@ -592,7 +597,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="416.004"
                 y2="350.762"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -600,7 +605,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 302.15 245.26)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="319.951"
@@ -608,7 +613,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="324.243"
                 y2="379.719"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="338.944"
@@ -616,7 +621,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="343.236"
                 y2="379.212"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="376.93"
@@ -624,7 +629,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="381.222"
                 y2="378.199"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="394.924"
@@ -632,7 +637,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="399.216"
                 y2="377.719"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="306.389"
@@ -648,7 +653,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="368.161"
                 y2="563.613"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="308.508"
@@ -656,7 +661,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="419.468"
                 y2="480.716"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="309.201"
@@ -664,7 +669,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="420.162"
                 y2="506.707"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -672,7 +677,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 307.775 456.185)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="309.975"
@@ -680,7 +685,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="420.935"
                 y2="535.696"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -688,7 +693,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 307.082 430.194)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="324.882"
@@ -696,7 +701,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="329.174"
                 y2="564.653"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="343.875"
@@ -704,7 +709,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="348.167"
                 y2="564.146"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="381.862"
@@ -712,7 +717,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="386.154"
                 y2="563.133"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="399.856"
@@ -720,7 +725,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="404.148"
                 y2="562.654"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="311.321"
@@ -736,7 +741,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="373.093"
                 y2="748.548"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="313.44"
@@ -744,7 +749,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="424.401"
                 y2="665.65"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="314.134"
@@ -752,7 +757,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="425.094"
                 y2="691.641"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -760,7 +765,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 312.708 641.119)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="314.907"
@@ -768,7 +773,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="425.868"
                 y2="720.631"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -776,7 +781,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 312.015 615.128)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="329.815"
@@ -784,7 +789,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="334.107"
                 y2="749.587"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="348.808"
@@ -792,7 +797,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="353.1"
                 y2="749.081"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="386.794"
@@ -800,7 +805,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="391.086"
                 y2="748.068"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="404.789"
@@ -808,7 +813,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="409.081"
                 y2="747.588"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="423.48"
@@ -824,7 +829,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="485.252"
                 y2="190.359"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="425.6"
@@ -832,7 +837,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="536.56"
                 y2="107.462"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="426.293"
@@ -840,7 +845,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="537.254"
                 y2="133.453"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -848,7 +853,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 424.867 82.9309)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="427.066"
@@ -856,7 +861,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="538.027"
                 y2="162.443"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -864,7 +869,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 424.174 56.9402)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="441.974"
@@ -872,7 +877,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="446.266"
                 y2="191.399"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="460.967"
@@ -880,7 +885,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="465.259"
                 y2="190.893"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="498.954"
@@ -888,7 +893,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="503.246"
                 y2="189.88"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="516.948"
@@ -896,7 +901,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="521.24"
                 y2="189.4"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="428.412"
@@ -912,7 +917,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="490.184"
                 y2="375.293"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="430.531"
@@ -920,7 +925,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="541.492"
                 y2="292.396"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="431.225"
@@ -928,7 +933,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="542.185"
                 y2="318.387"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -936,7 +941,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 429.799 267.865)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="431.998"
@@ -944,7 +949,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="542.959"
                 y2="347.377"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -952,7 +957,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 429.105 241.874)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="446.906"
@@ -960,7 +965,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="451.198"
                 y2="376.333"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="465.899"
@@ -968,7 +973,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="470.191"
                 y2="375.827"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="503.885"
@@ -976,7 +981,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="508.177"
                 y2="374.814"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="521.879"
@@ -984,7 +989,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="526.171"
                 y2="374.334"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="433.344"
@@ -1000,7 +1005,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="495.116"
                 y2="560.228"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="435.463"
@@ -1008,7 +1013,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="546.423"
                 y2="477.331"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="436.156"
@@ -1016,7 +1021,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="547.117"
                 y2="503.321"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1024,7 +1029,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 434.73 452.799)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="436.93"
@@ -1032,7 +1037,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="547.89"
                 y2="532.311"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1040,7 +1045,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 434.037 426.809)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="451.837"
@@ -1048,7 +1053,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="456.129"
                 y2="561.268"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="470.831"
@@ -1056,7 +1061,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="475.122"
                 y2="560.761"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="508.817"
@@ -1064,7 +1069,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="513.109"
                 y2="559.748"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="526.811"
@@ -1072,7 +1077,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="531.103"
                 y2="559.268"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="438.275"
@@ -1088,7 +1093,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="500.047"
                 y2="745.162"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="440.395"
@@ -1096,7 +1101,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="551.355"
                 y2="662.265"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="441.088"
@@ -1104,7 +1109,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="552.048"
                 y2="688.256"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1112,7 +1117,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 439.662 637.734)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="441.861"
@@ -1120,7 +1125,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="552.822"
                 y2="717.245"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1128,7 +1133,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 438.969 611.743)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="456.769"
@@ -1136,7 +1141,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="461.061"
                 y2="746.202"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="475.762"
@@ -1144,7 +1149,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="480.054"
                 y2="745.695"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="513.748"
@@ -1152,7 +1157,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="518.04"
                 y2="744.682"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="531.743"
@@ -1160,7 +1165,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="536.035"
                 y2="744.202"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="550.436"
@@ -1176,7 +1181,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="612.207"
                 y2="186.974"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="552.555"
@@ -1184,7 +1189,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="663.515"
                 y2="104.076"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="553.248"
@@ -1192,7 +1197,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="664.209"
                 y2="130.067"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1200,7 +1205,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 551.822 79.5452)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="554.022"
@@ -1208,7 +1213,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="664.982"
                 y2="159.057"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1216,7 +1221,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 551.129 53.5544)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="568.929"
@@ -1224,7 +1229,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="573.221"
                 y2="188.013"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="587.922"
@@ -1232,7 +1237,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="592.214"
                 y2="187.507"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="625.909"
@@ -1240,7 +1245,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="630.201"
                 y2="186.494"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="643.903"
@@ -1248,7 +1253,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="648.195"
                 y2="186.014"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="555.367"
@@ -1264,7 +1269,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="617.139"
                 y2="371.908"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="557.486"
@@ -1272,7 +1277,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="668.447"
                 y2="289.011"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="558.18"
@@ -1280,7 +1285,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="669.14"
                 y2="315.001"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1288,7 +1293,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 556.754 264.479)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="558.953"
@@ -1296,7 +1301,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="669.914"
                 y2="343.991"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1304,7 +1309,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 556.061 238.489)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="573.861"
@@ -1312,7 +1317,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="578.153"
                 y2="372.948"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="592.854"
@@ -1320,7 +1325,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="597.146"
                 y2="372.441"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="630.84"
@@ -1328,7 +1333,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="635.132"
                 y2="371.428"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="648.834"
@@ -1336,7 +1341,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="653.126"
                 y2="370.948"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="560.299"
@@ -1352,7 +1357,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="622.071"
                 y2="556.842"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="562.418"
@@ -1360,7 +1365,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="673.379"
                 y2="473.945"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="563.111"
@@ -1368,7 +1373,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="674.072"
                 y2="499.936"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1376,7 +1381,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 561.686 449.414)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="563.885"
@@ -1384,7 +1389,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="674.845"
                 y2="528.925"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1392,7 +1397,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 560.992 423.423)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="578.792"
@@ -1400,7 +1405,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="583.084"
                 y2="557.882"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="597.786"
@@ -1408,7 +1413,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="602.078"
                 y2="557.375"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="635.772"
@@ -1416,7 +1421,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="640.064"
                 y2="556.362"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="653.766"
@@ -1424,7 +1429,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="658.058"
                 y2="555.883"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="565.23"
@@ -1440,7 +1445,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="627.002"
                 y2="741.776"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="567.35"
@@ -1448,7 +1453,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="678.31"
                 y2="658.879"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="568.043"
@@ -1456,7 +1461,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="679.004"
                 y2="684.87"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1464,7 +1469,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 566.617 634.348)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="568.816"
@@ -1472,7 +1477,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="679.777"
                 y2="713.86"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 y1="-1.5"
@@ -1480,7 +1485,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 y2="-1.5"
                 transform="matrix(0.999645 -0.0266583 -0.0266583 -0.999645 565.924 608.357)"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="583.724"
@@ -1488,7 +1493,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="588.016"
                 y2="742.816"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="602.717"
@@ -1496,7 +1501,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="607.009"
                 y2="742.31"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="640.704"
@@ -1504,7 +1509,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="644.996"
                 y2="741.297"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <line
                 x1="658.698"
@@ -1512,7 +1517,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 x2="662.99"
                 y2="740.817"
                 stroke="#50B4CA"
-                strokeWidth="3"
+                stroke-width="3"
             />
             <rect
                 x="156.742"
@@ -1522,7 +1527,7 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 rx="28.5"
                 transform="rotate(-1.52759 156.742 25.5582)"
                 stroke="white"
-                strokeWidth="23"
+                stroke-width="23"
             />
             <rect
                 x="511.05"
@@ -1533,6 +1538,214 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 transform="rotate(-1.73042 511.05 396.853)"
                 fill="white"
             />
+            <rect
+                x="741.572"
+                y="441.443"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(-95.4252 741.572 441.443)"
+                fill="#FFC876"
+            />
+            <rect
+                x="736.656"
+                y="389.676"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(-95.4252 736.656 389.676)"
+                fill="#FFC876"
+            />
+            <rect
+                x="736.278"
+                y="385.694"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(-95.4252 736.278 385.694)"
+                fill="#FFDCA8"
+            />
+            <rect
+                x="88.2295"
+                y="514.648"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(171.06 88.2295 514.648)"
+                fill="#FFC876"
+            />
+            <rect
+                x="36.8604"
+                y="522.729"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(171.06 36.8604 522.729)"
+                fill="#FFC876"
+            />
+            <rect
+                x="32.9092"
+                y="523.35"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(171.06 32.9092 523.35)"
+                fill="#FFDCA8"
+            />
+            <rect
+                x="83.2295"
+                y="478.648"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(171.06 83.2295 478.648)"
+                fill="#FFC876"
+            />
+            <rect
+                x="31.8604"
+                y="486.729"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(171.06 31.8604 486.729)"
+                fill="#FFC876"
+            />
+            <rect
+                x="27.9092"
+                y="487.35"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(171.06 27.9092 487.35)"
+                fill="#FFDCA8"
+            />
+            <rect
+                x="78.2295"
+                y="442.648"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(171.06 78.2295 442.648)"
+                fill="#FFC876"
+            />
+            <rect
+                x="26.8604"
+                y="450.729"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(171.06 26.8604 450.729)"
+                fill="#FFC876"
+            />
+            <rect
+                x="22.9092"
+                y="451.35"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(171.06 22.9092 451.35)"
+                fill="#FFDCA8"
+            />
+            <rect
+                x="776.996"
+                y="440.838"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(-95.4252 776.996 440.838)"
+                fill="#FFC876"
+            />
+            <rect
+                x="772.08"
+                y="389.071"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(-95.4252 772.08 389.071)"
+                fill="#FFC876"
+            />
+            <rect
+                x="771.702"
+                y="385.089"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(-95.4252 771.702 385.089)"
+                fill="#FFDCA8"
+            />
+            <rect
+                x="812.42"
+                y="440.232"
+                width="73"
+                height="33"
+                rx="16.5"
+                transform="rotate(-95.4252 812.42 440.232)"
+                fill="#FFC876"
+            />
+            <rect
+                x="807.504"
+                y="388.465"
+                width="21"
+                height="33"
+                rx="10.5"
+                transform="rotate(-95.4252 807.504 388.465)"
+                fill="#FFC876"
+            />
+            <rect
+                x="807.126"
+                y="384.483"
+                width="18"
+                height="33"
+                rx="9"
+                transform="rotate(-95.4252 807.126 384.483)"
+                fill="#FFDCA8"
+            />
+            <path
+                d="M403.12 247.968C408.151 276.477 392.398 302.53 368.487 306.581C344.575 310.633 320.809 291.276 315.778 262.767C310.746 234.259 326.499 208.206 350.411 204.154C374.322 200.103 398.089 219.46 403.12 247.968Z"
+                fill="white"
+                stroke="#040404"
+                stroke-width="3"
+            />
+            <ellipse
+                rx="15.9506"
+                ry="17.162"
+                transform="matrix(0.985948 -0.167054 0.173789 0.984783 361.555 267.298)"
+                fill="black"
+            />
+            <path
+                d="M512.489 245.491C513.037 274.415 493.424 297.819 469.16 298.26C444.896 298.701 424.411 276.026 423.864 247.101C423.317 218.177 442.929 194.773 467.193 194.332C491.457 193.891 511.942 216.566 512.489 245.491Z"
+                fill="white"
+                stroke="#040404"
+                stroke-width="3"
+            />
+            <ellipse
+                rx="15.9597"
+                ry="17.1518"
+                transform="matrix(0.999835 -0.0181668 0.0189213 0.999821 468.406 258.401)"
+                fill="black"
+            />
+            <path
+                d="M504.692 318.412L499.054 330.299C494.024 340.906 490.771 352.269 489.427 363.933L488.234 374.288C486.952 385.407 482.547 395.934 475.529 404.651C456.072 428.816 421.531 434.443 395.384 417.707L390.755 414.744C378.099 406.642 369.017 394.009 365.372 379.433L363.4 371.544C360.084 358.286 354.071 345.852 345.736 335.019L336.465 322.968L354.722 333.31C402.85 360.571 462.907 354.605 504.692 318.412Z"
+                fill="#6F0F22"
+                stroke="black"
+                stroke-width="3"
+            />
+            <path
+                d="M437.93 367.266L399.96 368.769C382.524 369.459 367.599 356.377 366 339C401.154 354.409 441.27 353.779 475.923 337.275L476.5 337C471.517 354.352 455.969 366.552 437.93 367.266Z"
+                fill="white"
+                stroke="black"
+            />
+            <path
+                d="M454.979 414.296L458.619 418.645C438.678 430.748 413.346 429.974 394.125 416.674L385.451 410.672L387.569 408.716C399.141 398.029 417.746 400.587 426 414C424.638 411.787 422.973 409.77 421.053 408.008L420.5 407.5C432.143 401.387 446.55 404.227 454.979 414.296Z"
+                fill="#DA3D60"
+                stroke="black"
+            />
+            <path
+                d="M430.72 401.45L452.97 406.641C456.296 407.417 459.766 407.327 463.047 406.381C468.494 404.811 472.664 400.416 473.946 394.894L476.261 384.923C476.772 382.722 476.46 380.41 475.383 378.424C473.28 374.546 468.95 372.426 464.597 373.143L458.563 374.138C453.632 374.95 448.839 376.452 444.326 378.6L435.574 382.766C429.372 385.385 422.324 385.097 416.356 381.981L415.521 381.545C412 379.707 408.292 378.252 404.459 377.207L396.304 374.983C394.459 374.48 392.543 374.29 390.635 374.42L387.913 374.605C381.462 375.045 376.224 379.989 375.413 386.404C375.197 388.116 375.497 389.853 376.276 391.393L376.964 392.753C379.334 397.438 384.184 400.346 389.432 400.228L413.703 399.684C419.427 399.556 425.144 400.149 430.72 401.45Z"
+                fill="#9A192E"
+            />
+            <circle cx="355" cy="260" r="4" fill="white" />
+            <circle cx="463" cy="252" r="4" fill="white" />
             <text
                 className="mascot-text"
                 x="535"
@@ -1563,214 +1776,6 @@ const Mascot: FC<SolarPanelComponentPropsI> = ({ effect }) => {
                 transform="rotate(-1.73042 511.05 396.853)">
                 kW nå!
             </text>
-            <rect
-                x="741.572"
-                y="441.443"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(-95.4252 741.572 441.443)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="736.656"
-                y="389.676"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(-95.4252 736.656 389.676)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="736.278"
-                y="385.694"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(-95.4252 736.278 385.694)"
-                fill="#DFDFDF"
-            />
-            <rect
-                x="88.2295"
-                y="514.648"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(171.06 88.2295 514.648)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="36.8604"
-                y="522.729"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(171.06 36.8604 522.729)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="32.9092"
-                y="523.35"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(171.06 32.9092 523.35)"
-                fill="#DFDFDF"
-            />
-            <rect
-                x="83.2295"
-                y="478.648"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(171.06 83.2295 478.648)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="31.8604"
-                y="486.729"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(171.06 31.8604 486.729)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="27.9092"
-                y="487.35"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(171.06 27.9092 487.35)"
-                fill="#DFDFDF"
-            />
-            <rect
-                x="78.2295"
-                y="442.648"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(171.06 78.2295 442.648)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="26.8604"
-                y="450.729"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(171.06 26.8604 450.729)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="22.9092"
-                y="451.35"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(171.06 22.9092 451.35)"
-                fill="#DFDFDF"
-            />
-            <rect
-                x="776.996"
-                y="440.838"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(-95.4252 776.996 440.838)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="772.08"
-                y="389.071"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(-95.4252 772.08 389.071)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="771.702"
-                y="385.089"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(-95.4252 771.702 385.089)"
-                fill="#DFDFDF"
-            />
-            <rect
-                x="812.42"
-                y="440.232"
-                width="73"
-                height="33"
-                rx="16.5"
-                transform="rotate(-95.4252 812.42 440.232)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="807.504"
-                y="388.465"
-                width="21"
-                height="33"
-                rx="10.5"
-                transform="rotate(-95.4252 807.504 388.465)"
-                fill="#C5C5C5"
-            />
-            <rect
-                x="807.126"
-                y="384.483"
-                width="18"
-                height="33"
-                rx="9"
-                transform="rotate(-95.4252 807.126 384.483)"
-                fill="#DFDFDF"
-            />
-            <path
-                d="M403.12 247.968C408.151 276.477 392.398 302.53 368.487 306.581C344.575 310.633 320.809 291.276 315.778 262.767C310.746 234.259 326.499 208.206 350.411 204.154C374.322 200.103 398.089 219.46 403.12 247.968Z"
-                fill="white"
-                stroke="#040404"
-                strokeWidth="3"
-            />
-            <ellipse
-                rx="15.9506"
-                ry="17.162"
-                transform="matrix(0.985948 -0.167054 0.173789 0.984783 361.555 267.298)"
-                fill="black"
-            />
-            <path
-                d="M512.489 245.491C513.037 274.415 493.424 297.819 469.16 298.26C444.896 298.701 424.411 276.026 423.864 247.101C423.317 218.177 442.929 194.773 467.193 194.332C491.457 193.891 511.942 216.566 512.489 245.491Z"
-                fill="white"
-                stroke="#040404"
-                strokeWidth="3"
-            />
-            <ellipse
-                rx="15.9597"
-                ry="17.1518"
-                transform="matrix(0.999835 -0.0181668 0.0189213 0.999821 468.406 258.401)"
-                fill="black"
-            />
-            <path
-                d="M504.692 318.412L499.054 330.299C494.024 340.906 490.771 352.269 489.427 363.933L488.234 374.288C486.952 385.407 482.547 395.934 475.529 404.651C456.072 428.816 421.531 434.443 395.384 417.707L390.755 414.744C378.099 406.642 369.017 394.009 365.372 379.433L363.4 371.544C360.084 358.286 354.071 345.852 345.736 335.019L336.465 322.968L354.722 333.31C402.85 360.571 462.907 354.605 504.692 318.412Z"
-                fill="#6F0F22"
-                stroke="black"
-                strokeWidth="3"
-            />
-            <path
-                d="M437.93 367.266L399.96 368.769C382.524 369.459 367.599 356.377 366 339C401.154 354.409 441.27 353.779 475.923 337.275L476.5 337C471.517 354.352 455.969 366.552 437.93 367.266Z"
-                fill="white"
-                stroke="black"
-            />
-            <path
-                d="M454.979 414.296L458.619 418.645C438.678 430.748 413.346 429.974 394.125 416.674L385.451 410.672L387.569 408.716C399.141 398.029 417.746 400.587 426 414C424.638 411.787 422.973 409.77 421.053 408.008L420.5 407.5C432.143 401.387 446.55 404.227 454.979 414.296Z"
-                fill="#DA3D60"
-                stroke="black"
-            />
-            <path
-                d="M430.72 401.45L452.97 406.641C456.296 407.417 459.766 407.327 463.047 406.381C468.494 404.811 472.664 400.416 473.946 394.894L476.261 384.923C476.772 382.722 476.46 380.41 475.383 378.424C473.28 374.546 468.95 372.426 464.597 373.143L458.563 374.138C453.632 374.95 448.839 376.452 444.326 378.6L435.574 382.766C429.372 385.385 422.324 385.097 416.356 381.981L415.521 381.545C412 379.707 408.292 378.252 404.459 377.207L396.304 374.983C394.459 374.48 392.543 374.29 390.635 374.42L387.913 374.605C381.462 375.045 376.224 379.989 375.413 386.404C375.197 388.116 375.497 389.853 376.276 391.393L376.964 392.753C379.334 397.438 384.184 400.346 389.432 400.228L413.703 399.684C419.427 399.556 425.144 400.149 430.72 401.45Z"
-                fill="#9A192E"
-            />
-            <circle cx="355" cy="260" r="4" fill="white" />
-            <circle cx="463" cy="252" r="4" fill="white" />
         </svg>
     );
 };
