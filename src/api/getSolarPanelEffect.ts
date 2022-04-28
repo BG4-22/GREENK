@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * This method is meant to simulate real time data
+ *
+ * @returns number that will update every two seconds
+ */
 const getSolarPanelEffect = () => {
     const [effect, setEffect] = useState(0);
 

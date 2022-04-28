@@ -2,25 +2,25 @@ import { useEffect, useState } from 'react';
 
 import { Box, HStack, Text } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
-import dataJson from '../assets/MockData.json';
+import { getMonthlySpendings } from 'api/energyData';
+import { MonthlySpendings } from 'types/api';
 
 const DiagramMoney = () => {
-    const [count, setCount] = useState<string>('');
+    const [data, setData] = useState<MonthlySpendings>([]);
 
-    useEffect(() => {}, []);
-
-    const moneyToList = () =>
-        dataJson.EnergyMoneyMonthly.map((month) => month.spent);
+    useEffect(() => {
+        setData(getMonthlySpendings());
+    }, []);
 
     const moneyBoxHeight: () => JSX.Element[] = () =>
-        moneyToList().map((item) => (
-            <Box className="moneyBar" height={item / 166.66}></Box>
+        data.map((month) => (
+            <Box className="moneyBar" height={month.spent / 166.66}></Box>
         ));
 
     return (
         <>
             <Text transform={'translateY(7rem)'} fontSize="4xl">
-                Penger skolen har brukt på strøm
+                Hvor mye penger har skolen brukt på energi
             </Text>
             <Box>
                 <Box className="moneyBarWrapper" marginLeft={40}>
@@ -29,10 +29,7 @@ const DiagramMoney = () => {
                     </HStack>
                 </Box>
                 <Box className="axisWrapper" marginLeft={40}>
-                    <BarChart
-                        width={1200}
-                        height={400}
-                        data={dataJson.EnergyMoneyMonthly}>
+                    <BarChart width={1200} height={400} data={data}>
                         <XAxis dataKey="month" tick={{ fontSize: 25 }} />
                         <YAxis tick={{ fontSize: 18 }} />
                         <Bar
@@ -49,10 +46,6 @@ const DiagramMoney = () => {
                 <Text>
                     Dette er i gjennomsnitt 10 000 kr mindre enn andre skoler i
                     Trondheim.
-                </Text>
-                <Text>
-                    Lær mer om hvorfor skolen bruker mindre strøm om sommeren:
-                    ...
                 </Text>
             </Box>
         </>
