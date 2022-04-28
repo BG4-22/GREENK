@@ -7,9 +7,9 @@ import {
     Spinner,
     Text,
 } from '@chakra-ui/react';
-import { getEnergyConsumptionPerHour } from 'api/energyData';
+import { getEnergyConsumptionPerHour } from '../../api/energyData';
 import { useEffect, useState } from 'react';
-import { EnergyConsumptionList } from 'types/api';
+import { EnergyConsumptionList } from '../../types/api';
 import HotChocolate from '../../assets/stats/hotChocolate.png';
 import Light from '../../assets/stats/light.png';
 import Playstation from '../../assets/stats/playstation.png';

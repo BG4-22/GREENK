@@ -14,11 +14,11 @@ import SolarPanel from '../components/statistics/SolarPanel';
 const Statistics: React.FC = () => {
     //Set the components that will be shown on the Statistics site
     const statComponents = [
-        <OverallCon />,
-        <HeatPump />,
-        <SolarPanel />,
-        <DiagramMoney />,
-        <EnergySources />,
+        <OverallCon key={'consumption'} />,
+        <HeatPump key={'Heat pump'} />,
+        <SolarPanel key={'Solar panel'} />,
+        <DiagramMoney key={'Money diagram'} />,
+        <EnergySources key={'Energy sources'} />,
     ].sort(() => (Math.random() > 0.5 ? 1 : -1));
     return <Carousel navButtons={'default'}>{statComponents}</Carousel>;
 };
