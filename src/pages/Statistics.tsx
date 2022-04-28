@@ -2,7 +2,7 @@ import Carousel from '../components/carousel/Carousel';
 import DiagramMoney from '../components/DiagramMoney';
 import EnergySources from '../components/statistics/EnergySources';
 import HeatPump from '../components/statistics/HeatPump';
-import OverallCon from '../components/statistics/OverallCon';
+import OverallCon from '../components/statistics/OverallConsumption';
 import SolarPanel from '../components/statistics/SolarPanel';
 
 const Statistics: React.FC = () => {

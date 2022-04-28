@@ -1,6 +1,6 @@
 import Carousel from '../components/carousel/Carousel';
 import { shallow } from 'enzyme';
-import OverallCon from '../components/statistics/OverallCon';
+import OverallCon from '../components/statistics/OverallConsumption';
 import DiagramMoney from '../components/DiagramMoney';
 
 describe('<Carousel />', () => {
