@@ -2,7 +2,7 @@
 
 exports[`<EnergyFlow /> renders correctly 1`] = `
 <Center
-  margin="20px auto"
+  margin="75px auto"
 >
   <video
     autoPlay={true}

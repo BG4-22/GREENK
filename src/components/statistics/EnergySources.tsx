@@ -8,9 +8,9 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
-import { getEnergySources } from 'api/energyData';
+import { getEnergySources } from '../../api/energyData';
 import { FC, useEffect, useState } from 'react';
-import { EnergySourceList } from 'types/api';
+import { EnergySourceList } from '../../types/api';
 import Skole from '../../assets/stats/skole.svg';
 import './statistics.css';
 
