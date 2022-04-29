@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Home from '../pages/home/Home';
-import SolarPanelComponent from '../components/solarpanel/SolarPanelComponent';
-import HomeWelcomeComponent from '../pages/home/Home';
+import Home from '../pages/Home/Home';
+import SolarPanelComponent from '../components/home/Solarpanel/SolarPanelComponent';
+import HomeWelcomeComponent from '../pages/Home/Home';
 import Scoreboard from '../components/game/Scoreboard';
-import Competition from '../components/competition';
-import FunfactSlideshow from '../components/funfacts/funfact-slideshow';
+import Competition from '../components/home/Competition';
+import FunfactSlideshow from '../components/home/Funfacts';
 
 describe('<Home />', () => {
     const wrapper = shallow(<Home />);

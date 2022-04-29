@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import cloudIcon from '../../assets/images/cloudIcon.svg';
-import sunIcon from '../../assets/images/sunIcon.svg';
+import cloudIcon from '../../../assets/images/cloudIcon.svg';
+import sunIcon from '../../../assets/images/sunIcon.svg';
 
 export interface WeatherPropsI {
     sun: boolean;

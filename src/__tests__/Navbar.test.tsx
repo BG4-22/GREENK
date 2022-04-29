@@ -1,4 +1,4 @@
-import Navbar from '../layout/Navbar';
+import Navbar from '../layout/Navbar/Navbar';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { Link } from 'react-router-dom';

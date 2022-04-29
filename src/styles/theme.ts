@@ -8,7 +8,17 @@ const theme = extendTheme({
             500: '#B794F4', // you need this
         },
     },
+    fonts: {
+        heading: 'Roboto, sans-serif, -apple-system, BlinkMacSystemFont',
+        body: 'Roboto, sans-serif, -apple-system, BlinkMacSystemFont',
+    },
     components: {
+        Heading: {
+            baseStyle: {
+                fontWeight: 300,
+                textAlign: 'center',
+            },
+        },
         Button: {
             baseStyle: {
                 borderRadius: '50px',
