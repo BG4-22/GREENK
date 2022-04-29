@@ -2,7 +2,7 @@ import Carousel from '../components/carousel/Carousel';
 import { shallow } from 'enzyme';
 import Statistics from '../pages/Statistics';
 import OverallCon from '../components/statistics/OverallConsumption';
-import DiagramMoney from '../components/DiagramMoney';
+import DiagramMoney from '../components/statistics/DiagramMoney';
 import SolarPanel from '../components/statistics/SolarPanel';
 import Heatpump from '../components/statistics/HeatPump';
 import EnergySources from '../components/statistics/EnergySources';
