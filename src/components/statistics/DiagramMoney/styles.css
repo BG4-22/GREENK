@@ -1,0 +1,21 @@
+.moneyBar {
+    background-image: url(../../../assets/stats/money.png);
+    background-repeat: repeat-y;
+    background-size: 70px 30px;
+    width: 70px;
+    margin-bottom: 0;
+}
+
+.moneyBarWrapper {
+    width: 1400px;
+    position: relative;
+    z-index: 10;
+    top: 165px;
+    left: 85px;
+    overflow: hidden;
+}
+.axisWrapper {
+    position: relative;
+    z-index: 10;
+    bottom: 200px;
+}

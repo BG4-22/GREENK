@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { Box, Center, Heading, HStack, Spinner, Text } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
-import { getMonthlySpendings } from '../../api/energyData';
-import { MonthlySpendings } from '../../types/api';
+import { getMonthlySpendings } from '../../../api/energyData';
+import { MonthlySpendings } from '../../../types/api';
+import './styles.css';
 
 const DiagramMoney = () => {
     const [data, setData] = useState<MonthlySpendings>([]);
