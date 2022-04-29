@@ -1,4 +1,4 @@
-import Carousel from '../components/carousel/Carousel';
+import Carousel from '../components/common/Carousel';
 import DiagramMoney from '../components/statistics/DiagramMoney';
 import EnergySources from '../components/statistics/EnergySources';
 import HeatPump from '../components/statistics/HeatPump';

@@ -4,7 +4,7 @@ import { ListItem, List, OrderedList } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HighscoreEntry } from 'types/game';
 import { getHighscores } from '../services/game';
-import GameButton from '../components/GameButton';
+import GameButton from '../components/common/GameButton';
 
 /**
  * Component to show highscores. The component fetches highscores from the database,
@@ -25,7 +25,6 @@ function Highscores() {
     useEffect(() => {
         updateHighscores();
     }, []);
-
 
     /**
      * Components for name and score entry which is added into the parent-list component.

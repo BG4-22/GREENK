@@ -1,4 +1,3 @@
-import Carousel from '../components/carousel/Carousel';
 import { shallow } from 'enzyme';
 import Statistics from '../pages/Statistics';
 import OverallCon from '../components/statistics/OverallConsumption';
