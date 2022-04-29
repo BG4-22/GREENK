@@ -30,15 +30,18 @@ const hotChocoConsumption = 0.27;
 
 const OverallConsumption: React.FC = () => {
     const [data, setData] = useState<EnergyConsumptionList>([]);
-    useEffect(() => {
-        setData(getEnergyConsumptionPerHour());
-    }, []);
-
     const [hour, setHour] = useState<number>(0);
+    const [consPerHour, setConsPerHour] = useState<number>(0);
+
+    useEffect(() => {
+        const data = getEnergyConsumptionPerHour();
+        setData(data);
+        setConsPerHour(data[0] ?? 0);
+    }, []);
 
     //Updates data when hour change
     function incrementHour() {
-        const nextHour = hour >= 23 ? 0 : hour;
+        const nextHour = hour >= data.length - 1 ? 0 : hour + 1;
         setHour(nextHour);
         setConsPerHour(data[nextHour]);
     }
@@ -49,9 +52,8 @@ const OverallConsumption: React.FC = () => {
             incrementHour();
         }, 10000);
         return () => clearInterval(interval);
-    }, []);
+    }, [incrementHour]);
 
-    const [consPerHour, setConsPerHour] = useState<number>(134.5);
     const [LightHour, setLightHour] = useState<number>(0);
     const [playstationHour, setPlaystationHour] = useState<number>(0);
     const [hotChocoCount, setHotChocoCount] = useState<number>(0);
