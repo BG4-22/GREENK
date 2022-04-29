@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> Should render correctly 1`] = `
+<Box
+  aria-label="navigation"
+  id="navBar"
+>
+  <Link
+    className="link"
+    to="/energiflyt"
+  >
+    Energiflyt
+  </Link>
+  <Link
+    to="/"
+  >
+    <Circle
+      className="homeButton"
+      size={100}
+    >
+      <FiHome
+        size={30}
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": "15px",
+          }
+        }
+      >
+        Hjem
+      </Text>
+    </Circle>
+  </Link>
+  <Link
+    className="link"
+    to="/statistikk"
+  >
+    Statistikk
+  </Link>
+</Box>
+`;

@@ -1,6 +1,6 @@
 #funfactStack {
     border-radius: 2rem;
-    background: #fffcfb;
+    background: #fff;
     width: 80%;
     height: 280px;
     padding-bottom: 0.9rem;
@@ -23,9 +23,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #textElement {
+    background: #fff;
     text-align: center;
     width: 90%;
     font-size: 1.1rem;
