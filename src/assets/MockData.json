@@ -1,5 +1,5 @@
 {
-	"EnergyComsumptionByHour": [
+	"EnergyConsumptionByHour": [
 		48.6,
 		50.6,
 		53.6,
@@ -66,11 +66,11 @@
 	"EnergyMoneyMonthly": [
 		{
 			"month": "Mai🌸",
-			"spent": 20000
+			"spent": 24000
 		},
 		{
 			"month": "Jun☀️",
-			"spent": 15000
+			"spent": 18000
 		},
 		{
 			"month": "Jul🏖️",
@@ -78,39 +78,39 @@
 		},
 		{
 			"month": "Aug☀️",
-			"spent": 20000
+			"spent": 19000
 		},
 		{
 			"month": "Sep🌦️",
-			"spent": 50000
+			"spent": 28000
 		},
 		{
 			"month": "Okt🎃",
-			"spent": 50000
+			"spent": 36000
 		},
 		{
 			"month": "Nov☃️",
-			"spent": 50000
+			"spent": 53000
 		},
 		{
 			"month": "Des🎅🏼",
-			"spent": 30000
+			"spent": 60000
 		},
 		{
 			"month": "Jan❄️",
-			"spent": 40000
+			"spent": 69000
 		},
 		{
 			"month": "Feb⛷️",
-			"spent": 30000
+			"spent": 62000
 		},
 		{
 			"month": "Mar🌦️",
-			"spent": 25000
+			"spent": 50000
 		},
 		{
 			"month": "Apr🌼",
-			"spent": 20000
+			"spent": 42000
 		}
 	],
 	"EnergySources": [

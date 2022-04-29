@@ -108,7 +108,7 @@ const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
         weather
     );
     return (
-        <Box id={'weather-box'}>
+        <Box mb={'-20px'} id={'weather-box'}>
             <motion.img
                 className={'cloud'}
                 src={cloudIcon}

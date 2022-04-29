@@ -8,16 +8,11 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
+import { getEnergySources } from '../../api/energyData';
 import { FC, useEffect, useState } from 'react';
-import dataJson from '../../assets/MockData.json';
+import { EnergySourceList } from '../../types/api';
 import Skole from '../../assets/stats/skole.svg';
 import './statistics.css';
-const data = dataJson['EnergySources'];
-
-interface EnergySourceI {
-    name: string;
-    amount: number;
-}
 
 const colors: string[] = [
     'rgba(205, 233, 181, .6)',
@@ -31,21 +26,23 @@ const colors: string[] = [
 ];
 
 interface EnergyElementsPropsI {
-    elements: EnergySourceI[];
+    elements: EnergySourceList;
 }
 
 const EnergyElements: FC<EnergyElementsPropsI> = ({
     elements,
 }): JSX.Element => {
     const total = elements
-        .map((value: EnergySourceI, index: number) => value.amount)
+        .map((value) => value.amount)
         .reduce((a: number, b: number) => a + b);
+
     return (
         <>
             {elements.map((element, index) => {
                 const value: number = Math.ceil((element.amount / total) * 100);
                 return (
                     <Box
+                        key={'energyElement' + index}
                         className={'animate-width'}
                         pos={'relative'}
                         h={'100%'}
@@ -91,7 +88,14 @@ const EnergyInfoList: FC<EnergyElementsPropsI> = ({ elements }) => {
 };
 
 const EnergySources: FC = () => {
-    //Index to get data at different hours from the mock data
+    /**
+     * Index to get data at different hours from the mock data
+     */
+    const [data, setData] = useState<EnergySourceList[]>([]);
+    useEffect(() => {
+        setData(getEnergySources());
+    }, []);
+
     const [index, setIndex] = useState<number>(0);
 
     const increment = () => {
@@ -102,13 +106,17 @@ const EnergySources: FC = () => {
         }
     };
 
-    //Calculates hours and counts based on the overall consumption
+    /**
+     * Calculates hours and counts based on the overall consumption
+     */
     useEffect(() => {
         const interval = setInterval(() => {
             increment();
-        }, 10 * 1000);
+        }, 5 * 1000);
         return () => clearInterval(interval);
-    }, [index]);
+    }, [index, data]);
+
+    if (data.length < 1) return <></>;
 
     return (
         <>
@@ -116,7 +124,7 @@ const EnergySources: FC = () => {
                 fontSize={'3rem'}
                 textAlign={'center'}
                 transform={'translateY(2rem)'}>
-                Hvor energien kommer fra
+                Hvor energien kommer fra akkurat nå
             </Text>
             <HStack pos={'relative'} w={'100%'} h={'100%'}>
                 <VStack justifyContent={'center'} w={'100%'} h={'100%'}>
@@ -139,8 +147,8 @@ const EnergySources: FC = () => {
                 fontSize={'1.5rem'}
                 textAlign={'center'}
                 transform={'translateY(-2rem)'}>
-                {/* Til sammenlikning får den gjennomsnittlige skolen kjøpe 60% av
-                strømmen sin */}
+                Til sammenlikning må den gjennomsnittlige skolen kjøpe 60% av
+                strømmen sin
             </Text>
         </>
     );

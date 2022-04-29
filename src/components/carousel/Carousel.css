@@ -69,12 +69,12 @@
 }
 
 .moneyBarWrapper {
-    height: 50%;
     width: 1400px;
     position: relative;
     z-index: 10;
-    top: 215px;
+    top: 165px;
     left: 85px;
+    overflow: hidden;
 }
 .axisWrapper {
     position: relative;

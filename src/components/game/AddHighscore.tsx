@@ -1,28 +1,33 @@
-import { Box, Button, Flex, Spacer, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { Input } from '@chakra-ui/react';
 
 import { Center } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { submitScore } from '../../services/game';
 import '../../fonts.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import './Game.css';
 
-// Function that takes the points as a prop and returns a component that handles logic for submitting the score
+/**
+ * Function that takes the points as a prop and returns a component that handles logic for submitting the score
+ */
 function AddHighscore(props: { points: number }) {
-    /* 
-    Variables: 
-        value: string value of input field
-        added: boolean state that prohibites multiple submissions
-    */
+    /**
+     * Variables:
+     *    value: string value of input field
+     *    added: boolean state that prohibites multiple submissions
+     */
+
     const [value, setValue] = useState('');
     const [added, setAdded] = useState(false);
 
     const navigate = useNavigate();
     const navigateTo = () => navigate('/highscore');
-    
-    // Function that calls submitScore and updates state of added
+
+    /**
+     * Function that calls submitScore and updates state of added
+     */
     function addScore() {
         submitScore({ name: value, score: props.points });
         setAdded(true);
@@ -67,6 +72,7 @@ function AddHighscore(props: { points: number }) {
                                         <Button
                                             id={'addButton'}
                                             size="lg"
+                                            variant="game"
                                             onClick={
                                                 added ? () => {} : addScore
                                             }>
@@ -92,7 +98,11 @@ function AddHighscore(props: { points: number }) {
                     </Center>
                 </Box>
                 {/* Button that navigates to "/highscore" page */}
-                <Button id={'continueButton'} size="lg" onClick={navigateTo}>
+                <Button
+                    id={'continueButton'}
+                    variant="gameNavigation"
+                    size="lg"
+                    onClick={navigateTo}>
                     Gå videre
                 </Button>
             </Center>

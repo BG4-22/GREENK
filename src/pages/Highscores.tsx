@@ -6,16 +6,30 @@ import { HighscoreEntry } from 'types/game';
 import { getHighscores } from '../services/game';
 import GameButton from '../components/GameButton';
 
+/**
+ * Component to show highscores. The component fetches highscores from the database,
+ * and maps them to entries in the list.
+ * @returns
+ */
+
 function Highscores() {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
     async function updateHighscores() {
+        //Fetches highscores from the database.
         setHighscores(await getHighscores());
     }
 
+    /**
+     * The component re-renders with updated scores when a new highscore entry is added.
+     */
     useEffect(() => {
         updateHighscores();
     }, []);
 
+
+    /**
+     * Components for name and score entry which is added into the parent-list component.
+     */
     const listItemsNames = highscores.map((item, i) => (
         <ListItem
             key={`$name-${i + 1}`}

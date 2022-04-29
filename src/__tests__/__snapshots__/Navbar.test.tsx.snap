@@ -36,7 +36,7 @@ exports[`<Navbar /> Should render correctly 1`] = `
     className="link"
     to="/statistikk"
   >
-    Se Statistikk
+    Statistikk
   </Link>
 </Box>
 `;
