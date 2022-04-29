@@ -10,7 +10,7 @@ function GameSlide(props: {
     return (
         <>
             <Box id={'gameSlideContainer'}>
-                <Image id={'gameSlideImage'} src={props.prompt.img} />
+                <Image className={'gameSlideImage'} src={props.prompt.img} />
                 <Text id={'slideDescription'} className={'slideText'}>
                     {props.prompt.description}
                 </Text>

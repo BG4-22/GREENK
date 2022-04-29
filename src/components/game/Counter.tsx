@@ -44,7 +44,7 @@ function Counter(props: {
         }
     }, [props.to]);
 
-    return <p style={{ display: 'inline-block' }} ref={nodeContainer} />;
+    return <span style={{ display: 'inline-block' }} ref={nodeContainer} />;
 }
 
 export default Counter;
