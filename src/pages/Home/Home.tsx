@@ -1,9 +1,9 @@
 import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import NidarvollVideo from 'assets/videos/NidarvollGjenbruk-video.mp4';
-import Competition from '../../components/competition/Competition';
-import FunfactSlideshow from '../../components/funfacts/funfact-slideshow';
+import Competition from '../../components/home/Competition/Competition';
+import FunfactSlideshow from '../../components/home/Funfacts';
 import Scoreboard from '../../components/game/Scoreboard';
-import SolarPanelComponent from '../../components/solarpanel/SolarPanelComponent';
+import SolarPanelComponent from '../../components/home/Solarpanel/SolarPanelComponent';
 import React from 'react';
 import './Home.css';
 
@@ -39,7 +39,7 @@ const HomeWelcomeComponent: React.FC = () => {
         <Box id={'welcomeBox'}>
             <Text id={'greenK'}>GRØNN KIOSK</Text>
             <Box marginTop={'70px'}>
-                <video width="100%" loop autoPlay>
+                <video width="100%" loop autoPlay muted>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
             </Box>

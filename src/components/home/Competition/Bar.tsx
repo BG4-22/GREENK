@@ -1,7 +1,7 @@
 import { VStack, Image, Text, Flex } from '@chakra-ui/react';
 import React from 'react';
 
-import Crown from '../../assets/images/crown.png';
+import Crown from '../../../assets/images/crown.png';
 
 interface BarProps {
     height: string;

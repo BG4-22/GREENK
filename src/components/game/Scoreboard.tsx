@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { getHighscores } from '../../services/game';
 import { HighscoreEntry } from '../../types/game';
-import Card from '../Card';
-import GameButton from '../GameButton';
+import Card from '../common/Card';
+import GameButton from '../common/GameButton';
 import './Game.css';
 
 /**

@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
-import Home from './pages/home/Home';
+import Home from './pages/Home';
 import EnergyFlow from './pages/EnergyFlow';
 import Game from './pages/Game';
 import Highscores from './pages/Highscores';
