@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { Box, Center, Heading, HStack, Spinner, Text } from '@chakra-ui/react';
 import { Bar, BarChart, XAxis, YAxis } from 'recharts';
-import { getMonthlySpendings } from '../api/energyData';
-import { MonthlySpendings } from '../types/api';
+import { getMonthlySpendings } from '../../api/energyData';
+import { MonthlySpendings } from '../../types/api';
 
 const DiagramMoney = () => {
     const [data, setData] = useState<MonthlySpendings>([]);
@@ -47,7 +47,7 @@ const DiagramMoney = () => {
 
     return (
         <>
-            <Heading transform={'translateY(7rem)'} fontSize="4xl">
+            <Heading transform={'translateY(7rem)'}>
                 Hvor mye penger har skolen brukt på energi
             </Heading>
 
