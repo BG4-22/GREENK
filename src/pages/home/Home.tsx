@@ -39,7 +39,7 @@ const HomeWelcomeComponent: React.FC = () => {
         <Box id={'welcomeBox'}>
             <Text id={'greenK'}>GRØNN KIOSK</Text>
             <Box marginTop={'70px'}>
-                <video width="100%" loop autoPlay>
+                <video width="100%" loop autoPlay muted>
                     <source src={NidarvollVideo} type="video/mp4"></source>
                 </video>
             </Box>
