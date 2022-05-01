@@ -1,9 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
-import Home from './pages/Home';
 import EnergyFlow from './pages/EnergyFlow';
 import Game from './pages/Game';
-import Highscores from './pages/Highscores';
+import Home from './pages/Home';
 import Statistics from './pages/Statistics';
 
 /**
@@ -17,7 +16,6 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="statistikk" element={<Statistics />} />
                 <Route path="spill" element={<Game />} />
-                <Route path="highscore" element={<Highscores />} />
                 <Route path="energiflyt" element={<EnergyFlow />} />
                 <Route path="*" element={<Navigate replace to={'/'} />} />
             </Route>
