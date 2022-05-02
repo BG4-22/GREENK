@@ -6,10 +6,15 @@ import Highscores from '../../pages/Highscores';
 import { submitScore } from '../../services/game';
 import './Game.css';
 
+interface AddHighscorePropsI {
+    points: number;
+    playAgain: () => void;
+}
+
 /**
  * Function that takes the points as a prop and returns a component that handles logic for submitting the score
  */
-function AddHighscore(props: { points: number; playAgain: () => void }) {
+function AddHighscore(props: AddHighscorePropsI) {
     /**
      * Variables:
      *    value: string value of input field

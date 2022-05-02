@@ -2,11 +2,13 @@ import { Box, Image, Text } from '@chakra-ui/react';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-function GameSlide(props: {
+interface GameSlidePropsI {
     prompt: Prompt;
     hasAnswered: boolean;
     next: boolean;
-}) {
+}
+
+function GameSlide(props: GameSlidePropsI) {
     return (
         <>
             <Box id={'gameSlideContainer'}>

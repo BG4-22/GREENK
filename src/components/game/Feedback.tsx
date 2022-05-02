@@ -6,15 +6,16 @@ import '../../fonts.css';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-/**
- * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
- */
-function Feedback(props: {
+interface FeedbackPropsI {
     points: number;
     promptLeft: Prompt;
     promptRight: Prompt;
     updateHighscore: any;
-}) {
+}
+/**
+ * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+ */
+function Feedback(props: FeedbackPropsI) {
     /**
      * Create referance to biggest and smallest prompt by comparing kWh.
      */
