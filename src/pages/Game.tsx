@@ -51,7 +51,7 @@ function Game() {
         setLoading(true);
         updatePrompts();
         updatePrompts();
-        setPoints(50);
+        setPoints(0);
     };
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
