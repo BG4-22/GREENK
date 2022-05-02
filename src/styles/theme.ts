@@ -38,8 +38,8 @@ const theme = extendTheme({
                     width: '30%',
                 }),
                 gameNavigation: {
-                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                    background: '#f6dc97',
+                    borderBottom: '3px solid grey',
+                    background: '#FFDD85',
                     fontSize: '25px',
                 },
             },

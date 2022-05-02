@@ -51,6 +51,7 @@ function Game() {
         setLoading(true);
         updatePrompts();
         updatePrompts();
+        setPoints(0);
     };
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
@@ -182,6 +183,7 @@ function Game() {
                     'Hva bruker mest energi?'
                 )}
             </Heading>
+            {console.log(highscore)}
             {highscore ? (
                 <AddHighscore playAgain={useForceRender} points={points} />
             ) : gameOver &&
