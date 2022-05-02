@@ -1,10 +1,8 @@
-import { Box, Button, Input, Stack, Text } from '@chakra-ui/react';
-
-import { Center } from '@chakra-ui/react';
+import { Box, Button, Center, Input, Stack, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Highscores from 'pages/Highscores';
 import { useState } from 'react';
 import '../../fonts.css';
+import Highscores from '../../pages/Highscores';
 import { submitScore } from '../../services/game';
 import './Game.css';
 
