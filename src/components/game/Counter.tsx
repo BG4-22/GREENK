@@ -1,16 +1,17 @@
 import { animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-/**
- * Function that returns a <p> component that animates a number from the props.from value to the props.to value.
- */
-function Counter(props: {
+interface CounterPropsI {
     to: number;
     from: number;
     hasAnswered: boolean;
     next: boolean;
     setNext: any;
-}) {
+}
+/**
+ * Function that returns a <p> component that animates a number from the props.from value to the props.to value.
+ */
+function Counter(props: CounterPropsI) {
     const nodeContainer = useRef<HTMLParagraphElement>(null);
     useEffect(() => {
         /**

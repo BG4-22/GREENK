@@ -1,6 +1,5 @@
+import { SpinnerIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import belysning from 'assets/game/belysning.jpeg';
 import kjøleskap from 'assets/game/kjøleskap.jpeg';
 import klimaanlegg from 'assets/game/klimaanlegg.png';
@@ -11,11 +10,12 @@ import tv from 'assets/game/tv.jpeg';
 import tørketrommel from 'assets/game/tørketrommel.jpeg';
 import varmtvann from 'assets/game/varmtvann.jpeg';
 import vaskemaskin from 'assets/game/vaskemaskin.jpeg';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import AddHighscore from '../components/game/AddHighscore';
 import Counter from '../components/game/Counter';
 import Feedback from '../components/game/Feedback';
 import GameSlide from '../components/game/Slide';
-import { SpinnerIcon } from '@chakra-ui/icons';
 
 import { Prompt } from '../components/game/Prompt';
 
@@ -41,6 +41,17 @@ function Game() {
     const [answer, setAnswer] = useState<Prompt>();
     const [highscore, setHighscore] = useState(false);
     const [loading, setLoading] = useState(true);
+    const from = 0;
+    const [to, setTo] = useState(0);
+
+    const useForceRender = () => {
+        setGameOver(false);
+        setHasAnswered(false);
+        setHighscore(false);
+        setLoading(true);
+        updatePrompts();
+        updatePrompts();
+    };
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
     Water Heater (4-person household): 310/kWh/month
@@ -162,9 +173,6 @@ function Game() {
         }
     }, [next]);
 
-    const from = 0;
-    const [to, setTo] = useState(0);
-
     return (
         <div style={{ textAlign: 'center', height: '100%' }}>
             <Heading color="white" margin="20px">
@@ -175,7 +183,7 @@ function Game() {
                 )}
             </Heading>
             {highscore ? (
-                <AddHighscore points={points} />
+                <AddHighscore playAgain={useForceRender} points={points} />
             ) : gameOver &&
               hasAnswered &&
               answer &&
@@ -441,8 +449,8 @@ function Game() {
                                 <motion.div
                                     style={{
                                         marginTop: '-24%',
-                                        marginLeft: "37%",
-                                        position : "absolute",
+                                        marginLeft: '37%',
+                                        position: 'absolute',
                                         height: '50px',
                                         width: '50px',
                                         visibility: 'visible',

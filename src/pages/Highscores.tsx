@@ -1,10 +1,18 @@
-import { Box, Flex, Heading, Spacer, Text, VStack } from '@chakra-ui/react';
-import { Center } from '@chakra-ui/react';
-import { ListItem, List, OrderedList } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Center,
+    Flex,
+    Heading,
+    List,
+    ListItem,
+    Spacer,
+    Text,
+    VStack,
+} from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { HighscoreEntry } from 'types/game';
 import { getHighscores } from '../services/game';
-import GameButton from '../components/common/GameButton';
 
 /**
  * Component to show highscores. The component fetches highscores from the database,
@@ -12,7 +20,7 @@ import GameButton from '../components/common/GameButton';
  * @returns
  */
 
-function Highscores() {
+function Highscores(props: { playAgain: () => void }) {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
     async function updateHighscores() {
         //Fetches highscores from the database.
@@ -32,22 +40,24 @@ function Highscores() {
     const listItemsNames = highscores.map((item, i) => (
         <ListItem
             key={`$name-${i + 1}`}
-            style={{
-                backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '',
-                wordSpacing: '1vW',
-                whiteSpace: 'nowrap',
-                paddingLeft: '5vw',
-            }}>
-            {`${i + 1}. ${item.name}`}
+            w={'100%'}
+            textAlign={'left'}
+            listStyleType={'decimal'}
+            listStylePos={'inside'}
+            whiteSpace={'nowrap'}
+            overflow={'hidden'}
+            textOverflow={'ellipsis'}
+            bg={i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : undefined}
+            paddingLeft={'5vw'}>
+            {`${item.name}`}
         </ListItem>
     ));
     const listItemsScores = highscores.map((item, i) => (
         <ListItem
+            textAlign={'center'}
             key={`$highscore-${i + 1}`}
-            style={{
-                backgroundColor: i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : '',
-                paddingLeft: '2vw',
-            }}>
+            bg={i % 2 !== 0 ? 'rgba(255, 255, 255, 0.2)' : undefined}
+            paddingLeft={'2vw'}>
             {`${item.score}`}
         </ListItem>
     ));
@@ -91,7 +101,9 @@ function Highscores() {
                     </Flex>
                 </Center>
             </Box>
-            <GameButton>Spill igjen!</GameButton>
+            <Button onClick={props.playAgain} size="lg" variant="game">
+                Spill igjen!
+            </Button>
         </VStack>
     );
 }
