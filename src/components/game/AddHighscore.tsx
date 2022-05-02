@@ -1,6 +1,6 @@
 import { Box, Button, Center, Input, Stack, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../../fonts.css';
 import Highscores from '../../pages/Highscores';
 import { submitScore } from '../../services/game';
@@ -23,6 +23,7 @@ function AddHighscore(props: AddHighscorePropsI) {
 
     const [value, setValue] = useState('');
     const [added, setAdded] = useState(false);
+    const [empty, setEmpty] = useState(false);
     const [showHighScores, setShowHighScores] = useState(false);
 
     // const navigate = useNavigate();
@@ -32,12 +33,25 @@ function AddHighscore(props: AddHighscorePropsI) {
      * Function that calls submitScore and updates state of added
      */
     function addScore() {
-        submitScore({ name: value, score: props.points });
-        setAdded(true);
+        if (value) {
+            submitScore({ name: value, score: props.points });
+            setAdded(true);
+        } else {
+            setEmpty(true);
+        }
     }
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setEmpty(false)
+        }, 1500);
+
+        return () => clearTimeout(timeout);
+    }, [empty]);
+
     return (
         <>
-            {showHighScores ? (
+            {!showHighScores ? (
                 <Center>
                     <Box id={'addHighScoreBox'}>
                         <Center>
@@ -66,6 +80,9 @@ function AddHighscore(props: AddHighscorePropsI) {
                                                 width="50%"
                                                 marginLeft={5}
                                                 marginRight={5}
+                                                placeholder={!empty ? "Skriv inn navn" : "Navn kan ikke være tom!"}
+                                                border={!empty ? "none" : "2px"}
+                                                borderColor={"#FF8585"}
                                                 onChange={(e) =>
                                                     setValue(e.target.value)
                                                 }
@@ -80,7 +97,7 @@ function AddHighscore(props: AddHighscorePropsI) {
                                                 onClick={
                                                     added ? () => {} : addScore
                                                 }>
-                                                Legg til
+                                                Legg til!
                                             </Button>
                                         </Center>
                                     </motion.div>
