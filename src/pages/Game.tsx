@@ -20,7 +20,7 @@ import GameSlide from '../components/game/Slide';
 import { Prompt } from '../components/game/Prompt';
 
 //Function that handle the game logic, and returns a component that contains the game
-function Game() {
+const Game: React.FC = () => {
     /* 
     gameOver: Has the player lost?
     hasAnswered: Has the player answered the current question
@@ -44,7 +44,10 @@ function Game() {
     const from = 0;
     const [to, setTo] = useState(0);
 
-    const useForceRender = () => {
+    /**
+     * Resets the game state
+     */
+    const resetGame = () => {
         setGameOver(false);
         setHasAnswered(false);
         setHighscore(false);
@@ -185,7 +188,7 @@ function Game() {
             </Heading>
             {console.log(highscore)}
             {highscore ? (
-                <AddHighscore playAgain={useForceRender} points={points} />
+                <AddHighscore playAgain={resetGame} points={points} />
             ) : gameOver &&
               hasAnswered &&
               answer &&
@@ -477,6 +480,6 @@ function Game() {
             )}
         </div>
     );
-}
+};
 
 export default Game;

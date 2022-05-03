@@ -4,7 +4,7 @@ import React from 'react';
 import HeatPump from '../../assets/stats/heatpump2.png';
 import Shower from '../../assets/stats/shower.png';
 
-const Heatpump = () => {
+const Heatpump: React.FC = () => {
     const heatPumpEnergy = 5000;
     const showerEnergy = 10;
     const calcHours = heatPumpEnergy / showerEnergy;

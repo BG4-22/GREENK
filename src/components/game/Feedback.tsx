@@ -15,7 +15,7 @@ interface FeedbackPropsI {
 /**
  * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
  */
-function Feedback(props: FeedbackPropsI) {
+const Feedback: React.FC<FeedbackPropsI> = (props: FeedbackPropsI) => {
     /**
      * Create referance to biggest and smallest prompt by comparing kWh.
      */
@@ -90,6 +90,6 @@ function Feedback(props: FeedbackPropsI) {
             </Button>
         </VStack>
     );
-}
+};
 
 export default Feedback;

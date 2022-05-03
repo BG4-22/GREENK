@@ -11,7 +11,7 @@ interface CounterPropsI {
 /**
  * Function that returns a <p> component that animates a number from the props.from value to the props.to value.
  */
-function Counter(props: CounterPropsI) {
+const Counter: React.FC<CounterPropsI> = (props: CounterPropsI) => {
     const nodeContainer = useRef<HTMLParagraphElement>(null);
     useEffect(() => {
         /**
@@ -46,6 +46,6 @@ function Counter(props: CounterPropsI) {
     }, [props.to]);
 
     return <span style={{ display: 'inline-block' }} ref={nodeContainer} />;
-}
+};
 
 export default Counter;

@@ -14,13 +14,16 @@ import { useEffect, useState } from 'react';
 import { HighscoreEntry } from 'types/game';
 import { getHighscores } from '../services/game';
 
+interface HighscoresPropsI {
+    playAgain: () => void;
+}
+
 /**
  * Component to show highscores. The component fetches highscores from the database,
  * and maps them to entries in the list.
  * @returns
  */
-
-function Highscores(props: { playAgain: () => void }) {
+const Highscores: React.FC<HighscoresPropsI> = (props: HighscoresPropsI) => {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
     async function updateHighscores() {
         //Fetches highscores from the database.
@@ -106,6 +109,6 @@ function Highscores(props: { playAgain: () => void }) {
             </Button>
         </VStack>
     );
-}
+};
 
 export default Highscores;

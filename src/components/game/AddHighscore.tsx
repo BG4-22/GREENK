@@ -14,20 +14,20 @@ interface AddHighscorePropsI {
 /**
  * Function that takes the points as a prop and returns a component that handles logic for submitting the score
  */
-function AddHighscore(props: AddHighscorePropsI) {
+const AddHighscore: React.FC<AddHighscorePropsI> = (
+    props: AddHighscorePropsI
+) => {
     /**
      * Variables:
      *    value: string value of input field
      *    added: boolean state that prohibites multiple submissions
+     *    empty: wether name is empty
      */
 
     const [value, setValue] = useState('');
     const [added, setAdded] = useState(false);
     const [empty, setEmpty] = useState(false);
     const [showHighScores, setShowHighScores] = useState(false);
-
-    // const navigate = useNavigate();
-    // const navigateTo = () => navigate('/highscore');
 
     /**
      * Function that calls submitScore and updates state of added
@@ -41,11 +41,14 @@ function AddHighscore(props: AddHighscorePropsI) {
         }
     }
 
+    /**
+     * Effect which makes the input field blink red if the user
+     * tries to submit score with an empty name
+     */
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setEmpty(false)
+            setEmpty(false);
         }, 1500);
-
         return () => clearTimeout(timeout);
     }, [empty]);
 
@@ -80,9 +83,13 @@ function AddHighscore(props: AddHighscorePropsI) {
                                                 width="50%"
                                                 marginLeft={5}
                                                 marginRight={5}
-                                                placeholder={!empty ? "Skriv inn navn" : "Navn kan ikke være tom!"}
-                                                border={!empty ? "none" : "2px"}
-                                                borderColor={"#FF8585"}
+                                                placeholder={
+                                                    !empty
+                                                        ? 'Skriv inn navn'
+                                                        : 'Navn kan ikke være tom!'
+                                                }
+                                                border={!empty ? 'none' : '2px'}
+                                                borderColor={'#FF8585'}
                                                 onChange={(e) =>
                                                     setValue(e.target.value)
                                                 }
@@ -136,6 +143,6 @@ function AddHighscore(props: AddHighscorePropsI) {
             )}
         </>
     );
-}
+};
 
 export default AddHighscore;
