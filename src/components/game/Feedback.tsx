@@ -1,7 +1,7 @@
 import { Button, HStack, Image, Text, VStack } from '@chakra-ui/react';
-import netflix from '../../assets/game/netflix.svg';
-import playstation from '../../assets/game/playstation.png';
-import tesla from '../../assets/game/tesla.png';
+import netflix from '../../assets/images/game/netflix.svg';
+import playstation from '../../assets/images/game/playstation.png';
+import tesla from '../../assets/images/game/tesla.png';
 import '../../fonts.css';
 import './Game.css';
 import { Prompt } from './Prompt';

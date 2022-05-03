@@ -12,7 +12,7 @@ import {
 import { getEnergySources } from '../../api/energyData';
 import { FC, useEffect, useState } from 'react';
 import { EnergySourceList } from '../../types/api';
-import Skole from '../../assets/stats/skole.svg';
+import Skole from '../../assets/images/stats/skole.svg';
 import './statistics.css';
 
 const colors: string[] = [

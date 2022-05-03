@@ -10,9 +10,9 @@ import {
 import { getEnergyConsumptionPerHour } from '../../api/energyData';
 import { useEffect, useState } from 'react';
 import { EnergyConsumptionList } from '../../types/api';
-import HotChocolate from '../../assets/stats/hotChocolate.png';
-import Light from '../../assets/stats/light.png';
-import Playstation from '../../assets/stats/playstation.png';
+import HotChocolate from '../../assets/images/stats/hotChocolate.png';
+import Light from '../../assets/images/stats/light.png';
+import Playstation from '../../assets/images/stats/playstation.png';
 import './statistics.css';
 
 //Variable for light consumption

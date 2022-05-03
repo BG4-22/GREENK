@@ -3,12 +3,12 @@ import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 
 import getSolarPanelEffect from '../../api/getSolarPanelEffect';
 
-import SolarPanelPhone from 'assets/stats/solarPanelPhone.png';
-import NoBattery from 'assets/stats/battery/noBattery.png';
-import LowBattery from 'assets/stats/battery/lowBattery.png';
-import TwoBattery from 'assets/stats/battery/twoBattery.png';
-import ThreeBattery from 'assets/stats/battery/threeBattery.png';
-import FullBattery from 'assets/stats/battery/fullBattery.png';
+import SolarPanelPhone from 'assets/images/stats/solarPanelPhone.png';
+import NoBattery from 'assets/images/stats/battery/noBattery.png';
+import LowBattery from 'assets/images/stats/battery/lowBattery.png';
+import TwoBattery from 'assets/images/stats/battery/twoBattery.png';
+import ThreeBattery from 'assets/images/stats/battery/threeBattery.png';
+import FullBattery from 'assets/images/stats/battery/fullBattery.png';
 
 const SolarPanel = () => {
     //www.forbes.com/sites/christopherhelman/2013/09/07/how-much-energy-does-your-iphone-and-other-devices-use-and-what-to-do-about-it/
@@ -40,7 +40,7 @@ const SolarPanel = () => {
      */
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex(index > 3 ? 0 : index + 1)
+            setIndex(index > 3 ? 0 : index + 1);
 
             /**
              * No charging animation if no energy

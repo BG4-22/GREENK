@@ -1,8 +1,8 @@
 import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 import React from 'react';
 
-import HeatPump from '../../assets/stats/heatpump2.png';
-import Shower from '../../assets/stats/shower.png';
+import HeatPump from '../../assets/images/stats/heatpump2.png';
+import Shower from '../../assets/images/stats/shower.png';
 
 const Heatpump: React.FC = () => {
     const heatPumpEnergy = 5000;
