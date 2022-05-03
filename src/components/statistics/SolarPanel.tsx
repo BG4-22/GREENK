@@ -10,7 +10,7 @@ import TwoBattery from 'assets/images/stats/battery/twoBattery.png';
 import ThreeBattery from 'assets/images/stats/battery/threeBattery.png';
 import FullBattery from 'assets/images/stats/battery/fullBattery.png';
 
-const SolarPanel = () => {
+const SolarPanel: React.FC = () => {
     //www.forbes.com/sites/christopherhelman/2013/09/07/how-much-energy-does-your-iphone-and-other-devices-use-and-what-to-do-about-it/
     /**
      * Constant variable for phones energy consumption

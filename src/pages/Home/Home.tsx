@@ -11,8 +11,6 @@ import './Home.css';
  * The "main page" component. Combines different components to make a whole page.
  */
 
-export interface HomePropsI {}
-
 /**
  * List of funfacts to add as props in the funfact-component.
  */
@@ -51,7 +49,7 @@ const HomeWelcomeComponent: React.FC = () => {
  * @param props
  * @returns Home component
  */
-const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
+const Home: React.FC = () => {
     return (
         <Grid id="grid">
             <GridItem id={'item1'} rowSpan={1} colSpan={1}>

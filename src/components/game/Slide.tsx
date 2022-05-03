@@ -8,7 +8,7 @@ interface GameSlidePropsI {
     next: boolean;
 }
 
-function GameSlide(props: GameSlidePropsI) {
+const GameSlide: React.FC<GameSlidePropsI> = (props: GameSlidePropsI) => {
     return (
         <>
             <Box id={'gameSlideContainer'}>
@@ -31,6 +31,6 @@ function GameSlide(props: GameSlidePropsI) {
             </Box>
         </>
     );
-}
+};
 
 export default GameSlide;

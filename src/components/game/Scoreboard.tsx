@@ -11,7 +11,7 @@ import './Game.css';
  * Function that fetches highscores from the database and returns a component that renders them.
  * Also has clickable button that navigates to "/game"
  */
-function Scoreboard() {
+const Scoreboard: React.FC = () => {
     const [highscores, setHighscores] = useState<HighscoreEntry[]>([]);
 
     async function updateHighscores() {
@@ -37,6 +37,6 @@ function Scoreboard() {
             <GameButton>Spill nå!</GameButton>
         </Card>
     );
-}
+};
 
 export default Scoreboard;
