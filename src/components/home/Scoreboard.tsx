@@ -5,7 +5,7 @@ import { getHighscores } from '../../services/game';
 import { HighscoreEntry } from '../../types/game';
 import Card from '../common/Card';
 import GameButton from '../common/GameButton';
-import './Game.css';
+import '../game/Game.css';
 
 /**
  * Function that fetches highscores from the database and returns a component that renders them.

@@ -2,7 +2,7 @@ import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import NidarvollVideo from 'assets/videos/NidarvollGjenbruk-video.mp4';
 import Competition from '../../components/home/Competition/Competition';
 import FunfactSlideshow from '../../components/home/Funfacts';
-import Scoreboard from '../../components/game/Scoreboard';
+import Scoreboard from '../../components/home/Scoreboard';
 import SolarPanelComponent from '../../components/home/Solarpanel/SolarPanelComponent';
 import React from 'react';
 import './Home.css';
