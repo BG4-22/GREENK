@@ -1,11 +1,10 @@
 import { Box, Image, Text, Flex, Center, Spacer } from '@chakra-ui/react';
 import React from 'react';
 
-import HeatPump from '../../assets/stats/heatPumpPink.png';
-import Shower from '../../assets/stats/shower.png';
-import Arrow from '../../assets/stats/arrow.png';
+import HeatPump from '../../assets/images/stats/heatpump2.png';
+import Shower from '../../assets/images/stats/shower.png';
 
-const Heatpump = () => {
+const Heatpump: React.FC = () => {
     const heatPumpEnergy = 5000;
     const showerEnergy = 10;
     const calcHours = heatPumpEnergy / showerEnergy;
@@ -13,28 +12,43 @@ const Heatpump = () => {
         <>
             <Box>
                 <Center>
-                    <Text fontSize="2xl">
-                        Forrige time produserte varmepumpene nok energi til at
-                        du kan dusje i
-                    </Text>
-                    <Text fontSize="4xl" color="#FF8585" margin={3}>
-                        {calcHours}
-                    </Text>
-                    <Text fontSize="2xl"> timer!</Text>
+                    <Flex
+                        marginTop={10}
+                        width="900px"
+                        flexDir={'column'}
+                        justifyContent={'center'}
+                        alignItems={'center'}>
+                        <Text fontSize="4xl" margin={'-40px auto 50px auto'}>
+                            Denne skolen bruker fornybare energikilder!
+                        </Text>
+                        <Box>
+                            <Image src={HeatPump} width="400px"></Image>
+                        </Box>
+                        <Spacer />
+                        <Text
+                            fontSize="3xl"
+                            width={'600px'}
+                            textAlign={'center'}
+                            margin={'30px auto -20px auto'}>
+                            har den siste timen spart jordkloden for like mye
+                            energi som om du skulle dusjet i
+                        </Text>
+                        <Flex
+                            marginTop={10}
+                            width="900px"
+                            flexDir={'row'}
+                            justifyContent={'center'}
+                            alignItems={'center'}>
+                            <Text fontSize="8xl" color="#F4A4C0" margin={3}>
+                                {calcHours}
+                            </Text>
+                            <Text fontSize="3xl"> timer</Text>
+                            <Box>
+                                <Image src={Shower} width="150px"></Image>
+                            </Box>
+                        </Flex>
+                    </Flex>
                 </Center>
-                <Flex marginTop={10} width="900px">
-                    <Box>
-                        <Image src={HeatPump} width="400px"></Image>
-                    </Box>
-                    <Spacer />
-                    <Box>
-                        <Image src={Arrow} width="200px" marginTop={50}></Image>
-                    </Box>
-                    <Spacer />
-                    <Box>
-                        <Image src={Shower} width="250px"></Image>
-                    </Box>
-                </Flex>
             </Box>
         </>
     );

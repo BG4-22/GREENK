@@ -2,7 +2,7 @@ import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import NidarvollVideo from 'assets/videos/NidarvollGjenbruk-video.mp4';
 import Competition from '../../components/home/Competition/Competition';
 import FunfactSlideshow from '../../components/home/Funfacts';
-import Scoreboard from '../../components/game/Scoreboard';
+import Scoreboard from '../../components/home/Scoreboard';
 import SolarPanelComponent from '../../components/home/Solarpanel/SolarPanelComponent';
 import React from 'react';
 import './Home.css';
@@ -10,8 +10,6 @@ import './Home.css';
 /**
  * The "main page" component. Combines different components to make a whole page.
  */
-
-export interface HomePropsI {}
 
 /**
  * List of funfacts to add as props in the funfact-component.
@@ -51,7 +49,7 @@ const HomeWelcomeComponent: React.FC = () => {
  * @param props
  * @returns Home component
  */
-const Home: React.FC<HomePropsI> = (props: HomePropsI) => {
+const Home: React.FC = () => {
     return (
         <Grid id="grid">
             <GridItem id={'item1'} rowSpan={1} colSpan={1}>

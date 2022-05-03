@@ -6,7 +6,7 @@ import { getMonthlySpendings } from '../../../api/energyData';
 import { MonthlySpendings } from '../../../types/api';
 import './styles.css';
 
-const DiagramMoney = () => {
+const DiagramMoney: React.FC = () => {
     const [data, setData] = useState<MonthlySpendings>([]);
     const [height, setHeight] = useState<number | undefined>(undefined);
 

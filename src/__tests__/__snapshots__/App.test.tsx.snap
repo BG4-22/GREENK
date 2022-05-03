@@ -19,10 +19,6 @@ exports[`<App /> Should render correctly 1`] = `
       path="spill"
     />
     <Route
-      element={<Highscores />}
-      path="highscore"
-    />
-    <Route
       element={<EnergyFlow />}
       path="energiflyt"
     />
