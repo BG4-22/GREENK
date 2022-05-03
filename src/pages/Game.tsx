@@ -186,7 +186,6 @@ const Game: React.FC = () => {
                     'Hva bruker mest energi?'
                 )}
             </Heading>
-            {console.log(highscore)}
             {highscore ? (
                 <AddHighscore playAgain={resetGame} points={points} />
             ) : gameOver &&
