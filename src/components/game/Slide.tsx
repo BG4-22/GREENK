@@ -2,11 +2,13 @@ import { Box, Image, Text } from '@chakra-ui/react';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-function GameSlide(props: {
+interface GameSlidePropsI {
     prompt: Prompt;
     hasAnswered: boolean;
     next: boolean;
-}) {
+}
+
+const GameSlide: React.FC<GameSlidePropsI> = (props: GameSlidePropsI) => {
     return (
         <>
             <Box id={'gameSlideContainer'}>
@@ -29,6 +31,6 @@ function GameSlide(props: {
             </Box>
         </>
     );
-}
+};
 
 export default GameSlide;

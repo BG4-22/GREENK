@@ -1,20 +1,21 @@
 import { Button, HStack, Image, Text, VStack } from '@chakra-ui/react';
-import netflix from '../../assets/game/netflix.svg';
-import playstation from '../../assets/game/playstation.png';
-import tesla from '../../assets/game/tesla.png';
+import netflix from '../../assets/images/game/netflix.svg';
+import playstation from '../../assets/images/game/playstation.png';
+import tesla from '../../assets/images/game/tesla.png';
 import '../../fonts.css';
 import './Game.css';
 import { Prompt } from './Prompt';
 
-/**
- * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
- */
-function Feedback(props: {
+interface FeedbackPropsI {
     points: number;
     promptLeft: Prompt;
     promptRight: Prompt;
     updateHighscore: any;
-}) {
+}
+/**
+ * Feedback function returns component that compares the difference between the two prompts with a random object from the comperisons list
+ */
+const Feedback: React.FC<FeedbackPropsI> = (props: FeedbackPropsI) => {
     /**
      * Create referance to biggest and smallest prompt by comparing kWh.
      */
@@ -89,6 +90,6 @@ function Feedback(props: {
             </Button>
         </VStack>
     );
-}
+};
 
 export default Feedback;

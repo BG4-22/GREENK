@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import Home from '../pages/Home/Home';
 import SolarPanelComponent from '../components/home/Solarpanel/SolarPanelComponent';
 import HomeWelcomeComponent from '../pages/Home/Home';
-import Scoreboard from '../components/game/Scoreboard';
+import Scoreboard from '../components/home/Scoreboard';
 import Competition from '../components/home/Competition';
 import FunfactSlideshow from '../components/home/Funfacts';
 

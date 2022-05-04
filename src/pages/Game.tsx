@@ -1,26 +1,26 @@
+import { SpinnerIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import belysning from 'assets/images/game/belysning.jpeg';
+import kjøleskap from 'assets/images/game/kjøleskap.jpeg';
+import klimaanlegg from 'assets/images/game/klimaanlegg.png';
+import mikrobølgeovn from 'assets/images/game/mikrobølgeovn.jpeg';
+import oppvaskmaskin from 'assets/images/game/oppvaskmaskin.jpeg';
+import stekeovn from 'assets/images/game/stekeovn.jpeg';
+import tv from 'assets/images/game/tv.jpeg';
+import tørketrommel from 'assets/images/game/tørketrommel.jpeg';
+import varmtvann from 'assets/images/game/varmtvann.jpeg';
+import vaskemaskin from 'assets/images/game/vaskemaskin.jpeg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import belysning from 'assets/game/belysning.jpeg';
-import kjøleskap from 'assets/game/kjøleskap.jpeg';
-import klimaanlegg from 'assets/game/klimaanlegg.png';
-import mikrobølgeovn from 'assets/game/mikrobølgeovn.jpeg';
-import oppvaskmaskin from 'assets/game/oppvaskmaskin.jpeg';
-import stekeovn from 'assets/game/stekeovn.jpeg';
-import tv from 'assets/game/tv.jpeg';
-import tørketrommel from 'assets/game/tørketrommel.jpeg';
-import varmtvann from 'assets/game/varmtvann.jpeg';
-import vaskemaskin from 'assets/game/vaskemaskin.jpeg';
 import AddHighscore from '../components/game/AddHighscore';
 import Counter from '../components/game/Counter';
 import Feedback from '../components/game/Feedback';
 import GameSlide from '../components/game/Slide';
-import { SpinnerIcon } from '@chakra-ui/icons';
 
 import { Prompt } from '../components/game/Prompt';
 
 //Function that handle the game logic, and returns a component that contains the game
-function Game() {
+const Game: React.FC = () => {
     /* 
     gameOver: Has the player lost?
     hasAnswered: Has the player answered the current question
@@ -41,6 +41,21 @@ function Game() {
     const [answer, setAnswer] = useState<Prompt>();
     const [highscore, setHighscore] = useState(false);
     const [loading, setLoading] = useState(true);
+    const from = 0;
+    const [to, setTo] = useState(0);
+
+    /**
+     * Resets the game state
+     */
+    const resetGame = () => {
+        setGameOver(false);
+        setHasAnswered(false);
+        setHighscore(false);
+        setLoading(true);
+        updatePrompts();
+        updatePrompts();
+        setPoints(0);
+    };
 
     /*Central Air Conditioner (2 ton): 1450 kWh/month
     Water Heater (4-person household): 310/kWh/month
@@ -162,9 +177,6 @@ function Game() {
         }
     }, [next]);
 
-    const from = 0;
-    const [to, setTo] = useState(0);
-
     return (
         <div style={{ textAlign: 'center', height: '100%' }}>
             <Heading color="white" margin="20px">
@@ -175,7 +187,7 @@ function Game() {
                 )}
             </Heading>
             {highscore ? (
-                <AddHighscore points={points} />
+                <AddHighscore playAgain={resetGame} points={points} />
             ) : gameOver &&
               hasAnswered &&
               answer &&
@@ -441,8 +453,8 @@ function Game() {
                                 <motion.div
                                     style={{
                                         marginTop: '-24%',
-                                        marginLeft: "37%",
-                                        position : "absolute",
+                                        marginLeft: '37%',
+                                        position: 'absolute',
                                         height: '50px',
                                         width: '50px',
                                         visibility: 'visible',
@@ -467,6 +479,6 @@ function Game() {
             )}
         </div>
     );
-}
+};
 
 export default Game;
