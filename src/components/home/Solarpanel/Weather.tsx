@@ -5,7 +5,7 @@ import cloudIcon from '../../../assets/images/cloudIcon.svg';
 import sunIcon from '../../../assets/images/sunIcon.svg';
 
 /**
- * boolean states for either showing or not showing the sun and the coud
+ * boolean states for either showing or not showing the sun and the cloud
  */
 export interface WeatherPropsI {
     sun: boolean;

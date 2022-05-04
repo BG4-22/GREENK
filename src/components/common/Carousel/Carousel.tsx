@@ -102,7 +102,7 @@ const Carousel: FC<CarouselPropsI> = ({
         opacity: { duration: 0.2 },
     };
 
-    // show last page if the horizontal swipe power was negatibe
+    // show last page if the horizontal swipe power was negative
     // show the next page if the horizontal swipe power was positive
     // do nothing if the absolute value of the swipe power is less than the threshold
     const onDragEnd: (
