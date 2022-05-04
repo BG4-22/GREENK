@@ -82,8 +82,7 @@ This is the source code for the GREENK website. The website aims to present the 
  ┃ ┃ ┃ ┣ 📜shower.png  
  ┃ ┃ ┃ ┣ 📜skole.svg  
  ┃ ┃ ┃ ┣ 📜solarPanelPhone.png  
- ┃ ┃ ┃ ┗ 📜sunshine.png  
- ┃ ┃ ┣ 📜.DS_Store  
+ ┃ ┃ ┃ ┗ 📜sunshine.png   
  ┃ ┃ ┣ 📜Mascot.svg  
  ┃ ┃ ┣ 📜canvas_1000.png  
  ┃ ┃ ┣ 📜cloudIcon.svg  
@@ -96,8 +95,7 @@ This is the source code for the GREENK website. The website aims to present the 
  ┃ ┃ ┣ 📜Nidarvoll-video.mp4  
  ┃ ┃ ┣ 📜Nidarvoll-videoeksempel.mov  
  ┃ ┃ ┣ 📜NidarvollGjenbruk-video.mp4  
- ┃ ┃ ┗ 📜gjenbruk.mp4  
- ┃ ┣ 📜.DS_Store  
+ ┃ ┃ ┗ 📜gjenbruk.mp4   
  ┃ ┗ 📜MockData.json  
  ┣ 📂components  
  ┃ ┣ 📂common  
@@ -150,13 +148,11 @@ This is the source code for the GREENK website. The website aims to present the 
  ┃ ┃ ┗ 📜index.tsx  
  ┃ ┗ 📜Layout.tsx  
  ┣ 📂pages  
- ┃ ┣ 📂Competition  
- ┃ ┃ ┗ 📜.DS_Store  
+ ┃ ┣ 📂Competition   
  ┃ ┣ 📂Home  
  ┃ ┃ ┣ 📜Home.css  
  ┃ ┃ ┣ 📜Home.tsx  
- ┃ ┃ ┗ 📜index.ts  
- ┃ ┣ 📜.DS_Store  
+ ┃ ┃ ┗ 📜index.ts   
  ┃ ┣ 📜EnergyFlow.tsx  
  ┃ ┣ 📜Game.tsx  
  ┃ ┣ 📜Highscores.tsx  
