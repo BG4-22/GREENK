@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import getSolarPanelEffect from '../../../api/getSolarPanelEffect';
 import React, { useEffect, useState } from 'react';
+import getSolarPanelEffect from '../../../api/getSolarPanelEffect';
 import Mascot from './Mascot';
 import './SolarPanelComponent.css';
 import Weather, { WeatherPropsI } from './Weather';
@@ -16,15 +16,23 @@ export interface SolarPanelComponentPropsI {
 
 const SolarPanelComponent: React.FC = () => {
     const effect = getSolarPanelEffect();
+    // these values should be updated to fit real-time data
+    // show the sun if the effect is higher than 6
     const isSunny = (effect: number) => effect > 6;
+    // show the cloud if the effect is lower than 12
     const isCloudy = (effect: number) => effect < 12;
+
+    // state to controll the weather
     const [weather, setWeather] = useState<WeatherPropsI>({
         sun: isSunny(effect),
         cloud: isCloudy(effect),
     });
+
+    // setter to update weather
     const updateWeather = (sun: boolean, cloud: boolean): void => {
         setWeather({ sun, cloud });
     };
+
     useEffect(() => {
         updateWeather(isSunny(effect), isCloudy(effect));
     }, [effect]);
