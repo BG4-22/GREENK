@@ -1,14 +1,24 @@
 import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import cloudIcon from '../../../assets/images/cloudIcon.svg';
 import sunIcon from '../../../assets/images/sunIcon.svg';
 
+/**
+ * boolean states for either showing or not showing the sun and the coud
+ */
 export interface WeatherPropsI {
     sun: boolean;
     cloud: boolean;
 }
 
+/**
+ *  these are the states of the solar panel animation on the home-screen
+ *
+ * @param w1 the last state of the weather
+ * @param w2 the next state of the weather
+ * @returns keys for the sun and cloud animation variants
+ */
 function weatherUpdateToAnimation(
     w1: WeatherPropsI | undefined,
     w2: WeatherPropsI
@@ -36,67 +46,72 @@ function weatherUpdateToAnimation(
     }
     return [sunState, cloudState];
 }
-const Weather: React.FC<WeatherPropsI> = (weather: WeatherPropsI) => {
-    const sunVariants = {
-        sunIn: {
-            rotate: [90, 270],
-            opacity: [0, 0, 1],
-            transition: {
-                duration: 1,
-            },
+
+// variants for animating following a semicircle for the in and out animations
+const sunVariants = {
+    sunIn: {
+        rotate: [90, 270],
+        opacity: [0, 0, 1],
+        transition: {
+            duration: 1,
         },
-        sunOut: {
-            rotate: [270, 450],
-            opacity: [1, 0, 0],
-            transition: {
-                duration: 1,
-            },
+    },
+    sunOut: {
+        rotate: [270, 450],
+        opacity: [1, 0, 0],
+        transition: {
+            duration: 1,
         },
-        sun: {
-            opacity: 1,
-            rotate: [270, 270],
-            transition: {
-                duration: 0,
-                repeat: 0,
-            },
+    },
+    sun: {
+        opacity: 1,
+        rotate: [270, 270],
+        transition: {
+            duration: 0,
+            repeat: 0,
         },
-        noSun: {
-            rotate: [90, 90],
-            transition: {
-                duration: 0,
-            },
+    },
+    noSun: {
+        rotate: [90, 90],
+        transition: {
+            duration: 0,
         },
-    };
-    const cloudVariants = {
-        cloudIn: {
-            x: ['-200%', '10%'],
-            opacity: [0, 0, 1],
-            transition: {
-                duration: 1,
-            },
+    },
+};
+
+// variants for animating the cloud in and out of the component along the x-axis
+const cloudVariants = {
+    cloudIn: {
+        x: ['-200%', '10%'],
+        opacity: [0, 0, 1],
+        transition: {
+            duration: 1,
         },
-        cloudOut: {
-            x: ['10%', '200%'],
-            opacity: [1, 0, 0],
-            transition: {
-                duration: 1,
-            },
+    },
+    cloudOut: {
+        x: ['10%', '200%'],
+        opacity: [1, 0, 0],
+        transition: {
+            duration: 1,
         },
-        cloud: {
-            opacity: 1,
-            x: ['10%', '10%'],
-            transition: {
-                duration: 0,
-            },
+    },
+    cloud: {
+        opacity: 1,
+        x: ['10%', '10%'],
+        transition: {
+            duration: 0,
         },
-        noCloud: {
-            x: ['-200%', '-200%'],
-            transition: {
-                duration: 1,
-            },
+    },
+    noCloud: {
+        x: ['-200%', '-200%'],
+        transition: {
+            duration: 1,
         },
-        // You can do whatever you want here, if you just want it to stop completely use `rotate: 0`
-    };
+    },
+};
+
+const Weather: FC<WeatherPropsI> = (weather: WeatherPropsI) => {
+    // get the weather state from previous render
     const prevWeatherRef = useRef<WeatherPropsI>();
     useEffect(() => {
         //assign the ref's current value to the count Hook
