@@ -19,19 +19,21 @@ import GameSlide from '../components/game/Slide';
 
 import { Prompt } from '../components/game/Prompt';
 
-//Function that handle the game logic, and returns a component that contains the game
+/**
+ * Function that handle the game logic, and returns a component that contains the game
+ */
 const Game: React.FC = () => {
-    /* 
-    gameOver: Has the player lost?
-    hasAnswered: Has the player answered the current question
-    next: Should we update to the next game state?
-    points: Increases by one for every right answer
-    promptLeft: Prompt object that contains information on the left prompt
-    promptRight: Prompt object that contains information on the right prompt
-    answer: Prompt that is a referance to the answered prompt
-    highscore: Should we show the addHighscore component?
-    loading: State for not animating the first time the component is rendered
-    */
+    /**
+     * gameOver: Has the player lost?
+     * hasAnswered: Has the player answered the current question
+     * next: Should we update to the next game state?
+     * points: Increases by one for every right answer
+     * promptLeft: Prompt object that contains information on the left prompt
+     * promptRight: Prompt object that contains information on the right prompt
+     * answer: Prompt that is a referance to the answered prompt
+     * highscore: Should we show the addHighscore component?
+     * loading: State for not animating the first time the component is rendered
+     */
     const [gameOver, setGameOver] = useState(false);
     const [hasAnswered, setHasAnswered] = useState(false);
     const [next, setNext] = useState(false);
@@ -145,20 +147,25 @@ const Game: React.FC = () => {
         setTo(randomPromptRight.kWh);
     }
 
+    // Fetches a random prompt
     function getRandomPromt() {
         let random = Math.floor(Math.random() * prompts.length);
         return prompts[random];
     }
 
+    // Convenience function for updating state related to answers
     function updateHasAnswered(prompt: Prompt) {
         setAnswer(prompt);
         setHasAnswered(true);
     }
+
+    // Convenience function for updating state related to scores
     function updateHighscore() {
         setHighscore(true);
         setGameOver(false);
     }
 
+    // Updates points and slides, moving the game forward
     useEffect(() => {
         if (answer && next) {
             if (
