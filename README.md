@@ -21,14 +21,8 @@ This is the source code for the GREENK website. The website aims to present the 
 ```
 📦src  
  ┣ 📂__mocks__  
- ┃ ┣ 📜fileMock.js  
- ┃ ┗ 📜styleMock.js  
  ┣ 📂__tests__  
  ┃ ┣ 📂__snapshots__  
- ┃ ┃ ┣ 📜App.test.tsx.snap  
- ┃ ┃ ┣ 📜EnergyFlow.test.tsx.snap  
- ┃ ┃ ┣ 📜Home.test.tsx.snap  
- ┃ ┃ ┗ 📜Navbar.test.tsx.snap  
  ┃ ┣ 📜App.test.tsx  
  ┃ ┣ 📜Carousel.test.tsx  
  ┃ ┣ 📜EnergyFlow.test.tsx  
@@ -41,61 +35,8 @@ This is the source code for the GREENK website. The website aims to present the 
  ┃ ┣ 📜firebase.ts  
  ┃ ┗ 📜getSolarPanelEffect.ts  
  ┣ 📂assets  
- ┃ ┣ 📂images  
- ┃ ┃ ┣ 📂game  
- ┃ ┃ ┃ ┣ 📜badekar.jpg  
- ┃ ┃ ┃ ┣ 📜belysning.jpeg  
- ┃ ┃ ┃ ┣ 📜dusj.JPG  
- ┃ ┃ ┃ ┣ 📜game_console.JPG  
- ┃ ┃ ┃ ┣ 📜is.jpg  
- ┃ ┃ ┃ ┣ 📜kjøleskap.jpeg  
- ┃ ┃ ┃ ┣ 📜klimaanlegg.png  
- ┃ ┃ ┃ ┣ 📜lys.jpg  
- ┃ ┃ ┃ ┣ 📜mikrobølgeovn.jpeg  
- ┃ ┃ ┃ ┣ 📜netflix.svg  
- ┃ ┃ ┃ ┣ 📜oppvaskmaskin.jpeg  
- ┃ ┃ ┃ ┣ 📜playstation.png  
- ┃ ┃ ┃ ┣ 📜stekeovn.jpeg  
- ┃ ┃ ┃ ┣ 📜tesla.png  
- ┃ ┃ ┃ ┣ 📜tv.jpeg  
- ┃ ┃ ┃ ┣ 📜tørketrommel.jpeg  
- ┃ ┃ ┃ ┣ 📜varmtvann.jpeg  
- ┃ ┃ ┃ ┗ 📜vaskemaskin.jpeg  
- ┃ ┃ ┣ 📂stats  
- ┃ ┃ ┃ ┣ 📂battery  
- ┃ ┃ ┃ ┃ ┣ 📜fullBattery.png  
- ┃ ┃ ┃ ┃ ┣ 📜lowBattery.png  
- ┃ ┃ ┃ ┃ ┣ 📜noBattery.png  
- ┃ ┃ ┃ ┃ ┣ 📜threeBattery.png  
- ┃ ┃ ┃ ┃ ┗ 📜twoBattery.png  
- ┃ ┃ ┃ ┣ 📜Solar.png  
- ┃ ┃ ┃ ┣ 📜arrow.png  
- ┃ ┃ ┃ ┣ 📜elBike.png  
- ┃ ┃ ┃ ┣ 📜heatPump.png  
- ┃ ┃ ┃ ┣ 📜heatPumpColors.png  
- ┃ ┃ ┃ ┣ 📜heatPumpPink.png  
- ┃ ┃ ┃ ┣ 📜heatpump2.png  
- ┃ ┃ ┃ ┣ 📜hotChocolate.png  
- ┃ ┃ ┃ ┣ 📜light.png  
- ┃ ┃ ┃ ┣ 📜money.png  
- ┃ ┃ ┃ ┣ 📜playstation.png  
- ┃ ┃ ┃ ┣ 📜shower.png  
- ┃ ┃ ┃ ┣ 📜skole.svg  
- ┃ ┃ ┃ ┣ 📜solarPanelPhone.png  
- ┃ ┃ ┃ ┗ 📜sunshine.png   
- ┃ ┃ ┣ 📜Mascot.svg  
- ┃ ┃ ┣ 📜canvas_1000.png  
- ┃ ┃ ┣ 📜cloudIcon.svg  
- ┃ ┃ ┣ 📜crown.png  
- ┃ ┃ ┣ 📜greenk-logo.png  
- ┃ ┃ ┗ 📜sunIcon.svg  
+ ┃ ┣ 📂images   
  ┃ ┣ 📂videos  
- ┃ ┃ ┣ 📜Energiflyt_Nidarvoll.mp4  
- ┃ ┃ ┣ 📜Energyflow-video.mp4  
- ┃ ┃ ┣ 📜Nidarvoll-video.mp4  
- ┃ ┃ ┣ 📜Nidarvoll-videoeksempel.mov  
- ┃ ┃ ┣ 📜NidarvollGjenbruk-video.mp4  
- ┃ ┃ ┗ 📜gjenbruk.mp4   
  ┃ ┗ 📜MockData.json  
  ┣ 📂components  
  ┃ ┣ 📂common  
@@ -165,7 +106,6 @@ This is the source code for the GREENK website. The website aims to present the 
  ┃ ┣ 📜api.ts  
  ┃ ┗ 📜game.ts  
  ┣ 📂utils  
- ┃ ┗ 📜hashcode.ts  
  ┣ 📜App.tsx  
  ┣ 📜fonts.css  
  ┣ 📜index.css  
