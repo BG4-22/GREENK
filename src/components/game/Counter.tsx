@@ -9,13 +9,15 @@ interface CounterPropsI {
     setNext: any;
 }
 /**
- * Function that returns a <p> component that animates a number from the props.from value to the props.to value.
+ * The soloution to a comparison in the game
+ * Animates the way the soloution is displayed by quickly counting upwards until the soloution is reached
+ * to add suspense
  */
 const Counter: React.FC<CounterPropsI> = (props: CounterPropsI) => {
     const nodeContainer = useRef<HTMLParagraphElement>(null);
     useEffect(() => {
         /**
-         * Counter wont anumate until player has answered
+         * Counter wont animate until player has answered
          */
         if (props.to != 0 && props.hasAnswered) {
             const node = nodeContainer.current;
