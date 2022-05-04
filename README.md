@@ -22,94 +22,37 @@ This is the source code for the GREENK website. The website aims to present the 
 📦src  
  ┣ 📂__mocks__  
  ┣ 📂__tests__  
- ┃ ┣ 📂__snapshots__  
- ┃ ┣ 📜App.test.tsx  
- ┃ ┣ 📜Carousel.test.tsx  
- ┃ ┣ 📜EnergyFlow.test.tsx  
- ┃ ┣ 📜Game.test.tsx  
- ┃ ┣ 📜Home.test.tsx  
- ┃ ┣ 📜Navbar.test.tsx  
- ┃ ┗ 📜Statistics.test.tsx  
+ ┃ ┣ 📂__snapshots__    
  ┣ 📂api  
- ┃ ┣ 📜energyData.ts  
- ┃ ┣ 📜firebase.ts  
- ┃ ┗ 📜getSolarPanelEffect.ts  
  ┣ 📂assets  
  ┃ ┣ 📂images   
  ┃ ┣ 📂videos  
  ┃ ┗ 📜MockData.json  
  ┣ 📂components  
  ┃ ┣ 📂common  
- ┃ ┃ ┣ 📂Carousel  
- ┃ ┃ ┃ ┣ 📜Carousel.css  
- ┃ ┃ ┃ ┣ 📜Carousel.tsx  
- ┃ ┃ ┃ ┗ 📜index.ts  
- ┃ ┃ ┣ 📜Card.tsx  
- ┃ ┃ ┗ 📜GameButton.tsx  
- ┃ ┣ 📂game  
- ┃ ┃ ┣ 📜AddHighscore.tsx  
- ┃ ┃ ┣ 📜Counter.tsx  
- ┃ ┃ ┣ 📜Feedback.tsx  
- ┃ ┃ ┣ 📜Game.css  
- ┃ ┃ ┣ 📜Prompt.ts  
- ┃ ┃ ┗ 📜Slide.tsx  
+ ┃ ┃ ┣ 📂Carousel    
+ ┃ ┃ ┗ ... 
+ ┃ ┣ 📂game     
  ┃ ┣ 📂home  
- ┃ ┃ ┣ 📂Competition  
- ┃ ┃ ┃ ┣ 📜Bar.tsx  
- ┃ ┃ ┃ ┣ 📜Chart.tsx  
- ┃ ┃ ┃ ┣ 📜Competition.tsx  
- ┃ ┃ ┃ ┣ 📜Legend.tsx  
- ┃ ┃ ┃ ┣ 📜YAxisLabel.tsx  
- ┃ ┃ ┃ ┗ 📜index.ts  
+ ┃ ┃ ┣ 📂Competition    
  ┃ ┃ ┣ 📂Funfacts  
- ┃ ┃ ┃ ┣ 📜FunfactSlideshow.tsx  
- ┃ ┃ ┃ ┗ 📜index.tsx  
- ┃ ┃ ┣ 📂Solarpanel  
- ┃ ┃ ┃ ┣ 📜Mascot.css  
- ┃ ┃ ┃ ┣ 📜Mascot.tsx  
- ┃ ┃ ┃ ┣ 📜SolarPanelComponent.css  
- ┃ ┃ ┃ ┣ 📜SolarPanelComponent.tsx  
- ┃ ┃ ┃ ┣ 📜Weather.tsx  
- ┃ ┃ ┃ ┗ 📜index.tsx  
- ┃ ┃ ┗ 📜Scoreboard.tsx  
+ ┃ ┃ ┣ 📂Solarpanel   
+ ┃ ┃ ┗ ...  
  ┃ ┗ 📂statistics  
- ┃ ┃ ┣ 📂DiagramMoney  
- ┃ ┃ ┃ ┣ 📜DiagramMoney.tsx  
- ┃ ┃ ┃ ┣ 📜index.ts  
- ┃ ┃ ┃ ┗ 📜styles.css  
- ┃ ┃ ┣ 📜EnergySources.tsx  
- ┃ ┃ ┣ 📜HeatPump.tsx  
- ┃ ┃ ┣ 📜OverallConsumption.tsx  
- ┃ ┃ ┣ 📜SolarPanel.tsx  
- ┃ ┃ ┗ 📜statistics.css  
+ ┃ ┃ ┣ 📂DiagramMoney   
+ ┃ ┃ ┗ ... 
  ┣ 📂layout  
- ┃ ┣ 📂Navbar  
- ┃ ┃ ┣ 📜Navbar.css  
- ┃ ┃ ┣ 📜Navbar.tsx  
- ┃ ┃ ┗ 📜index.tsx  
- ┃ ┗ 📜Layout.tsx  
+ ┃ ┣ 📂Navbar   
+ ┃ ┗ ...  
  ┣ 📂pages  
  ┃ ┣ 📂Competition   
- ┃ ┣ 📂Home  
- ┃ ┃ ┣ 📜Home.css  
- ┃ ┃ ┣ 📜Home.tsx  
- ┃ ┃ ┗ 📜index.ts   
- ┃ ┣ 📜EnergyFlow.tsx  
- ┃ ┣ 📜Game.tsx  
- ┃ ┣ 📜Highscores.tsx  
- ┃ ┗ 📜Statistics.tsx  
- ┣ 📂services  
- ┃ ┗ 📜game.ts  
- ┣ 📂styles  
- ┃ ┗ 📜theme.ts  
- ┣ 📂types  
- ┃ ┣ 📜api.ts  
- ┃ ┗ 📜game.ts  
+ ┃ ┣ 📂Home     
+ ┃ ┗ ...  
+ ┣ 📂services   
+ ┣ 📂styles   
+ ┣ 📂types   
  ┣ 📂utils  
- ┣ 📜App.tsx  
- ┣ 📜fonts.css  
- ┣ 📜index.css  
- ┣ 📜main.tsx  
- ┣ 📜setupTests.ts  
- ┗ 📜vite-env.d.ts
+ ┣ 📜App.tsx   
+ ┣ 📜main.tsx   
+ ┗ ...
 ```
