@@ -5,7 +5,7 @@
 <img src="src/assets/images/greenk-logo.png" alt="greenk-logo" width="300"/>
   
 </div>
-  
+
 <div align="center">
 
 **[Project description](#project-description) • 
@@ -21,9 +21,13 @@
 ## 🌿 Project description
 This is the source code for the GREENK website. The website aims to present the sustainable energy-saving measures which will be implemented in the ongoing construction project called the ”Nidarvoll projects”. The construction project is led by Trondheim municipality, and they have initiated project called Green Kiosk, abbreviated ”GREENK”.
 
+<br />
+
 ## 👨‍💻 Tech stack
 - This project uses the front end library [React](https://reactjs.org/), with the programming language [TypeScript](https://www.typescriptlang.org/) and the component library [Chakra UI](https://chakra-ui.com/)
 - For persistent storage (database), the app uses [Firebase](https://firebase.google.com/)
+
+<br />
 
 ## 🛠️ Installation
 
@@ -38,6 +42,8 @@ This is the source code for the GREENK website. The website aims to present the 
 1. Clone the repository: `git clone git@github.com:BG4-22/GREENK.git` or `git clone https://github.com/BG4-22/GREENK.git`
 2. Download dependencies: `yarn`
 3. Run the application: `yarn dev`
+
+<br />
 
 ## 📂 File structure
 ```bash
