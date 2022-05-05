@@ -46,6 +46,11 @@ This is the source code for the GREENK website. The website aims to present the 
 <br />
 
 ## 📂 File structure
+
+Here the files structure is explained and what the different folders contain.  
+
+Folders with Pascal case e.g. *SomeFolder* represent an individual component, and only contains files related to this one component. 
+
 ```bash
 📦src  
 ┣ 📂__mocks__    # Mock files for Jest to be re-directed  
