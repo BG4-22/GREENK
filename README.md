@@ -87,5 +87,4 @@ This is the source code for the GREENK website. The website aims to present the 
 
 
 ## ⚠️ License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
